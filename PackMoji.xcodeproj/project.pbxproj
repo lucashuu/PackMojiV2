@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B75CADD32E0D03C800D283C8 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = B75CADD22E0D03C800D283C8 /* ElegantCalendar */; };
+		B75CADD82E0D085500D283C8 /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B75CADD72E0D085500D283C8 /* ElegantCalendar.xcassets */; };
+		B75CADDA2E0D0BB400D283C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B75CADD92E0D0BB400D283C8 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B769CB582E04997D00D807D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B769CB422E04997B00D807D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B769CB492E04997B00D807D7;
+			remoteInfo = PackMoji;
+		};
+		B769CB622E04997D00D807D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B769CB422E04997B00D807D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B769CB492E04997B00D807D7;
+			remoteInfo = PackMoji;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B75CADD72E0D085500D283C8 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../Library/Developer/Xcode/DerivedData/PackMoji-fqtecjtibgkvhnhejvbqsmezchfz/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
+		B75CADD92E0D0BB400D283C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = PackMoji/Assets.xcassets; sourceTree = "<group>"; };
+		B769CB4A2E04997B00D807D7 /* PackMoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackMoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B769CB572E04997D00D807D7 /* PackMojiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PackMojiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B769CB612E04997D00D807D7 /* PackMojiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PackMojiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B7835D9C2E090FFB00415C78 /* Exceptions for "PackMoji" folder in "PackMoji" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+				Info.plist,
+			);
+			target = B769CB492E04997B00D807D7 /* PackMoji */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B769CB4C2E04997B00D807D7 /* PackMoji */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B7835D9C2E090FFB00415C78 /* Exceptions for "PackMoji" folder in "PackMoji" target */,
+			);
+			path = PackMoji;
+			sourceTree = "<group>";
+		};
+		B769CB5A2E04997D00D807D7 /* PackMojiTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PackMojiTests;
+			sourceTree = "<group>";
+		};
+		B769CB642E04997D00D807D7 /* PackMojiUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PackMojiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B769CB472E04997B00D807D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B75CADD32E0D03C800D283C8 /* ElegantCalendar in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B769CB542E04997D00D807D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B769CB5E2E04997D00D807D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B769CB412E04997B00D807D7 = {
+			isa = PBXGroup;
+			children = (
+				B75CADD92E0D0BB400D283C8 /* Assets.xcassets */,
+				B75CADD72E0D085500D283C8 /* ElegantCalendar.xcassets */,
+				B769CB4C2E04997B00D807D7 /* PackMoji */,
+				B769CB5A2E04997D00D807D7 /* PackMojiTests */,
+				B769CB642E04997D00D807D7 /* PackMojiUITests */,
+				B769CB4B2E04997B00D807D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B769CB4B2E04997B00D807D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B769CB4A2E04997B00D807D7 /* PackMoji.app */,
+				B769CB572E04997D00D807D7 /* PackMojiTests.xctest */,
+				B769CB612E04997D00D807D7 /* PackMojiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B769CB492E04997B00D807D7 /* PackMoji */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B769CB6B2E04997D00D807D7 /* Build configuration list for PBXNativeTarget "PackMoji" */;
+			buildPhases = (
+				B769CB462E04997B00D807D7 /* Sources */,
+				B769CB472E04997B00D807D7 /* Frameworks */,
+				B769CB482E04997B00D807D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B769CB4C2E04997B00D807D7 /* PackMoji */,
+			);
+			name = PackMoji;
+			packageProductDependencies = (
+				B75CADD22E0D03C800D283C8 /* ElegantCalendar */,
+			);
+			productName = PackMoji;
+			productReference = B769CB4A2E04997B00D807D7 /* PackMoji.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B769CB562E04997D00D807D7 /* PackMojiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B769CB6E2E04997D00D807D7 /* Build configuration list for PBXNativeTarget "PackMojiTests" */;
+			buildPhases = (
+				B769CB532E04997D00D807D7 /* Sources */,
+				B769CB542E04997D00D807D7 /* Frameworks */,
+				B769CB552E04997D00D807D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B769CB592E04997D00D807D7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B769CB5A2E04997D00D807D7 /* PackMojiTests */,
+			);
+			name = PackMojiTests;
+			packageProductDependencies = (
+			);
+			productName = PackMojiTests;
+			productReference = B769CB572E04997D00D807D7 /* PackMojiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B769CB602E04997D00D807D7 /* PackMojiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B769CB712E04997D00D807D7 /* Build configuration list for PBXNativeTarget "PackMojiUITests" */;
+			buildPhases = (
+				B769CB5D2E04997D00D807D7 /* Sources */,
+				B769CB5E2E04997D00D807D7 /* Frameworks */,
+				B769CB5F2E04997D00D807D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B769CB632E04997D00D807D7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B769CB642E04997D00D807D7 /* PackMojiUITests */,
+			);
+			name = PackMojiUITests;
+			packageProductDependencies = (
+			);
+			productName = PackMojiUITests;
+			productReference = B769CB612E04997D00D807D7 /* PackMojiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B769CB422E04997B00D807D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					B769CB492E04997B00D807D7 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					B769CB562E04997D00D807D7 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = B769CB492E04997B00D807D7;
+					};
+					B769CB602E04997D00D807D7 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = B769CB492E04997B00D807D7;
+					};
+				};
+			};
+			buildConfigurationList = B769CB452E04997B00D807D7 /* Build configuration list for PBXProject "PackMoji" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = B769CB412E04997B00D807D7;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B7FE20A42E0D0282002334C8 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B769CB4B2E04997B00D807D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B769CB492E04997B00D807D7 /* PackMoji */,
+				B769CB562E04997D00D807D7 /* PackMojiTests */,
+				B769CB602E04997D00D807D7 /* PackMojiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B769CB482E04997B00D807D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B75CADDA2E0D0BB400D283C8 /* Assets.xcassets in Resources */,
+				B75CADD82E0D085500D283C8 /* ElegantCalendar.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B769CB552E04997D00D807D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B769CB5F2E04997D00D807D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B769CB462E04997B00D807D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B769CB532E04997D00D807D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B769CB5D2E04997D00D807D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B769CB592E04997D00D807D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B769CB492E04997B00D807D7 /* PackMoji */;
+			targetProxy = B769CB582E04997D00D807D7 /* PBXContainerItemProxy */;
+		};
+		B769CB632E04997D00D807D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B769CB492E04997B00D807D7 /* PackMoji */;
+			targetProxy = B769CB622E04997D00D807D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B769CB692E04997D00D807D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B769CB6A2E04997D00D807D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B769CB6C2E04997D00D807D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GH5RW54LY5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PackMoji/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We use your location to determine if your trip is domestic or international, helping us recommend the correct travel documents (e.g., ID card vs. passport).";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vv.PackMoji;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B769CB6D2E04997D00D807D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GH5RW54LY5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PackMoji/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We use your location to determine if your trip is domestic or international, helping us recommend the correct travel documents (e.g., ID card vs. passport).";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vv.PackMoji;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B769CB6F2E04997D00D807D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GH5RW54LY5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vv.PackMojiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PackMoji.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PackMoji";
+			};
+			name = Debug;
+		};
+		B769CB702E04997D00D807D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GH5RW54LY5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vv.PackMojiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PackMoji.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PackMoji";
+			};
+			name = Release;
+		};
+		B769CB722E04997D00D807D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GH5RW54LY5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vv.PackMojiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PackMoji;
+			};
+			name = Debug;
+		};
+		B769CB732E04997D00D807D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GH5RW54LY5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vv.PackMojiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PackMoji;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B769CB452E04997B00D807D7 /* Build configuration list for PBXProject "PackMoji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B769CB692E04997D00D807D7 /* Debug */,
+				B769CB6A2E04997D00D807D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B769CB6B2E04997D00D807D7 /* Build configuration list for PBXNativeTarget "PackMoji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B769CB6C2E04997D00D807D7 /* Debug */,
+				B769CB6D2E04997D00D807D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B769CB6E2E04997D00D807D7 /* Build configuration list for PBXNativeTarget "PackMojiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B769CB6F2E04997D00D807D7 /* Debug */,
+				B769CB702E04997D00D807D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B769CB712E04997D00D807D7 /* Build configuration list for PBXNativeTarget "PackMojiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B769CB722E04997D00D807D7 /* Debug */,
+				B769CB732E04997D00D807D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B7FE20A42E0D0282002334C8 /* XCRemoteSwiftPackageReference "ElegantCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ThasianX/ElegantCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B75CADD22E0D03C800D283C8 /* ElegantCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7FE20A42E0D0282002334C8 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
+			productName = ElegantCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = B769CB422E04997B00D807D7 /* Project object */;
+}

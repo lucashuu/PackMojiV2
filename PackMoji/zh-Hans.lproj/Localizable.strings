@@ -1,0 +1,116 @@
+/* 
+  Localizable.strings
+  PackMoji
+
+  Created by Gemini on 2024/06/25.
+*/
+
+// MARK: - Home View
+"home_tagline" = "告别繁琐攻略，一键生成你的专属行囊";
+"home_destination_placeholder" = "你要去哪里？";
+"home_date_placeholder" = "选择旅行日期";
+"home_generate_button" = "生成清单";
+"home_error_alert_title" = "出错啦";
+"home_error_alert_button" = "好的";
+"home_error_date_required" = "请选择出行日期";
+"home_error_destination_required" = "请输入目的地";
+"home_error_location_required" = "无法获取您的位置信息，请确保已允许 PackMoji 使用位置服务";
+"home_error_network" = "网络错误，请检查网络连接后重试";
+
+// MARK: - Weather
+"weather_title" = "天气";
+
+// MARK: - Date Picker
+"date_picker_title" = "选择旅行区间";
+"date_picker_start_date" = "开始日期";
+"date_picker_end_date" = "结束日期";
+"date_picker_done" = "完成";
+
+// MARK: - Activity Tags
+"activity_hiking" = "徒步";
+"activity_business" = "商务";
+"activity_photography" = "摄影";
+"activity_beach" = "海滩";
+"activity_shopping" = "购物";
+"activity_skiing" = "滑雪";
+"activity_city" = "城市观光";
+"activity_party" = "派对";
+"activity_camping" = "露营";
+
+// MARK: - Checklist View
+"checklist_title_suffix" = "清单";
+"checklist_days_suffix" = "天";
+"checklist_weather_title" = "每日天气预报";
+"checklist_historical_weather_title" = "历史天气参考";
+"checklist_historical_weather_summary" = "无法获取该日期的实时预报，天气情况基于去年同期平均值，仅供参考。";
+"checklist_partial_forecast_summary" = "提示: 仅显示未来几天的预报，长途旅行部分天气基于历史平均。";
+
+// MARK: - Templates & Custom Categories
+"templates_title" = "我的模板";
+"templates_empty" = "暂无模板";
+"templates_create" = "创建模板";
+"templates_edit" = "编辑模板";
+"templates_delete" = "删除模板";
+"templates_share" = "分享模板";
+"templates_import" = "导入模板";
+"templates_export" = "导出模板";
+"templates_duplicate" = "复制模板";
+
+"template_name_placeholder" = "模板名称";
+"template_description_placeholder" = "模板描述";
+"template_activities_title" = "建议活动";
+"template_categories_title" = "分类";
+"template_items_title" = "物品";
+
+"category_new" = "新建分类";
+"category_name_placeholder" = "分类名称";
+"category_emoji_placeholder" = "选择表情";
+"category_delete" = "删除分类";
+"category_reorder" = "重新排序";
+
+"item_new" = "新增物品";
+"item_name_placeholder" = "物品名称";
+"item_quantity" = "数量";
+"item_required" = "必需品";
+"item_note_placeholder" = "添加备注";
+"item_delete" = "删除物品";
+
+// MARK: - Search
+"search_placeholder" = "搜索物品...";
+"search_no_results" = "未找到相关物品";
+"search_in_category" = "在";
+
+// MARK: - Sharing
+"share_title" = "分享清单";
+"share_message" = "看看我的行李清单：";
+"share_copy_link" = "复制链接";
+"share_export_pdf" = "导出PDF";
+"share_via" = "分享方式";
+
+// MARK: - Offline Mode
+"offline_mode" = "离线模式";
+"offline_saved" = "已保存清单";
+"offline_changes_pending" = "更改将在联网后同步";
+"offline_last_synced" = "上次同步：";
+
+// MARK: - Premium Features
+"premium_title" = "PackMoji 高级版";
+"premium_unlimited_templates" = "无限模板";
+"premium_custom_categories" = "自定义分类";
+"premium_advanced_weather" = "高级天气数据";
+"premium_offline_access" = "完整离线访问";
+"premium_no_ads" = "无广告体验";
+"premium_restore" = "恢复购买";
+"premium_subscribe" = "订阅";
+"premium_price_monthly" = "月付";
+"premium_price_yearly" = "年付";
+"premium_trial" = "开始免费试用";
+
+// MARK: - Tab Bar
+"tab_home" = "首页";
+"tab_templates" = "模板";
+
+// MARK: - Error Alerts
+"error_alert_title" = "错误";
+"error_alert_button" = "确定";
+"error_unknown" = "发生未知错误"; 

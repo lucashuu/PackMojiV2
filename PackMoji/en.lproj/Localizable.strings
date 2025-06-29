@@ -1,0 +1,116 @@
+/* 
+  Localizable.strings
+  PackMoji
+
+  Created by Gemini on 2024/06/25.
+*/
+
+// MARK: - Home View
+"home_tagline" = "Your smart packing list, one tap away.";
+"home_destination_placeholder" = "Where are you going?";
+"home_date_placeholder" = "Select travel dates";
+"home_generate_button" = "Generate Checklist";
+"home_error_alert_title" = "Error";
+"home_error_alert_button" = "OK";
+"home_error_date_required" = "Please select a valid date range";
+"home_error_destination_required" = "Please enter a destination";
+"home_error_location_required" = "Could not determine your location. Please ensure location services are enabled for PackMoji";
+"home_error_network" = "Network error. Please check your internet connection and try again";
+
+// MARK: - Weather
+"weather_title" = "Weather";
+
+// MARK: - Date Picker
+"date_picker_title" = "Select Travel Dates";
+"date_picker_start_date" = "Start Date";
+"date_picker_end_date" = "End Date";
+"date_picker_done" = "Done";
+
+// MARK: - Activity Tags
+"activity_hiking" = "Hiking";
+"activity_business" = "Business";
+"activity_photography" = "Photo";
+"activity_beach" = "Beach";
+"activity_shopping" = "Shopping";
+"activity_skiing" = "Skiing";
+"activity_city" = "City Tour";
+"activity_party" = "Party";
+"activity_camping" = "Camping";
+
+// MARK: - Checklist View
+"checklist_title_suffix" = "List";
+"checklist_days_suffix" = "days";
+"checklist_weather_title" = "Daily Weather";
+"checklist_historical_weather_title" = "Historical Weather Reference";
+"checklist_historical_weather_summary" = "Live forecast for this date is unavailable. Weather is based on historical averages for reference only.";
+"checklist_partial_forecast_summary" = "Note: Only the next few days are shown. The rest of the trip's weather is based on historical averages.";
+
+// MARK: - Templates & Custom Categories
+"templates_title" = "My Templates";
+"templates_empty" = "No templates yet";
+"templates_create" = "Create Template";
+"templates_edit" = "Edit Template";
+"templates_delete" = "Delete Template";
+"templates_share" = "Share Template";
+"templates_import" = "Import Template";
+"templates_export" = "Export Template";
+"templates_duplicate" = "Duplicate Template";
+
+"template_name_placeholder" = "Template Name";
+"template_description_placeholder" = "Template Description";
+"template_activities_title" = "Suggested Activities";
+"template_categories_title" = "Categories";
+"template_items_title" = "Items";
+
+"category_new" = "New Category";
+"category_name_placeholder" = "Category Name";
+"category_emoji_placeholder" = "Select Emoji";
+"category_delete" = "Delete Category";
+"category_reorder" = "Reorder Categories";
+
+"item_new" = "New Item";
+"item_name_placeholder" = "Item Name";
+"item_quantity" = "Quantity";
+"item_required" = "Required Item";
+"item_note_placeholder" = "Add Note";
+"item_delete" = "Delete Item";
+
+// MARK: - Search
+"search_placeholder" = "Search items...";
+"search_no_results" = "No items found";
+"search_in_category" = "in";
+
+// MARK: - Sharing
+"share_title" = "Share Packing List";
+"share_message" = "Check out my packing list for";
+"share_copy_link" = "Copy Link";
+"share_export_pdf" = "Export as PDF";
+"share_via" = "Share via";
+
+// MARK: - Offline Mode
+"offline_mode" = "Offline Mode";
+"offline_saved" = "Saved Lists";
+"offline_changes_pending" = "Changes will sync when online";
+"offline_last_synced" = "Last synced:";
+
+// MARK: - Premium Features
+"premium_title" = "PackMoji Premium";
+"premium_unlimited_templates" = "Unlimited Templates";
+"premium_custom_categories" = "Custom Categories";
+"premium_advanced_weather" = "Advanced Weather Data";
+"premium_offline_access" = "Full Offline Access";
+"premium_no_ads" = "Ad-free Experience";
+"premium_restore" = "Restore Purchase";
+"premium_subscribe" = "Subscribe";
+"premium_price_monthly" = "Monthly";
+"premium_price_yearly" = "Yearly";
+"premium_trial" = "Start Free Trial";
+
+// MARK: - Tab Bar
+"tab_home" = "Home";
+"tab_templates" = "Templates";
+
+// MARK: - Error Alerts
+"error_alert_title" = "Error";
+"error_alert_button" = "OK";
+"error_unknown" = "An unknown error occurred"; 
