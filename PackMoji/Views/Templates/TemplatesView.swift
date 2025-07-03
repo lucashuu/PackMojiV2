@@ -40,13 +40,13 @@ struct TemplatesView: View {
                                 Button(role: .destructive) {
                                     viewModel.deleteTemplates(at: IndexSet([filteredTemplates.firstIndex(where: { $0.id == template.id })!]))
                                 } label: {
-                                    Label("删除", systemImage: "trash")
+                                    Label("delete", systemImage: "trash")
                                 }
                                 .tint(.red)
                             }
                         }
                     } header: {
-                        Text("向左滑动可删除模版")
+                        Text("templates_swipe_to_delete")
                             .font(.caption)
                             .foregroundColor(.secondary)
                             .textCase(nil)
@@ -54,7 +54,7 @@ struct TemplatesView: View {
                 }
             }
             .listStyle(.insetGrouped)
-            .navigationTitle("模版")
+            .navigationTitle("templates_title")
             .navigationBarTitleDisplayMode(.large)
             .searchable(text: $searchText, isPresented: $showSearch, prompt: Text("search_placeholder"))
             .toolbar {
@@ -67,6 +67,12 @@ struct TemplatesView: View {
                     }
                 }
             }
+            .onAppear {
+                viewModel.refreshTemplates()
+            }
+            .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("TemplateCreated"))) { _ in
+                viewModel.refreshTemplates()
+            }
         }
     }
 }
@@ -74,30 +80,77 @@ struct TemplatesView: View {
 struct TemplateRowView: View {
     let template: PackingTemplate
     
+    // Activity emoji mapping
+    private func getActivityEmoji(for activity: String) -> String {
+        switch activity {
+        case "activity_travel":
+            return "✈️"
+        case "activity_business":
+            return "💼"
+        case "activity_vacation":
+            return "🏖️"
+        case "activity_camping":
+            return "⛺️"
+        case "activity_beach":
+            return "🏖️"
+        case "activity_city":
+            return "🏙️"
+        case "activity_hiking":
+            return "🥾"
+        case "activity_skiing":
+            return "⛷️"
+        case "activity_photography":
+            return "📸"
+        case "activity_shopping":
+            return "🛍️"
+        case "activity_party":
+            return "🎉"
+        default:
+            return "🎯"
+        }
+    }
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(template.name)
-                .font(.headline)
+        VStack(alignment: .leading, spacing: 12) {
+            // Template Info Card
+            VStack(alignment: .leading, spacing: 8) {
+                Text(template.name)
+                    .font(.headline)
+                
+                Text(template.description)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .lineLimit(2)
+            }
             
-            Text(template.description)
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-                .lineLimit(2)
-            
+            // Travel Types Card
             if !template.activities.isEmpty {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 8) {
-                        ForEach(template.activities, id: \.self) { activity in
-                            Text(activity)
-                                .font(.caption)
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 6)
-                                .background(Color.accentColor.opacity(0.1))
-                                .foregroundColor(.accentColor)
-                                .cornerRadius(12)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("template_travel_types")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .textCase(.uppercase)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
+                            ForEach(template.activities, id: \.self) { activity in
+                                HStack(spacing: 4) {
+                                    Text(getActivityEmoji(for: activity))
+                                        .font(.caption)
+                                    Text(LocalizedStringKey(activity))
+                                        .font(.caption)
+                                }
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(Color(.secondarySystemBackground))
+                                .cornerRadius(8)
+                            }
                         }
                     }
                 }
+                .padding(.vertical, 8)
+                .background(Color(.systemBackground))
+                .cornerRadius(10)
             }
         }
         .padding(.vertical, 8)

@@ -43,19 +43,19 @@ struct EditTemplateView: View {
     var body: some View {
         List {
             Section {
-                TextField("模版名称", text: Binding(
+                TextField("template_name_placeholder", text: Binding(
                     get: { template.name },
                     set: { template.name = $0 }
                 ))
                 
-                TextField("模版描述", text: Binding(
+                TextField("template_description_placeholder", text: Binding(
                     get: { template.description },
                     set: { template.description = $0 }
                 ))
                 .lineLimit(3)
             }
             
-            Section(header: Text("活动标签")) {
+            Section(header: Text("template_activities_title")) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
                         ForEach(template.activities, id: \.self) { activity in
@@ -103,7 +103,7 @@ struct EditTemplateView: View {
                             selectedCategoryIndex = index
                             showAddItem = true
                         }) {
-                            Label("添加物品", systemImage: "plus.circle")
+                            Label("item_add", systemImage: "plus.circle")
                         }
                     } header: {
                         HStack {
@@ -119,7 +119,7 @@ struct EditTemplateView: View {
             }
         }
         .listStyle(.insetGrouped)
-        .navigationTitle("编辑模版")
+        .navigationTitle("templates_edit")
         .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $searchText, isPresented: $showSearch, prompt: Text("search_placeholder"))
         .toolbar {
@@ -139,7 +139,7 @@ struct EditTemplateView: View {
                             .font(.system(size: 17))
                     }
                     
-                    Button("保存") {
+                    Button("save") {
                         viewModel.updateTemplate(template)
                         dismiss()
                     }
@@ -149,7 +149,7 @@ struct EditTemplateView: View {
         .sheet(isPresented: $showAddCategory) {
             NavigationStack {
                 VStack(spacing: 20) {
-                    Text("选择类别图标")
+                    Text("category_select_icon")
                         .font(.headline)
                     
                     Button(action: {
@@ -162,11 +162,11 @@ struct EditTemplateView: View {
                             .cornerRadius(12)
                     }
                     
-                    TextField("类别名称", text: $newCategoryName)
+                    TextField("category_name_placeholder", text: $newCategoryName)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
                     
-                    Button("创建类别") {
+                    Button("category_create") {
                         if !newCategoryName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                             let newCategory = CustomCategory(
                                 id: UUID().uuidString,
@@ -187,11 +187,11 @@ struct EditTemplateView: View {
                     Spacer()
                 }
                 .padding()
-                .navigationTitle("添加新类别")
+                .navigationTitle("category_add_new")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("取消") {
+                        Button("cancel") {
                             showAddCategory = false
                         }
                     }
@@ -199,11 +199,11 @@ struct EditTemplateView: View {
                 .sheet(isPresented: $showEmojiPicker) {
                     NavigationStack {
                         EmojiPickerView(selectedEmoji: $selectedEmoji)
-                            .navigationTitle("选择图标")
+                            .navigationTitle("emoji_picker_title")
                             .navigationBarTitleDisplayMode(.inline)
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarTrailing) {
-                                    Button("完成") {
+                                    Button("emoji_picker_done") {
                                         showEmojiPicker = false
                                     }
                                 }
@@ -218,7 +218,7 @@ struct EditTemplateView: View {
             if let categoryIndex = selectedCategoryIndex {
                 NavigationStack {
                     VStack(spacing: 20) {
-                        Text("选择物品图标")
+                        Text("item_select_icon")
                             .font(.headline)
                         
                         Button(action: {
@@ -231,11 +231,11 @@ struct EditTemplateView: View {
                                 .cornerRadius(12)
                         }
                         
-                        TextField("物品名称", text: $newItemName)
+                        TextField("item_name_placeholder", text: $newItemName)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.horizontal)
                         
-                        Button("添加") {
+                        Button("item_add") {
                             if !newItemName.trimmingCharacters(in: .whitespaces).isEmpty {
                                 let newItem = CustomItem(
                                     id: UUID().uuidString,
@@ -257,11 +257,11 @@ struct EditTemplateView: View {
                         Spacer()
                     }
                     .padding()
-                    .navigationTitle("添加自定义物品")
+                    .navigationTitle("item_add_custom")
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            Button("取消") {
+                            Button("cancel") {
                                 newItemName = ""
                                 selectedEmoji = "📝"
                                 showAddItem = false
@@ -271,11 +271,11 @@ struct EditTemplateView: View {
                     .sheet(isPresented: $showEmojiPicker) {
                         NavigationStack {
                             EmojiPickerView(selectedEmoji: $selectedEmoji)
-                                .navigationTitle("选择图标")
+                                .navigationTitle("emoji_picker_title")
                                 .navigationBarTitleDisplayMode(.inline)
                                 .toolbar {
                                     ToolbarItem(placement: .navigationBarTrailing) {
-                                        Button("完成") {
+                                        Button("emoji_picker_done") {
                                             showEmojiPicker = false
                                         }
                                     }
@@ -363,7 +363,7 @@ struct EditItemRow: View {
                         in: 1...99
                     ) {
                         HStack {
-                            Text("数量")
+                            Text("item_quantity")
                             Spacer()
                             Text("\(item.quantity)")
                                 .foregroundColor(.secondary)
@@ -371,13 +371,13 @@ struct EditItemRow: View {
                     }
                     .padding()
                     
-                    Button("完成") {
+                    Button("done") {
                         showQuantityEditor = false
                     }
                     .buttonStyle(.borderedProminent)
                 }
                 .padding()
-                .navigationTitle("调整数量")
+                .navigationTitle("item_adjust_quantity")
                 .navigationBarTitleDisplayMode(.inline)
             }
             .presentationDetents([.height(200)])

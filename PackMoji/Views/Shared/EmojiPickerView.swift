@@ -28,11 +28,11 @@ struct EmojiPickerView: View {
             }
             .padding()
         }
-        .navigationTitle("选择表情")
+        .navigationTitle("emoji_picker_title")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button("完成") {
+                Button("emoji_picker_done") {
                     dismiss()
                 }
             }

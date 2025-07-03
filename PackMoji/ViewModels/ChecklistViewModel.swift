@@ -269,6 +269,8 @@ class ChecklistViewModel: ObservableObject {
         // Save the template
         do {
             try storageService.saveTemplate(template)
+            // Post notification to refresh templates list
+            NotificationCenter.default.post(name: NSNotification.Name("TemplateCreated"), object: nil)
         } catch {
             print("Failed to save template: \(error.localizedDescription)")
         }

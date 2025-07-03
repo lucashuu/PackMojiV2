@@ -12,6 +12,7 @@ struct ChecklistView: View {
     @State private var templateName = ""
     @State private var templateDescription = ""
     @State private var selectedActivities: Set<String> = []
+    @State private var useFahrenheit = false
     
     var filteredCategories: [ChecklistCategory] {
         if searchText.isEmpty {
@@ -32,57 +33,65 @@ struct ChecklistView: View {
     
     var body: some View {
         List {
-            // Trip Info Header
-            VStack(alignment: .leading, spacing: 12) {
-                Text(viewModel.tripInfo.destinationName)
-                    .font(.system(size: 28, weight: .bold))
-                HStack {
-                    Image(systemName: "calendar")
-                    Text("\(viewModel.tripInfo.durationDays) \(String(localized: "checklist_days_suffix"))")
-                    Spacer()
-                    Image(systemName: "cloud.sun")
-                    Text(viewModel.tripInfo.weatherSummary)
-                }
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            }
-            .padding()
-            .listRowBackground(Color(UIColor.secondarySystemBackground))
-            .cornerRadius(14)
-            .listRowSeparator(.hidden)
-            
-            // Daily Weather Section
-            if !viewModel.tripInfo.dailyWeather.isEmpty {
+            // Combined Trip Info and Weather Section
+            VStack(alignment: .leading, spacing: 16) {
+                // Trip Header
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("checklist_weather_title")
-                        .font(.system(size: 17, weight: .bold))
-                    
-                    DailyWeatherView(dailyWeather: viewModel.tripInfo.dailyWeather)
-                    
-                    if viewModel.tripInfo.isHistorical {
-                        Text("checklist_partial_forecast_summary")
+                    HStack {
+                        Text(viewModel.tripInfo.destinationName)
+                            .font(.system(size: 28, weight: .bold))
+                        Spacer()
+                        Button {
+                            useFahrenheit.toggle()
+                        } label: {
+                            Text(useFahrenheit ? "°F" : "°C")
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(.accentColor)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(Color(.systemGray6))
+                                .cornerRadius(6)
+                        }
+                    }
+                    HStack {
+                        Image(systemName: "calendar")
+                        Text("\(viewModel.tripInfo.durationDays) \(String(localized: "checklist_days_suffix"))")
+                        Spacer()
+                        Image(systemName: "cloud.sun")
+                        Text(convertTemperatureInText(viewModel.tripInfo.weatherSummary))
+                    }
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                }
+                
+                // Weather Section
+                if !viewModel.tripInfo.dailyWeather.isEmpty {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("checklist_weather_title")
+                            .font(.system(size: 17, weight: .bold))
+                        
+                        DailyWeatherView(dailyWeather: viewModel.tripInfo.dailyWeather, useFahrenheit: useFahrenheit)
+                        
+                        if viewModel.tripInfo.isHistorical {
+                            Text("checklist_partial_forecast_summary")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .padding(.top, 4)
+                        }
+                    }
+                } else if viewModel.tripInfo.isHistorical {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("checklist_historical_weather_title")
+                            .font(.system(size: 17, weight: .bold))
+                        Text("checklist_historical_weather_summary")
                             .font(.caption)
                             .foregroundColor(.secondary)
-                            .padding(.top, 4)
                     }
                 }
-                .padding()
-                .background(Color(UIColor.secondarySystemBackground))
-                .cornerRadius(14)
-                .listRowSeparator(.hidden)
-            } else if viewModel.tripInfo.isHistorical {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("checklist_historical_weather_title")
-                        .font(.system(size: 17, weight: .bold))
-                    Text("checklist_historical_weather_summary")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
-                .padding()
-                .background(Color(UIColor.secondarySystemBackground))
-                .cornerRadius(14)
-                .listRowSeparator(.hidden)
             }
+            .padding()
+            .listRowBackground(Color(UIColor.systemBackground))
+            .listRowSeparator(.hidden)
             
             if filteredCategories.isEmpty && !searchText.isEmpty {
                 VStack(spacing: 16) {
@@ -118,7 +127,7 @@ struct ChecklistView: View {
         .searchable(text: $searchText, isPresented: $showSearch, prompt: Text("search_placeholder"))
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                HStack(spacing: 16) {
+                HStack(spacing: 8) {
                     Button {
                         showSearch.toggle()
                     } label: {
@@ -145,7 +154,7 @@ struct ChecklistView: View {
         .sheet(isPresented: $showAddCategory) {
             NavigationStack {
                 VStack(spacing: 20) {
-                    Text("选择类别图标")
+                    Text("category_select_icon")
                         .font(.headline)
                     
                     Button(action: {
@@ -158,11 +167,11 @@ struct ChecklistView: View {
                             .cornerRadius(12)
                     }
                     
-                    TextField("类别名称", text: $newCategoryName)
+                    TextField("category_name_placeholder", text: $newCategoryName)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
                     
-                    Button("创建类别") {
+                    Button("category_create") {
                         if !newCategoryName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                             viewModel.addCategory(name: newCategoryName, emoji: selectedEmoji)
                             newCategoryName = ""
@@ -176,11 +185,11 @@ struct ChecklistView: View {
                     Spacer()
                 }
                 .padding()
-                .navigationTitle("添加新类别")
+                .navigationTitle("category_add_new")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("取消") {
+                        Button("cancel") {
                             showAddCategory = false
                         }
                     }
@@ -188,11 +197,11 @@ struct ChecklistView: View {
                 .sheet(isPresented: $showEmojiPicker) {
                     NavigationStack {
                         EmojiPickerView(selectedEmoji: $selectedEmoji)
-                            .navigationTitle("选择图标")
+                            .navigationTitle("emoji_picker_title")
                             .navigationBarTitleDisplayMode(.inline)
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarTrailing) {
-                                    Button("完成") {
+                                    Button("emoji_picker_done") {
                                         showEmojiPicker = false
                                     }
                                 }
@@ -206,16 +215,25 @@ struct ChecklistView: View {
         .sheet(isPresented: $showSaveTemplate) {
             NavigationStack {
                 Form {
-                    Section(header: Text("基本信息")) {
-                        TextField("模版名称", text: $templateName)
-                        TextField("模版描述", text: $templateDescription, axis: .vertical)
-                            .lineLimit(3...6)
-                    }
-                    
-                    Section(header: Text("活动标签")) {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 8) {
-                                ForEach(["旅行", "商务", "度假", "露营", "海滩", "城市", "徒步", "滑雪"], id: \.self) { activity in
+                                    Section(header: Text("template_basic_info")) {
+                    TextField("template_name_placeholder", text: $templateName)
+                    TextField("template_description_placeholder", text: $templateDescription, axis: .vertical)
+                        .lineLimit(3...6)
+                }
+                
+                Section(header: Text("template_activities_title")) {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
+                            ForEach([
+                                ("activity_business", "💼"),
+                                ("activity_vacation", "🏖️"),
+                                ("activity_camping", "🏕️"),
+                                ("activity_beach", "🏖️"),
+                                ("activity_city", "🏙️"),
+                                ("activity_hiking", "🥾"),
+                                ("activity_skiing", "⛷️"),
+                                ("activity_party", "🎉")
+                            ], id: \.0) { activity, emoji in
                                     Toggle(isOn: Binding(
                                         get: { selectedActivities.contains(activity) },
                                         set: { isSelected in
@@ -224,9 +242,12 @@ struct ChecklistView: View {
                                             } else {
                                                 selectedActivities.remove(activity)
                                             }
-                                        }
+                                      }
                                     )) {
-                                        Text(activity)
+                                        HStack(spacing: 4) {
+                                            Text(emoji)
+                                            Text(LocalizedStringKey(activity))
+                                        }
                                     }
                                     .toggleStyle(.button)
                                     .buttonStyle(.bordered)
@@ -236,18 +257,18 @@ struct ChecklistView: View {
                         }
                     }
                 }
-                .navigationTitle("保存为模版")
+                .navigationTitle("templates_create")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        Button("取消") {
+                        Button("cancel") {
                             showSaveTemplate = false
                             resetTemplateForm()
                         }
                     }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("保存") {
+                        Button("save") {
                             let _ = viewModel.saveAsTemplate(
                                 name: templateName,
                                 description: templateDescription,
@@ -268,6 +289,31 @@ struct ChecklistView: View {
         templateName = ""
         templateDescription = ""
         selectedActivities = []
+    }
+    
+    private func convertTemperatureInText(_ text: String) -> String {
+        if !useFahrenheit {
+            return text
+        }
+        
+        // 使用正则表达式匹配温度数字
+        let pattern = #"(-?\d+)(?:°C|°)"#
+        let regex = try? NSRegularExpression(pattern: pattern, options: [])
+        let range = NSRange(location: 0, length: text.utf16.count)
+        
+        var result = text
+        regex?.enumerateMatches(in: text, options: [], range: range) { match, _, _ in
+            guard let match = match,
+                  let tempRange = Range(match.range(at: 1), in: text),
+                  let celsius = Int(text[tempRange]) else { return }
+            
+            let fahrenheit = Int(Double(celsius) * 9.0 / 5.0 + 32)
+            let originalTemp = String(text[Range(match.range, in: text)!])
+            let newTemp = "\(fahrenheit)°F"
+            result = result.replacingOccurrences(of: originalTemp, with: newTemp)
+        }
+        
+        return result
     }
 }
 
@@ -294,7 +340,7 @@ struct CategoryHeaderView: View {
             .sheet(isPresented: $showAddItemSheet) {
                 NavigationStack {
                     VStack(spacing: 20) {
-                        Text("选择物品图标")
+                        Text("item_select_icon")
                             .font(.headline)
                         
                         Button(action: {
@@ -307,11 +353,11 @@ struct CategoryHeaderView: View {
                                 .cornerRadius(12)
                         }
                         
-                        TextField("物品名称", text: $newItemName)
+                        TextField("item_name_placeholder", text: $newItemName)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.horizontal)
                         
-                        Button("添加") {
+                        Button("item_add") {
                             if !newItemName.trimmingCharacters(in: .whitespaces).isEmpty {
                                 viewModel.addCustomItem(to: categoryIndex, name: newItemName, emoji: selectedEmoji)
                                 newItemName = ""
@@ -325,11 +371,11 @@ struct CategoryHeaderView: View {
                         Spacer()
                     }
                     .padding()
-                    .navigationTitle("添加自定义物品")
+                    .navigationTitle("item_add_custom")
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            Button("取消") {
+                            Button("cancel") {
                                 newItemName = ""
                                 selectedEmoji = "📝"
                                 showAddItemSheet = false
@@ -339,11 +385,11 @@ struct CategoryHeaderView: View {
                     .sheet(isPresented: $showEmojiPicker) {
                         NavigationStack {
                             EmojiPickerView(selectedEmoji: $selectedEmoji)
-                                .navigationTitle("选择图标")
+                                .navigationTitle("emoji_picker_title")
                                 .navigationBarTitleDisplayMode(.inline)
                                 .toolbar {
                                     ToolbarItem(placement: .navigationBarTrailing) {
-                                        Button("完成") {
+                                        Button("emoji_picker_done") {
                                             showEmojiPicker = false
                                         }
                                     }
@@ -514,7 +560,7 @@ struct ChecklistItemRow: View {
                         in: 1...99
                     ) {
                         HStack {
-                            Text("数量")
+                            Text("item_quantity")
                             Spacer()
                             Text("\(item.quantity)")
                                 .foregroundColor(.secondary)
@@ -522,13 +568,13 @@ struct ChecklistItemRow: View {
                     }
                     .padding()
                     
-                    Button("完成") {
+                    Button("done") {
                         showQuantityEditor = false
                     }
                     .buttonStyle(.borderedProminent)
                 }
                 .padding()
-                .navigationTitle("调整数量")
+                .navigationTitle("item_adjust_quantity")
                 .navigationBarTitleDisplayMode(.inline)
             }
             .presentationDetents([.height(200)])
@@ -543,7 +589,7 @@ struct ChecklistItemRow: View {
                         .cornerRadius(8)
                         .padding()
                     
-                    Button("保存") {
+                    Button("save") {
                         print("保存备注：\(editingNote)")  // Debug log
                         viewModel.updateItemNote(in: categoryIndex, itemId: item.id, note: editingNote.isEmpty ? nil : editingNote)
                         isEditingNote = false
@@ -551,11 +597,11 @@ struct ChecklistItemRow: View {
                     .buttonStyle(.borderedProminent)
                     .padding()
                 }
-                .navigationTitle("添加备注")
+                .navigationTitle("item_add_note")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("取消") {
+                        Button("cancel") {
                             isEditingNote = false
                         }
                     }
@@ -574,7 +620,7 @@ struct EmptyChecklistView: View {
             Image(systemName: "tray")
                 .font(.system(size: 48))
                 .foregroundColor(.gray)
-            Text("还没有任何物品，点击下方 + 按钮添加吧！")
+            Text("checklist_empty_state")
                 .font(.headline)
                 .foregroundColor(.gray)
         }

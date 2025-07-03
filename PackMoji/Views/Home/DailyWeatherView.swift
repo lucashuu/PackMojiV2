@@ -2,6 +2,7 @@ import SwiftUI
 
 struct DailyWeatherView: View {
     let dailyWeather: [DailyWeather]
+    let useFahrenheit: Bool
     
     // 根据天数计算合适的图标大小
     private var iconSize: CGFloat {
@@ -67,7 +68,8 @@ struct DailyWeatherView: View {
                         day: day,
                         iconSize: iconSize,
                         cardWidth: cardWidth,
-                        cardHeight: cardHeight
+                        cardHeight: cardHeight,
+                        useFahrenheit: useFahrenheit
                     )
                 }
             }
@@ -81,6 +83,7 @@ struct DailyWeatherCard: View {
     let iconSize: CGFloat
     let cardWidth: CGFloat
     let cardHeight: CGFloat
+    let useFahrenheit: Bool
     
     private var formattedDate: String {
         let formatter = DateFormatter()
@@ -90,6 +93,15 @@ struct DailyWeatherCard: View {
             return formatter.string(from: date)
         }
         return day.date
+    }
+    
+    private var displayTemperature: String {
+        if useFahrenheit {
+            let fahrenheit = Int(Double(day.temperature) * 9.0 / 5.0 + 32)
+            return "\(fahrenheit)°F"
+        } else {
+            return "\(day.temperature)°C"
+        }
     }
     
     var body: some View {
@@ -113,7 +125,7 @@ struct DailyWeatherCard: View {
             )
             
             // Temperature
-            Text("\(day.temperature)°")
+            Text(displayTemperature)
                 .font(.system(size: max(12, iconSize * 0.4), weight: .semibold))
                 .foregroundColor(.primary)
             
@@ -128,25 +140,25 @@ struct DailyWeatherCard: View {
         .padding(.vertical, 8)
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color(.systemBackground))
-                .shadow(color: .black.opacity(0.1), radius: 3, x: 0, y: 1)
+                .fill(Color(.secondarySystemBackground))
         )
     }
     
     private var shortenedCondition: String {
         let condition = day.condition
+        // Check for Chinese weather conditions and return localized versions
         if condition.contains("晴") {
-            return "晴"
+            return String(localized: "weather_sunny")
         } else if condition.contains("多云") {
-            return "多云"
+            return String(localized: "weather_cloudy")
         } else if condition.contains("雨") {
-            return "雨"
+            return String(localized: "weather_rainy")
         } else if condition.contains("雪") {
-            return "雪"
+            return String(localized: "weather_snowy")
         } else if condition.contains("雾") {
-            return "雾"
+            return String(localized: "weather_foggy")
         } else if condition.contains("雷") {
-            return "雷"
+            return String(localized: "weather_stormy")
         } else {
             return condition.count > 4 ? String(condition.prefix(4)) : condition
         }
@@ -158,25 +170,25 @@ struct DailyWeatherCard: View {
         // 5天行程
         VStack(alignment: .leading) {
             Text("5天行程").font(.headline)
-            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"), count: 5))
+            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"), count: 5), useFahrenheit: false)
         }
         
         // 10天行程
         VStack(alignment: .leading) {
             Text("10天行程").font(.headline)
-            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"), count: 10))
+            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"), count: 10), useFahrenheit: false)
         }
         
         // 20天行程
         VStack(alignment: .leading) {
             Text("20天行程").font(.headline)
-            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"), count: 20))
+            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"), count: 20), useFahrenheit: false)
         }
         
         // 30天行程
         VStack(alignment: .leading) {
             Text("30天行程").font(.headline)
-            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"), count: 30))
+            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"), count: 30), useFahrenheit: false)
         }
     }
     .padding()

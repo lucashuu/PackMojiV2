@@ -25,6 +25,11 @@
 "date_picker_start_date" = "Start Date";
 "date_picker_end_date" = "End Date";
 "date_picker_done" = "Done";
+"date_picker_sheet_title" = "Select Date Range";
+"date_picker_previous_month" = "Previous Month";
+"date_picker_next_month" = "Next Month";
+"date_picker_cancel" = "Cancel";
+"date_picker_confirm" = "Confirm";
 
 // MARK: - Activity Tags
 "activity_hiking" = "Hiking";
@@ -36,6 +41,8 @@
 "activity_city" = "City Tour";
 "activity_party" = "Party";
 "activity_camping" = "Camping";
+"activity_travel" = "Travel";
+"activity_vacation" = "Vacation";
 
 // MARK: - Checklist View
 "checklist_title_suffix" = "List";
@@ -44,6 +51,7 @@
 "checklist_historical_weather_title" = "Historical Weather Reference";
 "checklist_historical_weather_summary" = "Live forecast for this date is unavailable. Weather is based on historical averages for reference only.";
 "checklist_partial_forecast_summary" = "Note: Only the next few days are shown. The rest of the trip's weather is based on historical averages.";
+"checklist_empty_state" = "No items yet. Tap the + button below to add some!";
 
 // MARK: - Templates & Custom Categories
 "templates_title" = "My Templates";
@@ -55,18 +63,24 @@
 "templates_import" = "Import Template";
 "templates_export" = "Export Template";
 "templates_duplicate" = "Duplicate Template";
+"templates_swipe_to_delete" = "Swipe left to delete templates";
 
 "template_name_placeholder" = "Template Name";
 "template_description_placeholder" = "Template Description";
 "template_activities_title" = "Suggested Activities";
+"template_travel_types" = "Travel Types";
 "template_categories_title" = "Categories";
 "template_items_title" = "Items";
+"template_basic_info" = "Basic Information";
 
 "category_new" = "New Category";
 "category_name_placeholder" = "Category Name";
 "category_emoji_placeholder" = "Select Emoji";
 "category_delete" = "Delete Category";
 "category_reorder" = "Reorder Categories";
+"category_select_icon" = "Select Category Icon";
+"category_create" = "Create Category";
+"category_add_new" = "Add New Category";
 
 "item_new" = "New Item";
 "item_name_placeholder" = "Item Name";
@@ -74,6 +88,11 @@
 "item_required" = "Required Item";
 "item_note_placeholder" = "Add Note";
 "item_delete" = "Delete Item";
+"item_add" = "Add";
+"item_add_custom" = "Add Custom Item";
+"item_select_icon" = "Select Item Icon";
+"item_adjust_quantity" = "Adjust Quantity";
+"item_add_note" = "Add Note";
 
 // MARK: - Search
 "search_placeholder" = "Search items...";
@@ -110,7 +129,51 @@
 "tab_home" = "Home";
 "tab_templates" = "Templates";
 
+// MARK: - Common Actions
+"cancel" = "Cancel";
+"done" = "Done";
+"save" = "Save";
+"delete" = "Delete";
+"edit" = "Edit";
+"add" = "Add";
+"import" = "Import";
+"export" = "Export";
+"confirm" = "Confirm";
+
 // MARK: - Error Alerts
 "error_alert_title" = "Error";
 "error_alert_button" = "OK";
-"error_unknown" = "An unknown error occurred"; 
+"error_unknown" = "An unknown error occurred";
+
+// MARK: - Network Errors
+"network_error_invalid_url" = "The URL provided was invalid.";
+"network_error_invalid_response" = "The server returned an invalid response.";
+"network_error_encoding_failed" = "Failed to encode the request body.";
+"network_error_decoding_failed" = "Failed to decode the server response.";
+"network_error_bad_request" = "Invalid request. Please check your input.";
+"network_error_unauthorized" = "Unauthorized access.";
+"network_error_not_found" = "The requested resource was not found.";
+"network_error_timeout" = "The request timed out. Please try again.";
+"network_error_no_internet" = "No internet connection. Please check your network.";
+
+// MARK: - Storage Errors
+"storage_error_invalid_data" = "Invalid template data";
+"storage_error_save_failed" = "Failed to save data";
+"storage_error_load_failed" = "Failed to load data";
+"storage_error_not_found" = "Data not found";
+
+// MARK: - Import Template
+"import_template_paste_instruction" = "Paste the template data here";
+"import_template_format_instruction" = "The template data should be in JSON format";
+
+// MARK: - Weather Conditions
+"weather_sunny" = "Sunny";
+"weather_cloudy" = "Cloudy";
+"weather_rainy" = "Rainy";
+"weather_snowy" = "Snowy";
+"weather_foggy" = "Foggy";
+"weather_stormy" = "Stormy";
+
+// MARK: - Emoji Picker
+"emoji_picker_title" = "Select Emoji";
+"emoji_picker_done" = "Done"; 

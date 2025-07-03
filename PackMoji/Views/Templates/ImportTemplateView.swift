@@ -14,29 +14,29 @@ struct ImportTemplateView: View {
                     TextEditor(text: $importText)
                         .frame(minHeight: 200)
                 } header: {
-                    Text("Paste the template data here")
+                    Text("import_template_paste_instruction")
                 } footer: {
-                    Text("The template data should be in JSON format")
+                    Text("import_template_format_instruction")
                 }
             }
             .navigationTitle("templates_import")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel") {
+                    Button("cancel") {
                         dismiss()
                     }
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Import") {
+                    Button("import") {
                         importTemplate()
                     }
                     .disabled(importText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 }
             }
-            .alert("Error", isPresented: $showError) {
-                Button("OK", role: .cancel) {}
+            .alert("error_alert_title", isPresented: $showError) {
+                Button("error_alert_button", role: .cancel) {}
             } message: {
                 Text(errorMessage)
             }

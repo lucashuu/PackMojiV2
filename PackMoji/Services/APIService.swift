@@ -7,7 +7,7 @@ class APIService {
     private var cancellables = Set<AnyCancellable>()
     
     // Base URL for the backend API
-    private let baseURL = "http://192.168.1.156:3000/api/v1"
+    private let baseURL = "https://packmoji.onrender.com/api/v1"
     
     // Network request timeout in seconds
     private let timeoutInterval: TimeInterval = 10
@@ -131,25 +131,25 @@ enum NetworkError: Error, LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidURL:
-            return NSLocalizedString("The URL provided was invalid.", comment: "")
+            return String(localized: "network_error_invalid_url")
         case .invalidResponse:
-            return NSLocalizedString("The server returned an invalid response.", comment: "")
+            return String(localized: "network_error_invalid_response")
         case .encodingFailed:
-            return NSLocalizedString("Failed to encode the request body.", comment: "")
+            return String(localized: "network_error_encoding_failed")
         case .decodingFailed:
-            return NSLocalizedString("Failed to decode the server response.", comment: "")
+            return String(localized: "network_error_decoding_failed")
         case .badRequest:
-            return NSLocalizedString("Invalid request. Please check your input.", comment: "")
+            return String(localized: "network_error_bad_request")
         case .unauthorized:
-            return NSLocalizedString("Unauthorized access.", comment: "")
+            return String(localized: "network_error_unauthorized")
         case .notFound:
-            return NSLocalizedString("The requested resource was not found.", comment: "")
+            return String(localized: "network_error_not_found")
         case .serverError(let message):
             return message
         case .timeout:
-            return NSLocalizedString("The request timed out. Please try again.", comment: "")
+            return String(localized: "network_error_timeout")
         case .noInternet:
-            return NSLocalizedString("No internet connection. Please check your network.", comment: "")
+            return String(localized: "network_error_no_internet")
         case .networkError(let message):
             return message
         }

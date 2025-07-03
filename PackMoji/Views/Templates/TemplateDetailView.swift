@@ -15,6 +15,36 @@ struct TemplateDetailView: View {
         _viewModel = StateObject(wrappedValue: TemplateViewModel(template: template))
     }
     
+    // Activity emoji mapping
+    private func getActivityEmoji(for activity: String) -> String {
+        switch activity {
+        case "activity_travel":
+            return "✈️"
+        case "activity_business":
+            return "💼"
+        case "activity_vacation":
+            return "🏖️"
+        case "activity_camping":
+            return "⛺️"
+        case "activity_beach":
+            return "🏖️"
+        case "activity_city":
+            return "🏙️"
+        case "activity_hiking":
+            return "🥾"
+        case "activity_skiing":
+            return "⛷️"
+        case "activity_photography":
+            return "📸"
+        case "activity_shopping":
+            return "🛍️"
+        case "activity_party":
+            return "🎉"
+        default:
+            return "🎯"
+        }
+    }
+    
     var filteredCategories: [CustomCategory] {
         if searchText.isEmpty {
             return viewModel.categories
@@ -33,34 +63,44 @@ struct TemplateDetailView: View {
     
     var body: some View {
         List {
-            // Template Info Header
-            VStack(alignment: .leading, spacing: 12) {
-                Text(template.name)
-                    .font(.system(size: 28, weight: .bold))
-                Text(template.description)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+            // Combined Template Info and Travel Types Section
+            VStack(alignment: .leading, spacing: 16) {
+                // Template Header
+                VStack(alignment: .leading, spacing: 12) {
+                    Text(template.name)
+                        .font(.system(size: 28, weight: .bold))
+                    Text(template.description)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
                 
-                // Activities Tags
+                // Travel Types Section
                 if !template.activities.isEmpty {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 8) {
-                            ForEach(template.activities, id: \.self) { activity in
-                                Text(activity)
-                                    .font(.caption)
-                                    .padding(.horizontal, 12)
-                                    .padding(.vertical, 6)
-                                    .background(Color.accentColor.opacity(0.1))
-                                    .foregroundColor(.accentColor)
-                                    .cornerRadius(12)
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("template_travel_types")
+                            .font(.system(size: 17, weight: .bold))
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 8) {
+                                ForEach(template.activities, id: \.self) { activity in
+                                    HStack(spacing: 4) {
+                                        Text(getActivityEmoji(for: activity))
+                                            .font(.caption)
+                                        Text(LocalizedStringKey(activity))
+                                            .font(.caption)
+                                    }
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 4)
+                                    .background(Color(.secondarySystemBackground))
+                                    .cornerRadius(8)
+                                }
                             }
                         }
                     }
                 }
             }
             .padding()
-            .listRowBackground(Color(UIColor.secondarySystemBackground))
-            .cornerRadius(14)
+            .listRowBackground(Color(UIColor.systemBackground))
             .listRowSeparator(.hidden)
             
             if filteredCategories.isEmpty && !searchText.isEmpty {
@@ -115,7 +155,7 @@ struct TemplateDetailView: View {
         .sheet(isPresented: $showAddCategory) {
             NavigationStack {
                 VStack(spacing: 20) {
-                    Text("选择类别图标")
+                    Text("category_select_icon")
                         .font(.headline)
                     
                     Button(action: {
@@ -128,11 +168,11 @@ struct TemplateDetailView: View {
                             .cornerRadius(12)
                     }
                     
-                    TextField("类别名称", text: $newCategoryName)
+                    TextField("category_name_placeholder", text: $newCategoryName)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
                     
-                    Button("创建类别") {
+                    Button("category_create") {
                         if !newCategoryName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                             viewModel.addCategory(name: newCategoryName, emoji: selectedEmoji)
                             newCategoryName = ""
@@ -146,11 +186,11 @@ struct TemplateDetailView: View {
                     Spacer()
                 }
                 .padding()
-                .navigationTitle("添加新类别")
+                .navigationTitle("category_add_new")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("取消") {
+                        Button("cancel") {
                             showAddCategory = false
                         }
                     }
@@ -158,11 +198,11 @@ struct TemplateDetailView: View {
                 .sheet(isPresented: $showEmojiPicker) {
                     NavigationStack {
                         EmojiPickerView(selectedEmoji: $selectedEmoji)
-                            .navigationTitle("选择图标")
+                            .navigationTitle("emoji_picker_title")
                             .navigationBarTitleDisplayMode(.inline)
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarTrailing) {
-                                    Button("完成") {
+                                    Button("emoji_picker_done") {
                                         showEmojiPicker = false
                                     }
                                 }
@@ -262,7 +302,7 @@ struct TemplateItemRow: View {
                         in: 1...99
                     ) {
                         HStack {
-                            Text("数量")
+                            Text("item_quantity")
                             Spacer()
                             Text("\(item.quantity)")
                                 .foregroundColor(.secondary)
@@ -270,13 +310,13 @@ struct TemplateItemRow: View {
                     }
                     .padding()
                     
-                    Button("完成") {
+                    Button("done") {
                         showQuantityEditor = false
                     }
                     .buttonStyle(.borderedProminent)
                 }
                 .padding()
-                .navigationTitle("调整数量")
+                .navigationTitle("item_adjust_quantity")
                 .navigationBarTitleDisplayMode(.inline)
             }
             .presentationDetents([.height(200)])
@@ -295,13 +335,9 @@ struct TemplateCategoryHeaderView: View {
 
     var body: some View {
         HStack {
-            HStack(spacing: 8) {
-                Text(category.emoji)
-                    .font(.system(size: 17))
-                Text(category.name)
-                    .font(.system(size: 17, weight: .bold))
-                    .foregroundColor(Color.primary)
-            }
+            Text(category.name)
+                .font(.system(size: 17, weight: .bold))
+                .foregroundColor(Color.primary)
             
             Spacer()
             
@@ -313,7 +349,7 @@ struct TemplateCategoryHeaderView: View {
             .sheet(isPresented: $showAddItemSheet) {
                 NavigationStack {
                     VStack(spacing: 20) {
-                        Text("选择物品图标")
+                        Text("item_select_icon")
                             .font(.headline)
                         
                         Button(action: {
@@ -326,11 +362,11 @@ struct TemplateCategoryHeaderView: View {
                                 .cornerRadius(12)
                         }
                         
-                        TextField("物品名称", text: $newItemName)
+                        TextField("item_name_placeholder", text: $newItemName)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.horizontal)
                         
-                        Button("添加") {
+                        Button("item_add") {
                             if !newItemName.trimmingCharacters(in: .whitespaces).isEmpty {
                                 viewModel.addCustomItem(to: categoryIndex, name: newItemName, emoji: selectedEmoji)
                                 newItemName = ""
@@ -344,11 +380,11 @@ struct TemplateCategoryHeaderView: View {
                         Spacer()
                     }
                     .padding()
-                    .navigationTitle("添加自定义物品")
+                    .navigationTitle("item_add_custom")
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            Button("取消") {
+                            Button("cancel") {
                                 newItemName = ""
                                 selectedEmoji = "📝"
                                 showAddItemSheet = false
@@ -358,11 +394,11 @@ struct TemplateCategoryHeaderView: View {
                     .sheet(isPresented: $showEmojiPicker) {
                         NavigationStack {
                             EmojiPickerView(selectedEmoji: $selectedEmoji)
-                                .navigationTitle("选择图标")
+                                .navigationTitle("emoji_picker_title")
                                 .navigationBarTitleDisplayMode(.inline)
                                 .toolbar {
                                     ToolbarItem(placement: .navigationBarTrailing) {
-                                        Button("完成") {
+                                        Button("emoji_picker_done") {
                                             showEmojiPicker = false
                                         }
                                     }

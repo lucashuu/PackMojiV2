@@ -57,14 +57,14 @@ struct DateRangePickerSheet: View {
                         .frame(maxWidth: .infinity)
                 }
                 HStack {
-                    Button("上个月") {
+                    Button("date_picker_previous_month") {
                         leftMonth = calendar.date(byAdding: .month, value: -1, to: leftMonth) ?? leftMonth
                         rightMonth = calendar.date(byAdding: .month, value: -1, to: rightMonth) ?? rightMonth
                         leftManager.scrollToMonth(leftMonth)
                         rightManager.scrollToMonth(rightMonth)
                     }
                     Spacer()
-                    Button("下个月") {
+                    Button("date_picker_next_month") {
                         leftMonth = calendar.date(byAdding: .month, value: 1, to: leftMonth) ?? leftMonth
                         rightMonth = calendar.date(byAdding: .month, value: 1, to: rightMonth) ?? rightMonth
                         leftManager.scrollToMonth(leftMonth)
@@ -78,6 +78,17 @@ struct DateRangePickerSheet: View {
                 tempStart = startDate
                 tempEnd = endDate
                 updateHighlight()
+                
+                // Scroll to today's date when the calendar appears
+                let today = Date()
+                leftMonth = today
+                rightMonth = calendar.date(byAdding: .month, value: 1, to: today) ?? today
+                
+                // Use a small delay to ensure the calendar views are ready
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    leftManager.scrollToMonth(today)
+                    rightManager.scrollToMonth(calendar.date(byAdding: .month, value: 1, to: today) ?? today)
+                }
             }
             .onChange(of: leftManager.selectedDate) { oldValue, newValue in
                 if let date = newValue { handleDateSelection(date) }
@@ -85,12 +96,12 @@ struct DateRangePickerSheet: View {
             .onChange(of: rightManager.selectedDate) { oldValue, newValue in
                 if let date = newValue { handleDateSelection(date) }
             }
-            .navigationBarTitle("选择日期区间", displayMode: .inline)
+            .navigationBarTitle("date_picker_sheet_title", displayMode: .inline)
             .navigationBarItems(
-                leading: Button("取消") {
+                leading: Button("date_picker_cancel") {
                     presentationMode.wrappedValue.dismiss()
                 },
-                trailing: Button("确定") {
+                trailing: Button("date_picker_confirm") {
                     if let s = tempStart, let e = tempEnd {
                         startDate = s
                         endDate = e

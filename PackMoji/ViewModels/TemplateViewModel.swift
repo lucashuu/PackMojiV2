@@ -44,6 +44,10 @@ class TemplateViewModel: ObservableObject {
         templates = storageService.loadTemplates()
     }
     
+    func refreshTemplates() {
+        loadTemplates()
+    }
+    
     // MARK: - Template Management
     
     func deleteTemplates(at indexSet: IndexSet) {
@@ -73,6 +77,8 @@ class TemplateViewModel: ObservableObject {
         do {
             try storageService.saveTemplate(newTemplate)
             loadTemplates()
+            // Post notification to refresh templates list in other views
+            NotificationCenter.default.post(name: NSNotification.Name("TemplateCreated"), object: nil)
         } catch {
             errorMessage = error.localizedDescription
             showError = true
@@ -202,6 +208,8 @@ class TemplateViewModel: ObservableObject {
         do {
             _ = try storageService.importTemplate(from: jsonString)
             loadTemplates()
+            // Post notification to refresh templates list in other views
+            NotificationCenter.default.post(name: NSNotification.Name("TemplateCreated"), object: nil)
         } catch {
             throw error
         }

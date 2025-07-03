@@ -122,13 +122,13 @@ enum StorageError: Error {
     var localizedDescription: String {
         switch self {
         case .invalidTemplateData:
-            return "Invalid template data"
+            return String(localized: "storage_error_invalid_data")
         case .saveFailed:
-            return "Failed to save data"
+            return String(localized: "storage_error_save_failed")
         case .loadFailed:
-            return "Failed to load data"
+            return String(localized: "storage_error_load_failed")
         case .notFound:
-            return "Data not found"
+            return String(localized: "storage_error_not_found")
         }
     }
 } 

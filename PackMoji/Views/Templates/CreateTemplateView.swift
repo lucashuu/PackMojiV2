@@ -18,6 +18,36 @@ struct CreateTemplateView: View {
         "activity_party"
     ]
     
+    // Activity emoji mapping
+    private func getActivityEmoji(for activity: String) -> String {
+        switch activity {
+        case "activity_travel":
+            return "✈️"
+        case "activity_business":
+            return "💼"
+        case "activity_vacation":
+            return "🏖️"
+        case "activity_camping":
+            return "⛺️"
+        case "activity_beach":
+            return "🏖️"
+        case "activity_city":
+            return "🏙️"
+        case "activity_hiking":
+            return "🥾"
+        case "activity_skiing":
+            return "⛷️"
+        case "activity_photography":
+            return "📸"
+        case "activity_shopping":
+            return "🛍️"
+        case "activity_party":
+            return "🎉"
+        default:
+            return "🎯"
+        }
+    }
+    
     private func activityBinding(for activity: String) -> Binding<Bool> {
         Binding(
             get: { selectedActivities.contains(activity) },
@@ -41,8 +71,22 @@ struct CreateTemplateView: View {
                 }
                 
                 Section("template_activities_title") {
-                    ForEach(activities, id: \.self) { activity in
-                        Toggle(LocalizedStringKey(activity), isOn: activityBinding(for: activity))
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
+                            ForEach(activities, id: \.self) { activity in
+                                Toggle(isOn: activityBinding(for: activity)) {
+                                    HStack(spacing: 4) {
+                                        Text(getActivityEmoji(for: activity))
+                                            .font(.caption)
+                                        Text(LocalizedStringKey(activity))
+                                            .font(.caption)
+                                    }
+                                }
+                                .toggleStyle(.button)
+                                .buttonStyle(.bordered)
+                            }
+                        }
+                        .padding(.vertical, 4)
                     }
                 }
             }
@@ -50,13 +94,13 @@ struct CreateTemplateView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel") {
+                    Button("cancel") {
                         dismiss()
                     }
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
+                    Button("done") {
                         createTemplate()
                     }
                     .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)

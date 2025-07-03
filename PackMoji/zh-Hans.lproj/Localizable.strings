@@ -25,6 +25,11 @@
 "date_picker_start_date" = "开始日期";
 "date_picker_end_date" = "结束日期";
 "date_picker_done" = "完成";
+"date_picker_sheet_title" = "选择日期区间";
+"date_picker_previous_month" = "上个月";
+"date_picker_next_month" = "下个月";
+"date_picker_cancel" = "取消";
+"date_picker_confirm" = "确定";
 
 // MARK: - Activity Tags
 "activity_hiking" = "徒步";
@@ -36,6 +41,8 @@
 "activity_city" = "城市观光";
 "activity_party" = "派对";
 "activity_camping" = "露营";
+"activity_travel" = "旅行";
+"activity_vacation" = "度假";
 
 // MARK: - Checklist View
 "checklist_title_suffix" = "清单";
@@ -44,6 +51,7 @@
 "checklist_historical_weather_title" = "历史天气参考";
 "checklist_historical_weather_summary" = "无法获取该日期的实时预报，天气情况基于去年同期平均值，仅供参考。";
 "checklist_partial_forecast_summary" = "提示: 仅显示未来几天的预报，长途旅行部分天气基于历史平均。";
+"checklist_empty_state" = "还没有任何物品，点击下方 + 按钮添加吧！";
 
 // MARK: - Templates & Custom Categories
 "templates_title" = "我的模板";
@@ -55,18 +63,24 @@
 "templates_import" = "导入模板";
 "templates_export" = "导出模板";
 "templates_duplicate" = "复制模板";
+"templates_swipe_to_delete" = "向左滑动可删除模版";
 
 "template_name_placeholder" = "模板名称";
 "template_description_placeholder" = "模板描述";
 "template_activities_title" = "建议活动";
+"template_travel_types" = "旅行类型";
 "template_categories_title" = "分类";
 "template_items_title" = "物品";
+"template_basic_info" = "基本信息";
 
 "category_new" = "新建分类";
 "category_name_placeholder" = "分类名称";
 "category_emoji_placeholder" = "选择表情";
 "category_delete" = "删除分类";
 "category_reorder" = "重新排序";
+"category_select_icon" = "选择类别图标";
+"category_create" = "创建类别";
+"category_add_new" = "添加新类别";
 
 "item_new" = "新增物品";
 "item_name_placeholder" = "物品名称";
@@ -74,6 +88,11 @@
 "item_required" = "必需品";
 "item_note_placeholder" = "添加备注";
 "item_delete" = "删除物品";
+"item_add" = "添加";
+"item_add_custom" = "添加自定义物品";
+"item_select_icon" = "选择物品图标";
+"item_adjust_quantity" = "调整数量";
+"item_add_note" = "添加备注";
 
 // MARK: - Search
 "search_placeholder" = "搜索物品...";
@@ -110,7 +129,51 @@
 "tab_home" = "首页";
 "tab_templates" = "模板";
 
+// MARK: - Common Actions
+"cancel" = "取消";
+"done" = "完成";
+"save" = "保存";
+"delete" = "删除";
+"edit" = "编辑";
+"add" = "添加";
+"import" = "导入";
+"export" = "导出";
+"confirm" = "确定";
+
 // MARK: - Error Alerts
 "error_alert_title" = "错误";
 "error_alert_button" = "确定";
-"error_unknown" = "发生未知错误"; 
+"error_unknown" = "发生未知错误";
+
+// MARK: - Network Errors
+"network_error_invalid_url" = "提供的URL无效。";
+"network_error_invalid_response" = "服务器返回了无效响应。";
+"network_error_encoding_failed" = "请求数据编码失败。";
+"network_error_decoding_failed" = "服务器响应解码失败。";
+"network_error_bad_request" = "请求无效，请检查您的输入。";
+"network_error_unauthorized" = "未授权访问。";
+"network_error_not_found" = "未找到请求的资源。";
+"network_error_timeout" = "请求超时，请重试。";
+"network_error_no_internet" = "无网络连接，请检查您的网络。";
+
+// MARK: - Storage Errors
+"storage_error_invalid_data" = "无效的模板数据";
+"storage_error_save_failed" = "保存数据失败";
+"storage_error_load_failed" = "加载数据失败";
+"storage_error_not_found" = "未找到数据";
+
+// MARK: - Import Template
+"import_template_paste_instruction" = "在此粘贴模板数据";
+"import_template_format_instruction" = "模板数据应为JSON格式";
+
+// MARK: - Weather Conditions
+"weather_sunny" = "晴";
+"weather_cloudy" = "多云";
+"weather_rainy" = "雨";
+"weather_snowy" = "雪";
+"weather_foggy" = "雾";
+"weather_stormy" = "雷";
+
+// MARK: - Emoji Picker
+"emoji_picker_title" = "选择表情";
+"emoji_picker_done" = "完成"; 
