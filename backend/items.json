@@ -1479,6 +1479,62 @@
     "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
   },
   {
+    "id": "skis",
+    "name": { "en": "Skis", "zh": "滑雪板" },
+    "emoji": "🎿",
+    "category": { "en": "Skiing Equipment", "zh": "滑雪装备" },
+    "quantity_logic": { "type": "fixed", "value": 1 },
+    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+  },
+  {
+    "id": "ski_boots",
+    "name": { "en": "Ski Boots", "zh": "滑雪靴" },
+    "emoji": "🥾",
+    "category": { "en": "Skiing Equipment", "zh": "滑雪装备" },
+    "quantity_logic": { "type": "fixed", "value": 1 },
+    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+  },
+  {
+    "id": "ski_bindings",
+    "name": { "en": "Ski Bindings", "zh": "滑雪固定器" },
+    "emoji": "🔧",
+    "category": { "en": "Skiing Equipment", "zh": "滑雪装备" },
+    "quantity_logic": { "type": "fixed", "value": 1 },
+    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+  },
+  {
+    "id": "ski_poles",
+    "name": { "en": "Ski Poles", "zh": "滑雪杖" },
+    "emoji": "🦯",
+    "category": { "en": "Skiing Equipment", "zh": "滑雪装备" },
+    "quantity_logic": { "type": "fixed", "value": 1 },
+    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+  },
+  {
+    "id": "ski_pass",
+    "name": { "en": "Ski Pass/Lift Ticket", "zh": "滑雪票/缆车票" },
+    "emoji": "🎫",
+    "category": { "en": "Documents", "zh": "文件证件" },
+    "quantity_logic": { "type": "per_day", "value": 1 },
+    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+  },
+  {
+    "id": "ski_wax",
+    "name": { "en": "Ski Wax", "zh": "滑雪蜡" },
+    "emoji": "🧴",
+    "category": { "en": "Skiing Equipment", "zh": "滑雪装备" },
+    "quantity_logic": { "type": "fixed", "value": 1 },
+    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+  },
+  {
+    "id": "ski_bag",
+    "name": { "en": "Ski Bag", "zh": "滑雪包" },
+    "emoji": "🎒",
+    "category": { "en": "Skiing Equipment", "zh": "滑雪装备" },
+    "quantity_logic": { "type": "fixed", "value": 1 },
+    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+  },
+  {
     "id": "beach_towel",
     "name": { "en": "Beach Towel", "zh": "沙滩毛巾" },
     "emoji": "🏖️",

@@ -19,16 +19,16 @@ function testRecommendation() {
             }
         },
         {
-            name: "Domestic Trip with Hiking",
+            name: "Beach Vacation Trip",
             context: {
-                durationDays: 3,
-                avgTemp: 15,
-                weatherCode: "clouds",
-                activities: ["activity_hiking"],
+                durationDays: 7,
+                avgTemp: 28,
+                weatherCode: "clear",
+                activities: ["activity_beach"],
                 lang: "en",
-                tripType: "domestic",
+                tripType: "international",
                 originCountry: "US",
-                destination: "New York"
+                destination: "Maldives"
             }
         }
     ];

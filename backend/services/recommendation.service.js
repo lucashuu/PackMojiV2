@@ -177,26 +177,63 @@ const getRecommendedItems = (tripContext) => {
         };
     });
 
-    // Define score thresholds for different categories
-    const SCORE_THRESHOLDS = {
-        'Documents': 75,        // Documents need high relevance
-        'Medical Kit': 65,      // Medical always important
-        'Personal Care': 60,    // Personal care important 
-        'Toiletries': 60,       // Daily essentials
-        'Clothing': 55,         // Clothing depends on weather/activity
-        'Electronics': 50,      // Electronics moderately important
-        'Food & Snacks': 45,    // Food for specific activities
-        'Essentials': 70,       // Essentials are important
-        'Comfort': 35,          // Comfort items for longer trips
-        'Accessories': 30,      // Accessories less critical
-        'Miscellaneous': 25,    // Miscellaneous lowest priority
-        'Beach': 40,            // Activity-specific gear
-        'Business': 40,         // Activity-specific gear
-        'Camping Equipment': 40, // Activity-specific gear
-        'Skiing Equipment': 40,  // Activity-specific gear
-        'Cosmetics': 25,        // Optional items
-        'Skincare': 20          // Optional items
+    // Define base score thresholds for different categories (降低阈值以提高推荐覆盖率)
+    const BASE_SCORE_THRESHOLDS = {
+        'Documents': 45,        // 证件类：降低阈值确保护照等重要文件被推荐
+        'Medical Kit': 55,      // 医疗用品：稍微降低但保持重要性
+        'Personal Care': 50,    // 个人护理：适度降低
+        'Toiletries': 45,       // 日用品：降低以确保基本洗漱用品被推荐
+        'Clothing': 40,         // 衣物：大幅降低以确保基本衣物被推荐
+        'Electronics': 35,      // 电子产品：大幅降低确保手机、充电器等被推荐
+        'Food & Snacks': 35,    // 食物零食：降低阈值
+        'Essentials': 40,       // 必需品：大幅降低确保现金等被推荐
+        'Comfort': 30,          // 舒适用品：稍微降低
+        'Accessories': 25,      // 配件：保持较低
+        'Miscellaneous': 20,    // 杂物：保持较低
+        'Beach': 35,            // 海滩用品：降低以确保活动匹配时被推荐
+        'Business': 35,         // 商务用品：降低以确保活动匹配时被推荐
+        'Camping Equipment': 35, // 露营装备：降低以确保活动匹配时被推荐
+        'Camping': 35,          // 露营装备：降低以确保活动匹配时被推荐
+        'Skiing Equipment': 30,  // 滑雪装备：专业设备优先推荐
+        'Cosmetics': 20,        // 化妆品：保持较低
+        'Skincare': 15,         // 护肤品：保持较低
+        'Medicine': 40          // 药品：新增分类，中等阈值
     };
+
+    // Activity-specific threshold adjustments for professional gear
+    const ACTIVITY_THRESHOLD_ADJUSTMENTS = {
+        'activity_camping': {
+            'Clothing': -8,     // 野营活动下衣物阈值降低8分，确保专业户外衣物被推荐
+            'Accessories': -5   // 野营配件阈值也降低
+        },
+        'activity_hiking': {
+            'Clothing': -10,    // 登山活动下衣物阈值降低10分
+            'Accessories': -5
+        },
+        'activity_skiing': {
+            'Clothing': -12,    // 滑雪活动下衣物阈值大幅降低
+            'Accessories': -8
+        },
+        'activity_beach': {
+            'Clothing': -5,     // 海滩活动下衣物阈值稍微降低
+            'Beach': -5
+        }
+    };
+
+    // Calculate dynamic thresholds based on activities
+    const SCORE_THRESHOLDS = { ...BASE_SCORE_THRESHOLDS };
+    if (activities && activities.length > 0) {
+        activities.forEach(activity => {
+            const adjustments = ACTIVITY_THRESHOLD_ADJUSTMENTS[activity];
+            if (adjustments) {
+                Object.keys(adjustments).forEach(category => {
+                    if (SCORE_THRESHOLDS[category]) {
+                        SCORE_THRESHOLDS[category] = Math.max(15, SCORE_THRESHOLDS[category] + adjustments[category]);
+                    }
+                });
+            }
+        });
+    }
 
     // Filter items based on score thresholds
     const recommended = itemsWithScores.filter(item => {
@@ -236,7 +273,8 @@ const getRecommendedItems = (tripContext) => {
         'Miscellaneous': 8,
         'Beach': 8,
         'Business': 8,
-        'Camping Equipment': 10,
+        'Camping Equipment': 12,  // 增加camping装备限制
+        'Camping': 12,            // 添加Camping分类限制
         'Skiing Equipment': 10,
         'Cosmetics': 5,
         'Skincare': 3
