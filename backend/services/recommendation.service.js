@@ -35,7 +35,7 @@ const CATEGORY_PRIORITIES = {
     'Miscellaneous': 40,        // 杂物 - 较低
     'Beach': 35,                // 海滩用品 - 活动相关
     'Business': 35,             // 商务用品 - 活动相关
-    'Camping Equipment': 35,    // 露营装备 - 活动相关
+    'Camping': 35,              // 露营装备 - 活动相关
     'Skiing Equipment': 35,     // 滑雪装备 - 活动相关
     'Cosmetics': 30,            // 化妆品 - 较低
     'Skincare': 25              // 护肤品 - 较低
@@ -192,7 +192,6 @@ const getRecommendedItems = (tripContext) => {
         'Miscellaneous': 20,    // 杂物：保持较低
         'Beach': 35,            // 海滩用品：降低以确保活动匹配时被推荐
         'Business': 35,         // 商务用品：降低以确保活动匹配时被推荐
-        'Camping Equipment': 35, // 露营装备：降低以确保活动匹配时被推荐
         'Camping': 35,          // 露营装备：降低以确保活动匹配时被推荐
         'Skiing Equipment': 30,  // 滑雪装备：专业设备优先推荐
         'Cosmetics': 20,        // 化妆品：保持较低
@@ -273,8 +272,7 @@ const getRecommendedItems = (tripContext) => {
         'Miscellaneous': 8,
         'Beach': 8,
         'Business': 8,
-        'Camping Equipment': 12,  // 增加camping装备限制
-        'Camping': 12,            // 添加Camping分类限制
+        'Camping': 12,            // 露营装备限制
         'Skiing Equipment': 10,
         'Cosmetics': 5,
         'Skincare': 3
