@@ -315,6 +315,9 @@ struct HomeView: View {
                 isChecklistPresented = true
             }
         }
+        .onChange(of: selectedTags) {
+            viewModel.selectedTags = selectedTags
+        }
         .navigationBarHidden(true)
     }
 }
