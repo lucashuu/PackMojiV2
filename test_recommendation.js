@@ -19,16 +19,16 @@ function testRecommendation() {
             }
         },
         {
-            name: "Beach Vacation Trip",
+            name: "Camping Trip (Chinese Language)",
             context: {
-                durationDays: 7,
-                avgTemp: 28,
-                weatherCode: "clear",
-                activities: ["activity_beach"],
-                lang: "en",
-                tripType: "international",
+                durationDays: 4,
+                avgTemp: 15,
+                weatherCode: "clouds",
+                activities: ["activity_camping"],
+                lang: "zh",
+                tripType: "domestic",
                 originCountry: "US",
-                destination: "Maldives"
+                destination: "Yosemite National Park"
             }
         }
     ];
