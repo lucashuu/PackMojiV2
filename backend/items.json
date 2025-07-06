@@ -1,20 +1,38 @@
 [
   {
     "id": "passport",
-    "name": { "en": "Passport", "zh": "护照" },
+    "name": {
+      "en": "Passport",
+      "zh": "护照"
+    },
     "emoji": "🛂",
-    "category": { "en": "Essentials", "zh": "必需品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
     "attributes": {
       "trip_type": "international"
     }
   },
   {
     "id": "visa_info",
-    "name": { "en": "Check Visa Requirements", "zh": "查询签证要求" },
+    "name": {
+      "en": "Check Visa Requirements",
+      "zh": "查询签证要求"
+    },
     "emoji": "📄",
-    "category": { "en": "Essentials", "zh": "必需品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
     "attributes": {
       "trip_type": "international"
     },
@@ -22,81 +40,209 @@
   },
   {
     "id": "id_card_cn",
-    "name": { "en": "ID Card (Shen Fen Zheng)", "zh": "身份证" },
+    "name": {
+      "en": "ID Card (Shen Fen Zheng)",
+      "zh": "身份证"
+    },
     "emoji": "🪪",
-    "category": { "en": "Essentials", "zh": "必需品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
     "attributes": {
       "trip_type": "domestic",
-      "origin_country": ["CN"]
+      "origin_country": [
+        "CN"
+      ]
     }
   },
   {
     "id": "id_card_us",
-    "name": { "en": "ID Card / Driver's License", "zh": "身份证/驾照" },
+    "name": {
+      "en": "ID Card / Driver's License",
+      "zh": "身份证/驾照"
+    },
     "emoji": "🪪",
-    "category": { "en": "Essentials", "zh": "必需品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
     "attributes": {
       "trip_type": "domestic",
-      "origin_country": ["US"]
+      "origin_country": [
+        "US"
+      ]
     }
   },
   {
     "id": "credit_card",
-    "name": { "en": "Credit/Bank Card", "zh": "银行卡/信用卡" },
+    "name": {
+      "en": "Credit/Bank Card",
+      "zh": "银行卡/信用卡"
+    },
     "emoji": "💳",
-    "category": { "en": "Essentials", "zh": "必需品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "cash",
-    "name": { "en": "Some Cash", "zh": "少量现金" },
+    "name": {
+      "en": "Some Cash",
+      "zh": "少量现金"
+    },
     "emoji": "💵",
-    "category": { "en": "Essentials", "zh": "必需品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
     "attributes": {
-      "activities": ["activity_business", "activity_city", "activity_party", "activity_beach", "activity_shopping", "activity_photography", "activity_hiking", "activity_skiing"],
-      "weather_condition": ["any"],
-      "temp_min": -50, "temp_max": 50
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_party",
+        "activity_beach",
+        "activity_shopping",
+        "activity_photography",
+        "activity_hiking",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
     },
     "url": "https://www.google.com/search?q=currency+exchange+{destination}+local+money"
   },
   {
     "id": "phone",
-    "name": { "en": "Phone", "zh": "手机" },
+    "name": {
+      "en": "Phone",
+      "zh": "手机"
+    },
     "emoji": "📱",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "power_bank",
-    "name": { "en": "Power Bank", "zh": "充电宝" },
+    "name": {
+      "en": "Power Bank",
+      "zh": "充电宝"
+    },
     "emoji": "🔋",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "charger_cable",
-    "name": { "en": "Charger & Cable", "zh": "充电器/数据线" },
+    "name": {
+      "en": "Charger & Cable",
+      "zh": "充电器/数据线"
+    },
     "emoji": "🔌",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "travel_adapter",
-    "name": { "en": "Travel Adapter", "zh": "转换插头" },
+    "name": {
+      "en": "Travel Adapter",
+      "zh": "转换插头"
+    },
     "emoji": "🔌",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { 
-      "activities": ["any"], 
-      "weather_condition": ["any"], 
-      "temp_min": -50, 
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
       "temp_max": 50,
       "trip_type": "international"
     },
@@ -104,1850 +250,5387 @@
   },
   {
     "id": "headphones",
-    "name": { "en": "Headphones", "zh": "耳机" },
+    "name": {
+      "en": "Headphones",
+      "zh": "耳机"
+    },
     "emoji": "🎧",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "camera",
-    "name": { "en": "Camera", "zh": "相机" },
+    "name": {
+      "en": "Camera",
+      "zh": "相机"
+    },
     "emoji": "📷",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "ipad",
-    "name": { "en": "iPad/Tablet", "zh": "iPad/平板电脑" },
+    "name": {
+      "en": "iPad/Tablet",
+      "zh": "iPad/平板电脑"
+    },
     "emoji": "💻",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business", "activity_city", "activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "phone_charger",
-    "name": { "en": "Phone Charger", "zh": "手机充电器" },
+    "name": {
+      "en": "Phone Charger",
+      "zh": "手机充电器"
+    },
     "emoji": "🔋",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "ipad_charger",
-    "name": { "en": "iPad/Tablet Charger", "zh": "iPad/平板充电器" },
+    "name": {
+      "en": "iPad/Tablet Charger",
+      "zh": "iPad/平板充电器"
+    },
     "emoji": "🔌",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business", "activity_city", "activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "camera_charger",
-    "name": { "en": "Camera Charger", "zh": "相机充电器" },
+    "name": {
+      "en": "Camera Charger",
+      "zh": "相机充电器"
+    },
     "emoji": "🔋",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "camera_battery",
-    "name": { "en": "Camera Battery", "zh": "相机电池" },
+    "name": {
+      "en": "Camera Battery",
+      "zh": "相机电池"
+    },
     "emoji": "🔋",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "memory_card",
-    "name": { "en": "Memory Card/SD Card", "zh": "内存卡/SD卡" },
+    "name": {
+      "en": "Memory Card/SD Card",
+      "zh": "内存卡/SD卡"
+    },
     "emoji": "💾",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "usb_cable",
-    "name": { "en": "USB Cable", "zh": "USB数据线" },
+    "name": {
+      "en": "USB Cable",
+      "zh": "USB数据线"
+    },
     "emoji": "🔌",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "laptop_charger",
-    "name": { "en": "Laptop Charger", "zh": "笔记本充电器" },
+    "name": {
+      "en": "Laptop Charger",
+      "zh": "笔记本充电器"
+    },
     "emoji": "🔌",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "wireless_earbuds",
-    "name": { "en": "Wireless Earbuds", "zh": "无线耳机" },
+    "name": {
+      "en": "Wireless Earbuds",
+      "zh": "无线耳机"
+    },
     "emoji": "🎧",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "smartphone_gimbal",
-    "name": { "en": "Smartphone Gimbal", "zh": "手机云台" },
+    "name": {
+      "en": "Smartphone Gimbal",
+      "zh": "手机云台"
+    },
     "emoji": "📱",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "tripod",
-    "name": { "en": "Tripod", "zh": "三脚架" },
+    "name": {
+      "en": "Tripod",
+      "zh": "三脚架"
+    },
     "emoji": "📷",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "portable_speaker",
-    "name": { "en": "Portable Speaker", "zh": "便携音箱" },
+    "name": {
+      "en": "Portable Speaker",
+      "zh": "便携音箱"
+    },
     "emoji": "🔊",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_party", "activity_beach", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party",
+        "activity_beach",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "power_strip",
-    "name": { "en": "Power Strip", "zh": "插线板" },
+    "name": {
+      "en": "Power Strip",
+      "zh": "插线板"
+    },
     "emoji": "🔌",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "e_reader",
-    "name": { "en": "E-Reader/Kindle", "zh": "电子书阅读器" },
+    "name": {
+      "en": "E-Reader/Kindle",
+      "zh": "电子书阅读器"
+    },
     "emoji": "📚",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_vacation", "activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_vacation",
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "action_camera",
-    "name": { "en": "Action Camera", "zh": "运动相机" },
+    "name": {
+      "en": "Action Camera",
+      "zh": "运动相机"
+    },
     "emoji": "📹",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing", "activity_beach"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing",
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "drone",
-    "name": { "en": "Drone", "zh": "无人机" },
+    "name": {
+      "en": "Drone",
+      "zh": "无人机"
+    },
     "emoji": "🚁",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "walkie_talkie",
-    "name": { "en": "Walkie Talkie", "zh": "对讲机" },
+    "name": {
+      "en": "Walkie Talkie",
+      "zh": "对讲机"
+    },
     "emoji": "📻",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "t_shirt",
-    "name": { "en": "T-Shirt", "zh": "T恤" },
+    "name": {
+      "en": "T-Shirt",
+      "zh": "T恤"
+    },
     "emoji": "👕",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "per_day", "value": 1 },
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 1
+    },
     "attributes": {
-      "activities": ["activity_business", "activity_city", "activity_party", "activity_beach", "activity_shopping", "activity_photography", "activity_hiking"],
-      "weather_condition": ["any"],
-      "temp_min": 18, "temp_max": 50
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_party",
+        "activity_beach",
+        "activity_shopping",
+        "activity_photography",
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
     }
   },
   {
     "id": "long_sleeve_shirt",
-    "name": { "en": "Long-Sleeve Shirt", "zh": "长袖T恤/打底衫" },
+    "name": {
+      "en": "Long-Sleeve Shirt",
+      "zh": "长袖T恤/打底衫"
+    },
     "emoji": "👚",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "per_day", "value": 0.8 },
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 0.8
+    },
     "attributes": {
-      "activities": ["activity_business", "activity_city", "activity_party", "activity_shopping", "activity_photography", "activity_hiking", "activity_skiing"],
-      "weather_condition": ["any"],
-      "temp_min": 5, "temp_max": 22
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography",
+        "activity_hiking",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 5,
+      "temp_max": 22
     }
   },
   {
     "id": "sweater",
-    "name": { "en": "Sweater/Hoodie", "zh": "毛衣/卫衣" },
+    "name": {
+      "en": "Sweater/Hoodie",
+      "zh": "毛衣/卫衣"
+    },
     "emoji": "🧶",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "per_day", "value": 0.4 },
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 0.4
+    },
     "attributes": {
-      "activities": ["activity_business", "activity_city", "activity_party", "activity_shopping", "activity_photography", "activity_hiking", "activity_skiing"],
-      "weather_condition": ["dry", "windy", "cold"],
-      "temp_min": -5, "temp_max": 15
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography",
+        "activity_hiking",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "dry",
+        "windy",
+        "cold"
+      ],
+      "temp_min": -5,
+      "temp_max": 15
     }
   },
   {
     "id": "trench_coat",
-    "name": { "en": "Trench Coat/Jacket", "zh": "风衣/夹克" },
+    "name": {
+      "en": "Trench Coat/Jacket",
+      "zh": "风衣/夹克"
+    },
     "emoji": "🧥",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
     "attributes": {
-      "activities": ["activity_business", "activity_city", "activity_party", "activity_shopping", "activity_photography"],
-      "weather_condition": ["dry", "windy"],
-      "temp_min": 10, "temp_max": 20
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "dry",
+        "windy"
+      ],
+      "temp_min": 10,
+      "temp_max": 20
     }
   },
   {
     "id": "hardshell_jacket",
-    "name": { "en": "Hardshell Jacket", "zh": "冲锋衣" },
+    "name": {
+      "en": "Hardshell Jacket",
+      "zh": "冲锋衣"
+    },
     "emoji": "🧥",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
     "attributes": {
-      "activities": ["activity_hiking", "activity_skiing", "activity_photography"],
-      "weather_condition": ["rainy", "windy", "cold"],
-      "temp_min": 0, "temp_max": 15
+      "activities": [
+        "activity_hiking",
+        "activity_skiing",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "rainy",
+        "windy",
+        "cold"
+      ],
+      "temp_min": 0,
+      "temp_max": 15
     }
   },
   {
     "id": "wool_coat",
-    "name": { "en": "Wool Coat", "zh": "羊毛大衣" },
+    "name": {
+      "en": "Wool Coat",
+      "zh": "羊毛大衣"
+    },
     "emoji": "🧥",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
     "attributes": {
-      "activities": ["activity_business", "activity_city", "activity_party"],
-      "weather_condition": ["dry", "cold"],
-      "temp_min": -10, "temp_max": 8
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_party"
+      ],
+      "weather_condition": [
+        "dry",
+        "cold"
+      ],
+      "temp_min": -10,
+      "temp_max": 8
     }
   },
   {
     "id": "down_jacket",
-    "name": { "en": "Down Jacket", "zh": "羽绒服" },
+    "name": {
+      "en": "Down Jacket",
+      "zh": "羽绒服"
+    },
     "emoji": "🧥",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
     "attributes": {
-      "activities": ["activity_hiking", "activity_skiing", "activity_city"],
-      "weather_condition": ["cold", "snowy"],
-      "temp_min": -50, "temp_max": 5
+      "activities": [
+        "activity_hiking",
+        "activity_skiing",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "cold",
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 5
     }
   },
   {
     "id": "underwear",
-    "name": { "en": "Underwear", "zh": "内衣裤" },
+    "name": {
+      "en": "Underwear",
+      "zh": "内衣裤"
+    },
     "emoji": "🩲",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "per_day", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "socks",
-    "name": { "en": "Socks", "zh": "袜子" },
+    "name": {
+      "en": "Socks",
+      "zh": "袜子"
+    },
     "emoji": "🧦",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "per_day", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "pajamas",
-    "name": { "en": "Pajamas", "zh": "睡衣" },
+    "name": {
+      "en": "Pajamas",
+      "zh": "睡衣"
+    },
     "emoji": "😴",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "swimsuit",
-    "name": { "en": "Swimsuit", "zh": "泳衣" },
+    "name": {
+      "en": "Swimsuit",
+      "zh": "泳衣"
+    },
     "emoji": "👙",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach"], "weather_condition": ["sunny", "hot"], "temp_min": 22, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "sunny",
+        "hot"
+      ],
+      "temp_min": 22,
+      "temp_max": 50
+    }
   },
   {
     "id": "jeans",
-    "name": { "en": "Jeans", "zh": "牛仔裤" },
+    "name": {
+      "en": "Jeans",
+      "zh": "牛仔裤"
+    },
     "emoji": "👖",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_city", "activity_shopping", "activity_photography"], "weather_condition": ["any"], "temp_min": 5, "temp_max": 30 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 5,
+      "temp_max": 30
+    }
   },
   {
     "id": "casual_pants",
-    "name": { "en": "Casual Pants", "zh": "休闲裤" },
+    "name": {
+      "en": "Casual Pants",
+      "zh": "休闲裤"
+    },
     "emoji": "👖",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_business", "activity_city", "activity_shopping"], "weather_condition": ["any"], "temp_min": 10, "temp_max": 35 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_shopping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 10,
+      "temp_max": 35
+    }
   },
   {
     "id": "shorts",
-    "name": { "en": "Shorts", "zh": "短裤" },
+    "name": {
+      "en": "Shorts",
+      "zh": "短裤"
+    },
     "emoji": "🩳",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_beach", "activity_city", "activity_hiking"], "weather_condition": ["sunny"], "temp_min": 20, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach",
+        "activity_city",
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 20,
+      "temp_max": 50
+    }
   },
   {
     "id": "sports_pants",
-    "name": { "en": "Sports Pants", "zh": "运动裤" },
+    "name": {
+      "en": "Sports Pants",
+      "zh": "运动裤"
+    },
     "emoji": "🏃",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing"], "weather_condition": ["any"], "temp_min": -10, "temp_max": 30 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -10,
+      "temp_max": 30
+    }
   },
   {
     "id": "dress",
-    "name": { "en": "Dress", "zh": "连衣裙" },
+    "name": {
+      "en": "Dress",
+      "zh": "连衣裙"
+    },
     "emoji": "👗",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_party", "activity_city", "activity_shopping"], "weather_condition": ["any"], "temp_min": 15, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party",
+        "activity_city",
+        "activity_shopping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 15,
+      "temp_max": 50
+    }
   },
   {
     "id": "skirt",
-    "name": { "en": "Skirt", "zh": "裙子" },
+    "name": {
+      "en": "Skirt",
+      "zh": "裙子"
+    },
     "emoji": "🩱",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_party", "activity_city", "activity_shopping"], "weather_condition": ["any"], "temp_min": 15, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party",
+        "activity_city",
+        "activity_shopping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 15,
+      "temp_max": 50
+    }
   },
   {
     "id": "sneakers",
-    "name": { "en": "Sneakers", "zh": "运动鞋" },
+    "name": {
+      "en": "Sneakers",
+      "zh": "运动鞋"
+    },
     "emoji": "👟",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_hiking", "activity_shopping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_hiking",
+        "activity_shopping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "casual_shoes",
-    "name": { "en": "Casual Shoes", "zh": "休闲鞋" },
+    "name": {
+      "en": "Casual Shoes",
+      "zh": "休闲鞋"
+    },
     "emoji": "👞",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_business", "activity_shopping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_business",
+        "activity_shopping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "boots",
-    "name": { "en": "Boots", "zh": "靴子" },
+    "name": {
+      "en": "Boots",
+      "zh": "靴子"
+    },
     "emoji": "🥾",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_business"], "weather_condition": ["cold", "rainy"], "temp_min": -20, "temp_max": 15 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_business"
+      ],
+      "weather_condition": [
+        "cold",
+        "rainy"
+      ],
+      "temp_min": -20,
+      "temp_max": 15
+    }
   },
   {
     "id": "sandals",
-    "name": { "en": "Sandals", "zh": "凉鞋" },
+    "name": {
+      "en": "Sandals",
+      "zh": "凉鞋"
+    },
     "emoji": "👡",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach", "activity_city", "activity_vacation"], "weather_condition": ["sunny"], "temp_min": 18, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach",
+        "activity_city",
+        "activity_vacation"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
+    }
   },
   {
     "id": "sport_bra",
-    "name": { "en": "Sports Bra", "zh": "运动内衣" },
+    "name": {
+      "en": "Sports Bra",
+      "zh": "运动内衣"
+    },
     "emoji": "🏃‍♀️",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "thick_socks",
-    "name": { "en": "Thick Socks", "zh": "厚袜子" },
+    "name": {
+      "en": "Thick Socks",
+      "zh": "厚袜子"
+    },
     "emoji": "🧦",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "per_day", "value": 0.5 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing"], "weather_condition": ["cold"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 0.5
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "cold"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "silk_stockings",
-    "name": { "en": "Silk Stockings", "zh": "丝袜" },
+    "name": {
+      "en": "Silk Stockings",
+      "zh": "丝袜"
+    },
     "emoji": "🦵",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 3 },
-    "attributes": { "activities": ["activity_business", "activity_party"], "weather_condition": ["any"], "temp_min": 10, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 3
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_party"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 10,
+      "temp_max": 50
+    }
   },
   {
     "id": "scarf",
-    "name": { "en": "Scarf", "zh": "围巾" },
+    "name": {
+      "en": "Scarf",
+      "zh": "围巾"
+    },
     "emoji": "🧣",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business", "activity_city", "activity_party"], "weather_condition": ["cold", "windy"], "temp_min": -50, "temp_max": 15 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_party"
+      ],
+      "weather_condition": [
+        "cold",
+        "windy"
+      ],
+      "temp_min": -50,
+      "temp_max": 15
+    }
   },
   {
     "id": "gloves",
-    "name": { "en": "Gloves", "zh": "手套" },
+    "name": {
+      "en": "Gloves",
+      "zh": "手套"
+    },
     "emoji": "🧤",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_business", "activity_skiing"], "weather_condition": ["cold"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_business",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "cold"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "winter_hat",
-    "name": { "en": "Winter Hat", "zh": "毛线帽" },
+    "name": {
+      "en": "Winter Hat",
+      "zh": "毛线帽"
+    },
     "emoji": "🎩",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_skiing", "activity_hiking"], "weather_condition": ["cold"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_skiing",
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "cold"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "polo_shirt",
-    "name": { "en": "Polo Shirt", "zh": "polo衫" },
+    "name": {
+      "en": "Polo Shirt",
+      "zh": "polo衫"
+    },
     "emoji": "👔",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_business", "activity_city"], "weather_condition": ["any"], "temp_min": 15, "temp_max": 35 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 15,
+      "temp_max": 35
+    }
   },
   {
     "id": "blouse",
-    "name": { "en": "Blouse", "zh": "衬衫" },
+    "name": {
+      "en": "Blouse",
+      "zh": "衬衫"
+    },
     "emoji": "👚",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_business", "activity_party", "activity_city"], "weather_condition": ["any"], "temp_min": 10, "temp_max": 35 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_party",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 10,
+      "temp_max": 35
+    }
   },
   {
     "id": "cardigan",
-    "name": { "en": "Cardigan", "zh": "开衫" },
+    "name": {
+      "en": "Cardigan",
+      "zh": "开衫"
+    },
     "emoji": "🧥",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business", "activity_city", "activity_party"], "weather_condition": ["any"], "temp_min": 10, "temp_max": 25 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_party"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 10,
+      "temp_max": 25
+    }
   },
   {
     "id": "vest",
-    "name": { "en": "Vest", "zh": "背心/马甲" },
+    "name": {
+      "en": "Vest",
+      "zh": "背心/马甲"
+    },
     "emoji": "🦺",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business", "activity_hiking"], "weather_condition": ["any"], "temp_min": 5, "temp_max": 30 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 5,
+      "temp_max": 30
+    }
   },
   {
     "id": "tank_top",
-    "name": { "en": "Tank Top", "zh": "背心/吊带" },
+    "name": {
+      "en": "Tank Top",
+      "zh": "背心/吊带"
+    },
     "emoji": "👙",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_beach", "activity_party", "activity_city"], "weather_condition": ["sunny"], "temp_min": 22, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach",
+        "activity_party",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 22,
+      "temp_max": 50
+    }
   },
   {
     "id": "nightgown",
-    "name": { "en": "Nightgown", "zh": "睡裙" },
+    "name": {
+      "en": "Nightgown",
+      "zh": "睡裙"
+    },
     "emoji": "👗",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": 15, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 15,
+      "temp_max": 50
+    }
   },
   {
     "id": "robe",
-    "name": { "en": "Bathrobe", "zh": "浴袍" },
+    "name": {
+      "en": "Bathrobe",
+      "zh": "浴袍"
+    },
     "emoji": "🛁",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_vacation", "activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_vacation",
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "leggings",
-    "name": { "en": "Leggings", "zh": "打底裤" },
+    "name": {
+      "en": "Leggings",
+      "zh": "打底裤"
+    },
     "emoji": "🩱",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_city", "activity_hiking", "activity_skiing"], "weather_condition": ["any"], "temp_min": -10, "temp_max": 25 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_hiking",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -10,
+      "temp_max": 25
+    }
   },
   {
     "id": "windbreaker",
-    "name": { "en": "Windbreaker", "zh": "防风衣" },
+    "name": {
+      "en": "Windbreaker",
+      "zh": "防风衣"
+    },
     "emoji": "🧥",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_city"], "weather_condition": ["windy"], "temp_min": 5, "temp_max": 25 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "windy"
+      ],
+      "temp_min": 5,
+      "temp_max": 25
+    }
   },
   {
     "id": "fleece_jacket",
-    "name": { "en": "Fleece Jacket", "zh": "抓绒衣" },
+    "name": {
+      "en": "Fleece Jacket",
+      "zh": "抓绒衣"
+    },
     "emoji": "🧥",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing", "activity_camping"], "weather_condition": ["cold"], "temp_min": -20, "temp_max": 15 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "cold"
+      ],
+      "temp_min": -20,
+      "temp_max": 15
+    }
   },
   {
     "id": "compression_shorts",
-    "name": { "en": "Compression Shorts", "zh": "压缩短裤" },
+    "name": {
+      "en": "Compression Shorts",
+      "zh": "压缩短裤"
+    },
     "emoji": "🩳",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "face_wash",
-    "name": { "en": "Face Wash", "zh": "洗面奶" },
+    "name": {
+      "en": "Face Wash",
+      "zh": "洗面奶"
+    },
     "emoji": "🧼",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "toothbrush_paste",
-    "name": { "en": "Toothbrush & Paste", "zh": "牙刷牙膏" },
+    "name": {
+      "en": "Toothbrush & Paste",
+      "zh": "牙刷牙膏"
+    },
     "emoji": "🦷",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "towel",
-    "name": { "en": "Towel", "zh": "毛巾" },
+    "name": {
+      "en": "Towel",
+      "zh": "毛巾"
+    },
     "emoji": "🧖",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "bath_towel",
-    "name": { "en": "Bath Towel", "zh": "浴巾" },
+    "name": {
+      "en": "Bath Towel",
+      "zh": "浴巾"
+    },
     "emoji": "🛁",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "shampoo",
-    "name": { "en": "Shampoo & Conditioner", "zh": "洗发水和护发素" },
+    "name": {
+      "en": "Shampoo & Conditioner",
+      "zh": "洗发水和护发素"
+    },
     "emoji": "🧴",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "shower_gel",
-    "name": { "en": "Shower Gel", "zh": "沐浴露" },
+    "name": {
+      "en": "Shower Gel",
+      "zh": "沐浴露"
+    },
     "emoji": "🧴",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "razor",
-    "name": { "en": "Razor", "zh": "剃须刀/刮胡刀" },
+    "name": {
+      "en": "Razor",
+      "zh": "剃须刀/刮胡刀"
+    },
     "emoji": "🪒",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "slippers",
-    "name": { "en": "Slippers", "zh": "拖鞋" },
+    "name": {
+      "en": "Slippers",
+      "zh": "拖鞋"
+    },
     "emoji": "🩴",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "cotton_pads",
-    "name": { "en": "Cotton Pads", "zh": "化妆棉" },
+    "name": {
+      "en": "Cotton Pads",
+      "zh": "化妆棉"
+    },
     "emoji": "💆",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "makeup_remover",
-    "name": { "en": "Makeup Remover", "zh": "卸妆水/卸妆油" },
+    "name": {
+      "en": "Makeup Remover",
+      "zh": "卸妆水/卸妆油"
+    },
     "emoji": "🧴",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "foundation",
-    "name": { "en": "Foundation", "zh": "粉底液" },
+    "name": {
+      "en": "Foundation",
+      "zh": "粉底液"
+    },
     "emoji": "💄",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_party", "activity_shopping", "activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "concealer",
-    "name": { "en": "Concealer", "zh": "遮瑕" },
+    "name": {
+      "en": "Concealer",
+      "zh": "遮瑕"
+    },
     "emoji": "💄",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_party", "activity_shopping", "activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "eyeshadow",
-    "name": { "en": "Eyeshadow Palette", "zh": "眼影盘" },
+    "name": {
+      "en": "Eyeshadow Palette",
+      "zh": "眼影盘"
+    },
     "emoji": "👁️",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_party", "activity_shopping", "activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "eyeliner",
-    "name": { "en": "Eyeliner", "zh": "眼线笔" },
+    "name": {
+      "en": "Eyeliner",
+      "zh": "眼线笔"
+    },
     "emoji": "👁️",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_party", "activity_shopping", "activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "mascara",
-    "name": { "en": "Mascara", "zh": "睫毛膏" },
+    "name": {
+      "en": "Mascara",
+      "zh": "睫毛膏"
+    },
     "emoji": "👁️",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_party", "activity_shopping", "activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "eyebrow_pencil",
-    "name": { "en": "Eyebrow Pencil", "zh": "眉笔" },
+    "name": {
+      "en": "Eyebrow Pencil",
+      "zh": "眉笔"
+    },
     "emoji": "✏️",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_party", "activity_shopping", "activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "lipstick",
-    "name": { "en": "Lipstick", "zh": "口红" },
+    "name": {
+      "en": "Lipstick",
+      "zh": "口红"
+    },
     "emoji": "💄",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_party", "activity_shopping", "activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "lip_balm",
-    "name": { "en": "Lip Balm", "zh": "润唇膏" },
+    "name": {
+      "en": "Lip Balm",
+      "zh": "润唇膏"
+    },
     "emoji": "💋",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "makeup_brushes",
-    "name": { "en": "Makeup Brushes", "zh": "化妆刷" },
+    "name": {
+      "en": "Makeup Brushes",
+      "zh": "化妆刷"
+    },
     "emoji": "🖌️",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_party", "activity_shopping", "activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "toner",
-    "name": { "en": "Toner", "zh": "爽肤水" },
+    "name": {
+      "en": "Toner",
+      "zh": "爽肤水"
+    },
     "emoji": "🧴",
-    "category": { "en": "Skincare", "zh": "护肤品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Skincare",
+      "zh": "护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "essence",
-    "name": { "en": "Essence/Serum", "zh": "精华液" },
+    "name": {
+      "en": "Essence/Serum",
+      "zh": "精华液"
+    },
     "emoji": "🧴",
-    "category": { "en": "Skincare", "zh": "护肤品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Skincare",
+      "zh": "护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "moisturizer",
-    "name": { "en": "Moisturizer", "zh": "面霜" },
+    "name": {
+      "en": "Moisturizer",
+      "zh": "面霜"
+    },
     "emoji": "🧴",
-    "category": { "en": "Skincare", "zh": "护肤品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Skincare",
+      "zh": "护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "eye_cream",
-    "name": { "en": "Eye Cream", "zh": "眼霜" },
+    "name": {
+      "en": "Eye Cream",
+      "zh": "眼霜"
+    },
     "emoji": "👁️",
-    "category": { "en": "Skincare", "zh": "护肤品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Skincare",
+      "zh": "护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "face_mask",
-    "name": { "en": "Face Mask", "zh": "面膜" },
+    "name": {
+      "en": "Face Mask",
+      "zh": "面膜"
+    },
     "emoji": "🧖",
-    "category": { "en": "Skincare", "zh": "护肤品" },
-    "quantity_logic": { "type": "per_day", "value": 0.5 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Skincare",
+      "zh": "护肤品"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 0.5
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "hand_cream",
-    "name": { "en": "Hand Cream", "zh": "护手霜" },
+    "name": {
+      "en": "Hand Cream",
+      "zh": "护手霜"
+    },
     "emoji": "🧴",
-    "category": { "en": "Skincare", "zh": "护肤品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Skincare",
+      "zh": "护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "body_lotion",
-    "name": { "en": "Body Lotion", "zh": "身体乳" },
+    "name": {
+      "en": "Body Lotion",
+      "zh": "身体乳"
+    },
     "emoji": "🧴",
-    "category": { "en": "Skincare", "zh": "护肤品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Skincare",
+      "zh": "护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "skincare",
-    "name": { "en": "Skincare Products", "zh": "护肤品(水乳霜)" },
+    "name": {
+      "en": "Skincare Products",
+      "zh": "护肤品(水乳霜)"
+    },
     "emoji": "🧴",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "sunscreen",
-    "name": { "en": "Sunscreen", "zh": "防晒霜" },
+    "name": {
+      "en": "Sunscreen",
+      "zh": "防晒霜"
+    },
     "emoji": "☀️",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
     "attributes": {
-      "activities": ["activity_beach", "activity_hiking", "activity_skiing", "activity_city", "activity_photography"],
-      "weather_condition": ["sunny"],
-      "temp_min": 0, "temp_max": 50
+      "activities": [
+        "activity_beach",
+        "activity_hiking",
+        "activity_skiing",
+        "activity_city",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 0,
+      "temp_max": 50
     }
   },
   {
     "id": "makeup",
-    "name": { "en": "Makeup (Cosmetics)", "zh": "化妆品(彩妆)" },
+    "name": {
+      "en": "Makeup (Cosmetics)",
+      "zh": "化妆品(彩妆)"
+    },
     "emoji": "💄",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_city", "activity_party", "activity_shopping", "activity_photography"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "painkillers",
-    "name": { "en": "Painkillers/Cold Medicine", "zh": "止痛/感冒药" },
+    "name": {
+      "en": "Painkillers/Cold Medicine",
+      "zh": "止痛/感冒药"
+    },
     "emoji": "💊",
-    "category": { "en": "Medicine", "zh": "药品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Medicine",
+      "zh": "药品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "band_aids",
-    "name": { "en": "Band-Aids", "zh": "创可贴" },
+    "name": {
+      "en": "Band-Aids",
+      "zh": "创可贴"
+    },
     "emoji": "🩹",
-    "category": { "en": "Medicine", "zh": "药品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing", "activity_city"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Medicine",
+      "zh": "药品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "mosquito_repellent",
-    "name": { "en": "Mosquito Repellent", "zh": "防蚊喷雾" },
+    "name": {
+      "en": "Mosquito Repellent",
+      "zh": "防蚊喷雾"
+    },
     "emoji": "🦟",
-    "category": { "en": "Medicine", "zh": "药品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_beach"], "weather_condition": ["hot", "rainy"], "temp_min": 18, "temp_max": 50 }
+    "category": {
+      "en": "Medicine",
+      "zh": "药品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "hot",
+        "rainy"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
+    }
   },
   {
     "id": "sunglasses",
-    "name": { "en": "Sunglasses", "zh": "太阳镜" },
+    "name": {
+      "en": "Sunglasses",
+      "zh": "太阳镜"
+    },
     "emoji": "🕶️",
-    "category": { "en": "Accessories", "zh": "发型饰品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach", "activity_hiking", "activity_skiing", "activity_photography", "activity_city"], "weather_condition": ["sunny"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Accessories",
+      "zh": "发型饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach",
+        "activity_hiking",
+        "activity_skiing",
+        "activity_photography",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "hat_cap",
-    "name": { "en": "Hat/Cap", "zh": "帽子/遮阳帽" },
+    "name": {
+      "en": "Hat/Cap",
+      "zh": "帽子/遮阳帽"
+    },
     "emoji": "🧢",
-    "category": { "en": "Accessories", "zh": "发型饰品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach", "activity_hiking", "activity_photography", "activity_city"], "weather_condition": ["sunny"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Accessories",
+      "zh": "发型饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach",
+        "activity_hiking",
+        "activity_photography",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "umbrella",
-    "name": { "en": "Umbrella", "zh": "雨伞" },
+    "name": {
+      "en": "Umbrella",
+      "zh": "雨伞"
+    },
     "emoji": "☂️",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["rainy"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "rainy"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "tote_bag",
-    "name": { "en": "Tote Bag", "zh": "环保购物袋" },
+    "name": {
+      "en": "Tote Bag",
+      "zh": "环保购物袋"
+    },
     "emoji": "🛍️",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_shopping", "activity_city"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_shopping",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "travel_snacks",
-    "name": { "en": "Travel Snacks", "zh": "旅行零食" },
+    "name": {
+      "en": "Travel Snacks",
+      "zh": "旅行零食"
+    },
     "emoji": "🍪",
-    "category": { "en": "Food & Snacks", "zh": "食物零食" },
-    "quantity_logic": { "type": "per_day", "value": 0.5 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping", "activity_city"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 0.5
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "energy_bars",
-    "name": { "en": "Energy Bars", "zh": "能量棒" },
+    "name": {
+      "en": "Energy Bars",
+      "zh": "能量棒"
+    },
     "emoji": "🍫",
-    "category": { "en": "Food & Snacks", "zh": "食物零食" },
-    "quantity_logic": { "type": "per_day", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "instant_coffee",
-    "name": { "en": "Instant Coffee", "zh": "速溶咖啡" },
+    "name": {
+      "en": "Instant Coffee",
+      "zh": "速溶咖啡"
+    },
     "emoji": "☕",
-    "category": { "en": "Food & Snacks", "zh": "食物零食" },
-    "quantity_logic": { "type": "per_day", "value": 2 },
-    "attributes": { "activities": ["activity_camping", "activity_hiking", "activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping",
+        "activity_hiking",
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "nuts",
-    "name": { "en": "Nuts", "zh": "坚果" },
+    "name": {
+      "en": "Nuts",
+      "zh": "坚果"
+    },
     "emoji": "🥜",
-    "category": { "en": "Food & Snacks", "zh": "食物零食" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "dried_fruits",
-    "name": { "en": "Dried Fruits", "zh": "果干" },
+    "name": {
+      "en": "Dried Fruits",
+      "zh": "果干"
+    },
     "emoji": "🍇",
-    "category": { "en": "Food & Snacks", "zh": "食物零食" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "travel_documents_folder",
-    "name": { "en": "Travel Documents Folder", "zh": "旅行文件夹" },
+    "name": {
+      "en": "Travel Documents Folder",
+      "zh": "旅行文件夹"
+    },
     "emoji": "📁",
-    "category": { "en": "Documents", "zh": "证件文件" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Documents",
+      "zh": "证件文件"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "emergency_contacts",
-    "name": { "en": "Emergency Contacts", "zh": "紧急联系人清单" },
+    "name": {
+      "en": "Emergency Contacts",
+      "zh": "紧急联系人清单"
+    },
     "emoji": "📋",
-    "category": { "en": "Documents", "zh": "证件文件" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Documents",
+      "zh": "证件文件"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "insurance_documents",
-    "name": { "en": "Insurance Documents", "zh": "保险文件" },
+    "name": {
+      "en": "Insurance Documents",
+      "zh": "保险文件"
+    },
     "emoji": "📄",
-    "category": { "en": "Documents", "zh": "证件文件" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Documents",
+      "zh": "证件文件"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "hotel_reservation",
-    "name": { "en": "Hotel Reservation", "zh": "酒店预订单" },
+    "name": {
+      "en": "Hotel Reservation",
+      "zh": "酒店预订单"
+    },
     "emoji": "🏨",
-    "category": { "en": "Documents", "zh": "证件文件" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Documents",
+      "zh": "证件文件"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "wet_wipes",
-    "name": { "en": "Wet Wipes", "zh": "湿纸巾" },
+    "name": {
+      "en": "Wet Wipes",
+      "zh": "湿纸巾"
+    },
     "emoji": "🧻",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "tissues",
-    "name": { "en": "Tissues", "zh": "纸巾" },
+    "name": {
+      "en": "Tissues",
+      "zh": "纸巾"
+    },
     "emoji": "🧻",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "hand_sanitizer",
-    "name": { "en": "Hand Sanitizer", "zh": "免洗洗手液" },
+    "name": {
+      "en": "Hand Sanitizer",
+      "zh": "免洗洗手液"
+    },
     "emoji": "🧴",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "laundry_bags",
-    "name": { "en": "Laundry Bags", "zh": "洗衣袋" },
+    "name": {
+      "en": "Laundry Bags",
+      "zh": "洗衣袋"
+    },
     "emoji": "👕",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "zip_lock_bags",
-    "name": { "en": "Zip-lock Bags", "zh": "密封袋" },
+    "name": {
+      "en": "Zip-lock Bags",
+      "zh": "密封袋"
+    },
     "emoji": "🗂️",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 5 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 5
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "travel_pillow",
-    "name": { "en": "Travel Pillow", "zh": "旅行枕" },
+    "name": {
+      "en": "Travel Pillow",
+      "zh": "旅行枕"
+    },
     "emoji": "🛏️",
-    "category": { "en": "Comfort", "zh": "舒适用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Comfort",
+      "zh": "舒适用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "eye_mask",
-    "name": { "en": "Eye Mask", "zh": "眼罩" },
+    "name": {
+      "en": "Eye Mask",
+      "zh": "眼罩"
+    },
     "emoji": "😴",
-    "category": { "en": "Comfort", "zh": "舒适用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Comfort",
+      "zh": "舒适用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "earplugs",
-    "name": { "en": "Earplugs", "zh": "耳塞" },
+    "name": {
+      "en": "Earplugs",
+      "zh": "耳塞"
+    },
     "emoji": "🔇",
-    "category": { "en": "Comfort", "zh": "舒适用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Comfort",
+      "zh": "舒适用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "travel_blanket",
-    "name": { "en": "Travel Blanket", "zh": "旅行毯" },
+    "name": {
+      "en": "Travel Blanket",
+      "zh": "旅行毯"
+    },
     "emoji": "🛏️",
-    "category": { "en": "Comfort", "zh": "舒适用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Comfort",
+      "zh": "舒适用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "luggage_tags",
-    "name": { "en": "Luggage Tags", "zh": "行李牌" },
+    "name": {
+      "en": "Luggage Tags",
+      "zh": "行李牌"
+    },
     "emoji": "🏷️",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "luggage_locks",
-    "name": { "en": "Luggage Locks", "zh": "行李锁" },
+    "name": {
+      "en": "Luggage Locks",
+      "zh": "行李锁"
+    },
     "emoji": "🔒",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "portable_scale",
-    "name": { "en": "Portable Luggage Scale", "zh": "便携行李秤" },
+    "name": {
+      "en": "Portable Luggage Scale",
+      "zh": "便携行李秤"
+    },
     "emoji": "⚖️",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "travel_snacks",
-    "name": { "en": "Travel Snacks", "zh": "旅行零食" },
-    "emoji": "🍪",
-    "category": { "en": "Food & Snacks", "zh": "食物零食" },
-    "quantity_logic": { "type": "per_day", "value": 0.5 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping", "activity_city"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "energy_bars",
-    "name": { "en": "Energy Bars", "zh": "能量棒" },
-    "emoji": "🍫",
-    "category": { "en": "Food & Snacks", "zh": "食物零食" },
-    "quantity_logic": { "type": "per_day", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "instant_coffee",
-    "name": { "en": "Instant Coffee", "zh": "速溶咖啡" },
-    "emoji": "☕",
-    "category": { "en": "Food & Snacks", "zh": "食物零食" },
-    "quantity_logic": { "type": "per_day", "value": 2 },
-    "attributes": { "activities": ["activity_camping", "activity_hiking", "activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "nuts",
-    "name": { "en": "Nuts", "zh": "坚果" },
-    "emoji": "🥜",
-    "category": { "en": "Food & Snacks", "zh": "食物零食" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "dried_fruits",
-    "name": { "en": "Dried Fruits", "zh": "果干" },
-    "emoji": "🍇",
-    "category": { "en": "Food & Snacks", "zh": "食物零食" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "travel_documents_folder",
-    "name": { "en": "Travel Documents Folder", "zh": "旅行文件夹" },
-    "emoji": "📁",
-    "category": { "en": "Documents", "zh": "证件文件" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "emergency_contacts",
-    "name": { "en": "Emergency Contacts", "zh": "紧急联系人清单" },
-    "emoji": "📋",
-    "category": { "en": "Documents", "zh": "证件文件" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "insurance_documents",
-    "name": { "en": "Insurance Documents", "zh": "保险文件" },
-    "emoji": "📄",
-    "category": { "en": "Documents", "zh": "证件文件" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "hotel_reservation",
-    "name": { "en": "Hotel Reservation", "zh": "酒店预订单" },
-    "emoji": "🏨",
-    "category": { "en": "Documents", "zh": "证件文件" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "wet_wipes",
-    "name": { "en": "Wet Wipes", "zh": "湿纸巾" },
-    "emoji": "🧻",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "tissues",
-    "name": { "en": "Tissues", "zh": "纸巾" },
-    "emoji": "🧻",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "hand_sanitizer",
-    "name": { "en": "Hand Sanitizer", "zh": "免洗洗手液" },
-    "emoji": "🧴",
-    "category": { "en": "Toiletries", "zh": "日常洗漱" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "laundry_bags",
-    "name": { "en": "Laundry Bags", "zh": "洗衣袋" },
-    "emoji": "👕",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "zip_lock_bags",
-    "name": { "en": "Zip-lock Bags", "zh": "密封袋" },
-    "emoji": "🗂️",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 5 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "travel_pillow",
-    "name": { "en": "Travel Pillow", "zh": "旅行枕" },
-    "emoji": "🛏️",
-    "category": { "en": "Comfort", "zh": "舒适用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "eye_mask",
-    "name": { "en": "Eye Mask", "zh": "眼罩" },
-    "emoji": "😴",
-    "category": { "en": "Comfort", "zh": "舒适用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "earplugs",
-    "name": { "en": "Earplugs", "zh": "耳塞" },
-    "emoji": "🔇",
-    "category": { "en": "Comfort", "zh": "舒适用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "travel_blanket",
-    "name": { "en": "Travel Blanket", "zh": "旅行毯" },
-    "emoji": "🛏️",
-    "category": { "en": "Comfort", "zh": "舒适用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "luggage_tags",
-    "name": { "en": "Luggage Tags", "zh": "行李牌" },
-    "emoji": "🏷️",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "luggage_locks",
-    "name": { "en": "Luggage Locks", "zh": "行李锁" },
-    "emoji": "🔒",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "portable_scale",
-    "name": { "en": "Portable Luggage Scale", "zh": "便携行李秤" },
-    "emoji": "⚖️",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "hiking_boots",
-    "name": { "en": "Hiking Boots", "zh": "登山靴" },
+    "name": {
+      "en": "Hiking Boots",
+      "zh": "登山靴"
+    },
     "emoji": "🥾",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "hiking_backpack",
-    "name": { "en": "Hiking Backpack", "zh": "徒步背包" },
+    "name": {
+      "en": "Hiking Backpack",
+      "zh": "徒步背包"
+    },
     "emoji": "🎒",
-    "category": { "en": "Accessories", "zh": "发型饰品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Accessories",
+      "zh": "发型饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "water_bottle",
-    "name": { "en": "Water Bottle", "zh": "水瓶" },
+    "name": {
+      "en": "Water Bottle",
+      "zh": "水瓶"
+    },
     "emoji": "💧",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "hiking_poles",
-    "name": { "en": "Hiking Poles", "zh": "登山杖" },
+    "name": {
+      "en": "Hiking Poles",
+      "zh": "登山杖"
+    },
     "emoji": "🦯",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "quick_dry_pants",
-    "name": { "en": "Quick-Dry Pants", "zh": "速干裤" },
+    "name": {
+      "en": "Quick-Dry Pants",
+      "zh": "速干裤"
+    },
     "emoji": "👖",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_hiking"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "hiking_socks",
-    "name": { "en": "Hiking Socks", "zh": "徒步袜" },
+    "name": {
+      "en": "Hiking Socks",
+      "zh": "徒步袜"
+    },
     "emoji": "🧦",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "per_day", "value": 1 },
-    "attributes": { "activities": ["activity_hiking"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "compass_gps",
-    "name": { "en": "Compass/GPS", "zh": "指南针/GPS" },
+    "name": {
+      "en": "Compass/GPS",
+      "zh": "指南针/GPS"
+    },
     "emoji": "🧭",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "first_aid_kit",
-    "name": { "en": "First Aid Kit", "zh": "急救包" },
+    "name": {
+      "en": "First Aid Kit",
+      "zh": "急救包"
+    },
     "emoji": "🩹",
-    "category": { "en": "Medicine", "zh": "药品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Medicine",
+      "zh": "药品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "headlamp",
-    "name": { "en": "Headlamp/Flashlight", "zh": "头灯/手电筒" },
+    "name": {
+      "en": "Headlamp/Flashlight",
+      "zh": "头灯/手电筒"
+    },
     "emoji": "🔦",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "multi_tool",
-    "name": { "en": "Multi-Tool", "zh": "多功能工具" },
+    "name": {
+      "en": "Multi-Tool",
+      "zh": "多功能工具"
+    },
     "emoji": "🔧",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "emergency_whistle",
-    "name": { "en": "Emergency Whistle", "zh": "救生哨" },
+    "name": {
+      "en": "Emergency Whistle",
+      "zh": "救生哨"
+    },
     "emoji": "📯",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "rain_poncho",
-    "name": { "en": "Rain Poncho", "zh": "雨披" },
+    "name": {
+      "en": "Rain Poncho",
+      "zh": "雨披"
+    },
     "emoji": "🌧️",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping"], "weather_condition": ["rainy"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "rainy"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "thermal_underwear",
-    "name": { "en": "Thermal Underwear", "zh": "保暖内衣" },
+    "name": {
+      "en": "Thermal Underwear",
+      "zh": "保暖内衣"
+    },
     "emoji": "🩲",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing"], "weather_condition": ["cold"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "cold"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "hiking_gloves",
-    "name": { "en": "Hiking Gloves", "zh": "徒步手套" },
+    "name": {
+      "en": "Hiking Gloves",
+      "zh": "徒步手套"
+    },
     "emoji": "🧤",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking"], "weather_condition": ["cold"], "temp_min": -50, "temp_max": 15 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "cold"
+      ],
+      "temp_min": -50,
+      "temp_max": 15
+    }
   },
   {
     "id": "tent",
-    "name": { "en": "Tent", "zh": "帐篷" },
+    "name": {
+      "en": "Tent",
+      "zh": "帐篷"
+    },
     "emoji": "⛺",
-    "category": { "en": "Camping", "zh": "露营装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Camping",
+      "zh": "露营装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "sleeping_bag",
-    "name": { "en": "Sleeping Bag", "zh": "睡袋" },
+    "name": {
+      "en": "Sleeping Bag",
+      "zh": "睡袋"
+    },
     "emoji": "🛏️",
-    "category": { "en": "Camping", "zh": "露营装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Camping",
+      "zh": "露营装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "sleeping_pad",
-    "name": { "en": "Sleeping Pad", "zh": "睡垫" },
+    "name": {
+      "en": "Sleeping Pad",
+      "zh": "睡垫"
+    },
     "emoji": "🛏️",
-    "category": { "en": "Camping", "zh": "露营装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Camping",
+      "zh": "露营装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "camping_stove",
-    "name": { "en": "Camping Stove", "zh": "便携炉具" },
+    "name": {
+      "en": "Camping Stove",
+      "zh": "便携炉具"
+    },
     "emoji": "🔥",
-    "category": { "en": "Camping", "zh": "露营装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Camping",
+      "zh": "露营装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "camping_cookware",
-    "name": { "en": "Camping Cookware", "zh": "露营炊具" },
+    "name": {
+      "en": "Camping Cookware",
+      "zh": "露营炊具"
+    },
     "emoji": "🍳",
-    "category": { "en": "Camping", "zh": "露营装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Camping",
+      "zh": "露营装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "camping_lantern",
-    "name": { "en": "Camping Lantern", "zh": "露营灯" },
+    "name": {
+      "en": "Camping Lantern",
+      "zh": "露营灯"
+    },
     "emoji": "🏮",
-    "category": { "en": "Camping", "zh": "露营装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Camping",
+      "zh": "露营装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "paracord",
-    "name": { "en": "Rope/Paracord", "zh": "绳索/伞绳" },
+    "name": {
+      "en": "Rope/Paracord",
+      "zh": "绳索/伞绳"
+    },
     "emoji": "🪢",
-    "category": { "en": "Camping", "zh": "露营装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Camping",
+      "zh": "露营装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "camping_chair",
-    "name": { "en": "Camping Chair", "zh": "露营椅" },
+    "name": {
+      "en": "Camping Chair",
+      "zh": "露营椅"
+    },
     "emoji": "💺",
-    "category": { "en": "Camping", "zh": "露营装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Camping",
+      "zh": "露营装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "cooler",
-    "name": { "en": "Cooler", "zh": "保温箱" },
+    "name": {
+      "en": "Cooler",
+      "zh": "保温箱"
+    },
     "emoji": "🧊",
-    "category": { "en": "Camping", "zh": "露营装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Camping",
+      "zh": "露营装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "camping_utensils",
-    "name": { "en": "Camping Utensils", "zh": "露营餐具" },
+    "name": {
+      "en": "Camping Utensils",
+      "zh": "露营餐具"
+    },
     "emoji": "🍴",
-    "category": { "en": "Camping", "zh": "露营装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Camping",
+      "zh": "露营装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "matches_lighter",
-    "name": { "en": "Matches/Lighter", "zh": "火柴/打火机" },
+    "name": {
+      "en": "Matches/Lighter",
+      "zh": "火柴/打火机"
+    },
     "emoji": "🔥",
-    "category": { "en": "Camping", "zh": "露营装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Camping",
+      "zh": "露营装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "ski_goggles",
-    "name": { "en": "Ski Goggles", "zh": "滑雪镜" },
+    "name": {
+      "en": "Ski Goggles",
+      "zh": "滑雪镜"
+    },
     "emoji": "🥽",
-    "category": { "en": "Accessories", "zh": "发型饰品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Accessories",
+      "zh": "发型饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "ski_gloves",
-    "name": { "en": "Ski Gloves", "zh": "滑雪手套" },
+    "name": {
+      "en": "Ski Gloves",
+      "zh": "滑雪手套"
+    },
     "emoji": "🧤",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "ski_pants",
-    "name": { "en": "Ski Pants", "zh": "滑雪裤" },
+    "name": {
+      "en": "Ski Pants",
+      "zh": "滑雪裤"
+    },
     "emoji": "🎿",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "ski_jacket",
-    "name": { "en": "Ski Jacket", "zh": "滑雪服" },
+    "name": {
+      "en": "Ski Jacket",
+      "zh": "滑雪服"
+    },
     "emoji": "🧥",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "ski_socks",
-    "name": { "en": "Ski Socks", "zh": "滑雪袜" },
+    "name": {
+      "en": "Ski Socks",
+      "zh": "滑雪袜"
+    },
     "emoji": "🧦",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "per_day", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "neck_warmer",
-    "name": { "en": "Neck Warmer", "zh": "脖套" },
+    "name": {
+      "en": "Neck Warmer",
+      "zh": "脖套"
+    },
     "emoji": "🧣",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "hand_warmers",
-    "name": { "en": "Hand Warmers", "zh": "暖手贴" },
+    "name": {
+      "en": "Hand Warmers",
+      "zh": "暖手贴"
+    },
     "emoji": "🔥",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "per_day", "value": 2 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 5 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 5
+    }
   },
   {
     "id": "ski_helmet",
-    "name": { "en": "Ski Helmet", "zh": "滑雪头盔" },
+    "name": {
+      "en": "Ski Helmet",
+      "zh": "滑雪头盔"
+    },
     "emoji": "⛑️",
-    "category": { "en": "Accessories", "zh": "发型饰品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Accessories",
+      "zh": "发型饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "skis",
-    "name": { "en": "Skis", "zh": "滑雪板" },
+    "name": {
+      "en": "Skis",
+      "zh": "滑雪板"
+    },
     "emoji": "🎿",
-    "category": { "en": "Skiing Equipment", "zh": "滑雪装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Skiing Equipment",
+      "zh": "滑雪装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "ski_boots",
-    "name": { "en": "Ski Boots", "zh": "滑雪靴" },
+    "name": {
+      "en": "Ski Boots",
+      "zh": "滑雪靴"
+    },
     "emoji": "🥾",
-    "category": { "en": "Skiing Equipment", "zh": "滑雪装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Skiing Equipment",
+      "zh": "滑雪装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "ski_bindings",
-    "name": { "en": "Ski Bindings", "zh": "滑雪固定器" },
+    "name": {
+      "en": "Ski Bindings",
+      "zh": "滑雪固定器"
+    },
     "emoji": "🔧",
-    "category": { "en": "Skiing Equipment", "zh": "滑雪装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Skiing Equipment",
+      "zh": "滑雪装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "ski_poles",
-    "name": { "en": "Ski Poles", "zh": "滑雪杖" },
+    "name": {
+      "en": "Ski Poles",
+      "zh": "滑雪杖"
+    },
     "emoji": "🦯",
-    "category": { "en": "Skiing Equipment", "zh": "滑雪装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Skiing Equipment",
+      "zh": "滑雪装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "ski_pass",
-    "name": { "en": "Ski Pass/Lift Ticket", "zh": "滑雪票/缆车票" },
+    "name": {
+      "en": "Ski Pass/Lift Ticket",
+      "zh": "滑雪票/缆车票"
+    },
     "emoji": "🎫",
-    "category": { "en": "Documents", "zh": "文件证件" },
-    "quantity_logic": { "type": "per_day", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Documents",
+      "zh": "文件证件"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "ski_wax",
-    "name": { "en": "Ski Wax", "zh": "滑雪蜡" },
+    "name": {
+      "en": "Ski Wax",
+      "zh": "滑雪蜡"
+    },
     "emoji": "🧴",
-    "category": { "en": "Skiing Equipment", "zh": "滑雪装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Skiing Equipment",
+      "zh": "滑雪装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "ski_bag",
-    "name": { "en": "Ski Bag", "zh": "滑雪包" },
+    "name": {
+      "en": "Ski Bag",
+      "zh": "滑雪包"
+    },
     "emoji": "🎒",
-    "category": { "en": "Skiing Equipment", "zh": "滑雪装备" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing"], "weather_condition": ["snowy"], "temp_min": -50, "temp_max": 10 }
+    "category": {
+      "en": "Skiing Equipment",
+      "zh": "滑雪装备"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
   },
   {
     "id": "beach_towel",
-    "name": { "en": "Beach Towel", "zh": "沙滩毛巾" },
+    "name": {
+      "en": "Beach Towel",
+      "zh": "沙滩毛巾"
+    },
     "emoji": "🏖️",
-    "category": { "en": "Beach", "zh": "海滩用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach"], "weather_condition": ["sunny"], "temp_min": 18, "temp_max": 50 }
+    "category": {
+      "en": "Beach",
+      "zh": "海滩用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
+    }
   },
   {
     "id": "flip_flops",
-    "name": { "en": "Flip Flops", "zh": "拖鞋" },
+    "name": {
+      "en": "Flip Flops",
+      "zh": "拖鞋"
+    },
     "emoji": "🩴",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach"], "weather_condition": ["sunny"], "temp_min": 18, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
+    }
   },
   {
     "id": "beach_bag",
-    "name": { "en": "Beach Bag", "zh": "海滩包" },
+    "name": {
+      "en": "Beach Bag",
+      "zh": "海滩包"
+    },
     "emoji": "👜",
-    "category": { "en": "Beach", "zh": "海滩用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach"], "weather_condition": ["sunny"], "temp_min": 18, "temp_max": 50 }
+    "category": {
+      "en": "Beach",
+      "zh": "海滩用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
+    }
   },
   {
     "id": "beach_umbrella",
-    "name": { "en": "Beach Umbrella", "zh": "沙滩伞" },
+    "name": {
+      "en": "Beach Umbrella",
+      "zh": "沙滩伞"
+    },
     "emoji": "🏖️",
-    "category": { "en": "Beach", "zh": "海滩用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach"], "weather_condition": ["sunny"], "temp_min": 18, "temp_max": 50 }
+    "category": {
+      "en": "Beach",
+      "zh": "海滩用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
+    }
   },
   {
     "id": "snorkel_gear",
-    "name": { "en": "Snorkel Gear", "zh": "浮潜装备" },
+    "name": {
+      "en": "Snorkel Gear",
+      "zh": "浮潜装备"
+    },
     "emoji": "🤿",
-    "category": { "en": "Beach", "zh": "海滩用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach"], "weather_condition": ["sunny"], "temp_min": 18, "temp_max": 50 }
+    "category": {
+      "en": "Beach",
+      "zh": "海滩用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
+    }
   },
   {
     "id": "waterproof_phone_case",
-    "name": { "en": "Waterproof Phone Case", "zh": "防水手机壳" },
+    "name": {
+      "en": "Waterproof Phone Case",
+      "zh": "防水手机壳"
+    },
     "emoji": "📱",
-    "category": { "en": "Beach", "zh": "海滩用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach"], "weather_condition": ["sunny"], "temp_min": 18, "temp_max": 50 }
+    "category": {
+      "en": "Beach",
+      "zh": "海滩用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
+    }
   },
   {
     "id": "beach_coverup",
-    "name": { "en": "Beach Cover-up", "zh": "沙滩罩衫" },
+    "name": {
+      "en": "Beach Cover-up",
+      "zh": "沙滩罩衫"
+    },
     "emoji": "👗",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach"], "weather_condition": ["sunny"], "temp_min": 18, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
+    }
   },
   {
     "id": "aloe_vera_gel",
-    "name": { "en": "Aloe Vera Gel", "zh": "芦荟胶" },
+    "name": {
+      "en": "Aloe Vera Gel",
+      "zh": "芦荟胶"
+    },
     "emoji": "🧴",
-    "category": { "en": "Skincare", "zh": "护肤品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach"], "weather_condition": ["sunny"], "temp_min": 18, "temp_max": 50 }
+    "category": {
+      "en": "Skincare",
+      "zh": "护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
+    }
   },
   {
     "id": "water_shoes",
-    "name": { "en": "Water Shoes", "zh": "水鞋" },
+    "name": {
+      "en": "Water Shoes",
+      "zh": "水鞋"
+    },
     "emoji": "👟",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach"], "weather_condition": ["sunny"], "temp_min": 18, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
+    }
   },
   {
     "id": "business_cards",
-    "name": { "en": "Business Cards", "zh": "名片" },
+    "name": {
+      "en": "Business Cards",
+      "zh": "名片"
+    },
     "emoji": "💼",
-    "category": { "en": "Business", "zh": "商务用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Business",
+      "zh": "商务用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "laptop",
-    "name": { "en": "Laptop", "zh": "笔记本电脑" },
+    "name": {
+      "en": "Laptop",
+      "zh": "笔记本电脑"
+    },
     "emoji": "💻",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "notepad",
-    "name": { "en": "Notepad", "zh": "记事本" },
+    "name": {
+      "en": "Notepad",
+      "zh": "记事本"
+    },
     "emoji": "📝",
-    "category": { "en": "Business", "zh": "商务用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Business",
+      "zh": "商务用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "formal_shoes",
-    "name": { "en": "Formal Shoes", "zh": "正装皮鞋" },
+    "name": {
+      "en": "Formal Shoes",
+      "zh": "正装皮鞋"
+    },
     "emoji": "👞",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "belt",
-    "name": { "en": "Belt", "zh": "腰带" },
+    "name": {
+      "en": "Belt",
+      "zh": "腰带"
+    },
     "emoji": "👔",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "tie",
-    "name": { "en": "Tie/Bow Tie", "zh": "领带/领结" },
+    "name": {
+      "en": "Tie/Bow Tie",
+      "zh": "领带/领结"
+    },
     "emoji": "👔",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 2 },
-    "attributes": { "activities": ["activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "briefcase",
-    "name": { "en": "Briefcase", "zh": "公文包" },
+    "name": {
+      "en": "Briefcase",
+      "zh": "公文包"
+    },
     "emoji": "💼",
-    "category": { "en": "Business", "zh": "商务用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Business",
+      "zh": "商务用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "business_suit",
-    "name": { "en": "Business Suit", "zh": "商务西装" },
+    "name": {
+      "en": "Business Suit",
+      "zh": "商务西装"
+    },
     "emoji": "🤵",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_business"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "fancy_dress",
-    "name": { "en": "Fancy Dress/Outfit", "zh": "礼服/正装" },
+    "name": {
+      "en": "Fancy Dress/Outfit",
+      "zh": "礼服/正装"
+    },
     "emoji": "👗",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_party"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "dress_shoes",
-    "name": { "en": "Dress Shoes", "zh": "礼服鞋" },
+    "name": {
+      "en": "Dress Shoes",
+      "zh": "礼服鞋"
+    },
     "emoji": "👠",
-    "category": { "en": "Clothing", "zh": "衣物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_party"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Clothing",
+      "zh": "衣物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "jewelry",
-    "name": { "en": "Jewelry", "zh": "首饰" },
+    "name": {
+      "en": "Jewelry",
+      "zh": "首饰"
+    },
     "emoji": "💍",
-    "category": { "en": "Accessories", "zh": "发型饰品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_party"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Accessories",
+      "zh": "发型饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "perfume_cologne",
-    "name": { "en": "Perfume/Cologne", "zh": "香水" },
+    "name": {
+      "en": "Perfume/Cologne",
+      "zh": "香水"
+    },
     "emoji": "🧴",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_party"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "hair_styling_tools",
-    "name": { "en": "Hair Styling Tools", "zh": "美发工具" },
+    "name": {
+      "en": "Hair Styling Tools",
+      "zh": "美发工具"
+    },
     "emoji": "💇",
-    "category": { "en": "Accessories", "zh": "发型饰品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_party"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Accessories",
+      "zh": "发型饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "evening_bag",
-    "name": { "en": "Evening Bag/Clutch", "zh": "晚宴包" },
+    "name": {
+      "en": "Evening Bag/Clutch",
+      "zh": "晚宴包"
+    },
     "emoji": "👛",
-    "category": { "en": "Accessories", "zh": "发型饰品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_party"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "sunglasses",
-    "name": { "en": "Sunglasses", "zh": "墨镜" },
-    "emoji": "🕶️",
-    "category": { "en": "Accessories", "zh": "配饰" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach", "activity_city", "activity_hiking", "activity_skiing", "activity_party"], "weather_condition": ["sunny"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Accessories",
+      "zh": "发型饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "smartwatch",
-    "name": { "en": "Smartwatch/Digital Watch", "zh": "电子手表" },
+    "name": {
+      "en": "Smartwatch/Digital Watch",
+      "zh": "电子手表"
+    },
     "emoji": "⌚",
-    "category": { "en": "Electronics", "zh": "电子产品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing", "activity_business", "activity_city"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "sunscreen",
-    "name": { "en": "Sunscreen", "zh": "防晒霜" },
-    "emoji": "🧴",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_beach", "activity_city", "activity_hiking", "activity_skiing", "activity_party"], "weather_condition": ["sunny"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing",
+        "activity_business",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "drinking_water",
-    "name": { "en": "Drinking Water", "zh": "饮用水" },
+    "name": {
+      "en": "Drinking Water",
+      "zh": "饮用水"
+    },
     "emoji": "💧",
-    "category": { "en": "Food & Snacks", "zh": "食物零食" },
-    "quantity_logic": { "type": "per_day", "value": 3 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 3
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "alcohol_wipes",
-    "name": { "en": "Alcohol Wipes", "zh": "酒精棉" },
+    "name": {
+      "en": "Alcohol Wipes",
+      "zh": "酒精棉"
+    },
     "emoji": "🧻",
-    "category": { "en": "Medical Kit", "zh": "医疗用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "band_aids",
-    "name": { "en": "Band-aids", "zh": "创可贴" },
-    "emoji": "🩹",
-    "category": { "en": "Medical Kit", "zh": "医疗用品" },
-    "quantity_logic": { "type": "fixed", "value": 10 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "pain_relievers",
-    "name": { "en": "Pain Relievers", "zh": "止痛药" },
+    "name": {
+      "en": "Pain Relievers",
+      "zh": "止痛药"
+    },
     "emoji": "💊",
-    "category": { "en": "Medical Kit", "zh": "医疗用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "thermometer",
-    "name": { "en": "Thermometer", "zh": "体温计" },
+    "name": {
+      "en": "Thermometer",
+      "zh": "体温计"
+    },
     "emoji": "🌡️",
-    "category": { "en": "Medical Kit", "zh": "医疗用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "antiseptic",
-    "name": { "en": "Antiseptic", "zh": "消毒液" },
+    "name": {
+      "en": "Antiseptic",
+      "zh": "消毒液"
+    },
     "emoji": "🧴",
-    "category": { "en": "Medical Kit", "zh": "医疗用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping", "activity_skiing"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "medical_tape",
-    "name": { "en": "Medical Tape", "zh": "医用胶带" },
+    "name": {
+      "en": "Medical Tape",
+      "zh": "医用胶带"
+    },
     "emoji": "🩹",
-    "category": { "en": "Medical Kit", "zh": "医疗用品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping", "activity_skiing"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "electrolyte_powder",
-    "name": { "en": "Electrolyte Powder", "zh": "电解质粉" },
+    "name": {
+      "en": "Electrolyte Powder",
+      "zh": "电解质粉"
+    },
     "emoji": "🧂",
-    "category": { "en": "Food & Snacks", "zh": "食物零食" },
-    "quantity_logic": { "type": "per_day", "value": 2 },
-    "attributes": { "activities": ["activity_hiking", "activity_skiing", "activity_camping"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "insect_repellent",
-    "name": { "en": "Insect Repellent", "zh": "驱虫剂" },
+    "name": {
+      "en": "Insect Repellent",
+      "zh": "驱虫剂"
+    },
     "emoji": "🦟",
-    "category": { "en": "Miscellaneous", "zh": "杂物" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_hiking", "activity_camping"], "weather_condition": ["any"], "temp_min": 10, "temp_max": 50 }
-  },
-  {
-    "id": "lip_balm",
-    "name": { "en": "Lip Balm", "zh": "润唇膏" },
-    "emoji": "💄",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing", "activity_hiking", "activity_city"], "weather_condition": ["cold", "windy"], "temp_min": -50, "temp_max": 50 }
-  },
-  {
-    "id": "hand_cream",
-    "name": { "en": "Hand Cream", "zh": "护手霜" },
-    "emoji": "🧴",
-    "category": { "en": "Cosmetics", "zh": "化妆品" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["activity_skiing", "activity_hiking", "activity_city"], "weather_condition": ["cold", "windy"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 10,
+      "temp_max": 50
+    }
   },
   {
     "id": "sanitary_pads",
-    "name": { "en": "Sanitary Pads", "zh": "卫生巾/姨妈巾" },
+    "name": {
+      "en": "Sanitary Pads",
+      "zh": "卫生巾/姨妈巾"
+    },
     "emoji": "🩲",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "per_day", "value": 3 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 3
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "tampons",
-    "name": { "en": "Tampons", "zh": "卫生棉条" },
+    "name": {
+      "en": "Tampons",
+      "zh": "卫生棉条"
+    },
     "emoji": "🩲",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "per_day", "value": 4 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 4
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "panty_liners",
-    "name": { "en": "Panty Liners", "zh": "护垫" },
+    "name": {
+      "en": "Panty Liners",
+      "zh": "护垫"
+    },
     "emoji": "🩲",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "per_day", "value": 2 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "feminine_wipes",
-    "name": { "en": "Feminine Wipes", "zh": "女性湿巾" },
+    "name": {
+      "en": "Feminine Wipes",
+      "zh": "女性湿巾"
+    },
     "emoji": "🧻",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "intimate_wash",
-    "name": { "en": "Intimate Wash", "zh": "私处护理液" },
+    "name": {
+      "en": "Intimate Wash",
+      "zh": "私处护理液"
+    },
     "emoji": "🧴",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "pain_relief_patches",
-    "name": { "en": "Pain Relief Patches", "zh": "止痛贴" },
+    "name": {
+      "en": "Pain Relief Patches",
+      "zh": "止痛贴"
+    },
     "emoji": "🩹",
-    "category": { "en": "Medical Kit", "zh": "医疗用品" },
-    "quantity_logic": { "type": "fixed", "value": 5 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 5
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "heating_pad",
-    "name": { "en": "Heating Pad", "zh": "暖宫贴" },
+    "name": {
+      "en": "Heating Pad",
+      "zh": "暖宫贴"
+    },
     "emoji": "🔥",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "per_day", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "contraceptives",
-    "name": { "en": "Contraceptives", "zh": "避孕套" },
+    "name": {
+      "en": "Contraceptives",
+      "zh": "避孕套"
+    },
     "emoji": "🔒",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "fixed", "value": 5 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 5
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "pregnancy_test",
-    "name": { "en": "Pregnancy Test", "zh": "验孕棒" },
+    "name": {
+      "en": "Pregnancy Test",
+      "zh": "验孕棒"
+    },
     "emoji": "🧪",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "deodorant",
-    "name": { "en": "Deodorant", "zh": "除臭剂/止汗剂" },
+    "name": {
+      "en": "Deodorant",
+      "zh": "除臭剂/止汗剂"
+    },
     "emoji": "🧴",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "hair_ties",
-    "name": { "en": "Hair Ties", "zh": "发圈/橡皮筋" },
+    "name": {
+      "en": "Hair Ties",
+      "zh": "发圈/橡皮筋"
+    },
     "emoji": "🎀",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "fixed", "value": 10 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 10
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "bobby_pins",
-    "name": { "en": "Bobby Pins", "zh": "发夹" },
+    "name": {
+      "en": "Bobby Pins",
+      "zh": "发夹"
+    },
     "emoji": "📎",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "fixed", "value": 10 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 10
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "nail_clippers",
-    "name": { "en": "Nail Clippers", "zh": "指甲刀" },
+    "name": {
+      "en": "Nail Clippers",
+      "zh": "指甲刀"
+    },
     "emoji": "✂️",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "nail_file",
-    "name": { "en": "Nail File", "zh": "指甲锉" },
+    "name": {
+      "en": "Nail File",
+      "zh": "指甲锉"
+    },
     "emoji": "💅",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "tweezers",
-    "name": { "en": "Tweezers", "zh": "镊子" },
+    "name": {
+      "en": "Tweezers",
+      "zh": "镊子"
+    },
     "emoji": "🔧",
-    "category": { "en": "Personal Care", "zh": "个人护理" },
-    "quantity_logic": { "type": "fixed", "value": 1 },
-    "attributes": { "activities": ["any"], "weather_condition": ["any"], "temp_min": -50, "temp_max": 50 }
+    "category": {
+      "en": "Personal Care",
+      "zh": "个人护理"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   }
 ]
