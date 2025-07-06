@@ -108,7 +108,8 @@ const generateChecklist = async (req, res) => {
                 isHistorical: weatherData.isHistorical || false,
                 isMixedData: weatherData.isMixedData ?? false,
                 forecastDays: weatherData.forecastDays ?? 0,
-                historicalDays: weatherData.historicalDays ?? 0
+                historicalDays: weatherData.historicalDays ?? 0,
+                monthlyAverages: weatherData.monthlyAverages || []
             },
             categories: checklist,
         };

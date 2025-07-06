@@ -175,7 +175,8 @@ const getWeatherData = async (destination, startDate, endDate, lang = 'en') => {
             isHistorical: false,
             isMixedData: false,
             forecastDays: mockDays.length,
-            historicalDays: 0
+            historicalDays: 0,
+            monthlyAverages: []
         };
     }
 };
