@@ -105,7 +105,10 @@ const generateChecklist = async (req, res) => {
                 durationDays: duration,
                 weatherSummary: `${weatherData.condition}, ${weatherData.averageTemp}°C`,
                 dailyWeather: weatherData.dailyWeather || [],
-                isHistorical: weatherData.isHistorical || false
+                isHistorical: weatherData.isHistorical || false,
+                isMixedData: weatherData.isMixedData ?? false,
+                forecastDays: weatherData.forecastDays ?? 0,
+                historicalDays: weatherData.historicalDays ?? 0
             },
             categories: checklist,
         };

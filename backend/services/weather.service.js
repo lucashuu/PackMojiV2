@@ -6,16 +6,15 @@ const GEOCODE_URL = 'http://api.openweathermap.org/geo/1.0/direct';
 const WEATHER_URL = 'https://api.openweathermap.org/data/3.0/onecall';
 
 /**
- * Fetches real weather data for a given destination and date range.
- * 1. Geocodes the destination name to get latitude and longitude.
- * 2. Fetches the 8-day daily forecast for those coordinates.
- * 3. Returns daily weather information for each day of the trip.
+ * Fetches intelligent weather data combining real forecast and historical averages.
+ * - Within forecast range (0-7 days): Shows real weather forecast
+ * - Beyond forecast range: Shows historical monthly averages
  */
 const getWeatherData = async (destination, startDate, endDate, lang = 'en') => {
     if (!API_KEY) {
         throw new Error('OpenWeather API key is not configured. Please set OPENWEATHER_API_KEY in .env file.');
     }
-    console.log(`Fetching real weather for ${destination}...`);
+    console.log(`🌤️ Fetching intelligent weather data for ${destination}...`);
 
     const language = lang.startsWith('zh') ? 'zh' : 'en';
 
@@ -30,7 +29,20 @@ const getWeatherData = async (destination, startDate, endDate, lang = 'en') => {
         }
         const { lat, lon } = geoResponse.data[0];
 
-        // 2. Fetch 8-day forecast
+        // 2. Get trip duration and generate all trip days
+        const tripStart = new Date(startDate);
+        const tripEnd = new Date(endDate);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        
+        const allTripDays = [];
+        for (let d = new Date(tripStart); d <= tripEnd; d.setDate(d.getDate() + 1)) {
+            allTripDays.push(new Date(d));
+        }
+
+        console.log(`📅 Trip duration: ${allTripDays.length} days`);
+
+        // 3. Fetch 8-day forecast
         const weatherResponse = await axios.get(WEATHER_URL, {
             params: { lat, lon, exclude: 'current,minutely,hourly,alerts', appid: API_KEY, units: 'metric', lang: language }
         });
@@ -39,82 +51,183 @@ const getWeatherData = async (destination, startDate, endDate, lang = 'en') => {
             throw new Error('Invalid weather data received from API.');
         }
 
-        const tripStart = new Date(startDate);
-        const tripEnd = new Date(endDate);
-        const duration = Math.round((tripEnd - tripStart) / (1000 * 60 * 60 * 24)) + 1;
+        // 4. Process forecast data and determine forecast coverage
+        const forecastData = weatherResponse.data.daily;
+        const forecastEndDate = new Date(today);
+        forecastEndDate.setDate(forecastEndDate.getDate() + 7); // 7-day forecast coverage
 
-        // 3. Filter available forecasts to get days within the trip dates
-        const forecastedDays = weatherResponse.data.daily.map(day => {
-            const date = new Date(day.dt * 1000);
-            return {
-                date: date.toISOString().split('T')[0],
-                dayOfWeek: getDayOfWeek(date.getDay(), language),
-                temperature: Math.round(day.temp.day),
-                condition: day.weather[0].description,
-                conditionCode: day.weather[0].main.toLowerCase(),
-                icon: day.weather[0].icon
-            };
-        }).filter(day => {
-            const dayDate = new Date(day.date);
-            // Use setHours to avoid timezone issues affecting date comparison
-            return dayDate.setHours(0,0,0,0) >= tripStart.setHours(0,0,0,0) && dayDate.setHours(0,0,0,0) <= tripEnd.setHours(0,0,0,0);
-        });
+        console.log(`🔮 Forecast coverage: ${today.toISOString().split('T')[0]} to ${forecastEndDate.toISOString().split('T')[0]}`);
 
-        // 4. Case 1: Trip is entirely in the future (no forecast days)
-        if (forecastedDays.length === 0) {
-            console.warn(`No real-time forecast available. Fetching historical data for summary.`);
-            const lastYearStartDate = new Date(tripStart);
-            lastYearStartDate.setFullYear(lastYearStartDate.getFullYear() - 1);
-            const lastYearEndDate = new Date(tripEnd);
-            lastYearEndDate.setFullYear(lastYearEndDate.getFullYear() - 1);
+        // 5. Build daily weather array with mixed data
+        const dailyWeatherArray = [];
+        const allTemperatures = [];
+        const allConditions = [];
 
-            const historicalData = await getHistoricalWeatherData(
-                lat,
-                lon,
-                lastYearStartDate.toISOString().split('T')[0],
-                lastYearEndDate.toISOString().split('T')[0],
-                language
-            );
+        for (const dayDate of allTripDays) {
+            const dayDateStr = dayDate.toISOString().split('T')[0];
+            const dayOfWeek = getDayOfWeek(dayDate.getDay(), language);
+            
+            if (dayDate <= forecastEndDate) {
+                // Within forecast range - use real forecast data
+                const forecastDay = forecastData.find(day => {
+                    const forecastDate = new Date(day.dt * 1000);
+                    return forecastDate.toISOString().split('T')[0] === dayDateStr;
+                });
 
-            return {
-                averageTemp: historicalData.averageTemp,
-                condition: `历史平均: ${historicalData.condition}`,
-                conditionCode: historicalData.conditionCode,
-                dailyWeather: historicalData.dailyWeather, // Return historical daily data
-                isHistorical: true
-            };
+                if (forecastDay) {
+                    const temp = Math.round(forecastDay.temp.day);
+                    const condition = forecastDay.weather[0].description;
+                    const conditionCode = forecastDay.weather[0].main.toLowerCase();
+                    const icon = forecastDay.weather[0].icon;
+
+                    dailyWeatherArray.push({
+                        date: dayDateStr,
+                        dayOfWeek,
+                        temperature: temp,
+                        condition: condition,
+                        conditionCode: conditionCode,
+                        icon: icon,
+                        dataSource: 'forecast'
+                    });
+
+                    allTemperatures.push(temp);
+                    allConditions.push(conditionCode);
+                    console.log(`📊 ${dayDateStr}: ${temp}°C, ${condition} (预报)`);
+                } else {
+                    // Fallback to historical data if forecast not available for this day
+                    const historicalDay = await getHistoricalDayData(lat, lon, dayDate, language);
+                    dailyWeatherArray.push(historicalDay);
+                    allTemperatures.push(historicalDay.temperature);
+                    allConditions.push(historicalDay.conditionCode);
+                }
+            } else {
+                // Beyond forecast range - use historical monthly average
+                const historicalDay = await getHistoricalMonthlyAverage(lat, lon, dayDate, language);
+                dailyWeatherArray.push(historicalDay);
+                allTemperatures.push(historicalDay.temperature);
+                allConditions.push(historicalDay.conditionCode);
+            }
         }
 
-        // 5. Case 2: Trip is fully or partially in the forecast window
-        const totalTemp = forecastedDays.reduce((sum, day) => sum + day.temperature, 0);
-        const averageTemp = Math.round(totalTemp / forecastedDays.length);
-
-        const conditionCounts = forecastedDays.reduce((counts, day) => {
-            counts[day.conditionCode] = (counts[day.conditionCode] || 0) + 1;
+        // 6. Calculate overall trip averages
+        const averageTemp = Math.round(allTemperatures.reduce((sum, temp) => sum + temp, 0) / allTemperatures.length);
+        
+        const conditionCounts = allConditions.reduce((counts, condition) => {
+            counts[condition] = (counts[condition] || 0) + 1;
             return counts;
         }, {});
         const dominantConditionCode = Object.keys(conditionCounts).reduce((a, b) => conditionCounts[a] > conditionCounts[b] ? a : b);
-        const dominantCondition = forecastedDays.find(d => d.conditionCode === dominantConditionCode).condition;
+        const dominantCondition = dailyWeatherArray.find(d => d.conditionCode === dominantConditionCode).condition;
 
-        const isPartialForecast = forecastedDays.length < duration;
+        // 7. Check if data is mixed (contains both forecast and historical)
+        const forecastDays = dailyWeatherArray.filter(d => d.dataSource === 'forecast').length;
+        const historicalDays = dailyWeatherArray.filter(d => d.dataSource === 'historical').length;
+        const isMixedData = forecastDays > 0 && historicalDays > 0;
+
+        console.log(`📈 Weather Summary: ${averageTemp}°C, ${dominantCondition}`);
+        console.log(`📊 Data composition: ${forecastDays} forecast days, ${historicalDays} historical days`);
 
         return {
             averageTemp,
             condition: dominantCondition,
             conditionCode: dominantConditionCode,
-            dailyWeather: forecastedDays, // Only return available forecast days
-            isHistorical: isPartialForecast
+            dailyWeather: dailyWeatherArray,
+            isHistorical: historicalDays > 0,
+            isMixedData: isMixedData,
+            forecastDays: forecastDays,
+            historicalDays: historicalDays
         };
 
     } catch (error) {
         console.error("Error fetching weather data:", error.response ? error.response.data : error.message);
         // Fallback to mock data in case of any error
+        const mockDays = generateMockDailyWeather(startDate, endDate);
         return {
             averageTemp: 15,
             condition: "多云",
             conditionCode: "clouds",
-            dailyWeather: generateMockDailyWeather(startDate, endDate),
-            isHistorical: false
+            dailyWeather: mockDays,
+            isHistorical: false,
+            isMixedData: false,
+            forecastDays: mockDays.length,
+            historicalDays: 0
+        };
+    }
+};
+
+/**
+ * Get historical weather data for a specific day from last year
+ */
+const getHistoricalDayData = async (lat, lon, dayDate, language) => {
+    const lastYearDate = new Date(dayDate);
+    lastYearDate.setFullYear(lastYearDate.getFullYear() - 1);
+    
+    const dateStr = lastYearDate.toISOString().split('T')[0];
+    const dayOfWeek = getDayOfWeek(dayDate.getDay(), language);
+
+    try {
+        const historicalData = await getHistoricalWeatherData(lat, lon, dateStr, dateStr, language);
+        const dayData = historicalData.dailyWeather[0];
+        
+        return {
+            date: dayDate.toISOString().split('T')[0],
+            dayOfWeek: dayOfWeek,
+            temperature: dayData.temperature,
+            condition: `${dayData.condition} (去年同期)`,
+            conditionCode: dayData.conditionCode,
+            icon: dayData.icon,
+            dataSource: 'historical'
+        };
+    } catch (error) {
+        console.warn(`Unable to fetch historical data for ${dateStr}, using average`);
+        return {
+            date: dayDate.toISOString().split('T')[0],
+            dayOfWeek: dayOfWeek,
+            temperature: 20,
+            condition: "历史平均",
+            conditionCode: "clouds",
+            icon: "02d",
+            dataSource: 'historical'
+        };
+    }
+};
+
+/**
+ * Get historical monthly average for a specific day
+ */
+const getHistoricalMonthlyAverage = async (lat, lon, dayDate, language) => {
+    const month = dayDate.getMonth();
+    const dayOfWeek = getDayOfWeek(dayDate.getDay(), language);
+    
+    // Get same month from last year (broader range for better average)
+    const lastYearStart = new Date(dayDate.getFullYear() - 1, month, 1);
+    const lastYearEnd = new Date(dayDate.getFullYear() - 1, month + 1, 0);
+    
+    const startDateStr = lastYearStart.toISOString().split('T')[0];
+    const endDateStr = lastYearEnd.toISOString().split('T')[0];
+
+    try {
+        const historicalData = await getHistoricalWeatherData(lat, lon, startDateStr, endDateStr, language);
+        
+        return {
+            date: dayDate.toISOString().split('T')[0],
+            dayOfWeek: dayOfWeek,
+            temperature: historicalData.averageTemp,
+            condition: `${historicalData.condition} (月平均)`,
+            conditionCode: historicalData.conditionCode,
+            icon: mapWeatherCodeToIcon(0), // Use default icon for averages
+            dataSource: 'historical'
+        };
+    } catch (error) {
+        console.warn(`Unable to fetch monthly average for ${dayDate.toISOString().split('T')[0]}, using default`);
+        return {
+            date: dayDate.toISOString().split('T')[0],
+            dayOfWeek: dayOfWeek,
+            temperature: 20,
+            condition: "历史月平均",
+            conditionCode: "clouds",
+            icon: "02d",
+            dataSource: 'historical'
         };
     }
 };
@@ -252,7 +365,8 @@ function generateMockDailyWeather(startDate, endDate) {
             temperature: Math.floor(Math.random() * 20) + 10, // 10-30°C
             condition: "多云",
             conditionCode: "clouds",
-            icon: "02d"
+            icon: "02d",
+            dataSource: 'mock'
         });
     }
     
