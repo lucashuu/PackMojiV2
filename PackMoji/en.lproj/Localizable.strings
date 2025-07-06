@@ -177,7 +177,7 @@
 "weather_historical_average" = "Historical Average";
 "weather_monthly_average_suffix" = " (Monthly Avg)";
 "weather_monthly_average" = "Monthly Average";
-"weather_historical_monthly_average" = "Historical Weather Monthly Average";
+"weather_historical_monthly_average" = "Monthly Avg";
 
 // MARK: - Emoji Picker
 "emoji_picker_title" = "Select Emoji";
