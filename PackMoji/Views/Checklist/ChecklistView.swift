@@ -696,12 +696,13 @@ struct MonthlyAverageCard: View {
                 .foregroundColor(.primary)
             
             Text(localizedCondition)
-                .font(.system(size: 10))
+                .font(.system(size: 9))
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
-                .lineLimit(2)
+                .lineLimit(3)
+                .fixedSize(horizontal: false, vertical: true)
         }
-        .frame(width: 80, height: 100)
+        .frame(width: 90, height: 110)
         .padding(.vertical, 8)
         .background(
             RoundedRectangle(cornerRadius: 8)
