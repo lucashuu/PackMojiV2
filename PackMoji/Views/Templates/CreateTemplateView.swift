@@ -15,6 +15,7 @@ struct CreateTemplateView: View {
         "activity_shopping",
         "activity_skiing",
         "activity_city",
+        "activity_camping",
         "activity_party"
     ]
     
