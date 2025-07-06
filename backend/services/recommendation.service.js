@@ -25,7 +25,6 @@ const CATEGORY_PRIORITIES = {
     'Documents': 100,           // 证件文件 - 最重要
     'Medical Kit': 90,          // 医疗用品 - 很重要  
     'Personal Care': 80,        // 个人护理 - 重要
-    'Toiletries': 75,           // 日常洗漱 - 重要
     'Clothing': 70,             // 衣物 - 重要
     'Electronics': 65,          // 电子产品 - 较重要
     'Food & Snacks': 60,        // 食物零食 - 中等
@@ -182,7 +181,6 @@ const getRecommendedItems = (tripContext) => {
         'Documents': 45,        // 证件类：降低阈值确保护照等重要文件被推荐
         'Medical Kit': 55,      // 医疗用品：稍微降低但保持重要性
         'Personal Care': 50,    // 个人护理：适度降低
-        'Toiletries': 45,       // 日用品：降低以确保基本洗漱用品被推荐
         'Clothing': 40,         // 衣物：大幅降低以确保基本衣物被推荐
         'Electronics': 35,      // 电子产品：大幅降低确保手机、充电器等被推荐
         'Food & Snacks': 35,    // 食物零食：降低阈值
@@ -195,8 +193,7 @@ const getRecommendedItems = (tripContext) => {
         'Camping': 35,          // 露营装备：降低以确保活动匹配时被推荐
         'Skiing Equipment': 30,  // 滑雪装备：专业设备优先推荐
         'Cosmetics': 20,        // 化妆品：保持较低
-        'Skincare': 15,         // 护肤品：保持较低
-        'Medicine': 40          // 药品：新增分类，中等阈值
+        'Skincare': 15          // 护肤品：保持较低
     };
 
     // Activity-specific threshold adjustments for professional gear
@@ -260,9 +257,8 @@ const getRecommendedItems = (tripContext) => {
     // Apply smart limits to avoid overwhelming the user
     const maxItemsPerCategory = {
         'Documents': 10,
-        'Medical Kit': 8,
-        'Personal Care': 10,
-        'Toiletries': 8,
+        'Medical Kit': 10,
+        'Personal Care': 15,
         'Clothing': 15,
         'Electronics': 8,
         'Food & Snacks': 6,

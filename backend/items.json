@@ -1829,8 +1829,8 @@
     },
     "emoji": "🧼",
     "category": {
-      "en": "Toiletries",
-      "zh": "日常洗漱"
+      "en": "Personal Care",
+      "zh": "个人护理"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1855,8 +1855,8 @@
     },
     "emoji": "🦷",
     "category": {
-      "en": "Toiletries",
-      "zh": "日常洗漱"
+      "en": "Personal Care",
+      "zh": "个人护理"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1881,8 +1881,8 @@
     },
     "emoji": "🧖",
     "category": {
-      "en": "Toiletries",
-      "zh": "日常洗漱"
+      "en": "Personal Care",
+      "zh": "个人护理"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1907,8 +1907,8 @@
     },
     "emoji": "🛁",
     "category": {
-      "en": "Toiletries",
-      "zh": "日常洗漱"
+      "en": "Personal Care",
+      "zh": "个人护理"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1933,8 +1933,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Toiletries",
-      "zh": "日常洗漱"
+      "en": "Personal Care",
+      "zh": "个人护理"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1959,8 +1959,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Toiletries",
-      "zh": "日常洗漱"
+      "en": "Personal Care",
+      "zh": "个人护理"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1985,8 +1985,8 @@
     },
     "emoji": "🪒",
     "category": {
-      "en": "Toiletries",
-      "zh": "日常洗漱"
+      "en": "Personal Care",
+      "zh": "个人护理"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2011,8 +2011,8 @@
     },
     "emoji": "🩴",
     "category": {
-      "en": "Toiletries",
-      "zh": "日常洗漱"
+      "en": "Personal Care",
+      "zh": "个人护理"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2614,8 +2614,8 @@
     },
     "emoji": "💊",
     "category": {
-      "en": "Medicine",
-      "zh": "药品"
+      "en": "Medical Kit",
+      "zh": "医疗用品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2640,8 +2640,8 @@
     },
     "emoji": "🩹",
     "category": {
-      "en": "Medicine",
-      "zh": "药品"
+      "en": "Medical Kit",
+      "zh": "医疗用品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2668,8 +2668,8 @@
     },
     "emoji": "🦟",
     "category": {
-      "en": "Medicine",
-      "zh": "药品"
+      "en": "Medical Kit",
+      "zh": "医疗用品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3050,8 +3050,8 @@
     },
     "emoji": "🧻",
     "category": {
-      "en": "Toiletries",
-      "zh": "日常洗漱"
+      "en": "Personal Care",
+      "zh": "个人护理"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3076,8 +3076,8 @@
     },
     "emoji": "🧻",
     "category": {
-      "en": "Toiletries",
-      "zh": "日常洗漱"
+      "en": "Personal Care",
+      "zh": "个人护理"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3102,8 +3102,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Toiletries",
-      "zh": "日常洗漱"
+      "en": "Personal Care",
+      "zh": "个人护理"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3545,8 +3545,8 @@
     },
     "emoji": "🩹",
     "category": {
-      "en": "Medicine",
-      "zh": "药品"
+      "en": "Medical Kit",
+      "zh": "医疗用品"
     },
     "quantity_logic": {
       "type": "fixed",
