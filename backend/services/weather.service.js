@@ -448,7 +448,7 @@ async function getMonthlyAverageData(lat, lon, month, language) {
         return {
             monthName: month.name,
             temperature: historicalData.averageTemp,
-            condition: historicalData.condition,
+            condition: "weather_historical_monthly_average",
             conditionCode: historicalData.conditionCode,
             icon: mapWeatherCodeToIcon(0) // Use default icon for monthly averages
         };
