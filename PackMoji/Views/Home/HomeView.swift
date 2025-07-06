@@ -227,7 +227,10 @@ struct HomeView: View {
         Tag(name: LocalizedStringKey("activity_camping"), icon: "⛺️", color: .theme.tagOrange),
         Tag(name: LocalizedStringKey("activity_business"), icon: "💼", color: .theme.tagGray),
         Tag(name: LocalizedStringKey("activity_skiing"), icon: "⛷️", color: .theme.tagBlue),
-        Tag(name: LocalizedStringKey("activity_party"), icon: "🎉", color: .theme.tagParty)
+        Tag(name: LocalizedStringKey("activity_party"), icon: "🎉", color: .theme.tagParty),
+        Tag(name: LocalizedStringKey("activity_city"), icon: "🏙️", color: .theme.tagGreen),
+        Tag(name: LocalizedStringKey("activity_photography"), icon: "📸", color: .theme.tagPink),
+        Tag(name: LocalizedStringKey("activity_shopping"), icon: "🛍️", color: .theme.tagYellow)
     ]
     
     private var isDestinationFocusedBinding: Binding<Bool> {
@@ -373,8 +376,9 @@ struct HomeTagCloudView: View {
     @ObservedObject var viewModel: HomeViewModel
     
     private let columns: [GridItem] = [
-        GridItem(.flexible(), spacing: 12),
-        GridItem(.flexible(), spacing: 12)
+        GridItem(.flexible(), spacing: 8),
+        GridItem(.flexible(), spacing: 8),
+        GridItem(.flexible(), spacing: 8)
     ]
     
     var body: some View {
