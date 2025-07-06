@@ -1829,8 +1829,8 @@
     },
     "emoji": "🧼",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Toiletries",
+      "zh": "日常洗漱"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1855,8 +1855,8 @@
     },
     "emoji": "🦷",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Toiletries",
+      "zh": "日常洗漱"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1881,8 +1881,8 @@
     },
     "emoji": "🧖",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Toiletries",
+      "zh": "日常洗漱"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1907,8 +1907,8 @@
     },
     "emoji": "🛁",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Toiletries",
+      "zh": "日常洗漱"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1933,8 +1933,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Toiletries",
+      "zh": "日常洗漱"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1959,8 +1959,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Toiletries",
+      "zh": "日常洗漱"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1985,8 +1985,8 @@
     },
     "emoji": "🪒",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Toiletries",
+      "zh": "日常洗漱"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2011,8 +2011,8 @@
     },
     "emoji": "🩴",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Toiletries",
+      "zh": "日常洗漱"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2614,8 +2614,8 @@
     },
     "emoji": "💊",
     "category": {
-      "en": "Medical Kit",
-      "zh": "医疗用品"
+      "en": "Medicine",
+      "zh": "药品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2640,8 +2640,8 @@
     },
     "emoji": "🩹",
     "category": {
-      "en": "Medical Kit",
-      "zh": "医疗用品"
+      "en": "Medicine",
+      "zh": "药品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2668,8 +2668,8 @@
     },
     "emoji": "🦟",
     "category": {
-      "en": "Medical Kit",
-      "zh": "医疗用品"
+      "en": "Medicine",
+      "zh": "药品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3043,12 +3043,462 @@
     }
   },
   {
-    "id": "flight_reservation",
+    "id": "wet_wipes",
     "name": {
-      "en": "Flight Reservation",
-      "zh": "机票预订单"
+      "en": "Wet Wipes",
+      "zh": "湿纸巾"
     },
-    "emoji": "✈️",
+    "emoji": "🧻",
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "tissues",
+    "name": {
+      "en": "Tissues",
+      "zh": "纸巾"
+    },
+    "emoji": "🧻",
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "hand_sanitizer",
+    "name": {
+      "en": "Hand Sanitizer",
+      "zh": "免洗洗手液"
+    },
+    "emoji": "🧴",
+    "category": {
+      "en": "Toiletries",
+      "zh": "日常洗漱"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "laundry_bags",
+    "name": {
+      "en": "Laundry Bags",
+      "zh": "洗衣袋"
+    },
+    "emoji": "👕",
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "zip_lock_bags",
+    "name": {
+      "en": "Zip-lock Bags",
+      "zh": "密封袋"
+    },
+    "emoji": "🗂️",
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 5
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "travel_pillow",
+    "name": {
+      "en": "Travel Pillow",
+      "zh": "旅行枕"
+    },
+    "emoji": "🛏️",
+    "category": {
+      "en": "Comfort",
+      "zh": "舒适用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "eye_mask",
+    "name": {
+      "en": "Eye Mask",
+      "zh": "眼罩"
+    },
+    "emoji": "😴",
+    "category": {
+      "en": "Comfort",
+      "zh": "舒适用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "earplugs",
+    "name": {
+      "en": "Earplugs",
+      "zh": "耳塞"
+    },
+    "emoji": "🔇",
+    "category": {
+      "en": "Comfort",
+      "zh": "舒适用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "travel_blanket",
+    "name": {
+      "en": "Travel Blanket",
+      "zh": "旅行毯"
+    },
+    "emoji": "🛏️",
+    "category": {
+      "en": "Comfort",
+      "zh": "舒适用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "luggage_tags",
+    "name": {
+      "en": "Luggage Tags",
+      "zh": "行李牌"
+    },
+    "emoji": "🏷️",
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "luggage_locks",
+    "name": {
+      "en": "Luggage Locks",
+      "zh": "行李锁"
+    },
+    "emoji": "🔒",
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "portable_scale",
+    "name": {
+      "en": "Portable Luggage Scale",
+      "zh": "便携行李秤"
+    },
+    "emoji": "⚖️",
+    "category": {
+      "en": "Miscellaneous",
+      "zh": "杂物"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "travel_snacks",
+    "name": {
+      "en": "Travel Snacks",
+      "zh": "旅行零食"
+    },
+    "emoji": "🍪",
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 0.5
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "energy_bars",
+    "name": {
+      "en": "Energy Bars",
+      "zh": "能量棒"
+    },
+    "emoji": "🍫",
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "instant_coffee",
+    "name": {
+      "en": "Instant Coffee",
+      "zh": "速溶咖啡"
+    },
+    "emoji": "☕",
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping",
+        "activity_hiking",
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "nuts",
+    "name": {
+      "en": "Nuts",
+      "zh": "坚果"
+    },
+    "emoji": "🥜",
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "dried_fruits",
+    "name": {
+      "en": "Dried Fruits",
+      "zh": "果干"
+    },
+    "emoji": "🍇",
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "travel_documents_folder",
+    "name": {
+      "en": "Travel Documents Folder",
+      "zh": "旅行文件夹"
+    },
+    "emoji": "📁",
     "category": {
       "en": "Documents",
       "zh": "证件文件"
@@ -3069,12 +3519,12 @@
     }
   },
   {
-    "id": "rental_car_reservation",
+    "id": "emergency_contacts",
     "name": {
-      "en": "Rental Car Reservation",
-      "zh": "租车预订单"
+      "en": "Emergency Contacts",
+      "zh": "紧急联系人清单"
     },
-    "emoji": "🚗",
+    "emoji": "📋",
     "category": {
       "en": "Documents",
       "zh": "证件文件"
@@ -3095,12 +3545,38 @@
     }
   },
   {
-    "id": "attraction_reservation",
+    "id": "insurance_documents",
     "name": {
-      "en": "Attraction Reservation",
-      "zh": "景点预订单"
+      "en": "Insurance Documents",
+      "zh": "保险文件"
     },
-    "emoji": "🎫",
+    "emoji": "📄",
+    "category": {
+      "en": "Documents",
+      "zh": "证件文件"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "hotel_reservation",
+    "name": {
+      "en": "Hotel Reservation",
+      "zh": "酒店预订单"
+    },
+    "emoji": "🏨",
     "category": {
       "en": "Documents",
       "zh": "证件文件"
@@ -3128,8 +3604,8 @@
     },
     "emoji": "🧻",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Toiletries",
+      "zh": "日常洗漱"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3154,8 +3630,8 @@
     },
     "emoji": "🧻",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Toiletries",
+      "zh": "日常洗漱"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3180,8 +3656,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Toiletries",
+      "zh": "日常洗漱"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3623,8 +4099,8 @@
     },
     "emoji": "🩹",
     "category": {
-      "en": "Medical Kit",
-      "zh": "医疗用品"
+      "en": "Medicine",
+      "zh": "药品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5077,6 +5553,36 @@
     }
   },
   {
+    "id": "sunglasses",
+    "name": {
+      "en": "Sunglasses",
+      "zh": "墨镜"
+    },
+    "emoji": "🕶️",
+    "category": {
+      "en": "Accessories",
+      "zh": "配饰"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach",
+        "activity_city",
+        "activity_hiking",
+        "activity_skiing",
+        "activity_party"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
     "id": "smartwatch",
     "name": {
       "en": "Smartwatch/Digital Watch",
@@ -5100,6 +5606,36 @@
       ],
       "weather_condition": [
         "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "sunscreen",
+    "name": {
+      "en": "Sunscreen",
+      "zh": "防晒霜"
+    },
+    "emoji": "🧴",
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach",
+        "activity_city",
+        "activity_hiking",
+        "activity_skiing",
+        "activity_party"
+      ],
+      "weather_condition": [
+        "sunny"
       ],
       "temp_min": -50,
       "temp_max": 50
@@ -5146,6 +5682,32 @@
     "quantity_logic": {
       "type": "fixed",
       "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "band_aids",
+    "name": {
+      "en": "Band-aids",
+      "zh": "创可贴"
+    },
+    "emoji": "🩹",
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 10
     },
     "attributes": {
       "activities": [
@@ -5318,6 +5880,64 @@
         "any"
       ],
       "temp_min": 10,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "lip_balm",
+    "name": {
+      "en": "Lip Balm",
+      "zh": "润唇膏"
+    },
+    "emoji": "💄",
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing",
+        "activity_hiking",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "cold",
+        "windy"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "hand_cream",
+    "name": {
+      "en": "Hand Cream",
+      "zh": "护手霜"
+    },
+    "emoji": "🧴",
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing",
+        "activity_hiking",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "cold",
+        "windy"
+      ],
+      "temp_min": -50,
       "temp_max": 50
     }
   },

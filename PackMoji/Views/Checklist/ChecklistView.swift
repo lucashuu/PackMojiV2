@@ -65,19 +65,12 @@ struct ChecklistView: View {
                 }
                 
                 // Weather Section
-                if !viewModel.tripInfo.dailyWeather.isEmpty {
+                if !viewModel.tripInfo.dailyWeather.isEmpty && !viewModel.tripInfo.isHistorical {
                     VStack(alignment: .leading, spacing: 12) {
                         Text("checklist_weather_title")
                             .font(.system(size: 17, weight: .bold))
                         
                         DailyWeatherView(dailyWeather: viewModel.tripInfo.dailyWeather, useFahrenheit: useFahrenheit)
-                        
-                        if viewModel.tripInfo.isHistorical {
-                            Text("checklist_partial_forecast_summary")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                                .padding(.top, 4)
-                        }
                     }
                 } else if viewModel.tripInfo.isHistorical {
                     VStack(alignment: .leading, spacing: 4) {
@@ -225,14 +218,15 @@ struct ChecklistView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 8) {
                             ForEach([
-                                ("activity_business", "💼"),
-                                ("activity_vacation", "🏖️"),
-                                ("activity_camping", "🏕️"),
                                 ("activity_beach", "🏖️"),
-                                ("activity_city", "🏙️"),
-                                ("activity_hiking", "🥾"),
+                                ("activity_hiking", "🏃"),
+                                ("activity_camping", "⛺️"),
+                                ("activity_business", "💼"),
                                 ("activity_skiing", "⛷️"),
-                                ("activity_party", "🎉")
+                                ("activity_party", "🎉"),
+                                ("activity_city", "🏙️"),
+                                ("activity_photography", "📸"),
+                                ("activity_shopping", "🛍️")
                             ], id: \.0) { activity, emoji in
                                     Toggle(isOn: Binding(
                                         get: { selectedActivities.contains(activity) },
@@ -636,11 +630,11 @@ struct ChecklistView_Previews: PreviewProvider {
                 durationDays: 5, 
                 weatherSummary: "晴天, 15-25°C",
                 dailyWeather: [
-                    DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"),
-                    DailyWeather(date: "2024-01-16", dayOfWeek: "周二", temperature: 15, condition: "多云", conditionCode: "clouds", icon: "02d"),
-                    DailyWeather(date: "2024-01-17", dayOfWeek: "周三", temperature: 12, condition: "小雨", conditionCode: "rain", icon: "10d"),
-                    DailyWeather(date: "2024-01-18", dayOfWeek: "周四", temperature: 20, condition: "晴天", conditionCode: "clear", icon: "01d"),
-                    DailyWeather(date: "2024-01-19", dayOfWeek: "周五", temperature: 16, condition: "多云", conditionCode: "clouds", icon: "03d")
+                    DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d", dataSource: "forecast"),
+                    DailyWeather(date: "2024-01-16", dayOfWeek: "周二", temperature: 15, condition: "多云", conditionCode: "clouds", icon: "02d", dataSource: "forecast"),
+                    DailyWeather(date: "2024-01-17", dayOfWeek: "周三", temperature: 12, condition: "小雨", conditionCode: "rain", icon: "10d", dataSource: "forecast"),
+                    DailyWeather(date: "2024-01-18", dayOfWeek: "周四", temperature: 20, condition: "晴天", conditionCode: "clear", icon: "01d", dataSource: "forecast"),
+                    DailyWeather(date: "2024-01-19", dayOfWeek: "周五", temperature: 16, condition: "多云", conditionCode: "clouds", icon: "03d", dataSource: "forecast")
                 ],
                 isHistorical: false
             )
@@ -671,13 +665,13 @@ struct ChecklistView_Previews: PreviewProvider {
             durationDays: 7, 
             weatherSummary: "多云, 12-18°C",
             dailyWeather: [
-                DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 14, condition: "多云", conditionCode: "clouds", icon: "03d"),
-                DailyWeather(date: "2024-01-16", dayOfWeek: "周二", temperature: 12, condition: "小雨", conditionCode: "rain", icon: "10d"),
-                DailyWeather(date: "2024-01-17", dayOfWeek: "周三", temperature: 16, condition: "晴天", conditionCode: "clear", icon: "01d"),
-                DailyWeather(date: "2024-01-18", dayOfWeek: "周四", temperature: 13, condition: "多云", conditionCode: "clouds", icon: "02d"),
-                DailyWeather(date: "2024-01-19", dayOfWeek: "周五", temperature: 15, condition: "晴天", conditionCode: "clear", icon: "01d"),
-                DailyWeather(date: "2024-01-20", dayOfWeek: "周六", temperature: 11, condition: "小雨", conditionCode: "rain", icon: "09d"),
-                DailyWeather(date: "2024-01-21", dayOfWeek: "周日", temperature: 17, condition: "多云", conditionCode: "clouds", icon: "04d")
+                DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 14, condition: "多云", conditionCode: "clouds", icon: "03d", dataSource: "historical"),
+                DailyWeather(date: "2024-01-16", dayOfWeek: "周二", temperature: 12, condition: "小雨", conditionCode: "rain", icon: "10d", dataSource: "historical"),
+                DailyWeather(date: "2024-01-17", dayOfWeek: "周三", temperature: 16, condition: "晴天", conditionCode: "clear", icon: "01d", dataSource: "historical"),
+                DailyWeather(date: "2024-01-18", dayOfWeek: "周四", temperature: 13, condition: "多云", conditionCode: "clouds", icon: "02d", dataSource: "historical"),
+                DailyWeather(date: "2024-01-19", dayOfWeek: "周五", temperature: 15, condition: "晴天", conditionCode: "clear", icon: "01d", dataSource: "historical"),
+                DailyWeather(date: "2024-01-20", dayOfWeek: "周六", temperature: 11, condition: "小雨", conditionCode: "rain", icon: "09d", dataSource: "historical"),
+                DailyWeather(date: "2024-01-21", dayOfWeek: "周日", temperature: 17, condition: "多云", conditionCode: "clouds", icon: "04d", dataSource: "historical")
             ],
             isHistorical: true
         )

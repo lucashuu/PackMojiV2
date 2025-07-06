@@ -146,22 +146,38 @@ struct DailyWeatherCard: View {
     
     private var shortenedCondition: String {
         let condition = day.condition
+        
+        // Handle special historical weather cases
+        if condition == "historical_average" {
+            return String(localized: "weather_historical_average")
+        }
+        
+        // For historical data, add suffix to localized weather conditions
+        var localizedCondition: String
+        
         // Check for Chinese weather conditions and return localized versions
         if condition.contains("晴") {
-            return String(localized: "weather_sunny")
+            localizedCondition = String(localized: "weather_sunny")
         } else if condition.contains("多云") {
-            return String(localized: "weather_cloudy")
+            localizedCondition = String(localized: "weather_cloudy")
         } else if condition.contains("雨") {
-            return String(localized: "weather_rainy")
+            localizedCondition = String(localized: "weather_rainy")
         } else if condition.contains("雪") {
-            return String(localized: "weather_snowy")
+            localizedCondition = String(localized: "weather_snowy")
         } else if condition.contains("雾") {
-            return String(localized: "weather_foggy")
+            localizedCondition = String(localized: "weather_foggy")
         } else if condition.contains("雷") {
-            return String(localized: "weather_stormy")
+            localizedCondition = String(localized: "weather_stormy")
         } else {
-            return condition.count > 4 ? String(condition.prefix(4)) : condition
+            localizedCondition = condition.count > 4 ? String(condition.prefix(4)) : condition
         }
+        
+        // Add historical suffix for historical data
+        if day.dataSource == "historical" && condition != "historical_average" {
+            localizedCondition += String(localized: "weather_historical_suffix")
+        }
+        
+        return localizedCondition
     }
 }
 
@@ -170,25 +186,25 @@ struct DailyWeatherCard: View {
         // 5天行程
         VStack(alignment: .leading) {
             Text("5天行程").font(.headline)
-            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"), count: 5), useFahrenheit: false)
+            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d", dataSource: "forecast"), count: 5), useFahrenheit: false)
         }
         
         // 10天行程
         VStack(alignment: .leading) {
             Text("10天行程").font(.headline)
-            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"), count: 10), useFahrenheit: false)
+            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d", dataSource: "forecast"), count: 10), useFahrenheit: false)
         }
         
         // 20天行程
         VStack(alignment: .leading) {
             Text("20天行程").font(.headline)
-            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"), count: 20), useFahrenheit: false)
+            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d", dataSource: "historical"), count: 20), useFahrenheit: false)
         }
         
         // 30天行程
         VStack(alignment: .leading) {
             Text("30天行程").font(.headline)
-            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d"), count: 30), useFahrenheit: false)
+            DailyWeatherView(dailyWeather: Array(repeating: DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d", dataSource: "historical"), count: 30), useFahrenheit: false)
         }
     }
     .padding()

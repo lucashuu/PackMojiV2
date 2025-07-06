@@ -12,15 +12,15 @@ class TemplateViewModel: ObservableObject {
     private var template: PackingTemplate?
     
     let activities = [
-        "activity_hiking",
-        "activity_business",
-        "activity_photography",
         "activity_beach",
-        "activity_shopping",
-        "activity_skiing",
-        "activity_city",
+        "activity_hiking",
         "activity_camping",
-        "activity_party"
+        "activity_business",
+        "activity_skiing",
+        "activity_party",
+        "activity_city",
+        "activity_photography",
+        "activity_shopping"
     ]
     
     private let storageService = StorageService.shared

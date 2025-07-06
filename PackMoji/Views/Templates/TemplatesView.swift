@@ -80,31 +80,27 @@ struct TemplatesView: View {
 struct TemplateRowView: View {
     let template: PackingTemplate
     
-    // Activity emoji mapping
+    // Activity emoji mapping (consistent with HomeView)
     private func getActivityEmoji(for activity: String) -> String {
         switch activity {
-        case "activity_travel":
-            return "✈️"
-        case "activity_business":
-            return "💼"
-        case "activity_vacation":
-            return "🏖️"
-        case "activity_camping":
-            return "⛺️"
         case "activity_beach":
             return "🏖️"
-        case "activity_city":
-            return "🏙️"
         case "activity_hiking":
-            return "🥾"
+            return "🏃"
+        case "activity_camping":
+            return "⛺️"
+        case "activity_business":
+            return "💼"
         case "activity_skiing":
             return "⛷️"
+        case "activity_party":
+            return "🎉"
+        case "activity_city":
+            return "🏙️"
         case "activity_photography":
             return "📸"
         case "activity_shopping":
             return "🛍️"
-        case "activity_party":
-            return "🎉"
         default:
             return "🎯"
         }

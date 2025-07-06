@@ -173,7 +173,7 @@ const getHistoricalDayData = async (lat, lon, dayDate, language) => {
             date: dayDate.toISOString().split('T')[0],
             dayOfWeek: dayOfWeek,
             temperature: dayData.temperature,
-            condition: `${dayData.condition} (去年同期)`,
+            condition: dayData.condition,
             conditionCode: dayData.conditionCode,
             icon: dayData.icon,
             dataSource: 'historical'
@@ -184,7 +184,7 @@ const getHistoricalDayData = async (lat, lon, dayDate, language) => {
             date: dayDate.toISOString().split('T')[0],
             dayOfWeek: dayOfWeek,
             temperature: 20,
-            condition: "历史平均",
+            condition: "historical_average",
             conditionCode: "clouds",
             icon: "02d",
             dataSource: 'historical'

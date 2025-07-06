@@ -46,6 +46,11 @@ const ESSENTIAL_ITEMS = [
     'toothbrush_paste', 'face_wash', 'towel', 'sanitary_pads', 'band_aids'
 ];
 
+// International trip essential items (added dynamically)
+const INTERNATIONAL_ESSENTIAL_ITEMS = [
+    'visa_info'
+];
+
 /**
  * Enhanced match score calculation with multiple factors
  * @param {object} item - The item from the database.
@@ -73,6 +78,11 @@ function calculateMatchScore(item, tripContext) {
 
     // 2. Essential Items Boost (0-20 points)
     if (ESSENTIAL_ITEMS.includes(item.id)) {
+        score += WEIGHTS.essential;
+    }
+    
+    // 2b. International Trip Essential Items Boost (0-20 points)
+    if (tripContext.tripType === 'international' && INTERNATIONAL_ESSENTIAL_ITEMS.includes(item.id)) {
         score += WEIGHTS.essential;
     }
 
@@ -231,14 +241,34 @@ const getRecommendedItems = (tripContext) => {
         });
     }
 
-    // Filter items based on score thresholds
+    // Filter items based on score thresholds AND strict activity matching
     const recommended = itemsWithScores.filter(item => {
         const categoryKey = item.category['en'] || item.category[Object.keys(item.category)[0]];
         const threshold = SCORE_THRESHOLDS[categoryKey] || 35;
-        const isRecommended = item.score >= threshold;
         
-        console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ${isRecommended ? '✅' : '❌'}`);
-        return isRecommended;
+        // First check if item meets score threshold
+        if (item.score < threshold) {
+            console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (score too low)`);
+            return false;
+        }
+        
+        // Strict activity matching - prevent cross-activity contamination
+        if (item.attributes.activities && Array.isArray(item.attributes.activities)) {
+            // If item has specific activities (not "any"), check if any match current trip activities
+            if (!item.attributes.activities.includes('any')) {
+                const hasActivityMatch = tripContext.activities && tripContext.activities.some(userActivity => 
+                    item.attributes.activities.includes(userActivity)
+                );
+                
+                if (!hasActivityMatch) {
+                    console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (no activity match)`);
+                    return false;
+                }
+            }
+        }
+        
+        console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ✅`);
+        return true;
     });
 
     // Sort by score (highest first) and ensure essential items are prioritized

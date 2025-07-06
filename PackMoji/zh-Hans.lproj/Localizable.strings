@@ -173,6 +173,8 @@
 "weather_snowy" = "雪";
 "weather_foggy" = "雾";
 "weather_stormy" = "雷";
+"weather_historical_suffix" = " (去年同期)";
+"weather_historical_average" = "历史平均";
 
 // MARK: - Emoji Picker
 "emoji_picker_title" = "选择表情";

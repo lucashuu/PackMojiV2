@@ -173,6 +173,8 @@
 "weather_snowy" = "Snowy";
 "weather_foggy" = "Foggy";
 "weather_stormy" = "Stormy";
+"weather_historical_suffix" = " (Last Year)";
+"weather_historical_average" = "Historical Average";
 
 // MARK: - Emoji Picker
 "emoji_picker_title" = "Select Emoji";
