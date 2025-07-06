@@ -53,7 +53,7 @@ struct TemplatesView: View {
                     }
                 }
             }
-            .listStyle(.insetGrouped)
+            .listStyle(.grouped)
             .navigationTitle("templates_title")
             .navigationBarTitleDisplayMode(.large)
             .searchable(text: $searchText, isPresented: $showSearch, prompt: Text("search_placeholder"))

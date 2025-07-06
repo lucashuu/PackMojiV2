@@ -118,7 +118,7 @@ struct EditTemplateView: View {
                 }
             }
         }
-        .listStyle(.insetGrouped)
+        .listStyle(.grouped)
         .navigationTitle("templates_edit")
         .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $searchText, isPresented: $showSearch, prompt: Text("search_placeholder"))

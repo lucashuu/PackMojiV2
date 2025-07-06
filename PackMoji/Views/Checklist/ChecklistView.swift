@@ -120,7 +120,7 @@ struct ChecklistView: View {
                 }
             }
         }
-        .listStyle(.insetGrouped)
+        .listStyle(.grouped)
         .background(Color(UIColor.systemBackground).ignoresSafeArea())
         .navigationTitle("\(viewModel.tripInfo.destinationName) \(String(localized: "checklist_title_suffix"))")
         .navigationBarTitleDisplayMode(.inline)
@@ -402,7 +402,7 @@ struct CategoryHeaderView: View {
             }
         }
         .textCase(nil)
-        .padding(.vertical, 4)
+        .padding(.vertical, 2)
     }
 }
 
@@ -525,7 +525,7 @@ struct ChecklistItemRow: View {
                 .padding(.trailing, 12)
             }
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, 4)
         .padding(.horizontal, 12)
         .background(isChecked ? Color(UIColor.systemGray6) : .clear)
         .cornerRadius(8)

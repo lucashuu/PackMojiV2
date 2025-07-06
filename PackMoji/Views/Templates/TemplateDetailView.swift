@@ -126,7 +126,7 @@ struct TemplateDetailView: View {
                 }
             }
         }
-        .listStyle(.insetGrouped)
+        .listStyle(.grouped)
         .background(Color(UIColor.systemBackground).ignoresSafeArea())
         .navigationTitle(template.name)
         .navigationBarTitleDisplayMode(.inline)
@@ -274,7 +274,7 @@ struct TemplateItemRow: View {
             }
             .buttonStyle(.plain)
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, 4)
         .padding(.horizontal, 12)
         .background(Color.clear)
         .cornerRadius(8)
@@ -411,6 +411,6 @@ struct TemplateCategoryHeaderView: View {
             }
         }
         .textCase(nil)
-        .padding(.vertical, 4)
+        .padding(.vertical, 2)
     }
 } 
