@@ -376,9 +376,8 @@ struct HomeTagCloudView: View {
     @ObservedObject var viewModel: HomeViewModel
     
     private let columns: [GridItem] = [
-        GridItem(.flexible(), spacing: 8),
-        GridItem(.flexible(), spacing: 8),
-        GridItem(.flexible(), spacing: 8)
+        GridItem(.flexible(), spacing: 12),
+        GridItem(.flexible(), spacing: 12)
     ]
     
     var body: some View {
