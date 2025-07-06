@@ -156,6 +156,10 @@ struct DailyWeatherCard: View {
             return String(localized: "weather_monthly_average")
         }
         
+        if condition == "weather_historical_monthly_average" {
+            return String(localized: "weather_historical_monthly_average")
+        }
+        
         // Handle monthly average conditions (e.g., "Clear_monthly_average")
         if condition.hasSuffix("_monthly_average") {
             let baseCondition = String(condition.dropLast("_monthly_average".count))

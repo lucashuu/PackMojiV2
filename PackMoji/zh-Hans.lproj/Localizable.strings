@@ -177,6 +177,7 @@
 "weather_historical_average" = "历史平均";
 "weather_monthly_average_suffix" = " (月平均)";
 "weather_monthly_average" = "历史月平均";
+"weather_historical_monthly_average" = "历史天气月平均";
 
 // MARK: - Emoji Picker
 "emoji_picker_title" = "选择表情";

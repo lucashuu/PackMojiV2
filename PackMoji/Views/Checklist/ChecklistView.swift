@@ -657,6 +657,10 @@ struct MonthlyAverageCard: View {
             return String(localized: "weather_monthly_average")
         }
         
+        if condition == "weather_historical_monthly_average" {
+            return String(localized: "weather_historical_monthly_average")
+        }
+        
         // Check for Chinese weather conditions and return localized versions
         if condition.contains("晴") {
             return String(localized: "weather_sunny")
@@ -760,8 +764,8 @@ struct ChecklistView_Previews: PreviewProvider {
             ],
             isHistorical: true,
             monthlyAverages: [
-                MonthlyAverage(monthName: "1月", temperature: 15, condition: "多云", conditionCode: "clouds", icon: "03d"),
-                MonthlyAverage(monthName: "2月", temperature: 12, condition: "小雨", conditionCode: "rain", icon: "09d")
+                MonthlyAverage(monthName: "1月", temperature: 15, condition: "weather_historical_monthly_average", conditionCode: "clouds", icon: "03d"),
+                MonthlyAverage(monthName: "2月", temperature: 12, condition: "weather_historical_monthly_average", conditionCode: "rain", icon: "09d")
             ]
         )
         

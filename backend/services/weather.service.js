@@ -143,7 +143,7 @@ const getWeatherData = async (destination, startDate, endDate, lang = 'en') => {
                     monthlyAverages.push({
                         monthName: month.name,
                         temperature: 20,
-                        condition: "weather_monthly_average",
+                        condition: "weather_historical_monthly_average",
                         conditionCode: "clouds",
                         icon: "02d"
                     });
@@ -238,7 +238,7 @@ const getHistoricalMonthlyAverage = async (lat, lon, dayDate, language) => {
             date: dayDate.toISOString().split('T')[0],
             dayOfWeek: dayOfWeek,
             temperature: historicalData.averageTemp,
-            condition: `${historicalData.condition}_monthly_average`,
+            condition: "weather_historical_monthly_average",
             conditionCode: historicalData.conditionCode,
             icon: mapWeatherCodeToIcon(0), // Use default icon for averages
             dataSource: 'historical'
@@ -249,7 +249,7 @@ const getHistoricalMonthlyAverage = async (lat, lon, dayDate, language) => {
             date: dayDate.toISOString().split('T')[0],
             dayOfWeek: dayOfWeek,
             temperature: 20,
-            condition: "weather_monthly_average",
+            condition: "weather_historical_monthly_average",
             conditionCode: "clouds",
             icon: "02d",
             dataSource: 'historical'
@@ -456,7 +456,7 @@ async function getMonthlyAverageData(lat, lon, month, language) {
         return {
             monthName: month.name,
             temperature: 20,
-            condition: "weather_monthly_average",
+            condition: "weather_historical_monthly_average",
             conditionCode: "clouds",
             icon: "02d"
         };
