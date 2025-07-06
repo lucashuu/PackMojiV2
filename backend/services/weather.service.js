@@ -127,6 +127,30 @@ const getWeatherData = async (destination, startDate, endDate, lang = 'en') => {
         console.log(`📈 Weather Summary: ${averageTemp}°C, ${dominantCondition}`);
         console.log(`📊 Data composition: ${forecastDays} forecast days, ${historicalDays} historical days`);
 
+        // 8. Generate monthly averages for historical data
+        let monthlyAverages = [];
+        if (historicalDays > 0) {
+            const monthsInTrip = getMonthsInTrip(tripStart, tripEnd);
+            console.log(`📅 Trip spans ${monthsInTrip.length} months:`, monthsInTrip.map(m => m.name));
+            
+            for (const month of monthsInTrip) {
+                try {
+                    const monthlyData = await getMonthlyAverageData(lat, lon, month, language);
+                    monthlyAverages.push(monthlyData);
+                    console.log(`📊 Monthly average for ${month.name}: ${monthlyData.temperature}°C, ${monthlyData.condition}`);
+                } catch (error) {
+                    console.warn(`Unable to fetch monthly average for ${month.name}, using fallback`);
+                    monthlyAverages.push({
+                        monthName: month.name,
+                        temperature: 20,
+                        condition: "weather_monthly_average",
+                        conditionCode: "clouds",
+                        icon: "02d"
+                    });
+                }
+            }
+        }
+
         return {
             averageTemp,
             condition: dominantCondition,
@@ -135,7 +159,8 @@ const getWeatherData = async (destination, startDate, endDate, lang = 'en') => {
             isHistorical: historicalDays > 0,
             isMixedData: isMixedData,
             forecastDays: forecastDays,
-            historicalDays: historicalDays
+            historicalDays: historicalDays,
+            monthlyAverages: monthlyAverages
         };
 
     } catch (error) {
@@ -213,7 +238,7 @@ const getHistoricalMonthlyAverage = async (lat, lon, dayDate, language) => {
             date: dayDate.toISOString().split('T')[0],
             dayOfWeek: dayOfWeek,
             temperature: historicalData.averageTemp,
-            condition: `${historicalData.condition} (月平均)`,
+            condition: `${historicalData.condition}_monthly_average`,
             conditionCode: historicalData.conditionCode,
             icon: mapWeatherCodeToIcon(0), // Use default icon for averages
             dataSource: 'historical'
@@ -224,7 +249,7 @@ const getHistoricalMonthlyAverage = async (lat, lon, dayDate, language) => {
             date: dayDate.toISOString().split('T')[0],
             dayOfWeek: dayOfWeek,
             temperature: 20,
-            condition: "历史月平均",
+            condition: "weather_monthly_average",
             conditionCode: "clouds",
             icon: "02d",
             dataSource: 'historical'
@@ -371,6 +396,71 @@ function generateMockDailyWeather(startDate, endDate) {
     }
     
     return days;
+}
+
+// Helper function to get months spanned by a trip
+function getMonthsInTrip(startDate, endDate) {
+    const months = [];
+    const current = new Date(startDate);
+    
+    while (current <= endDate) {
+        const monthIndex = current.getMonth();
+        const year = current.getFullYear();
+        const monthName = getMonthName(monthIndex);
+        
+        // Check if this month is already added
+        if (!months.find(m => m.month === monthIndex && m.year === year)) {
+            months.push({
+                month: monthIndex,
+                year: year,
+                name: monthName
+            });
+        }
+        
+        // Move to next month
+        current.setMonth(current.getMonth() + 1, 1);
+    }
+    
+    return months;
+}
+
+// Helper function to get month name
+function getMonthName(monthIndex) {
+    const months = [
+        '1月', '2月', '3月', '4月', '5月', '6月',
+        '7月', '8月', '9月', '10月', '11月', '12月'
+    ];
+    return months[monthIndex];
+}
+
+// Get monthly average data for a specific month
+async function getMonthlyAverageData(lat, lon, month, language) {
+    const startDate = new Date(month.year - 1, month.month, 1);
+    const endDate = new Date(month.year - 1, month.month + 1, 0);
+    
+    const startDateStr = startDate.toISOString().split('T')[0];
+    const endDateStr = endDate.toISOString().split('T')[0];
+    
+    try {
+        const historicalData = await getHistoricalWeatherData(lat, lon, startDateStr, endDateStr, language);
+        
+        return {
+            monthName: month.name,
+            temperature: historicalData.averageTemp,
+            condition: historicalData.condition,
+            conditionCode: historicalData.conditionCode,
+            icon: mapWeatherCodeToIcon(0) // Use default icon for monthly averages
+        };
+    } catch (error) {
+        console.warn(`Unable to fetch monthly average for ${month.name}:`, error.message);
+        return {
+            monthName: month.name,
+            temperature: 20,
+            condition: "weather_monthly_average",
+            conditionCode: "clouds",
+            icon: "02d"
+        };
+    }
 }
 
 module.exports = {

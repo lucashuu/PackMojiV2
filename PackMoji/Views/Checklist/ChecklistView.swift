@@ -73,12 +73,27 @@ struct ChecklistView: View {
                         DailyWeatherView(dailyWeather: viewModel.tripInfo.dailyWeather, useFahrenheit: useFahrenheit)
                     }
                 } else if viewModel.tripInfo.isHistorical {
-                    VStack(alignment: .leading, spacing: 4) {
+                    VStack(alignment: .leading, spacing: 12) {
                         Text("checklist_historical_weather_title")
                             .font(.system(size: 17, weight: .bold))
                         Text("checklist_historical_weather_summary")
                             .font(.caption)
                             .foregroundColor(.secondary)
+                        
+                        // Monthly average cards
+                        if let monthlyAverages = viewModel.tripInfo.monthlyAverages, !monthlyAverages.isEmpty {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("weather_monthly_average")
+                                    .font(.system(size: 15, weight: .medium))
+                                    .foregroundColor(.secondary)
+                                
+                                HStack(spacing: 12) {
+                                    ForEach(monthlyAverages) { monthlyAverage in
+                                        MonthlyAverageCard(monthlyAverage: monthlyAverage, useFahrenheit: useFahrenheit)
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -622,6 +637,75 @@ struct EmptyChecklistView: View {
     }
 }
 
+struct MonthlyAverageCard: View {
+    let monthlyAverage: MonthlyAverage
+    let useFahrenheit: Bool
+    
+    private var displayTemperature: String {
+        if useFahrenheit {
+            let fahrenheit = Int(Double(monthlyAverage.temperature) * 9.0 / 5.0 + 32)
+            return "\(fahrenheit)°F"
+        } else {
+            return "\(monthlyAverage.temperature)°C"
+        }
+    }
+    
+    private var localizedCondition: String {
+        let condition = monthlyAverage.condition
+        
+        if condition == "weather_monthly_average" {
+            return String(localized: "weather_monthly_average")
+        }
+        
+        // Check for Chinese weather conditions and return localized versions
+        if condition.contains("晴") {
+            return String(localized: "weather_sunny")
+        } else if condition.contains("多云") {
+            return String(localized: "weather_cloudy")
+        } else if condition.contains("雨") {
+            return String(localized: "weather_rainy")
+        } else if condition.contains("雪") {
+            return String(localized: "weather_snowy")
+        } else if condition.contains("雾") {
+            return String(localized: "weather_foggy")
+        } else if condition.contains("雷") {
+            return String(localized: "weather_stormy")
+        } else {
+            return condition
+        }
+    }
+    
+    var body: some View {
+        VStack(spacing: 8) {
+            Text(monthlyAverage.monthName)
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.primary)
+            
+            WeatherIconView(
+                conditionCode: monthlyAverage.conditionCode,
+                icon: monthlyAverage.icon,
+                size: 24
+            )
+            
+            Text(displayTemperature)
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundColor(.primary)
+            
+            Text(localizedCondition)
+                .font(.system(size: 10))
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+        }
+        .frame(width: 80, height: 100)
+        .padding(.vertical, 8)
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color(.secondarySystemBackground))
+        )
+    }
+}
+
 struct ChecklistView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
@@ -636,7 +720,8 @@ struct ChecklistView_Previews: PreviewProvider {
                     DailyWeather(date: "2024-01-18", dayOfWeek: "周四", temperature: 20, condition: "晴天", conditionCode: "clear", icon: "01d", dataSource: "forecast"),
                     DailyWeather(date: "2024-01-19", dayOfWeek: "周五", temperature: 16, condition: "多云", conditionCode: "clouds", icon: "03d", dataSource: "forecast")
                 ],
-                isHistorical: false
+                isHistorical: false,
+                monthlyAverages: nil
             )
             
             let mockCategories = [
@@ -673,7 +758,11 @@ struct ChecklistView_Previews: PreviewProvider {
                 DailyWeather(date: "2024-01-20", dayOfWeek: "周六", temperature: 11, condition: "小雨", conditionCode: "rain", icon: "09d", dataSource: "historical"),
                 DailyWeather(date: "2024-01-21", dayOfWeek: "周日", temperature: 17, condition: "多云", conditionCode: "clouds", icon: "04d", dataSource: "historical")
             ],
-            isHistorical: true
+            isHistorical: true,
+            monthlyAverages: [
+                MonthlyAverage(monthName: "1月", temperature: 15, condition: "多云", conditionCode: "clouds", icon: "03d"),
+                MonthlyAverage(monthName: "2月", temperature: 12, condition: "小雨", conditionCode: "rain", icon: "09d")
+            ]
         )
         
         let mockCategories = [

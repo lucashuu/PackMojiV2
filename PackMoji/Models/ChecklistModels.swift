@@ -16,6 +16,7 @@ struct TripInfo: Codable, Equatable {
     var isMixedData: Bool?
     var forecastDays: Int?
     var historicalDays: Int?
+    var monthlyAverages: [MonthlyAverage]?
 }
 
 struct DailyWeather: Codable, Identifiable, Equatable {
@@ -27,6 +28,15 @@ struct DailyWeather: Codable, Identifiable, Equatable {
     let conditionCode: String
     let icon: String
     let dataSource: String? // "forecast" or "historical"
+}
+
+struct MonthlyAverage: Codable, Identifiable, Equatable {
+    var id: String { monthName }
+    let monthName: String
+    let temperature: Int
+    let condition: String
+    let conditionCode: String
+    let icon: String
 }
 
 struct ChecklistCategory: Codable, Equatable, Identifiable {

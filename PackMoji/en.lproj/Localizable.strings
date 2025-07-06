@@ -175,6 +175,8 @@
 "weather_stormy" = "Stormy";
 "weather_historical_suffix" = " (Last Year)";
 "weather_historical_average" = "Historical Average";
+"weather_monthly_average_suffix" = " (Monthly Avg)";
+"weather_monthly_average" = "Monthly Average";
 
 // MARK: - Emoji Picker
 "emoji_picker_title" = "Select Emoji";

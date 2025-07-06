@@ -152,6 +152,17 @@ struct DailyWeatherCard: View {
             return String(localized: "weather_historical_average")
         }
         
+        if condition == "weather_monthly_average" {
+            return String(localized: "weather_monthly_average")
+        }
+        
+        // Handle monthly average conditions (e.g., "Clear_monthly_average")
+        if condition.hasSuffix("_monthly_average") {
+            let baseCondition = String(condition.dropLast("_monthly_average".count))
+            let localizedBase = getLocalizedWeatherCondition(baseCondition)
+            return localizedBase + String(localized: "weather_monthly_average_suffix")
+        }
+        
         // For historical data, add suffix to localized weather conditions
         var localizedCondition: String
         
@@ -173,11 +184,30 @@ struct DailyWeatherCard: View {
         }
         
         // Add historical suffix for historical data
-        if day.dataSource == "historical" && condition != "historical_average" {
+        if day.dataSource == "historical" && condition != "historical_average" && !condition.hasSuffix("_monthly_average") {
             localizedCondition += String(localized: "weather_historical_suffix")
         }
         
         return localizedCondition
+    }
+    
+    private func getLocalizedWeatherCondition(_ condition: String) -> String {
+        switch condition.lowercased() {
+        case "clear", "sunny":
+            return String(localized: "weather_sunny")
+        case "cloudy", "overcast":
+            return String(localized: "weather_cloudy")
+        case "rain", "rainy":
+            return String(localized: "weather_rainy")
+        case "snow", "snowy":
+            return String(localized: "weather_snowy")
+        case "fog", "foggy":
+            return String(localized: "weather_foggy")
+        case "storm", "stormy":
+            return String(localized: "weather_stormy")
+        default:
+            return condition
+        }
     }
 }
 
