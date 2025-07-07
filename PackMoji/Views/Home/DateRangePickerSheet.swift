@@ -22,7 +22,7 @@ class RangeHighlightMonthlyDataSource: MonthlyCalendarDataSource, ObservableObje
     
     func calendar(backgroundColorOpacityForDate date: Date) -> Double {
         if let range = range, range.contains(date) {
-            return 0.3 // 设置选中日期范围的背景透明度
+            return 0.25 // 减少背景透明度，避免过于显眼
         }
         return 0.0
     }
@@ -36,28 +36,18 @@ class RangeHighlightMonthlyDataSource: MonthlyCalendarDataSource, ObservableObje
             let calendar = Calendar.current
             let isStart = calendar.isDate(date, inSameDayAs: range.lowerBound)
             let isEnd = calendar.isDate(date, inSameDayAs: range.upperBound)
-            let isInRange = range.contains(date)
             
-            if isStart || isEnd || isInRange {
+            // 只为起始和结束日期添加简单的圆形标记
+            if isStart || isEnd {
                 return AnyView(
                     ZStack {
-                        // 范围内的背景
-                        if isInRange {
-                            RoundedRectangle(cornerRadius: isStart || isEnd ? 8 : 0)
-                                .fill(Color.accentColor.opacity(0.2))
-                        }
+                        Circle()
+                            .fill(Color.accentColor)
+                            .frame(width: min(size.width * 0.7, 24), height: min(size.height * 0.7, 24))
                         
-                        // 起始和结束日期的特殊标记
-                        if isStart || isEnd {
-                            Circle()
-                                .fill(Color.accentColor)
-                                .frame(width: min(size.width * 0.8, 28), height: min(size.height * 0.8, 28))
-                        }
-                        
-                        // 日期文字
                         Text("\(calendar.component(.day, from: date))")
-                            .font(.system(size: min(size.width * 0.4, 14), weight: .medium))
-                            .foregroundColor(isStart || isEnd ? .white : .primary)
+                            .font(.system(size: min(size.width * 0.35, 12), weight: .medium))
+                            .foregroundColor(.white)
                     }
                 )
             }
@@ -89,12 +79,13 @@ struct DateRangePickerSheet: View {
         self._endDate = endDate
         let calendarStart = Date().addingTimeInterval(-60*60*24*365)
         let calendarEnd = Date().addingTimeInterval(60*60*24*365)
-        self.leftManager = MonthlyCalendarManager(
-            configuration: CalendarConfiguration(startDate: calendarStart, endDate: calendarEnd)
-        )
-        self.rightManager = MonthlyCalendarManager(
-            configuration: CalendarConfiguration(startDate: calendarStart, endDate: calendarEnd)
-        )
+        
+        // 创建自定义配置，减少视觉干扰
+        let configuration = CalendarConfiguration(startDate: calendarStart, endDate: calendarEnd)
+        
+        self.leftManager = MonthlyCalendarManager(configuration: configuration)
+        self.rightManager = MonthlyCalendarManager(configuration: configuration)
+        
         self.leftManager.datasource = leftDataSource
         self.rightManager.datasource = rightDataSource
     }
@@ -105,8 +96,12 @@ struct DateRangePickerSheet: View {
                 HStack(spacing: 8) {
                     MonthlyCalendarView(calendarManager: leftManager)
                         .frame(maxWidth: .infinity)
+                        .allowsHitTesting(true)
+                        .clipped()
                     MonthlyCalendarView(calendarManager: rightManager)
                         .frame(maxWidth: .infinity)
+                        .allowsHitTesting(true)
+                        .clipped()
                 }
                 HStack {
                     Button("date_picker_previous_month") {
@@ -240,6 +235,12 @@ struct DateRangePickerSheet: View {
     private func handleDateSelection(_ date: Date) {
         let selectedDate = date.startOfDay()
         
+        // 立即清除任何默认的选择效果
+        DispatchQueue.main.async {
+            self.leftManager.selectedDate = nil
+            self.rightManager.selectedDate = nil
+        }
+        
         // 清除之前的高亮
         clearHighlight()
         
@@ -265,8 +266,16 @@ struct DateRangePickerSheet: View {
     private func clearHighlight() {
         leftDataSource.range = nil
         rightDataSource.range = nil
-        leftDataSource.objectWillChange.send()
-        rightDataSource.objectWillChange.send()
+        
+        // 强制刷新数据源
+        DispatchQueue.main.async {
+            self.leftDataSource.objectWillChange.send()
+            self.rightDataSource.objectWillChange.send()
+            
+            // 清除日历管理器的选择状态
+            self.leftManager.selectedDate = nil
+            self.rightManager.selectedDate = nil
+        }
     }
     
     private func updateHighlight() {
