@@ -13,6 +13,9 @@ struct ChecklistView: View {
     @State private var templateDescription = ""
     @State private var selectedActivities: Set<String> = []
     @State private var useFahrenheit = false
+    @State private var isSelectionMode = false
+    @State private var selectedItems: Set<String> = []
+    @State private var showDeleteConfirmation = false
     
     var filteredCategories: [ChecklistCategory] {
         if searchText.isEmpty {
@@ -77,8 +80,11 @@ struct ChecklistView: View {
                         Text("checklist_historical_weather_title")
                             .font(.system(size: 17, weight: .bold))
                         Text("checklist_historical_weather_summary")
-                            .font(.caption)
+                            .font(.footnote)
                             .foregroundColor(.secondary)
+                            .lineLimit(nil)
+                            .multilineTextAlignment(.leading)
+                            .fixedSize(horizontal: false, vertical: true)
                         
                         // Monthly average cards
                         if let monthlyAverages = viewModel.tripInfo.monthlyAverages, !monthlyAverages.isEmpty {
@@ -98,7 +104,6 @@ struct ChecklistView: View {
                 }
             }
             .padding()
-            .listRowBackground(Color(UIColor.systemBackground))
             .listRowSeparator(.hidden)
             
             if filteredCategories.isEmpty && !searchText.isEmpty {
@@ -116,11 +121,36 @@ struct ChecklistView: View {
                 ForEach(Array(filteredCategories.enumerated()), id: \.element.id) { categoryIndex, category in
                     Section {
                         ForEach(Array(category.items.enumerated()), id: \.element.id) { itemIndex, item in
-                            ChecklistItemRow(item: item, isChecked: viewModel.isChecked(item: item), categoryIndex: categoryIndex, viewModel: viewModel) {
-                                viewModel.toggleCheck(item: item)
+                            ChecklistItemRow(
+                                item: item, 
+                                isChecked: viewModel.isChecked(item: item), 
+                                categoryIndex: categoryIndex, 
+                                viewModel: viewModel,
+                                isSelectionMode: isSelectionMode,
+                                isSelected: selectedItems.contains(item.id)
+                            ) {
+                                if isSelectionMode {
+                                    if selectedItems.contains(item.id) {
+                                        selectedItems.remove(item.id)
+                                    } else {
+                                        selectedItems.insert(item.id)
+                                    }
+                                } else {
+                                    viewModel.toggleCheck(item: item)
+                                }
                             } onDelete: {
                                 viewModel.deleteItem(at: IndexSet(integer: itemIndex), from: categoryIndex)
                             }
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                Button(role: .destructive) {
+                                    viewModel.deleteItem(at: IndexSet(integer: itemIndex), from: categoryIndex)
+                                } label: {
+                                    Label("delete", systemImage: "trash")
+                                }
+                            }
+                        }
+                        .onDelete { indexSet in
+                            viewModel.deleteItem(at: indexSet, from: categoryIndex)
                         }
                     } header: {
                         CategoryHeaderView(category: category, viewModel: viewModel, categoryIndex: categoryIndex)
@@ -134,27 +164,56 @@ struct ChecklistView: View {
         .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $searchText, isPresented: $showSearch, prompt: Text("search_placeholder"))
         .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                if isSelectionMode {
+                    Button("cancel") {
+                        isSelectionMode = false
+                        selectedItems.removeAll()
+                    }
+                }
+            }
+            
             ToolbarItem(placement: .navigationBarTrailing) {
                 HStack(spacing: 8) {
-                    Button {
-                        showSearch.toggle()
-                    } label: {
-                        Image(systemName: "magnifyingglass")
-                            .font(.system(size: 17))
-                    }
-                    
-                    Button {
-                        showAddCategory = true
-                    } label: {
-                        Image(systemName: "plus.circle")
-                            .font(.system(size: 17))
-                    }
-                    
-                    Button {
-                        showSaveTemplate = true
-                    } label: {
-                        Image(systemName: "doc.badge.plus")
-                            .font(.system(size: 17))
+                    if isSelectionMode {
+                        Button {
+                            if !selectedItems.isEmpty {
+                                showDeleteConfirmation = true
+                            }
+                        } label: {
+                            Image(systemName: "trash")
+                                .font(.system(size: 17))
+                                .foregroundColor(selectedItems.isEmpty ? .gray : .red)
+                        }
+                        .disabled(selectedItems.isEmpty)
+                    } else {
+                        Button {
+                            showSearch.toggle()
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                                .font(.system(size: 17))
+                        }
+                        
+                        Button {
+                            isSelectionMode = true
+                        } label: {
+                            Image(systemName: "checkmark.circle")
+                                .font(.system(size: 17))
+                        }
+                        
+                        Button {
+                            showAddCategory = true
+                        } label: {
+                            Image(systemName: "plus.circle")
+                                .font(.system(size: 17))
+                        }
+                        
+                        Button {
+                            showSaveTemplate = true
+                        } label: {
+                            Image(systemName: "doc.badge.plus")
+                                .font(.system(size: 17))
+                        }
                     }
                 }
             }
@@ -292,6 +351,40 @@ struct ChecklistView: View {
             }
             .presentationDetents([.medium])
         }
+        .alert("confirm_delete_title", isPresented: $showDeleteConfirmation) {
+            Button("cancel", role: .cancel) { }
+            Button("delete", role: .destructive) {
+                deleteSelectedItems()
+            }
+        } message: {
+            Text(String(format: NSLocalizedString("confirm_delete_items", comment: ""), selectedItems.count))
+        }
+    }
+    
+    private func deleteSelectedItems() {
+        // 按分类组织要删除的items
+        var itemsToDelete: [Int: [String]] = [:]
+        
+        for categoryIndex in filteredCategories.indices {
+            let category = filteredCategories[categoryIndex]
+            let itemIdsToDelete = category.items.filter { selectedItems.contains($0.id) }.map { $0.id }
+            if !itemIdsToDelete.isEmpty {
+                itemsToDelete[categoryIndex] = itemIdsToDelete
+            }
+        }
+        
+        // 执行删除
+        for (categoryIndex, itemIds) in itemsToDelete {
+            let category = filteredCategories[categoryIndex]
+            let indices = IndexSet(category.items.enumerated().compactMap { index, item in
+                itemIds.contains(item.id) ? index : nil
+            })
+            viewModel.deleteItem(at: indices, from: categoryIndex)
+        }
+        
+        // 清理选择状态
+        selectedItems.removeAll()
+        isSelectionMode = false
     }
     
     private func resetTemplateForm() {
@@ -301,25 +394,81 @@ struct ChecklistView: View {
     }
     
     private func convertTemperatureInText(_ text: String) -> String {
+        // First, handle localization of weather condition keys
+        var result = localizeWeatherConditionsInText(text)
+        
+        // Then, handle temperature conversion if needed
         if !useFahrenheit {
-            return text
+            return result
         }
         
         // 使用正则表达式匹配温度数字
         let pattern = #"(-?\d+)(?:°C|°)"#
         let regex = try? NSRegularExpression(pattern: pattern, options: [])
-        let range = NSRange(location: 0, length: text.utf16.count)
+        let range = NSRange(location: 0, length: result.utf16.count)
         
-        var result = text
-        regex?.enumerateMatches(in: text, options: [], range: range) { match, _, _ in
+        regex?.enumerateMatches(in: result, options: [], range: range) { match, _, _ in
             guard let match = match,
-                  let tempRange = Range(match.range(at: 1), in: text),
-                  let celsius = Int(text[tempRange]) else { return }
+                  let tempRange = Range(match.range(at: 1), in: result),
+                  let celsius = Int(result[tempRange]) else { return }
             
             let fahrenheit = Int(Double(celsius) * 9.0 / 5.0 + 32)
-            let originalTemp = String(text[Range(match.range, in: text)!])
+            let originalTemp = String(result[Range(match.range, in: result)!])
             let newTemp = "\(fahrenheit)°F"
             result = result.replacingOccurrences(of: originalTemp, with: newTemp)
+        }
+        
+        return result
+    }
+    
+    private func localizeWeatherConditionsInText(_ text: String) -> String {
+        var result = text
+        
+        // Handle specific weather localization keys
+        if result.contains("weather_historical_monthly_average") {
+            let localizedCondition = NSLocalizedString("weather_historical_monthly_average", comment: "Historical monthly average weather")
+            result = result.replacingOccurrences(of: "weather_historical_monthly_average", with: localizedCondition)
+        }
+        
+        if result.contains("weather_monthly_average") {
+            let localizedCondition = NSLocalizedString("weather_monthly_average", comment: "Monthly average weather")
+            result = result.replacingOccurrences(of: "weather_monthly_average", with: localizedCondition)
+        }
+        
+        if result.contains("historical_average") {
+            let localizedCondition = NSLocalizedString("weather_historical_average", comment: "Historical average weather")
+            result = result.replacingOccurrences(of: "historical_average", with: localizedCondition)
+        }
+        
+        // Handle Chinese weather conditions
+        if result.contains("晴") {
+            let localizedCondition = NSLocalizedString("weather_sunny", comment: "Sunny weather")
+            result = result.replacingOccurrences(of: "晴", with: localizedCondition)
+        }
+        
+        if result.contains("多云") {
+            let localizedCondition = NSLocalizedString("weather_cloudy", comment: "Cloudy weather")
+            result = result.replacingOccurrences(of: "多云", with: localizedCondition)
+        }
+        
+        if result.contains("雨") {
+            let localizedCondition = NSLocalizedString("weather_rainy", comment: "Rainy weather")
+            result = result.replacingOccurrences(of: "雨", with: localizedCondition)
+        }
+        
+        if result.contains("雪") {
+            let localizedCondition = NSLocalizedString("weather_snowy", comment: "Snowy weather")
+            result = result.replacingOccurrences(of: "雪", with: localizedCondition)
+        }
+        
+        if result.contains("雾") {
+            let localizedCondition = NSLocalizedString("weather_foggy", comment: "Foggy weather")
+            result = result.replacingOccurrences(of: "雾", with: localizedCondition)
+        }
+        
+        if result.contains("雷") {
+            let localizedCondition = NSLocalizedString("weather_stormy", comment: "Stormy weather")
+            result = result.replacingOccurrences(of: "雷", with: localizedCondition)
         }
         
         return result
@@ -420,6 +569,8 @@ struct ChecklistItemRow: View {
     let isChecked: Bool
     let categoryIndex: Int
     @ObservedObject var viewModel: ChecklistViewModel
+    let isSelectionMode: Bool
+    let isSelected: Bool
     let onToggle: () -> Void
     let onDelete: () -> Void
     @State private var isEditing = false
@@ -433,11 +584,17 @@ struct ChecklistItemRow: View {
         VStack(alignment: .leading, spacing: 4) {
             // Main Item Row
             HStack(spacing: 12) {
-                // Checkbox
+                // Checkbox or Selection Circle
                 Button(action: onToggle) {
-                    Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
-                        .foregroundColor(isChecked ? .green : .accentColor)
-                        .font(.system(size: 20))
+                    if isSelectionMode {
+                        Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
+                            .foregroundColor(isSelected ? .accentColor : .gray)
+                            .font(.system(size: 20))
+                    } else {
+                        Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
+                            .foregroundColor(isChecked ? .green : .accentColor)
+                            .font(.system(size: 20))
+                    }
                 }
                 .buttonStyle(PlainButtonStyle())
                 
@@ -468,7 +625,7 @@ struct ChecklistItemRow: View {
                 
                 // Quantity
                 Button(action: { showQuantityEditor = true }) {
-                    Text("x\(item.quantity)")
+                    Text("\(NSLocalizedString("item_quantity_prefix", comment: ""))\(item.quantity)")
                         .font(.system(size: 15))
                         .foregroundColor(.secondary)
                         .padding(.horizontal, 8)
@@ -490,14 +647,16 @@ struct ChecklistItemRow: View {
                 }
                 .buttonStyle(.plain)
                 
-                // Delete Button
-                Button(action: onDelete) {
-                    Image(systemName: "minus.circle.fill")
-                        .foregroundColor(.red)
-                        .font(.system(size: 18))
-                        .frame(width: 32, height: 32)
+                // Delete Button (hidden in selection mode)
+                if !isSelectionMode {
+                    Button(action: onDelete) {
+                        Image(systemName: "minus.circle.fill")
+                            .foregroundColor(.red)
+                            .font(.system(size: 18))
+                            .frame(width: 32, height: 32)
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
             }
             
             // Note Display (if exists)
@@ -653,28 +812,42 @@ struct MonthlyAverageCard: View {
     private var localizedCondition: String {
         let condition = monthlyAverage.condition
         
+        // Debug logging
+        print("🌤️ MonthlyAverageCard - Original condition: '\(condition)'")
+        
         if condition == "weather_monthly_average" {
-            return String(localized: "weather_monthly_average")
+            print("🌤️ MonthlyAverageCard - Matched weather_monthly_average")
+            return NSLocalizedString("weather_monthly_average", comment: "Monthly average weather")
         }
         
         if condition == "weather_historical_monthly_average" {
-            return String(localized: "weather_historical_monthly_average")
+            print("🌤️ MonthlyAverageCard - Matched weather_historical_monthly_average")
+            let localized = NSLocalizedString("weather_historical_monthly_average", comment: "Historical monthly average weather")
+            print("🌤️ MonthlyAverageCard - Localized result: '\(localized)'")
+            return localized
         }
         
         // Check for Chinese weather conditions and return localized versions
         if condition.contains("晴") {
-            return String(localized: "weather_sunny")
+            print("🌤️ MonthlyAverageCard - Matched 晴")
+            return NSLocalizedString("weather_sunny", comment: "Sunny weather")
         } else if condition.contains("多云") {
-            return String(localized: "weather_cloudy")
+            print("🌤️ MonthlyAverageCard - Matched 多云")
+            return NSLocalizedString("weather_cloudy", comment: "Cloudy weather")
         } else if condition.contains("雨") {
-            return String(localized: "weather_rainy")
+            print("🌤️ MonthlyAverageCard - Matched 雨")
+            return NSLocalizedString("weather_rainy", comment: "Rainy weather")
         } else if condition.contains("雪") {
-            return String(localized: "weather_snowy")
+            print("🌤️ MonthlyAverageCard - Matched 雪")
+            return NSLocalizedString("weather_snowy", comment: "Snowy weather")
         } else if condition.contains("雾") {
-            return String(localized: "weather_foggy")
+            print("🌤️ MonthlyAverageCard - Matched 雾")
+            return NSLocalizedString("weather_foggy", comment: "Foggy weather")
         } else if condition.contains("雷") {
-            return String(localized: "weather_stormy")
+            print("🌤️ MonthlyAverageCard - Matched 雷")
+            return NSLocalizedString("weather_stormy", comment: "Stormy weather")
         } else {
+            print("🌤️ MonthlyAverageCard - No match found, returning original condition")
             return condition
         }
     }

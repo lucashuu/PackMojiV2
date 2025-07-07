@@ -96,7 +96,6 @@ struct TemplateDetailView: View {
                 }
             }
             .padding()
-            .listRowBackground(Color(UIColor.systemBackground))
             .listRowSeparator(.hidden)
             
             if filteredCategories.isEmpty && !searchText.isEmpty {

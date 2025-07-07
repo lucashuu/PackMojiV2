@@ -1,17 +1,69 @@
 import SwiftUI
 import ElegantCalendar
 
+// Date 扩展
+extension Date {
+    func startOfDay() -> Date {
+        return Calendar.current.startOfDay(for: self)
+    }
+}
+
+// Calendar 扩展
+extension Calendar {
+    func startOfMonth(for date: Date) -> Date {
+        let components = dateComponents([.year, .month], from: date)
+        return self.date(from: components) ?? date
+    }
+}
+
 // 区间高亮数据源
 class RangeHighlightMonthlyDataSource: MonthlyCalendarDataSource, ObservableObject {
     var range: ClosedRange<Date>?
+    
     func calendar(backgroundColorOpacityForDate date: Date) -> Double {
         if let range = range, range.contains(date) {
-            return 1.0
+            return 0.3 // 设置选中日期范围的背景透明度
         }
         return 0.0
     }
-    func calendar(canSelectDate date: Date) -> Bool { true }
-    func calendar(viewForSelectedDate date: Date, dimensions size: CGSize) -> AnyView { AnyView(EmptyView()) }
+    
+    func calendar(canSelectDate date: Date) -> Bool { 
+        return date >= Date().startOfDay() // 只允许选择今天及以后的日期
+    }
+    
+    func calendar(viewForSelectedDate date: Date, dimensions size: CGSize) -> AnyView {
+        if let range = range {
+            let calendar = Calendar.current
+            let isStart = calendar.isDate(date, inSameDayAs: range.lowerBound)
+            let isEnd = calendar.isDate(date, inSameDayAs: range.upperBound)
+            let isInRange = range.contains(date)
+            
+            if isStart || isEnd || isInRange {
+                return AnyView(
+                    ZStack {
+                        // 范围内的背景
+                        if isInRange {
+                            RoundedRectangle(cornerRadius: isStart || isEnd ? 8 : 0)
+                                .fill(Color.accentColor.opacity(0.2))
+                        }
+                        
+                        // 起始和结束日期的特殊标记
+                        if isStart || isEnd {
+                            Circle()
+                                .fill(Color.accentColor)
+                                .frame(width: min(size.width * 0.8, 28), height: min(size.height * 0.8, 28))
+                        }
+                        
+                        // 日期文字
+                        Text("\(calendar.component(.day, from: date))")
+                            .font(.system(size: min(size.width * 0.4, 14), weight: .medium))
+                            .foregroundColor(isStart || isEnd ? .white : .primary)
+                    }
+                )
+            }
+        }
+        return AnyView(EmptyView())
+    }
 }
 
 struct DateRangePickerSheet: View {
@@ -58,12 +110,33 @@ struct DateRangePickerSheet: View {
                 }
                 HStack {
                     Button("date_picker_previous_month") {
-                        leftMonth = calendar.date(byAdding: .month, value: -1, to: leftMonth) ?? leftMonth
-                        rightMonth = calendar.date(byAdding: .month, value: -1, to: rightMonth) ?? rightMonth
-                        leftManager.scrollToMonth(leftMonth)
-                        rightManager.scrollToMonth(rightMonth)
+                        let newLeftMonth = calendar.date(byAdding: .month, value: -1, to: leftMonth) ?? leftMonth
+                        let newRightMonth = calendar.date(byAdding: .month, value: -1, to: rightMonth) ?? rightMonth
+                        
+                        // 确保不会导航到今天之前的月份
+                        let today = Date().startOfDay()
+                        if newLeftMonth >= calendar.startOfMonth(for: today) {
+                            leftMonth = newLeftMonth
+                            rightMonth = newRightMonth
+                            leftManager.scrollToMonth(leftMonth)
+                            rightManager.scrollToMonth(rightMonth)
+                        }
                     }
+                    
                     Spacer()
+                    
+                    // 显示当前月份
+                    VStack(spacing: 2) {
+                        Text(formatMonth(leftMonth))
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        Text(formatMonth(rightMonth))
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    
+                    Spacer()
+                    
                     Button("date_picker_next_month") {
                         leftMonth = calendar.date(byAdding: .month, value: 1, to: leftMonth) ?? leftMonth
                         rightMonth = calendar.date(byAdding: .month, value: 1, to: rightMonth) ?? rightMonth
@@ -72,22 +145,71 @@ struct DateRangePickerSheet: View {
                     }
                 }
                 .padding(.horizontal)
+                
+                // Selected Date Range Display
+                VStack(spacing: 12) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("date_picker_start_date")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            Text(formatDate(tempStart))
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                        }
+                        
+                        Spacer()
+                        
+                        Image(systemName: "arrow.right")
+                            .foregroundColor(.secondary)
+                        
+                        Spacer()
+                        
+                        VStack(alignment: .trailing, spacing: 4) {
+                            Text("date_picker_end_date")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            Text(formatDate(tempEnd ?? tempStart))
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                        }
+                    }
+                    
+                    if let start = tempStart, let end = tempEnd {
+                        let days = calendar.dateComponents([.day], from: start, to: end).day ?? 0
+                        Text("\(days + 1) \(String(localized: "checklist_days_suffix"))")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                .padding()
+                .background(Color(.secondarySystemBackground))
+                .cornerRadius(12)
+                .padding(.horizontal)
+                
                 Spacer()
             }
             .onAppear {
-                tempStart = startDate
-                tempEnd = endDate
+                // 设置初始日期范围
+                tempStart = startDate.startOfDay()
+                tempEnd = endDate.startOfDay()
+                
+                // 如果开始和结束日期相同，只设置开始日期
+                if calendar.isDate(startDate, inSameDayAs: endDate) {
+                    tempEnd = nil
+                }
+                
                 updateHighlight()
                 
-                // Scroll to today's date when the calendar appears
-                let today = Date()
-                leftMonth = today
-                rightMonth = calendar.date(byAdding: .month, value: 1, to: today) ?? today
+                // 滚动到开始日期或今天
+                let scrollToDate = startDate >= Date().startOfDay() ? startDate : Date()
+                leftMonth = scrollToDate
+                rightMonth = calendar.date(byAdding: .month, value: 1, to: scrollToDate) ?? scrollToDate
                 
-                // Use a small delay to ensure the calendar views are ready
+                // 延迟确保日历视图已准备好
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    leftManager.scrollToMonth(today)
-                    rightManager.scrollToMonth(calendar.date(byAdding: .month, value: 1, to: today) ?? today)
+                    leftManager.scrollToMonth(leftMonth)
+                    rightManager.scrollToMonth(rightMonth)
                 }
             }
             .onChange(of: leftManager.selectedDate) { oldValue, newValue in
@@ -116,18 +238,37 @@ struct DateRangePickerSheet: View {
     }
 
     private func handleDateSelection(_ date: Date) {
+        let selectedDate = date.startOfDay()
+        
+        // 清除之前的高亮
+        clearHighlight()
+        
         if tempStart == nil || (tempStart != nil && tempEnd != nil) {
-            tempStart = date
+            // 开始新的选择或重新选择
+            tempStart = selectedDate
             tempEnd = nil
-        } else if let start = tempStart, date > start {
-            tempEnd = date
-        } else {
-            tempStart = date
-            tempEnd = nil
+        } else if let start = tempStart {
+            if selectedDate >= start {
+                // 选择结束日期
+                tempEnd = selectedDate
+            } else {
+                // 选择的日期早于开始日期，重新开始选择
+                tempStart = selectedDate
+                tempEnd = nil
+            }
         }
+        
+        // 更新高亮
         updateHighlight()
     }
 
+    private func clearHighlight() {
+        leftDataSource.range = nil
+        rightDataSource.range = nil
+        leftDataSource.objectWillChange.send()
+        rightDataSource.objectWillChange.send()
+    }
+    
     private func updateHighlight() {
         if let s = tempStart, let e = tempEnd {
             leftDataSource.range = s...e
@@ -141,6 +282,22 @@ struct DateRangePickerSheet: View {
         }
         leftDataSource.objectWillChange.send()
         rightDataSource.objectWillChange.send()
+    }
+    
+    private func formatDate(_ date: Date?) -> String {
+        guard let date = date else { 
+            return NSLocalizedString("date_picker_select_date", comment: "Select date placeholder")
+        }
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter.string(from: date)
+    }
+    
+    private func formatMonth(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy年M月"
+        return formatter.string(from: date)
     }
 } 
  

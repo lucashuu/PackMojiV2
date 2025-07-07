@@ -30,6 +30,7 @@
 "date_picker_next_month" = "Next Month";
 "date_picker_cancel" = "Cancel";
 "date_picker_confirm" = "Confirm";
+"date_picker_select_date" = "Select Date";
 
 // MARK: - Activity Tags
 "activity_hiking" = "Hiking";
@@ -182,3 +183,10 @@
 // MARK: - Emoji Picker
 "emoji_picker_title" = "Select Emoji";
 "emoji_picker_done" = "Done"; 
+
+// MARK: - Multi-select and delete
+"confirm_delete_title" = "Confirm Delete";
+"confirm_delete_items" = "Are you sure you want to delete the selected %d items?";
+"confirm_delete_templates" = "Are you sure you want to delete the selected %d templates?";
+"select_mode" = "Select";
+"item_quantity_prefix" = "x";

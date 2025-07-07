@@ -30,6 +30,7 @@
 "date_picker_next_month" = "下个月";
 "date_picker_cancel" = "取消";
 "date_picker_confirm" = "确定";
+"date_picker_select_date" = "请选择日期";
 
 // MARK: - Activity Tags
 "activity_hiking" = "徒步";
@@ -182,3 +183,10 @@
 // MARK: - Emoji Picker
 "emoji_picker_title" = "选择表情";
 "emoji_picker_done" = "完成"; 
+
+// MARK: - Multi-select and delete
+"confirm_delete_title" = "确认删除";
+"confirm_delete_items" = "确定要删除选中的 %d 个物品吗？";
+"confirm_delete_templates" = "确定要删除选中的 %d 个模板吗？";
+"select_mode" = "选择";
+"item_quantity_prefix" = "x";

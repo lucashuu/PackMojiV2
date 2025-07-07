@@ -158,6 +158,7 @@ struct DailyWeatherCard: View {
         
         if condition == "weather_historical_monthly_average" {
             return String(localized: "weather_historical_monthly_average")
+
         }
         
         // Handle monthly average conditions (e.g., "Clear_monthly_average")
