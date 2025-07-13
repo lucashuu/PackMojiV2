@@ -87,6 +87,7 @@ const generateChecklist = async (req, res) => {
                 emoji: item.emoji, 
                 quantity: item.quantity,
                 category: categoryName,  // Use the localized category name
+                note: item.note || null,
                 url: item.url || null
             };
             

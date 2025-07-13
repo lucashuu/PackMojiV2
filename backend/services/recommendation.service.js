@@ -22,33 +22,36 @@ const weatherConditionMap = {
 
 // Define item category priorities (higher = more important)
 const CATEGORY_PRIORITIES = {
-    'Documents': 100,           // 证件文件 - 最重要
-    'Medical Kit': 90,          // 医疗用品 - 很重要  
-    'Personal Care': 80,        // 个人护理 - 重要
-    'Clothing': 70,             // 衣物 - 重要
-    'Electronics': 65,          // 电子产品 - 较重要
-    'Food & Snacks': 60,        // 食物零食 - 中等
-    'Essentials': 85,           // 必需品 - 很重要
-    'Comfort': 50,              // 舒适用品 - 中等
-    'Accessories': 45,          // 配饰 - 中等
-    'Miscellaneous': 40,        // 杂物 - 较低
-    'Beach': 35,                // 海滩用品 - 活动相关
-    'Business': 35,             // 商务用品 - 活动相关
-    'Camping': 35,              // 露营装备 - 活动相关
-    'Skiing Equipment': 35,     // 滑雪装备 - 活动相关
-    'Cosmetics': 30,            // 化妆品 - 较低
-    'Skincare': 25              // 护肤品 - 较低
+    'Essentials': 100,                      // 必需品 - 最重要（护照、身份证、钱包等）
+    'Clothing/Accessories': 90,             // 衣物/饰品 - 基本需求
+    'Personal Care/Skincare': 85,           // 个人护理/护肤品 - 日常护理
+    'Electronics': 80,                      // 电子产品 - 现代生活必需
+    'Medical Kit': 75,                      // 医疗用品 - 健康安全
+    'Cosmetics': 65,                        // 化妆品 - 个人形象
+    'Food & Snacks': 60,                    // 食物零食 - 补充营养
+    'Business': 50,                         // 商务用品 - 特定场景需求
+    'Comfort': 45,                          // 舒适用品 - 提升旅行体验
+    'Beach': 35,                            // 海滩用品 - 活动相关
+    'Skiing Equipment': 35,                 // 滑雪装备 - 活动相关
+    'Camping': 35,                          // 露营装备 - 活动相关
+    'Miscellaneous': 30,                    // 杂物 - 较低
+    // 兼容旧的类别名称
+    'Clothing': 90,                         // 兼容旧的衣物类别
+    'Accessories': 90,                      // 兼容旧的配饰类别
+    'Personal Care': 85,                    // 兼容旧的个人护理类别
+    'Skincare': 85                          // 兼容旧的护肤品类别
 };
 
 // Essential items that should always be included
 const ESSENTIAL_ITEMS = [
-    'passport', 'id_card', 'tickets', 'cash', 'underwear', 'socks', 'pajamas',
+    'passport', 'id_card', 'tickets', 'cash', 'keys', 'drivers_license', 'student_id', 'underwear', 'socks', 'pajamas',
     'toothbrush_paste', 'face_wash', 'towel', 'sanitary_pads', 'band_aids'
 ];
 
 // International trip essential items (added dynamically)
 const INTERNATIONAL_ESSENTIAL_ITEMS = [
-    'visa_info'
+    'visa_info',
+    'international_driving_permit_info'
 ];
 
 /**
@@ -188,22 +191,24 @@ const getRecommendedItems = (tripContext) => {
 
     // Define base score thresholds for different categories (降低阈值以提高推荐覆盖率)
     const BASE_SCORE_THRESHOLDS = {
-        'Documents': 45,        // 证件类：降低阈值确保护照等重要文件被推荐
-        'Medical Kit': 55,      // 医疗用品：稍微降低但保持重要性
-        'Personal Care': 50,    // 个人护理：适度降低
-        'Clothing': 40,         // 衣物：大幅降低以确保基本衣物被推荐
-        'Electronics': 35,      // 电子产品：大幅降低确保手机、充电器等被推荐
-        'Food & Snacks': 35,    // 食物零食：降低阈值
-        'Essentials': 40,       // 必需品：大幅降低确保现金等被推荐
-        'Comfort': 30,          // 舒适用品：稍微降低
-        'Accessories': 25,      // 配件：保持较低
-        'Miscellaneous': 20,    // 杂物：保持较低
-        'Beach': 35,            // 海滩用品：降低以确保活动匹配时被推荐
-        'Business': 35,         // 商务用品：降低以确保活动匹配时被推荐
-        'Camping': 35,          // 露营装备：降低以确保活动匹配时被推荐
-        'Skiing Equipment': 30,  // 滑雪装备：专业设备优先推荐
-        'Cosmetics': 20,        // 化妆品：保持较低
-        'Skincare': 15          // 护肤品：保持较低
+        'Essentials': 40,                   // 必需品：确保重要物品被推荐
+        'Clothing/Accessories': 40,         // 衣物/饰品：基本需求
+        'Personal Care/Skincare': 45,       // 个人护理/护肤品：日常护理
+        'Electronics': 35,                  // 电子产品：现代生活必需
+        'Medical Kit': 50,                  // 医疗用品：健康安全
+        'Cosmetics': 35,                    // 化妆品：个人形象
+        'Food & Snacks': 35,                // 食物零食：补充营养
+        'Business': 40,                     // 商务用品：特定场景需求
+        'Comfort': 30,                      // 舒适用品：提升旅行体验
+        'Beach': 35,                        // 海滩用品：活动相关
+        'Skiing Equipment': 35,             // 滑雪装备：活动相关
+        'Camping': 35,                      // 露营装备：活动相关
+        'Miscellaneous': 20,                // 杂物：较低
+        // 兼容旧的类别名称
+        'Clothing': 40,                     // 兼容旧的衣物类别
+        'Accessories': 25,                  // 兼容旧的配饰类别
+        'Personal Care': 45,                // 兼容旧的个人护理类别
+        'Skincare': 45                      // 兼容旧的护肤品类别
     };
 
     // Activity-specific threshold adjustments for professional gear
@@ -344,10 +349,17 @@ const getRecommendedItems = (tripContext) => {
             quantity = item.quantity_logic.value;
         }
         
-        // Process URL if it exists
+        // Process URL if it exists - add to note field
         let processedUrl = null;
+        let noteText = null;
         if (item.url) {
             processedUrl = item.url.replace('{destination}', encodeURIComponent(destination));
+            // Add URL to note field for easy access
+            if (lang === 'zh') {
+                noteText = `搜索链接：${processedUrl}`;
+            } else {
+                noteText = `Search link: ${processedUrl}`;
+            }
         }
         
         return {
@@ -356,6 +368,7 @@ const getRecommendedItems = (tripContext) => {
             emoji: item.emoji,
             category: item.category[lang] || item.category['en'],
             quantity: quantity,
+            note: noteText,
             url: processedUrl,
             score: item.score // Include score for debugging
         };

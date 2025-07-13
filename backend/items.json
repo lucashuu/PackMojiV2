@@ -39,6 +39,26 @@
     "url": "https://www.google.com/search?q=visa+requirements+for+{destination}"
   },
   {
+    "id": "international_driving_permit_info",
+    "name": {
+      "en": "Check International Driving Permit Requirements",
+      "zh": "查询国际驾照要求"
+    },
+    "emoji": "🚗",
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "trip_type": "international"
+    },
+    "url": "https://www.google.com/search?q=international+driving+permit+requirements+{destination}"
+  },
+  {
     "id": "id_card_cn",
     "name": {
       "en": "ID Card (Shen Fen Zheng)",
@@ -109,6 +129,58 @@
     }
   },
   {
+    "id": "drivers_license",
+    "name": {
+      "en": "Driver's License",
+      "zh": "驾照"
+    },
+    "emoji": "🚗",
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "student_id",
+    "name": {
+      "en": "Student ID",
+      "zh": "学生证"
+    },
+    "emoji": "🎓",
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
     "id": "cash",
     "name": {
       "en": "Some Cash",
@@ -141,6 +213,32 @@
       "temp_max": 50
     },
     "url": "https://www.google.com/search?q=currency+exchange+{destination}+local+money"
+  },
+  {
+    "id": "keys",
+    "name": {
+      "en": "Keys",
+      "zh": "钥匙"
+    },
+    "emoji": "🔑",
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
   },
   {
     "id": "phone",
@@ -761,12 +859,12 @@
     },
     "emoji": "👕",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "per_day",
-      "value": 1
+      "value": 0.5
     },
     "attributes": {
       "activities": [
@@ -793,8 +891,8 @@
     },
     "emoji": "👚",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "per_day",
@@ -825,8 +923,8 @@
     },
     "emoji": "🧶",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "per_day",
@@ -852,6 +950,174 @@
     }
   },
   {
+    "id": "polo_shirt",
+    "name": {
+      "en": "Polo Shirt",
+      "zh": "polo衫"
+    },
+    "emoji": "👔",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 15,
+      "temp_max": 35
+    }
+  },
+  {
+    "id": "blouse",
+    "name": {
+      "en": "Blouse",
+      "zh": "衬衫"
+    },
+    "emoji": "👚",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_party",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 10,
+      "temp_max": 35
+    }
+  },
+  {
+    "id": "cardigan",
+    "name": {
+      "en": "Cardigan",
+      "zh": "开衫"
+    },
+    "emoji": "🧥",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_party"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 10,
+      "temp_max": 25
+    }
+  },
+  {
+    "id": "vest",
+    "name": {
+      "en": "Vest",
+      "zh": "背心/马甲"
+    },
+    "emoji": "🦺",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": 5,
+      "temp_max": 30
+    }
+  },
+  {
+    "id": "tank_top",
+    "name": {
+      "en": "Tank Top",
+      "zh": "背心/吊带"
+    },
+    "emoji": "👙",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach",
+        "activity_party",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 22,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "sun_protection_shirt",
+    "name": {
+      "en": "Sun Protection Shirt",
+      "zh": "防晒衣"
+    },
+    "emoji": "👕",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach",
+        "activity_hiking",
+        "activity_photography",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "sunny",
+        "hot"
+      ],
+      "temp_min": 15,
+      "temp_max": 50
+    }
+  },
+  {
     "id": "trench_coat",
     "name": {
       "en": "Trench Coat/Jacket",
@@ -859,8 +1125,8 @@
     },
     "emoji": "🧥",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -890,8 +1156,8 @@
     },
     "emoji": "🧥",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -920,8 +1186,8 @@
     },
     "emoji": "🧥",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -949,8 +1215,8 @@
     },
     "emoji": "🧥",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -971,67 +1237,15 @@
     }
   },
   {
-    "id": "underwear",
+    "id": "windbreaker",
     "name": {
-      "en": "Underwear",
-      "zh": "内衣裤"
+      "en": "Windbreaker",
+      "zh": "防风衣"
     },
-    "emoji": "🩲",
+    "emoji": "🧥",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "per_day",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "socks",
-    "name": {
-      "en": "Socks",
-      "zh": "袜子"
-    },
-    "emoji": "🧦",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "per_day",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "pajamas",
-    "name": {
-      "en": "Pajamas",
-      "zh": "睡衣"
-    },
-    "emoji": "😴",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1039,12 +1253,69 @@
     },
     "attributes": {
       "activities": [
-        "any"
+        "activity_hiking",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "windy"
+      ],
+      "temp_min": 5,
+      "temp_max": 25
+    }
+  },
+  {
+    "id": "fleece_jacket",
+    "name": {
+      "en": "Fleece Jacket",
+      "zh": "抓绒衣"
+    },
+    "emoji": "🧥",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "cold"
+      ],
+      "temp_min": -20,
+      "temp_max": 15
+    }
+  },
+  {
+    "id": "skirt",
+    "name": {
+      "en": "Skirt",
+      "zh": "裙子"
+    },
+    "emoji": "🩱",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party",
+        "activity_city",
+        "activity_shopping"
       ],
       "weather_condition": [
         "any"
       ],
-      "temp_min": -50,
+      "temp_min": 15,
       "temp_max": 50
     }
   },
@@ -1056,8 +1327,8 @@
     },
     "emoji": "👙",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1076,6 +1347,58 @@
     }
   },
   {
+    "id": "beach_coverup",
+    "name": {
+      "en": "Beach Cover-up",
+      "zh": "沙滩罩衫"
+    },
+    "emoji": "👗",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": 18,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "fancy_dress",
+    "name": {
+      "en": "Fancy Dress/Outfit",
+      "zh": "礼服/正装"
+    },
+    "emoji": "👗",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
     "id": "jeans",
     "name": {
       "en": "Jeans",
@@ -1083,8 +1406,8 @@
     },
     "emoji": "👖",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1111,8 +1434,8 @@
     },
     "emoji": "👖",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1132,6 +1455,33 @@
     }
   },
   {
+    "id": "sports_pants",
+    "name": {
+      "en": "Sports Pants",
+      "zh": "运动裤"
+    },
+    "emoji": "🏃",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -10,
+      "temp_max": 30
+    }
+  },
+  {
     "id": "shorts",
     "name": {
       "en": "Shorts",
@@ -1139,8 +1489,8 @@
     },
     "emoji": "🩳",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1160,22 +1510,23 @@
     }
   },
   {
-    "id": "sports_pants",
+    "id": "leggings",
     "name": {
-      "en": "Sports Pants",
-      "zh": "运动裤"
+      "en": "Leggings",
+      "zh": "打底裤"
     },
-    "emoji": "🏃",
+    "emoji": "🩱",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
-      "value": 1
+      "value": 2
     },
     "attributes": {
       "activities": [
+        "activity_city",
         "activity_hiking",
         "activity_skiing"
       ],
@@ -1183,19 +1534,71 @@
         "any"
       ],
       "temp_min": -10,
-      "temp_max": 30
+      "temp_max": 25
     }
   },
   {
-    "id": "dress",
+    "id": "underwear",
     "name": {
-      "en": "Dress",
-      "zh": "连衣裙"
+      "en": "Underwear",
+      "zh": "内衣裤"
     },
-    "emoji": "👗",
+    "emoji": "🩲",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "socks",
+    "name": {
+      "en": "Socks",
+      "zh": "袜子"
+    },
+    "emoji": "🧦",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "pajamas",
+    "name": {
+      "en": "Pajamas",
+      "zh": "睡衣"
+    },
+    "emoji": "😴",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1203,45 +1606,16 @@
     },
     "attributes": {
       "activities": [
-        "activity_party",
-        "activity_city",
-        "activity_shopping"
+        "any"
       ],
       "weather_condition": [
         "any"
       ],
-      "temp_min": 15,
+      "temp_min": -50,
       "temp_max": 50
     }
   },
-  {
-    "id": "skirt",
-    "name": {
-      "en": "Skirt",
-      "zh": "裙子"
-    },
-    "emoji": "🩱",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_party",
-        "activity_city",
-        "activity_shopping"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": 15,
-      "temp_max": 50
-    }
-  },
+
   {
     "id": "sneakers",
     "name": {
@@ -1250,8 +1624,8 @@
     },
     "emoji": "👟",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1278,8 +1652,8 @@
     },
     "emoji": "👞",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1306,8 +1680,8 @@
     },
     "emoji": "🥾",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1334,8 +1708,8 @@
     },
     "emoji": "👡",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1362,8 +1736,8 @@
     },
     "emoji": "🏃‍♀️",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1389,8 +1763,8 @@
     },
     "emoji": "🧦",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "per_day",
@@ -1408,33 +1782,7 @@
       "temp_max": 10
     }
   },
-  {
-    "id": "silk_stockings",
-    "name": {
-      "en": "Silk Stockings",
-      "zh": "丝袜"
-    },
-    "emoji": "🦵",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 3
-    },
-    "attributes": {
-      "activities": [
-        "activity_business",
-        "activity_party"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": 10,
-      "temp_max": 50
-    }
-  },
+
   {
     "id": "scarf",
     "name": {
@@ -1443,8 +1791,8 @@
     },
     "emoji": "🧣",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1472,8 +1820,8 @@
     },
     "emoji": "🧤",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1500,8 +1848,8 @@
     },
     "emoji": "🎩",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1521,170 +1869,6 @@
     }
   },
   {
-    "id": "polo_shirt",
-    "name": {
-      "en": "Polo Shirt",
-      "zh": "polo衫"
-    },
-    "emoji": "👔",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 2
-    },
-    "attributes": {
-      "activities": [
-        "activity_business",
-        "activity_city"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": 15,
-      "temp_max": 35
-    }
-  },
-  {
-    "id": "blouse",
-    "name": {
-      "en": "Blouse",
-      "zh": "衬衫"
-    },
-    "emoji": "👚",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 2
-    },
-    "attributes": {
-      "activities": [
-        "activity_business",
-        "activity_party",
-        "activity_city"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": 10,
-      "temp_max": 35
-    }
-  },
-  {
-    "id": "cardigan",
-    "name": {
-      "en": "Cardigan",
-      "zh": "开衫"
-    },
-    "emoji": "🧥",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_business",
-        "activity_city",
-        "activity_party"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": 10,
-      "temp_max": 25
-    }
-  },
-  {
-    "id": "vest",
-    "name": {
-      "en": "Vest",
-      "zh": "背心/马甲"
-    },
-    "emoji": "🦺",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_business",
-        "activity_hiking"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": 5,
-      "temp_max": 30
-    }
-  },
-  {
-    "id": "tank_top",
-    "name": {
-      "en": "Tank Top",
-      "zh": "背心/吊带"
-    },
-    "emoji": "👙",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 2
-    },
-    "attributes": {
-      "activities": [
-        "activity_beach",
-        "activity_party",
-        "activity_city"
-      ],
-      "weather_condition": [
-        "sunny"
-      ],
-      "temp_min": 22,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "nightgown",
-    "name": {
-      "en": "Nightgown",
-      "zh": "睡裙"
-    },
-    "emoji": "👗",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": 15,
-      "temp_max": 50
-    }
-  },
-  {
     "id": "robe",
     "name": {
       "en": "Bathrobe",
@@ -1692,8 +1876,8 @@
     },
     "emoji": "🛁",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1712,89 +1896,6 @@
     }
   },
   {
-    "id": "leggings",
-    "name": {
-      "en": "Leggings",
-      "zh": "打底裤"
-    },
-    "emoji": "🩱",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 2
-    },
-    "attributes": {
-      "activities": [
-        "activity_city",
-        "activity_hiking",
-        "activity_skiing"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -10,
-      "temp_max": 25
-    }
-  },
-  {
-    "id": "windbreaker",
-    "name": {
-      "en": "Windbreaker",
-      "zh": "防风衣"
-    },
-    "emoji": "🧥",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking",
-        "activity_city"
-      ],
-      "weather_condition": [
-        "windy"
-      ],
-      "temp_min": 5,
-      "temp_max": 25
-    }
-  },
-  {
-    "id": "fleece_jacket",
-    "name": {
-      "en": "Fleece Jacket",
-      "zh": "抓绒衣"
-    },
-    "emoji": "🧥",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking",
-        "activity_skiing",
-        "activity_camping"
-      ],
-      "weather_condition": [
-        "cold"
-      ],
-      "temp_min": -20,
-      "temp_max": 15
-    }
-  },
-  {
     "id": "compression_shorts",
     "name": {
       "en": "Compression Shorts",
@@ -1802,8 +1903,8 @@
     },
     "emoji": "🩳",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1829,8 +1930,8 @@
     },
     "emoji": "🧼",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1855,8 +1956,60 @@
     },
     "emoji": "🦷",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "mouthwash",
+    "name": {
+      "en": "Mouthwash",
+      "zh": "漱口水"
+    },
+    "emoji": "🧽",
+    "category": {
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "water_flosser",
+    "name": {
+      "en": "Water Flosser",
+      "zh": "冲牙器"
+    },
+    "emoji": "💧",
+    "category": {
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1881,8 +2034,8 @@
     },
     "emoji": "🧖",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1907,8 +2060,8 @@
     },
     "emoji": "🛁",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1933,8 +2086,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1959,8 +2112,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -1985,8 +2138,164 @@
     },
     "emoji": "🪒",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "glasses",
+    "name": {
+      "en": "Glasses",
+      "zh": "眼镜"
+    },
+    "emoji": "👓",
+    "category": {
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "contact_lenses",
+    "name": {
+      "en": "Contact Lenses",
+      "zh": "隐形眼镜"
+    },
+    "emoji": "👁️",
+    "category": {
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "comb",
+    "name": {
+      "en": "Comb",
+      "zh": "梳子"
+    },
+    "emoji": "🪮",
+    "category": {
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "glasses",
+    "name": {
+      "en": "Glasses",
+      "zh": "眼镜"
+    },
+    "emoji": "👓",
+    "category": {
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "contact_lenses",
+    "name": {
+      "en": "Contact Lenses",
+      "zh": "隐形眼镜"
+    },
+    "emoji": "👁️",
+    "category": {
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "comb",
+    "name": {
+      "en": "Comb",
+      "zh": "梳子"
+    },
+    "emoji": "🪮",
+    "category": {
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2011,8 +2320,8 @@
     },
     "emoji": "🩴",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2340,6 +2649,151 @@
     }
   },
   {
+    "id": "primer",
+    "name": {
+      "en": "Primer",
+      "zh": "隔离霜"
+    },
+    "emoji": "🧴",
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "contour",
+    "name": {
+      "en": "Contour",
+      "zh": "修容"
+    },
+    "emoji": "🎨",
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "highlighter",
+    "name": {
+      "en": "Highlighter",
+      "zh": "高光"
+    },
+    "emoji": "✨",
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "setting_spray",
+    "name": {
+      "en": "Setting Spray",
+      "zh": "定妆喷雾"
+    },
+    "emoji": "💨",
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "powder",
+    "name": {
+      "en": "Powder",
+      "zh": "粉饼/散粉"
+    },
+    "emoji": "💄",
+    "category": {
+      "en": "Cosmetics",
+      "zh": "化妆品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_city",
+        "activity_party",
+        "activity_shopping",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
     "id": "toner",
     "name": {
       "en": "Toner",
@@ -2347,8 +2801,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Skincare",
-      "zh": "护肤品"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2373,8 +2827,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Skincare",
-      "zh": "护肤品"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2399,8 +2853,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Skincare",
-      "zh": "护肤品"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2425,8 +2879,8 @@
     },
     "emoji": "👁️",
     "category": {
-      "en": "Skincare",
-      "zh": "护肤品"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2451,8 +2905,8 @@
     },
     "emoji": "🧖",
     "category": {
-      "en": "Skincare",
-      "zh": "护肤品"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "per_day",
@@ -2477,8 +2931,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Skincare",
-      "zh": "护肤品"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2503,8 +2957,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Skincare",
-      "zh": "护肤品"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2571,9 +3025,9 @@
         "activity_photography"
       ],
       "weather_condition": [
-        "sunny"
+        "any"
       ],
-      "temp_min": 0,
+      "temp_min": -50,
       "temp_max": 50
     }
   },
@@ -2696,8 +3150,8 @@
     },
     "emoji": "🕶️",
     "category": {
-      "en": "Accessories",
-      "zh": "发型饰品"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2726,8 +3180,8 @@
     },
     "emoji": "🧢",
     "category": {
-      "en": "Accessories",
-      "zh": "发型饰品"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2887,8 +3341,8 @@
   {
     "id": "nuts",
     "name": {
-      "en": "Nuts",
-      "zh": "坚果"
+      "en": "Nuts/Dried Fruits (customize quantity)",
+      "zh": "坚果/果干（自选数量）"
     },
     "emoji": "🥜",
     "category": {
@@ -2911,33 +3365,7 @@
       "temp_max": 50
     }
   },
-  {
-    "id": "dried_fruits",
-    "name": {
-      "en": "Dried Fruits",
-      "zh": "果干"
-    },
-    "emoji": "🍇",
-    "category": {
-      "en": "Food & Snacks",
-      "zh": "食物零食"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking",
-        "activity_camping"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
+
   {
     "id": "travel_documents_folder",
     "name": {
@@ -2946,8 +3374,8 @@
     },
     "emoji": "📁",
     "category": {
-      "en": "Documents",
-      "zh": "证件文件"
+      "en": "Essentials",
+      "zh": "必需品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2972,8 +3400,8 @@
     },
     "emoji": "📋",
     "category": {
-      "en": "Documents",
-      "zh": "证件文件"
+      "en": "Essentials",
+      "zh": "必需品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -2998,8 +3426,8 @@
     },
     "emoji": "📄",
     "category": {
-      "en": "Documents",
-      "zh": "证件文件"
+      "en": "Essentials",
+      "zh": "必需品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3024,8 +3452,8 @@
     },
     "emoji": "🏨",
     "category": {
-      "en": "Documents",
-      "zh": "证件文件"
+      "en": "Essentials",
+      "zh": "必需品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3050,8 +3478,8 @@
     },
     "emoji": "✈️",
     "category": {
-      "en": "Documents",
-      "zh": "证件文件"
+      "en": "Essentials",
+      "zh": "必需品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3076,8 +3504,8 @@
     },
     "emoji": "🚗",
     "category": {
-      "en": "Documents",
-      "zh": "证件文件"
+      "en": "Essentials",
+      "zh": "必需品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3102,8 +3530,8 @@
     },
     "emoji": "🎫",
     "category": {
-      "en": "Documents",
-      "zh": "证件文件"
+      "en": "Essentials",
+      "zh": "必需品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3128,8 +3556,8 @@
     },
     "emoji": "🧻",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3154,8 +3582,8 @@
     },
     "emoji": "🧻",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3180,8 +3608,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3440,8 +3868,8 @@
     },
     "emoji": "🥾",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3466,8 +3894,8 @@
     },
     "emoji": "🎒",
     "category": {
-      "en": "Accessories",
-      "zh": "发型饰品"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3545,8 +3973,8 @@
     },
     "emoji": "👖",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3571,8 +3999,8 @@
     },
     "emoji": "🧦",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "per_day",
@@ -3730,8 +4158,8 @@
     },
     "emoji": "🌧️",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3757,8 +4185,8 @@
     },
     "emoji": "🩲",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3784,8 +4212,8 @@
     },
     "emoji": "🧤",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4096,8 +4524,8 @@
     },
     "emoji": "🥽",
     "category": {
-      "en": "Accessories",
-      "zh": "发型饰品"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4122,8 +4550,8 @@
     },
     "emoji": "🧤",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4148,8 +4576,8 @@
     },
     "emoji": "🎿",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4174,8 +4602,8 @@
     },
     "emoji": "🧥",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4200,8 +4628,8 @@
     },
     "emoji": "🧦",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "per_day",
@@ -4226,8 +4654,8 @@
     },
     "emoji": "🧣",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4278,8 +4706,8 @@
     },
     "emoji": "⛑️",
     "category": {
-      "en": "Accessories",
-      "zh": "发型饰品"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4408,7 +4836,7 @@
     },
     "emoji": "🎫",
     "category": {
-      "en": "Documents",
+      "en": "Essentials",
       "zh": "文件证件"
     },
     "quantity_logic": {
@@ -4512,8 +4940,8 @@
     },
     "emoji": "🩴",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4635,32 +5063,6 @@
     }
   },
   {
-    "id": "beach_coverup",
-    "name": {
-      "en": "Beach Cover-up",
-      "zh": "沙滩罩衫"
-    },
-    "emoji": "👗",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_beach"
-      ],
-      "weather_condition": [
-        "sunny"
-      ],
-      "temp_min": 18,
-      "temp_max": 50
-    }
-  },
-  {
     "id": "aloe_vera_gel",
     "name": {
       "en": "Aloe Vera Gel",
@@ -4668,8 +5070,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Skincare",
-      "zh": "护肤品"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4694,8 +5096,8 @@
     },
     "emoji": "👟",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4798,8 +5200,8 @@
     },
     "emoji": "👞",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4824,8 +5226,8 @@
     },
     "emoji": "👔",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4850,8 +5252,8 @@
     },
     "emoji": "👔",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4902,8 +5304,8 @@
     },
     "emoji": "🤵",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4921,32 +5323,6 @@
     }
   },
   {
-    "id": "fancy_dress",
-    "name": {
-      "en": "Fancy Dress/Outfit",
-      "zh": "礼服/正装"
-    },
-    "emoji": "👗",
-    "category": {
-      "en": "Clothing",
-      "zh": "衣物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_party"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
     "id": "dress_shoes",
     "name": {
       "en": "Dress Shoes",
@@ -4954,8 +5330,8 @@
     },
     "emoji": "👠",
     "category": {
-      "en": "Clothing",
-      "zh": "衣物"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -4980,8 +5356,8 @@
     },
     "emoji": "💍",
     "category": {
-      "en": "Accessories",
-      "zh": "发型饰品"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5032,8 +5408,8 @@
     },
     "emoji": "💇",
     "category": {
-      "en": "Accessories",
-      "zh": "发型饰品"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5054,12 +5430,12 @@
     "id": "evening_bag",
     "name": {
       "en": "Evening Bag/Clutch",
-      "zh": "晚宴包"
+      "zh": "包包"
     },
     "emoji": "👛",
     "category": {
-      "en": "Accessories",
-      "zh": "发型饰品"
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5108,8 +5484,8 @@
   {
     "id": "drinking_water",
     "name": {
-      "en": "Drinking Water",
-      "zh": "饮用水"
+      "en": "Drinking Water (customize quantity)",
+      "zh": "饮用水（自选数量）"
     },
     "emoji": "💧",
     "category": {
@@ -5117,8 +5493,8 @@
       "zh": "食物零食"
     },
     "quantity_logic": {
-      "type": "per_day",
-      "value": 3
+      "type": "fixed",
+      "value": 1
     },
     "attributes": {
       "activities": [
@@ -5139,6 +5515,58 @@
       "zh": "酒精棉"
     },
     "emoji": "🧻",
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "medical_mask",
+    "name": {
+      "en": "Medical Mask",
+      "zh": "医用口罩"
+    },
+    "emoji": "😷",
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "personal_medications",
+    "name": {
+      "en": "Personal Medications",
+      "zh": "个人必备药品"
+    },
+    "emoji": "💊",
     "category": {
       "en": "Medical Kit",
       "zh": "医疗用品"
@@ -5324,17 +5752,17 @@
   {
     "id": "sanitary_pads",
     "name": {
-      "en": "Sanitary Pads",
-      "zh": "卫生巾/姨妈巾"
+      "en": "Sanitary Pads (customize quantity)",
+      "zh": "卫生巾/经期用品（自选数量）"
     },
     "emoji": "🩲",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
-      "type": "per_day",
-      "value": 3
+      "type": "fixed",
+      "value": 1
     },
     "attributes": {
       "activities": [
@@ -5355,8 +5783,8 @@
     },
     "emoji": "🩲",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "per_day",
@@ -5381,8 +5809,8 @@
     },
     "emoji": "🩲",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "per_day",
@@ -5407,8 +5835,8 @@
     },
     "emoji": "🧻",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5433,8 +5861,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5485,8 +5913,8 @@
     },
     "emoji": "🔥",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "per_day",
@@ -5511,8 +5939,8 @@
     },
     "emoji": "🔒",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5537,8 +5965,8 @@
     },
     "emoji": "🧪",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5563,8 +5991,8 @@
     },
     "emoji": "🧴",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5589,8 +6017,8 @@
     },
     "emoji": "🎀",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5615,8 +6043,8 @@
     },
     "emoji": "📎",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5641,8 +6069,8 @@
     },
     "emoji": "✂️",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5667,8 +6095,8 @@
     },
     "emoji": "💅",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5693,8 +6121,8 @@
     },
     "emoji": "🔧",
     "category": {
-      "en": "Personal Care",
-      "zh": "个人护理"
+      "en": "Personal Care/Skincare",
+      "zh": "个人护理/护肤品"
     },
     "quantity_logic": {
       "type": "fixed",
