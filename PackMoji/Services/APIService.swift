@@ -7,7 +7,7 @@ class APIService {
     private var cancellables = Set<AnyCancellable>()
     
     // Base URL for the backend API
-    private let baseURL = "https://packmoji.onrender.com/api/v1"
+    private let baseURL = "http://localhost:3000/api/v1"
     
     // Network request timeout in seconds
     private let timeoutInterval: TimeInterval = 10

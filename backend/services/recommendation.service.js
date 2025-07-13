@@ -191,43 +191,75 @@ const getRecommendedItems = (tripContext) => {
 
     // Define base score thresholds for different categories (降低阈值以提高推荐覆盖率)
     const BASE_SCORE_THRESHOLDS = {
-        'Essentials': 40,                   // 必需品：确保重要物品被推荐
-        'Clothing/Accessories': 40,         // 衣物/饰品：基本需求
-        'Personal Care/Skincare': 45,       // 个人护理/护肤品：日常护理
-        'Electronics': 35,                  // 电子产品：现代生活必需
-        'Medical Kit': 50,                  // 医疗用品：健康安全
-        'Cosmetics': 35,                    // 化妆品：个人形象
-        'Food & Snacks': 35,                // 食物零食：补充营养
-        'Business': 40,                     // 商务用品：特定场景需求
-        'Comfort': 30,                      // 舒适用品：提升旅行体验
-        'Beach': 35,                        // 海滩用品：活动相关
-        'Skiing Equipment': 35,             // 滑雪装备：活动相关
-        'Camping': 35,                      // 露营装备：活动相关
-        'Miscellaneous': 20,                // 杂物：较低
+        'Essentials': 25,                   // 必需品：确保重要物品被推荐 (降低from 40)
+        'Clothing/Accessories': 30,         // 衣物/饰品：基本需求 (降低from 40)
+        'Personal Care/Skincare': 35,       // 个人护理/护肤品：日常护理 (降低from 45)
+        'Electronics': 25,                  // 电子产品：现代生活必需 (降低from 35)
+        'Medical Kit': 30,                  // 医疗用品：健康安全 (降低from 50)
+        'Cosmetics': 25,                    // 化妆品：个人形象 (降低from 35)
+        'Food & Snacks': 25,                // 食物零食：补充营养 (降低from 35)
+        'Business': 30,                     // 商务用品：特定场景需求 (降低from 40)
+        'Comfort': 20,                      // 舒适用品：提升旅行体验 (降低from 30)
+        'Beach': 25,                        // 海滩用品：活动相关 (降低from 35)
+        'Skiing Equipment': 25,             // 滑雪装备：活动相关 (降低from 35)
+        'Camping': 25,                      // 露营装备：活动相关 (降低from 35)
+        'Miscellaneous': 15,                // 杂物：较低 (降低from 20)
         // 兼容旧的类别名称
-        'Clothing': 40,                     // 兼容旧的衣物类别
-        'Accessories': 25,                  // 兼容旧的配饰类别
-        'Personal Care': 45,                // 兼容旧的个人护理类别
-        'Skincare': 45                      // 兼容旧的护肤品类别
+        'Clothing': 30,                     // 兼容旧的衣物类别 (降低from 40)
+        'Accessories': 20,                  // 兼容旧的配饰类别 (降低from 25)
+        'Personal Care': 35,                // 兼容旧的个人护理类别 (降低from 45)
+        'Skincare': 35                      // 兼容旧的护肤品类别 (降低from 45)
     };
 
     // Activity-specific threshold adjustments for professional gear
     const ACTIVITY_THRESHOLD_ADJUSTMENTS = {
         'activity_camping': {
-            'Clothing': -8,     // 野营活动下衣物阈值降低8分，确保专业户外衣物被推荐
-            'Accessories': -5   // 野营配件阈值也降低
+            'Clothing': -10,     // 野营活动下衣物阈值降低10分，确保专业户外衣物被推荐
+            'Accessories': -8,   // 野营配件阈值也降低
+            'Camping': -10,      // 露营装备阈值降低
+            'Medical Kit': -10   // 医疗用品更重要
         },
         'activity_hiking': {
-            'Clothing': -10,    // 登山活动下衣物阈值降低10分
-            'Accessories': -5
+            'Clothing': -12,    // 登山活动下衣物阈值降低12分
+            'Accessories': -8,
+            'Medical Kit': -10,
+            'Miscellaneous': -5
         },
         'activity_skiing': {
-            'Clothing': -12,    // 滑雪活动下衣物阈值大幅降低
-            'Accessories': -8
+            'Clothing': -15,    // 滑雪活动下衣物阈值大幅降低
+            'Accessories': -10,
+            'Skiing Equipment': -10,
+            'Medical Kit': -8
         },
         'activity_beach': {
-            'Clothing': -5,     // 海滩活动下衣物阈值稍微降低
-            'Beach': -5
+            'Clothing': -8,     // 海滩活动下衣物阈值稍微降低
+            'Beach': -10,
+            'Personal Care/Skincare': -5,  // 防晒用品更重要
+            'Medical Kit': -8
+        },
+        'activity_business': {
+            'Business': -15,    // 商务活动下商务用品阈值大幅降低
+            'Clothing': -5,
+            'Electronics': -8
+        },
+        'activity_city': {
+            'Electronics': -5,  // 城市活动下电子产品更重要
+            'Comfort': -5,
+            'Miscellaneous': -3
+        },
+        'activity_photography': {
+            'Electronics': -10, // 摄影活动下电子产品阈值降低
+            'Accessories': -5,
+            'Miscellaneous': -5
+        },
+        'activity_shopping': {
+            'Miscellaneous': -8,
+            'Comfort': -5
+        },
+        'activity_party': {
+            'Cosmetics': -10,   // 派对活动下化妆品更重要
+            'Clothing': -5,
+            'Accessories': -5
         }
     };
 
@@ -239,17 +271,17 @@ const getRecommendedItems = (tripContext) => {
             if (adjustments) {
                 Object.keys(adjustments).forEach(category => {
                     if (SCORE_THRESHOLDS[category]) {
-                        SCORE_THRESHOLDS[category] = Math.max(15, SCORE_THRESHOLDS[category] + adjustments[category]);
+                        SCORE_THRESHOLDS[category] = Math.max(10, SCORE_THRESHOLDS[category] + adjustments[category]);
                     }
                 });
             }
         });
     }
 
-    // Filter items based on score thresholds AND strict activity matching
+    // Filter items based on score thresholds AND more flexible activity matching
     const recommended = itemsWithScores.filter(item => {
         const categoryKey = item.category['en'] || item.category[Object.keys(item.category)[0]];
-        const threshold = SCORE_THRESHOLDS[categoryKey] || 35;
+        const threshold = SCORE_THRESHOLDS[categoryKey] || 25;
         
         // First check if item meets score threshold
         if (item.score < threshold) {
@@ -257,7 +289,19 @@ const getRecommendedItems = (tripContext) => {
             return false;
         }
         
-        // Strict activity matching - prevent cross-activity contamination
+        // 严格的旅行类型匹配：过滤掉不符合旅行类型的物品
+        if (item.attributes.trip_type) {
+            if (item.attributes.trip_type === 'international' && tripContext.tripType !== 'international') {
+                console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (international item for domestic trip)`);
+                return false;
+            }
+            if (item.attributes.trip_type === 'domestic' && tripContext.tripType !== 'domestic') {
+                console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (domestic item for international trip)`);
+                return false;
+            }
+        }
+        
+        // More flexible activity matching - allow items with partial matches or general utility
         if (item.attributes.activities && Array.isArray(item.attributes.activities)) {
             // If item has specific activities (not "any"), check if any match current trip activities
             if (!item.attributes.activities.includes('any')) {
@@ -265,9 +309,14 @@ const getRecommendedItems = (tripContext) => {
                     item.attributes.activities.includes(userActivity)
                 );
                 
+                // 更宽松的活动匹配：如果分数足够高，即使没有完全匹配也允许通过
                 if (!hasActivityMatch) {
-                    console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (no activity match)`);
-                    return false;
+                    // 如果分数比阈值高出很多，允许通过（表示这是一个通用的有用物品）
+                    const scoreBuffer = item.score - threshold;
+                    if (scoreBuffer < 15) {  // 如果分数优势不够大，则过滤掉
+                        console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (no activity match, score buffer: ${scoreBuffer.toFixed(1)})`);
+                        return false;
+                    }
                 }
             }
         }
@@ -289,24 +338,26 @@ const getRecommendedItems = (tripContext) => {
         return b.score - a.score;
     });
 
-    // Apply smart limits to avoid overwhelming the user
+    // Apply smart limits to avoid overwhelming the user (增加限制以推荐更多物品)
     const maxItemsPerCategory = {
-        'Documents': 10,
-        'Medical Kit': 10,
-        'Personal Care': 15,
-        'Clothing': 15,
-        'Electronics': 8,
-        'Food & Snacks': 6,
-        'Essentials': 12,
-        'Comfort': 5,
-        'Accessories': 6,
-        'Miscellaneous': 8,
-        'Beach': 8,
-        'Business': 8,
-        'Camping': 12,            // 露营装备限制
-        'Skiing Equipment': 10,
-        'Cosmetics': 5,
-        'Skincare': 3
+        'Documents': 12,            // 增加from 10
+        'Medical Kit': 15,          // 增加from 10
+        'Personal Care': 20,        // 增加from 15
+        'Clothing': 20,             // 增加from 15
+        'Electronics': 12,          // 增加from 8
+        'Food & Snacks': 8,         // 增加from 6
+        'Essentials': 15,           // 增加from 12
+        'Comfort': 8,               // 增加from 5
+        'Accessories': 10,          // 增加from 6
+        'Miscellaneous': 12,        // 增加from 8
+        'Beach': 12,                // 增加from 8
+        'Business': 12,             // 增加from 8
+        'Camping': 18,              // 增加from 12
+        'Skiing Equipment': 15,     // 增加from 10
+        'Cosmetics': 8,             // 增加from 5
+        'Skincare': 6,              // 增加from 3
+        'Personal Care/Skincare': 20, // 新增
+        'Clothing/Accessories': 20    // 新增
     };
 
     // Group by category and apply limits
@@ -377,4 +428,4 @@ const getRecommendedItems = (tripContext) => {
 
 module.exports = {
     getRecommendedItems,
-}; 
+};
