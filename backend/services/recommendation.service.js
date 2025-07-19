@@ -399,6 +399,14 @@ const getRecommendedItems = (tripContext) => {
 
     // 最终排序：完全按照items.json中的顺序
     finalRecommended.sort((a, b) => {
+        // 必需品优先，然后按items.json中的顺序
+        const aIsEssential = ESSENTIAL_ITEMS.includes(a.id);
+        const bIsEssential = ESSENTIAL_ITEMS.includes(b.id);
+        
+        if (aIsEssential && !bIsEssential) return -1;
+        if (!aIsEssential && bIsEssential) return 1;
+        
+        // 如果都是必需品或都不是必需品，按items.json中的顺序排序
         const aOrder = itemOrderMap[a.id] || 999999;
         const bOrder = itemOrderMap[b.id] || 999999;
         return aOrder - bOrder;
