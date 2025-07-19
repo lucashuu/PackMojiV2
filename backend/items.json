@@ -19,46 +19,6 @@
     }
   },
   {
-    "id": "visa_info",
-    "name": {
-      "en": "Check Visa Requirements",
-      "zh": "查询签证要求"
-    },
-    "emoji": "📄",
-    "category": {
-      "en": "Essentials",
-      "zh": "必需品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "trip_type": "international"
-    },
-    "url": "https://www.google.com/search?q=visa+requirements+for+{destination}"
-  },
-  {
-    "id": "international_driving_permit_info",
-    "name": {
-      "en": "Check International Driving Permit Requirements",
-      "zh": "查询国际驾照要求"
-    },
-    "emoji": "🚗",
-    "category": {
-      "en": "Essentials",
-      "zh": "必需品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "trip_type": "international"
-    },
-    "url": "https://www.google.com/search?q=international+driving+permit+requirements+{destination}"
-  },
-  {
     "id": "id_card_cn",
     "name": {
       "en": "ID Card (Shen Fen Zheng)",
@@ -103,32 +63,6 @@
     }
   },
   {
-    "id": "credit_card",
-    "name": {
-      "en": "Credit/Bank Card",
-      "zh": "银行卡/信用卡"
-    },
-    "emoji": "💳",
-    "category": {
-      "en": "Essentials",
-      "zh": "必需品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
     "id": "drivers_license",
     "name": {
       "en": "Driver's License",
@@ -161,6 +95,72 @@
       "zh": "学生证"
     },
     "emoji": "🎓",
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "visa_info",
+    "name": {
+      "en": "Check Visa Requirements",
+      "zh": "查询签证要求"
+    },
+    "emoji": "📄",
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "trip_type": "international"
+    },
+    "url": "https://www.google.com/search?q=visa+requirements+for+{destination}"
+  },
+  {
+    "id": "international_driving_permit_info",
+    "name": {
+      "en": "Check International Driving Permit Requirements",
+      "zh": "查询国际驾照要求"
+    },
+    "emoji": "🚗",
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "trip_type": "international"
+    },
+    "url": "https://www.google.com/search?q=international+driving+permit+requirements+{destination}"
+  },
+  {
+    "id": "credit_card",
+    "name": {
+      "en": "Credit/Bank Card",
+      "zh": "银行卡/信用卡"
+    },
+    "emoji": "💳",
     "category": {
       "en": "Essentials",
       "zh": "必需品"
@@ -241,12 +241,64 @@
     }
   },
   {
+    "id": "flight_reservation",
+    "name": {
+      "en": "Flight Reservation",
+      "zh": "机票预订单"
+    },
+    "emoji": "✈️",
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
     "id": "emergency_contacts",
     "name": {
       "en": "Emergency Contacts",
       "zh": "紧急联系人清单"
     },
     "emoji": "📋",
+    "category": {
+      "en": "Essentials",
+      "zh": "必需品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "hotel_reservation",
+    "name": {
+      "en": "Hotel Reservation",
+      "zh": "酒店预订单"
+    },
+    "emoji": "🏨",
     "category": {
       "en": "Essentials",
       "zh": "必需品"
@@ -293,12 +345,12 @@
     }
   },
   {
-    "id": "phone_charger",
+    "id": "ipad",
     "name": {
-      "en": "Phone Charger",
-      "zh": "手机充电器"
+      "en": "iPad/Tablet",
+      "zh": "iPad/平板电脑"
     },
-    "emoji": "🔋",
+    "emoji": "💻",
     "category": {
       "en": "Electronics",
       "zh": "电子产品"
@@ -309,33 +361,9 @@
     },
     "attributes": {
       "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "power_bank",
-    "name": {
-      "en": "Power Bank",
-      "zh": "充电宝"
-    },
-    "emoji": "🔋",
-    "category": {
-      "en": "Electronics",
-      "zh": "电子产品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
+        "activity_business",
+        "activity_city",
+        "activity_photography"
       ],
       "weather_condition": [
         "any"
@@ -351,32 +379,6 @@
       "zh": "笔记本电脑"
     },
     "emoji": "💻",
-    "category": {
-      "en": "Electronics",
-      "zh": "电子产品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_business"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "laptop_charger",
-    "name": {
-      "en": "Laptop Charger",
-      "zh": "笔记本充电器"
-    },
-    "emoji": "🔌",
     "category": {
       "en": "Electronics",
       "zh": "电子产品"
@@ -423,12 +425,12 @@
     }
   },
   {
-    "id": "camera_charger",
+    "id": "smartwatch",
     "name": {
-      "en": "Camera Charger",
-      "zh": "相机充电器"
+      "en": "Smartwatch/Digital Watch",
+      "zh": "电子手表"
     },
-    "emoji": "🔋",
+    "emoji": "⌚",
     "category": {
       "en": "Electronics",
       "zh": "电子产品"
@@ -439,7 +441,10 @@
     },
     "attributes": {
       "activities": [
-        "activity_photography"
+        "activity_hiking",
+        "activity_skiing",
+        "activity_business",
+        "activity_city"
       ],
       "weather_condition": [
         "any"
@@ -475,12 +480,12 @@
     }
   },
   {
-    "id": "smartwatch",
+    "id": "power_bank",
     "name": {
-      "en": "Smartwatch/Digital Watch",
-      "zh": "电子手表"
+      "en": "Power Bank",
+      "zh": "充电宝"
     },
-    "emoji": "⌚",
+    "emoji": "🔋",
     "category": {
       "en": "Electronics",
       "zh": "电子产品"
@@ -491,10 +496,222 @@
     },
     "attributes": {
       "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "phone_charger",
+    "name": {
+      "en": "Phone Charger",
+      "zh": "手机充电器"
+    },
+    "emoji": "🔋",
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "laptop_charger",
+    "name": {
+      "en": "Laptop Charger",
+      "zh": "笔记本充电器"
+    },
+    "emoji": "🔌",
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "camera_charger",
+    "name": {
+      "en": "Camera Charger",
+      "zh": "相机充电器"
+    },
+    "emoji": "🔋",
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "ipad_charger",
+    "name": {
+      "en": "iPad/Tablet Charger",
+      "zh": "iPad/平板充电器"
+    },
+    "emoji": "🔌",
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business",
+        "activity_city",
+        "activity_photography"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "travel_adapter",
+    "name": {
+      "en": "Travel Adapter",
+      "zh": "转换插头"
+    },
+    "emoji": "🔌",
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50,
+      "trip_type": "international"
+    },
+    "url": "https://www.google.com/search?q=power+adapter+{destination}+electrical+outlet"
+  },
+  {
+    "id": "wireless_earbuds",
+    "name": {
+      "en": "Wireless Earbuds",
+      "zh": "无线耳机"
+    },
+    "emoji": "🎧",
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "e_reader",
+    "name": {
+      "en": "E-Reader/Kindle",
+      "zh": "电子书阅读器"
+    },
+    "emoji": "📚",
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_vacation",
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "walkie_talkie",
+    "name": {
+      "en": "Walkie Talkie",
+      "zh": "对讲机"
+    },
+    "emoji": "📻",
+    "category": {
+      "en": "Electronics",
+      "zh": "电子产品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
         "activity_hiking",
         "activity_skiing",
-        "activity_business",
-        "activity_city"
+        "activity_camping"
       ],
       "weather_condition": [
         "any"
@@ -2650,12 +2867,40 @@
     }
   },
   {
-    "id": "pain_relievers",
+    "id": "medical_tape",
     "name": {
-      "en": "Pain Relievers",
-      "zh": "止痛药"
+      "en": "Medical Tape",
+      "zh": "医用胶带"
     },
-    "emoji": "💊",
+    "emoji": "🩹",
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping",
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "alcohol_wipes",
+    "name": {
+      "en": "Alcohol Wipes",
+      "zh": "酒精棉"
+    },
+    "emoji": "🧻",
     "category": {
       "en": "Medical Kit",
       "zh": "医疗用品"
@@ -2667,6 +2912,34 @@
     "attributes": {
       "activities": [
         "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "antiseptic",
+    "name": {
+      "en": "Antiseptic",
+      "zh": "消毒液"
+    },
+    "emoji": "🧴",
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping",
+        "activity_skiing"
       ],
       "weather_condition": [
         "any"
@@ -2729,6 +3002,84 @@
     }
   },
   {
+    "id": "pain_relievers",
+    "name": {
+      "en": "Pain Relievers",
+      "zh": "止痛药"
+    },
+    "emoji": "💊",
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "painkillers",
+    "name": {
+      "en": "Painkillers/Cold Medicine",
+      "zh": "止痛/感冒药"
+    },
+    "emoji": "💊",
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "personal_medications",
+    "name": {
+      "en": "Personal Medications",
+      "zh": "个人必备药品"
+    },
+    "emoji": "💊",
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
     "id": "insect_repellent",
     "name": {
       "en": "Insect Repellent",
@@ -2752,6 +3103,34 @@
         "any"
       ],
       "temp_min": 10,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "mosquito_repellent",
+    "name": {
+      "en": "Mosquito Repellent",
+      "zh": "防蚊喷雾"
+    },
+    "emoji": "🦟",
+    "category": {
+      "en": "Medical Kit",
+      "zh": "医疗用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_beach"
+      ],
+      "weather_condition": [
+        "hot",
+        "rainy"
+      ],
+      "temp_min": 18,
       "temp_max": 50
     }
   },
@@ -3329,6 +3708,58 @@
     }
   },
   {
+    "id": "earplugs",
+    "name": {
+      "en": "Earplugs",
+      "zh": "耳塞"
+    },
+    "emoji": "🔇",
+    "category": {
+      "en": "Comfort",
+      "zh": "舒适用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "travel_blanket",
+    "name": {
+      "en": "Travel Blanket",
+      "zh": "旅行毯"
+    },
+    "emoji": "🛏️",
+    "category": {
+      "en": "Comfort",
+      "zh": "舒适用品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
     "id": "slippers",
     "name": {
       "en": "Slippers",
@@ -3372,6 +3803,34 @@
     "attributes": {
       "activities": [
         "any"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "travel_snacks",
+    "name": {
+      "en": "Travel Snacks",
+      "zh": "旅行零食"
+    },
+    "emoji": "🍪",
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping",
+        "activity_city"
       ],
       "weather_condition": [
         "any"
@@ -3436,6 +3895,34 @@
     }
   },
   {
+    "id": "instant_coffee",
+    "name": {
+      "en": "Instant Coffee",
+      "zh": "速溶咖啡"
+    },
+    "emoji": "☕",
+    "category": {
+      "en": "Food & Snacks",
+      "zh": "食物零食"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_camping",
+        "activity_hiking",
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
     "id": "towel",
     "name": {
       "en": "Towel/Bath Towel",
@@ -3488,19 +3975,19 @@
     }
   },
   {
-    "id": "insurance_documents",
+    "id": "laundry_bags",
     "name": {
-      "en": "Insurance Documents",
-      "zh": "保险文件"
+      "en": "Laundry Bags",
+      "zh": "洗衣袋"
     },
-    "emoji": "📄",
+    "emoji": "👕",
     "category": {
-      "en": "Essentials",
-      "zh": "必需品"
+      "en": "Miscellaneous",
+      "zh": "杂物"
     },
     "quantity_logic": {
       "type": "fixed",
-      "value": 1
+      "value": 2
     },
     "attributes": {
       "activities": [
@@ -3514,19 +4001,19 @@
     }
   },
   {
-    "id": "hotel_reservation",
+    "id": "zip_lock_bags",
     "name": {
-      "en": "Hotel Reservation",
-      "zh": "酒店预订单"
+      "en": "Zip-lock Bags",
+      "zh": "密封袋"
     },
-    "emoji": "🏨",
+    "emoji": "🗂️",
     "category": {
-      "en": "Essentials",
-      "zh": "必需品"
+      "en": "Miscellaneous",
+      "zh": "杂物"
     },
     "quantity_logic": {
       "type": "fixed",
-      "value": 1
+      "value": 5
     },
     "attributes": {
       "activities": [
@@ -3540,15 +4027,15 @@
     }
   },
   {
-    "id": "flight_reservation",
+    "id": "notepad",
     "name": {
-      "en": "Flight Reservation",
-      "zh": "机票预订单"
+      "en": "Notepad",
+      "zh": "记事本"
     },
-    "emoji": "✈️",
+    "emoji": "📝",
     "category": {
-      "en": "Essentials",
-      "zh": "必需品"
+      "en": "Business",
+      "zh": "商务用品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3556,7 +4043,7 @@
     },
     "attributes": {
       "activities": [
-        "any"
+        "activity_business"
       ],
       "weather_condition": [
         "any"
@@ -3618,15 +4105,15 @@
     }
   },
   {
-    "id": "travel_adapter",
+    "id": "insurance_documents",
     "name": {
-      "en": "Travel Adapter",
-      "zh": "转换插头"
+      "en": "Insurance Documents",
+      "zh": "保险文件"
     },
-    "emoji": "🔌",
+    "emoji": "📄",
     "category": {
-      "en": "Electronics",
-      "zh": "电子产品"
+      "en": "Essentials",
+      "zh": "必需品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -3640,10 +4127,8 @@
         "any"
       ],
       "temp_min": -50,
-      "temp_max": 50,
-      "trip_type": "international"
-    },
-    "url": "https://www.google.com/search?q=power+adapter+{destination}+electrical+outlet"
+      "temp_max": 50
+    }
   },
   {
     "id": "portable_speaker",
@@ -3806,62 +4291,6 @@
     }
   },
   {
-    "id": "ipad",
-    "name": {
-      "en": "iPad/Tablet",
-      "zh": "iPad/平板电脑"
-    },
-    "emoji": "💻",
-    "category": {
-      "en": "Electronics",
-      "zh": "电子产品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_business",
-        "activity_city",
-        "activity_photography"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "ipad_charger",
-    "name": {
-      "en": "iPad/Tablet Charger",
-      "zh": "iPad/平板充电器"
-    },
-    "emoji": "🔌",
-    "category": {
-      "en": "Electronics",
-      "zh": "电子产品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_business",
-        "activity_city",
-        "activity_photography"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
     "id": "camera_battery",
     "name": {
       "en": "Camera Battery",
@@ -3914,32 +4343,6 @@
     }
   },
   {
-    "id": "wireless_earbuds",
-    "name": {
-      "en": "Wireless Earbuds",
-      "zh": "无线耳机"
-    },
-    "emoji": "🎧",
-    "category": {
-      "en": "Electronics",
-      "zh": "电子产品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
     "id": "smartphone_gimbal",
     "name": {
       "en": "Smartphone Gimbal",
@@ -3957,61 +4360,6 @@
     "attributes": {
       "activities": [
         "activity_photography"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "e_reader",
-    "name": {
-      "en": "E-Reader/Kindle",
-      "zh": "电子书阅读器"
-    },
-    "emoji": "📚",
-    "category": {
-      "en": "Electronics",
-      "zh": "电子产品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_vacation",
-        "activity_business"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "walkie_talkie",
-    "name": {
-      "en": "Walkie Talkie",
-      "zh": "对讲机"
-    },
-    "emoji": "📻",
-    "category": {
-      "en": "Electronics",
-      "zh": "电子产品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 2
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking",
-        "activity_skiing",
-        "activity_camping"
       ],
       "weather_condition": [
         "any"
@@ -4490,62 +4838,6 @@
     }
   },
   {
-    "id": "travel_snacks",
-    "name": {
-      "en": "Travel Snacks",
-      "zh": "旅行零食"
-    },
-    "emoji": "🍪",
-    "category": {
-      "en": "Food & Snacks",
-      "zh": "食物零食"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking",
-        "activity_camping",
-        "activity_city"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "instant_coffee",
-    "name": {
-      "en": "Instant Coffee",
-      "zh": "速溶咖啡"
-    },
-    "emoji": "☕",
-    "category": {
-      "en": "Food & Snacks",
-      "zh": "食物零食"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_camping",
-        "activity_hiking",
-        "activity_business"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
     "id": "drinking_water",
     "name": {
       "en": "Drinking Water",
@@ -4618,246 +4910,6 @@
     "attributes": {
       "activities": [
         "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "medical_tape",
-    "name": {
-      "en": "Medical Tape",
-      "zh": "医用胶带"
-    },
-    "emoji": "🩹",
-    "category": {
-      "en": "Medical Kit",
-      "zh": "医疗用品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking",
-        "activity_camping",
-        "activity_skiing"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "painkillers",
-    "name": {
-      "en": "Painkillers/Cold Medicine",
-      "zh": "止痛/感冒药"
-    },
-    "emoji": "💊",
-    "category": {
-      "en": "Medical Kit",
-      "zh": "医疗用品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "mosquito_repellent",
-    "name": {
-      "en": "Mosquito Repellent",
-      "zh": "防蚊喷雾"
-    },
-    "emoji": "🦟",
-    "category": {
-      "en": "Medical Kit",
-      "zh": "医疗用品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking",
-        "activity_beach"
-      ],
-      "weather_condition": [
-        "hot",
-        "rainy"
-      ],
-      "temp_min": 18,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "alcohol_wipes",
-    "name": {
-      "en": "Alcohol Wipes",
-      "zh": "酒精棉"
-    },
-    "emoji": "🧻",
-    "category": {
-      "en": "Medical Kit",
-      "zh": "医疗用品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "personal_medications",
-    "name": {
-      "en": "Personal Medications",
-      "zh": "个人必备药品"
-    },
-    "emoji": "💊",
-    "category": {
-      "en": "Medical Kit",
-      "zh": "医疗用品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "antiseptic",
-    "name": {
-      "en": "Antiseptic",
-      "zh": "消毒液"
-    },
-    "emoji": "🧴",
-    "category": {
-      "en": "Medical Kit",
-      "zh": "医疗用品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking",
-        "activity_camping",
-        "activity_skiing"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "earplugs",
-    "name": {
-      "en": "Earplugs",
-      "zh": "耳塞"
-    },
-    "emoji": "🔇",
-    "category": {
-      "en": "Comfort",
-      "zh": "舒适用品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "travel_blanket",
-    "name": {
-      "en": "Travel Blanket",
-      "zh": "旅行毯"
-    },
-    "emoji": "🛏️",
-    "category": {
-      "en": "Comfort",
-      "zh": "舒适用品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "notepad",
-    "name": {
-      "en": "Notepad",
-      "zh": "记事本"
-    },
-    "emoji": "📝",
-    "category": {
-      "en": "Business",
-      "zh": "商务用品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_business"
       ],
       "weather_condition": [
         "any"
@@ -4963,58 +5015,6 @@
       "activities": [
         "activity_shopping",
         "activity_city"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "laundry_bags",
-    "name": {
-      "en": "Laundry Bags",
-      "zh": "洗衣袋"
-    },
-    "emoji": "👕",
-    "category": {
-      "en": "Miscellaneous",
-      "zh": "杂物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 2
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "zip_lock_bags",
-    "name": {
-      "en": "Zip-lock Bags",
-      "zh": "密封袋"
-    },
-    "emoji": "🗂️",
-    "category": {
-      "en": "Miscellaneous",
-      "zh": "杂物"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 5
-    },
-    "attributes": {
-      "activities": [
-        "any"
       ],
       "weather_condition": [
         "any"

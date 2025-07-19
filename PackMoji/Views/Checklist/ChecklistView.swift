@@ -824,6 +824,24 @@ struct MonthlyAverageCard: View {
         return tempRange
     }
     
+    // 根据天气提醒确定额外的天气图标
+    private var additionalWeatherIcon: String? {
+        guard let weatherAlerts = monthlyAverage.weatherAlerts else { return nil }
+        
+        for alert in weatherAlerts {
+            if alert.contains("降雨") || alert.contains("rain") {
+                return "🌧️"
+            } else if alert.contains("降雪") || alert.contains("snow") {
+                return "❄️"
+            } else if alert.contains("雾") || alert.contains("fog") {
+                return "🌫️"
+            } else if alert.contains("雷暴") || alert.contains("thunderstorm") {
+                return "⛈️"
+            }
+        }
+        return nil
+    }
+    
     private var localizedCondition: String {
         let condition = monthlyAverage.condition
         
@@ -873,11 +891,20 @@ struct MonthlyAverageCard: View {
                 .font(.system(size: 14, weight: .medium))
                 .foregroundColor(.primary)
             
-            WeatherIconView(
-                conditionCode: monthlyAverage.conditionCode,
-                icon: monthlyAverage.icon,
-                size: 24
-            )
+            // 天气图标区域 - 支持多个图标
+            HStack(spacing: 4) {
+                WeatherIconView(
+                    conditionCode: monthlyAverage.conditionCode,
+                    icon: monthlyAverage.icon,
+                    size: 24
+                )
+                
+                // 如果有额外的天气图标，显示在旁边
+                if let additionalIcon = additionalWeatherIcon {
+                    Text(additionalIcon)
+                        .font(.system(size: 16))
+                }
+            }
             
             VStack(spacing: 2) {
                 Text(displayTemperature)
@@ -902,7 +929,7 @@ struct MonthlyAverageCard: View {
         .padding(.vertical, 8)
         .background(
             RoundedRectangle(cornerRadius: 8)
-                .fill(Color(.secondarySystemBackground))
+                .fill(Color(.tertiarySystemBackground))
         )
     }
 }
@@ -1089,8 +1116,10 @@ struct ClickableNoteViewTest: View {
             ],
             isHistorical: true,
             monthlyAverages: [
-                MonthlyAverage(monthName: "1月", temperature: 15, condition: "weather_historical_monthly_average", conditionCode: "clouds", icon: "03d"),
-                MonthlyAverage(monthName: "2月", temperature: 12, condition: "weather_historical_monthly_average", conditionCode: "rain", icon: "09d")
+                MonthlyAverage(monthName: "1月", temperature: 15, tempRange: "10°C - 20°C", maxTemp: 20, minTemp: 10, condition: "weather_historical_monthly_average", conditionCode: "clouds", icon: "03d", weatherAlerts: ["⚠️ 历史数据显示这段时间有 30% 的降雨概率，建议携带雨具"]),
+                MonthlyAverage(monthName: "2月", temperature: 12, tempRange: "8°C - 16°C", maxTemp: 16, minTemp: 8, condition: "weather_historical_monthly_average", conditionCode: "rain", icon: "09d", weatherAlerts: ["⚠️ 历史数据显示这段时间有 45% 的降雨概率，建议携带雨具"]),
+                MonthlyAverage(monthName: "3月", temperature: 8, tempRange: "2°C - 12°C", maxTemp: 12, minTemp: 2, condition: "weather_historical_monthly_average", conditionCode: "snow", icon: "13d", weatherAlerts: ["❄️ 历史数据显示这段时间有 25% 的降雪概率，注意保暖"]),
+                MonthlyAverage(monthName: "4月", temperature: 18, tempRange: "12°C - 24°C", maxTemp: 24, minTemp: 12, condition: "weather_historical_monthly_average", conditionCode: "clear", icon: "01d", weatherAlerts: ["🌫️ 历史数据显示这段时间有 20% 的雾天概率，注意能见度"])
             ]
         )
         
