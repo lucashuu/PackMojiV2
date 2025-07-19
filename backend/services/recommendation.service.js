@@ -397,6 +397,13 @@ const getRecommendedItems = (tripContext) => {
         finalRecommended.push(...categoryItems);
     });
 
+    // 最终排序：完全按照items.json中的顺序
+    finalRecommended.sort((a, b) => {
+        const aOrder = itemOrderMap[a.id] || 999999;
+        const bOrder = itemOrderMap[b.id] || 999999;
+        return aOrder - bOrder;
+    });
+
     console.log(`📋 Final recommended items: ${finalRecommended.length}`);
     console.log(`📊 Score distribution:`);
     finalRecommended.forEach(item => {
