@@ -374,11 +374,24 @@ const getRecommendedItems = (tripContext) => {
     const finalRecommended = [];
     const seenIds = new Set(); // Track item IDs to prevent duplicates
     
+    // 获取items.json中物品的原始顺序，用于同一类别内的排序
+    const itemOrderMap = {};
+    items.forEach((item, index) => {
+        itemOrderMap[item.id] = index;
+    });
+    
     Object.keys(categoryGroups).forEach(categoryKey => {
         const maxItems = maxItemsPerCategory[categoryKey] || 6;
         const categoryItems = categoryGroups[categoryKey]
             .filter(item => !seenIds.has(item.id)) // Remove duplicates
             .slice(0, maxItems);
+        
+        // 在同一类别内，按照items.json中的原始顺序排序
+        categoryItems.sort((a, b) => {
+            const aOrder = itemOrderMap[a.id] || 999999;
+            const bOrder = itemOrderMap[b.id] || 999999;
+            return aOrder - bOrder;
+        });
         
         categoryItems.forEach(item => seenIds.add(item.id));
         finalRecommended.push(...categoryItems);
