@@ -822,6 +822,59 @@
     }
   },
   {
+    "id": "business_suit",
+    "name": {
+      "en": "Business Suit",
+      "zh": "商务西装"
+    },
+    "emoji": "🤵",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "rain_poncho",
+    "name": {
+      "en": "Rain Jacket",
+      "zh": "雨衣"
+    },
+    "emoji": "🌧️",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking",
+        "activity_camping"
+      ],
+      "weather_condition": [
+        "rainy"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
     "id": "light_jacket",
     "name": {
       "en": "Light Jacket",
@@ -1189,6 +1242,32 @@
     }
   },
   {
+    "id": "quick_dry_pants",
+    "name": {
+      "en": "Quick-Dry Pants",
+      "zh": "速干裤"
+    },
+    "emoji": "👖",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 2
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
     "id": "sneakers",
     "name": {
       "en": "Sneakers",
@@ -1405,6 +1484,32 @@
     }
   },
   {
+    "id": "formal_shoes",
+    "name": {
+      "en": "Leather Shoes",
+      "zh": "皮鞋"
+    },
+    "emoji": "👞",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_business"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
     "id": "socks",
     "name": {
       "en": "Socks",
@@ -1475,6 +1580,32 @@
       "activities": [
         "activity_hiking",
         "activity_skiing"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "hiking_socks",
+    "name": {
+      "en": "Hiking Socks",
+      "zh": "徒步袜"
+    },
+    "emoji": "🧦",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "per_day",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking"
       ],
       "weather_condition": [
         "any"
@@ -1674,6 +1805,165 @@
       ],
       "temp_min": -50,
       "temp_max": 10
+    }
+  },
+  {
+    "id": "hat_cap",
+    "name": {
+      "en": "Hat/Cap",
+      "zh": "帽子/遮阳帽"
+    },
+    "emoji": "🧢",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_beach",
+        "activity_hiking",
+        "activity_photography",
+        "activity_city"
+      ],
+      "weather_condition": [
+        "sunny"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "hiking_gloves",
+    "name": {
+      "en": "Hiking Gloves",
+      "zh": "徒步手套"
+    },
+    "emoji": "🧤",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "cold"
+      ],
+      "temp_min": -50,
+      "temp_max": 15
+    }
+  },
+  {
+    "id": "neck_warmer",
+    "name": {
+      "en": "Neck Warmer",
+      "zh": "脖套"
+    },
+    "emoji": "🧣",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_skiing"
+      ],
+      "weather_condition": [
+        "snowy"
+      ],
+      "temp_min": -50,
+      "temp_max": 10
+    }
+  },
+  {
+    "id": "evening_bag",
+    "name": {
+      "en": "Evening Bag/Clutch",
+      "zh": "包包"
+    },
+    "emoji": "👛",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "hiking_backpack",
+    "name": {
+      "en": "Hiking Backpack",
+      "zh": "徒步背包"
+    },
+    "emoji": "🎒",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_hiking"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
+    }
+  },
+  {
+    "id": "hair_styling_tools",
+    "name": {
+      "en": "Hair Styling Tools",
+      "zh": "美发工具"
+    },
+    "emoji": "💇",
+    "category": {
+      "en": "Clothing/Accessories",
+      "zh": "衣物/饰品"
+    },
+    "quantity_logic": {
+      "type": "fixed",
+      "value": 1
+    },
+    "attributes": {
+      "activities": [
+        "activity_party"
+      ],
+      "weather_condition": [
+        "any"
+      ],
+      "temp_min": -50,
+      "temp_max": 50
     }
   },
   {
@@ -3198,32 +3488,6 @@
     }
   },
   {
-    "id": "travel_documents_folder",
-    "name": {
-      "en": "Travel Documents Folder",
-      "zh": "旅行文件夹"
-    },
-    "emoji": "📁",
-    "category": {
-      "en": "Essentials",
-      "zh": "必需品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
     "id": "insurance_documents",
     "name": {
       "en": "Insurance Documents",
@@ -3337,32 +3601,6 @@
     "category": {
       "en": "Essentials",
       "zh": "必需品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "any"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "charger_cable",
-    "name": {
-      "en": "Charger & Cable",
-      "zh": "充电器/数据线"
-    },
-    "emoji": "🔌",
-    "category": {
-      "en": "Electronics",
-      "zh": "电子产品"
     },
     "quantity_logic": {
       "type": "fixed",
@@ -5360,296 +5598,6 @@
     },
     "quantity_logic": {
       "type": "per_day",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_skiing"
-      ],
-      "weather_condition": [
-        "snowy"
-      ],
-      "temp_min": -50,
-      "temp_max": 10
-    }
-  },
-  {
-    "id": "rain_poncho",
-    "name": {
-      "en": "Rain Jacket",
-      "zh": "雨衣"
-    },
-    "emoji": "🌧️",
-    "category": {
-      "en": "Clothing/Accessories",
-      "zh": "衣物/饰品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking",
-        "activity_camping"
-      ],
-      "weather_condition": [
-        "rainy"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "business_suit",
-    "name": {
-      "en": "Business Suit",
-      "zh": "商务西装"
-    },
-    "emoji": "🤵",
-    "category": {
-      "en": "Clothing/Accessories",
-      "zh": "衣物/饰品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_business"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "formal_shoes",
-    "name": {
-      "en": "Leather Shoes",
-      "zh": "皮鞋"
-    },
-    "emoji": "👞",
-    "category": {
-      "en": "Clothing/Accessories",
-      "zh": "衣物/饰品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_business"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "hat_cap",
-    "name": {
-      "en": "Hat/Cap",
-      "zh": "帽子/遮阳帽"
-    },
-    "emoji": "🧢",
-    "category": {
-      "en": "Clothing/Accessories",
-      "zh": "衣物/饰品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_beach",
-        "activity_hiking",
-        "activity_photography",
-        "activity_city"
-      ],
-      "weather_condition": [
-        "sunny"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "hiking_gloves",
-    "name": {
-      "en": "Hiking Gloves",
-      "zh": "徒步手套"
-    },
-    "emoji": "🧤",
-    "category": {
-      "en": "Clothing/Accessories",
-      "zh": "衣物/饰品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking"
-      ],
-      "weather_condition": [
-        "cold"
-      ],
-      "temp_min": -50,
-      "temp_max": 15
-    }
-  },
-  {
-    "id": "hair_styling_tools",
-    "name": {
-      "en": "Hair Styling Tools",
-      "zh": "美发工具"
-    },
-    "emoji": "💇",
-    "category": {
-      "en": "Clothing/Accessories",
-      "zh": "衣物/饰品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_party"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "evening_bag",
-    "name": {
-      "en": "Evening Bag/Clutch",
-      "zh": "包包"
-    },
-    "emoji": "👛",
-    "category": {
-      "en": "Clothing/Accessories",
-      "zh": "衣物/饰品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_party"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "hiking_backpack",
-    "name": {
-      "en": "Hiking Backpack",
-      "zh": "徒步背包"
-    },
-    "emoji": "🎒",
-    "category": {
-      "en": "Clothing/Accessories",
-      "zh": "衣物/饰品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "quick_dry_pants",
-    "name": {
-      "en": "Quick-Dry Pants",
-      "zh": "速干裤"
-    },
-    "emoji": "👖",
-    "category": {
-      "en": "Clothing/Accessories",
-      "zh": "衣物/饰品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
-      "value": 2
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "hiking_socks",
-    "name": {
-      "en": "Hiking Socks",
-      "zh": "徒步袜"
-    },
-    "emoji": "🧦",
-    "category": {
-      "en": "Clothing/Accessories",
-      "zh": "衣物/饰品"
-    },
-    "quantity_logic": {
-      "type": "per_day",
-      "value": 1
-    },
-    "attributes": {
-      "activities": [
-        "activity_hiking"
-      ],
-      "weather_condition": [
-        "any"
-      ],
-      "temp_min": -50,
-      "temp_max": 50
-    }
-  },
-  {
-    "id": "neck_warmer",
-    "name": {
-      "en": "Neck Warmer",
-      "zh": "脖套"
-    },
-    "emoji": "🧣",
-    "category": {
-      "en": "Clothing/Accessories",
-      "zh": "衣物/饰品"
-    },
-    "quantity_logic": {
-      "type": "fixed",
       "value": 1
     },
     "attributes": {
