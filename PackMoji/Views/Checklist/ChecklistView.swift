@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct ChecklistView: View {
     @ObservedObject var viewModel: ChecklistViewModel
@@ -47,7 +48,7 @@ struct ChecklistView: View {
                         Button {
                             useFahrenheit.toggle()
                         } label: {
-                            Text(useFahrenheit ? "°F" : "°C")
+                            Text(useFahrenheit ? "°C" : "°F")
                                 .font(.system(size: 16, weight: .medium))
                                 .foregroundColor(.accentColor)
                                 .padding(.horizontal, 8)
@@ -661,34 +662,10 @@ struct ChecklistItemRow: View {
             
             // Note Display (if exists)
             if let note = item.note, !note.isEmpty {
-                Button(action: {
-                    print("点击备注：\(note)")  // Debug log
+                ClickableNoteView(note: note) {
                     editingNote = note
                     isEditingNote = true
-                }) {
-                    HStack(spacing: 8) {
-                        Image(systemName: "text.quote")
-                            .foregroundColor(.orange)
-                            .font(.system(size: 12))
-                        
-                        Text(note)
-                            .font(.system(size: 14))
-                            .foregroundColor(.secondary)
-                            .lineLimit(3)
-                            .multilineTextAlignment(.leading)
-                        
-                        Spacer()
-                        
-                        Image(systemName: "pencil")
-                            .foregroundColor(.orange)
-                            .font(.system(size: 12))
-                    }
-                    .padding(.vertical, 6)
-                    .padding(.horizontal, 8)
-                    .background(Color(UIColor.systemGray6).opacity(0.5))
-                    .cornerRadius(6)
                 }
-                .buttonStyle(.plain)
                 .padding(.leading, 44)
                 .padding(.trailing, 12)
             }
@@ -921,6 +898,106 @@ struct ChecklistView_Previews: PreviewProvider {
     }
 }
 
+// MARK: - Clickable Note View
+struct ClickableNoteView: View {
+    let note: String
+    let onEdit: () -> Void
+    
+    private var isSearchLink: Bool {
+        note.contains("Search link:") || note.contains("搜索链接：")
+    }
+    
+    private var urlString: String? {
+        if note.contains("Search link:") {
+            return note.replacingOccurrences(of: "Search link: ", with: "")
+        } else if note.contains("搜索链接：") {
+            return note.replacingOccurrences(of: "搜索链接：", with: "")
+        }
+        return nil
+    }
+    
+    var body: some View {
+        Button(action: {
+            print("点击备注：\(note)")  // Debug log
+            onEdit()
+        }) {
+            HStack(spacing: 8) {
+                Image(systemName: "text.quote")
+                    .foregroundColor(.orange)
+                    .font(.system(size: 12))
+                
+                if isSearchLink, let urlStr = urlString {
+                    // 检测到Search link，显示为可点击的链接
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(urlStr)
+                            .font(.system(size: 14))
+                            .foregroundColor(.blue)
+                            .underline()
+                            .lineLimit(3)
+                            .multilineTextAlignment(.leading)
+                            .onTapGesture {
+                                print("点击链接：\(urlStr)")  // Debug log
+                                // 打开浏览器
+                                if let url = URL(string: urlStr) {
+                                    print("打开URL：\(url)")  // Debug log
+                                    UIApplication.shared.open(url)
+                                } else {
+                                    print("无效的URL：\(urlStr)")  // Debug log
+                                }
+                            }
+                    }
+                } else {
+                    // 普通note显示
+                    Text(note)
+                        .font(.system(size: 14))
+                        .foregroundColor(.secondary)
+                        .lineLimit(3)
+                        .multilineTextAlignment(.leading)
+                }
+                
+                Spacer()
+                
+                Image(systemName: "pencil")
+                    .foregroundColor(.orange)
+                    .font(.system(size: 12))
+            }
+            .padding(.vertical, 6)
+            .padding(.horizontal, 8)
+            .background(Color(UIColor.systemGray6).opacity(0.5))
+            .cornerRadius(6)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// MARK: - Test View for ClickableNoteView
+struct ClickableNoteViewTest: View {
+    var body: some View {
+        NavigationStack {
+            List {
+                Section("测试可点击链接") {
+                    ClickableNoteView(note: "搜索链接：https://www.google.com/search?q=visa+requirements+for+东京") {
+                        print("编辑中文链接")
+                    }
+                    
+                    ClickableNoteView(note: "Search link: https://www.google.com/search?q=currency+exchange+纽约+local+money") {
+                        print("编辑英文链接")
+                    }
+                    
+                    ClickableNoteView(note: "这是一个普通的备注，没有链接") {
+                        print("编辑普通备注")
+                    }
+                }
+            }
+            .navigationTitle("测试可点击链接")
+        }
+    }
+}
+
+#Preview("ClickableNoteView Test") {
+    ClickableNoteViewTest()
+}
+
 #Preview {
     NavigationStack {
         let mockTrip = TripInfo(
@@ -948,6 +1025,10 @@ struct ChecklistView_Previews: PreviewProvider {
                 ChecklistItem(id: "phone", emoji: "📱", name: "手机", quantity: 1, note: nil, url: nil, category: "电子产品"),
                 ChecklistItem(id: "charger", emoji: "🔌", name: "充电器", quantity: 1, note: nil, url: nil, category: "电子产品"),
                 ChecklistItem(id: "powerbank", emoji: "🔋", name: "充电宝", quantity: 1, note: nil, url: nil, category: "电子产品"),
+            ]),
+            ChecklistCategory(category: "必需品", items: [
+                ChecklistItem(id: "visa", emoji: "🛂", name: "签证要求查询", quantity: 1, note: "搜索链接：https://www.google.com/search?q=visa+requirements+for+伦敦", url: "https://www.google.com/search?q=visa+requirements+for+伦敦", category: "必需品"),
+                ChecklistItem(id: "cash", emoji: "💵", name: "现金兑换", quantity: 1, note: "Search link: https://www.google.com/search?q=currency+exchange+伦敦+local+money", url: "https://www.google.com/search?q=currency+exchange+伦敦+local+money", category: "必需品"),
             ])
         ]
         

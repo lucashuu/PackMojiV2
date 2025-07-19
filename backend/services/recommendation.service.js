@@ -23,23 +23,23 @@ const weatherConditionMap = {
 // Define item category priorities (higher = more important)
 const CATEGORY_PRIORITIES = {
     'Essentials': 100,                      // 必需品 - 最重要（护照、身份证、钱包等）
+    'Electronics': 95,                      // 电子产品 - 现代生活必需
     'Clothing/Accessories': 90,             // 衣物/饰品 - 基本需求
-    'Personal Care/Skincare': 85,           // 个人护理/护肤品 - 日常护理
-    'Electronics': 80,                      // 电子产品 - 现代生活必需
-    'Medical Kit': 75,                      // 医疗用品 - 健康安全
-    'Cosmetics': 65,                        // 化妆品 - 个人形象
-    'Food & Snacks': 60,                    // 食物零食 - 补充营养
-    'Business': 50,                         // 商务用品 - 特定场景需求
-    'Comfort': 45,                          // 舒适用品 - 提升旅行体验
-    'Beach': 35,                            // 海滩用品 - 活动相关
-    'Skiing Equipment': 35,                 // 滑雪装备 - 活动相关
-    'Camping': 35,                          // 露营装备 - 活动相关
-    'Miscellaneous': 30,                    // 杂物 - 较低
+    'Beach': 85,                            // 海滩用品 - 活动相关
+    'Skiing Equipment': 85,                 // 滑雪装备 - 活动相关
+    'Camping': 85,                          // 露营装备 - 活动相关
+    'Personal Care/Skincare': 80,           // 个人护理/护肤品 - 日常护理
+    'Cosmetics': 75,                        // 化妆品 - 个人形象
+    'Miscellaneous': 70,                    // 杂物 - 较低
+    'Food & Snacks': 65,                    // 食物零食 - 补充营养
+    'Business': 60,                         // 商务用品 - 特定场景需求
+    'Comfort': 55,                          // 舒适用品 - 提升旅行体验
+    'Medical Kit': 50,                      // 医疗用品 - 健康安全
     // 兼容旧的类别名称
     'Clothing': 90,                         // 兼容旧的衣物类别
     'Accessories': 90,                      // 兼容旧的配饰类别
-    'Personal Care': 85,                    // 兼容旧的个人护理类别
-    'Skincare': 85                          // 兼容旧的护肤品类别
+    'Personal Care': 80,                    // 兼容旧的个人护理类别
+    'Skincare': 80                          // 兼容旧的护肤品类别
 };
 
 // Essential items that should always be included
@@ -191,24 +191,24 @@ const getRecommendedItems = (tripContext) => {
 
     // Define base score thresholds for different categories (降低阈值以提高推荐覆盖率)
     const BASE_SCORE_THRESHOLDS = {
-        'Essentials': 25,                   // 必需品：确保重要物品被推荐 (降低from 40)
-        'Clothing/Accessories': 30,         // 衣物/饰品：基本需求 (降低from 40)
-        'Personal Care/Skincare': 35,       // 个人护理/护肤品：日常护理 (降低from 45)
-        'Electronics': 25,                  // 电子产品：现代生活必需 (降低from 35)
-        'Medical Kit': 30,                  // 医疗用品：健康安全 (降低from 50)
-        'Cosmetics': 25,                    // 化妆品：个人形象 (降低from 35)
-        'Food & Snacks': 25,                // 食物零食：补充营养 (降低from 35)
-        'Business': 30,                     // 商务用品：特定场景需求 (降低from 40)
-        'Comfort': 20,                      // 舒适用品：提升旅行体验 (降低from 30)
-        'Beach': 25,                        // 海滩用品：活动相关 (降低from 35)
-        'Skiing Equipment': 25,             // 滑雪装备：活动相关 (降低from 35)
-        'Camping': 25,                      // 露营装备：活动相关 (降低from 35)
-        'Miscellaneous': 15,                // 杂物：较低 (降低from 20)
+        'Essentials': 25,                   // 必需品：确保重要物品被推荐
+        'Electronics': 25,                  // 电子产品：现代生活必需
+        'Clothing/Accessories': 30,         // 衣物/饰品：基本需求
+        'Beach': 25,                        // 海滩用品：活动相关
+        'Skiing Equipment': 25,             // 滑雪装备：活动相关
+        'Camping': 25,                      // 露营装备：活动相关
+        'Personal Care/Skincare': 30,       // 个人护理/护肤品：日常护理
+        'Cosmetics': 25,                    // 化妆品：个人形象
+        'Miscellaneous': 20,                // 杂物：较低
+        'Food & Snacks': 25,                // 食物零食：补充营养
+        'Business': 30,                     // 商务用品：特定场景需求
+        'Comfort': 20,                      // 舒适用品：提升旅行体验
+        'Medical Kit': 25,                  // 医疗用品：健康安全
         // 兼容旧的类别名称
-        'Clothing': 30,                     // 兼容旧的衣物类别 (降低from 40)
-        'Accessories': 20,                  // 兼容旧的配饰类别 (降低from 25)
-        'Personal Care': 35,                // 兼容旧的个人护理类别 (降低from 45)
-        'Skincare': 35                      // 兼容旧的护肤品类别 (降低from 45)
+        'Clothing': 30,                     // 兼容旧的衣物类别
+        'Accessories': 20,                  // 兼容旧的配饰类别
+        'Personal Care': 30,                // 兼容旧的个人护理类别
+        'Skincare': 30                      // 兼容旧的护肤品类别
     };
 
     // Activity-specific threshold adjustments for professional gear
@@ -338,26 +338,26 @@ const getRecommendedItems = (tripContext) => {
         return b.score - a.score;
     });
 
-    // Apply smart limits to avoid overwhelming the user (增加限制以推荐更多物品)
+    // Apply smart limits to avoid overwhelming the user (按照新的优先级调整数量限制)
     const maxItemsPerCategory = {
-        'Documents': 12,            // 增加from 10
-        'Medical Kit': 15,          // 增加from 10
-        'Personal Care': 20,        // 增加from 15
-        'Clothing': 20,             // 增加from 15
-        'Electronics': 12,          // 增加from 8
-        'Food & Snacks': 8,         // 增加from 6
-        'Essentials': 15,           // 增加from 12
-        'Comfort': 8,               // 增加from 5
-        'Accessories': 10,          // 增加from 6
-        'Miscellaneous': 12,        // 增加from 8
-        'Beach': 12,                // 增加from 8
-        'Business': 12,             // 增加from 8
-        'Camping': 18,              // 增加from 12
-        'Skiing Equipment': 15,     // 增加from 10
-        'Cosmetics': 8,             // 增加from 5
-        'Skincare': 6,              // 增加from 3
-        'Personal Care/Skincare': 20, // 新增
-        'Clothing/Accessories': 20    // 新增
+        'Essentials': 15,           // 必需品：最重要，保持较高数量
+        'Electronics': 12,          // 电子产品：现代生活必需
+        'Clothing': 20,             // 衣物：基本需求
+        'Clothing/Accessories': 20, // 衣物/饰品：基本需求
+        'Beach': 12,                // 海滩用品：活动相关
+        'Skiing Equipment': 15,     // 滑雪装备：活动相关
+        'Camping': 18,              // 露营装备：活动相关
+        'Personal Care': 20,        // 个人护理：日常护理
+        'Personal Care/Skincare': 20, // 个人护理/护肤品：日常护理
+        'Skincare': 20,              // 护肤品：日常护理
+        'Cosmetics': 8,             // 化妆品：个人形象
+        'Miscellaneous': 12,        // 杂物：较低
+        'Food & Snacks': 8,         // 食物零食：补充营养
+        'Business': 12,             // 商务用品：特定场景需求
+        'Comfort': 8,               // 舒适用品：提升旅行体验
+        'Medical Kit': 15,          // 医疗用品：健康安全
+        'Documents': 12,            // 文档：重要但数量有限
+        'Accessories': 10,          // 配饰：兼容旧类别            
     };
 
     // Group by category and apply limits

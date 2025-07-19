@@ -3257,8 +3257,8 @@
   {
     "id": "travel_snacks",
     "name": {
-      "en": "Travel Snacks",
-      "zh": "旅行零食"
+      "en": "Travel Snacks (customize quantity)",
+      "zh": "旅行零食（自选数量）"
     },
     "emoji": "🍪",
     "category": {
@@ -3266,8 +3266,8 @@
       "zh": "食物零食"
     },
     "quantity_logic": {
-      "type": "per_day",
-      "value": 0.5
+      "type": "fixed",
+      "value": 1
     },
     "attributes": {
       "activities": [
@@ -3285,8 +3285,8 @@
   {
     "id": "energy_bars",
     "name": {
-      "en": "Energy Bars",
-      "zh": "能量棒"
+      "en": "Energy Bars (customize quantity)",
+      "zh": "能量棒（自选数量）"
     },
     "emoji": "🍫",
     "category": {
@@ -3294,7 +3294,7 @@
       "zh": "食物零食"
     },
     "quantity_logic": {
-      "type": "per_day",
+      "type": "fixed",
       "value": 1
     },
     "attributes": {
@@ -3313,8 +3313,8 @@
   {
     "id": "instant_coffee",
     "name": {
-      "en": "Instant Coffee",
-      "zh": "速溶咖啡"
+      "en": "Instant Coffee (customize quantity)",
+      "zh": "速溶咖啡（自选数量）"
     },
     "emoji": "☕",
     "category": {
@@ -3322,8 +3322,8 @@
       "zh": "食物零食"
     },
     "quantity_logic": {
-      "type": "per_day",
-      "value": 2
+      "type": "fixed",
+      "value": 1
     },
     "attributes": {
       "activities": [
@@ -5697,8 +5697,8 @@
   {
     "id": "electrolyte_powder",
     "name": {
-      "en": "Electrolyte Powder",
-      "zh": "电解质粉"
+      "en": "Electrolyte Powder (customize quantity)",
+      "zh": "电解质粉（自选数量）"
     },
     "emoji": "🧂",
     "category": {
@@ -5706,8 +5706,8 @@
       "zh": "食物零食"
     },
     "quantity_logic": {
-      "type": "per_day",
-      "value": 2
+      "type": "fixed",
+      "value": 1
     },
     "attributes": {
       "activities": [
