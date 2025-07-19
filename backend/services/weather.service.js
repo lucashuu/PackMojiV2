@@ -272,7 +272,7 @@ const getHistoricalWeatherData = async (lat, lon, startDate, endDate, lang = 'en
                 longitude: lon,
                 start_date: startDate,
                 end_date: endDate,
-                daily: 'weathercode,temperature_2m_mean',
+                daily: 'weathercode,temperature_2m_mean,temperature_2m_max,temperature_2m_min',
                 timezone: 'auto'
             }
         });
@@ -284,6 +284,11 @@ const getHistoricalWeatherData = async (lat, lon, startDate, endDate, lang = 'en
 
         const totalTemp = daily.temperature_2m_mean.reduce((sum, temp) => sum + temp, 0);
         const averageTemp = Math.round(totalTemp / daily.temperature_2m_mean.length);
+        
+        // 计算温度范围
+        const maxTemp = Math.round(Math.max(...daily.temperature_2m_max));
+        const minTemp = Math.round(Math.min(...daily.temperature_2m_min));
+        const tempRange = `${minTemp}°C - ${maxTemp}°C`;
 
         const conditionCounts = daily.weathercode.reduce((counts, code) => {
             counts[code] = (counts[code] || 0) + 1;
@@ -291,6 +296,9 @@ const getHistoricalWeatherData = async (lat, lon, startDate, endDate, lang = 'en
         }, {});
         
         const dominantCode = Object.keys(conditionCounts).reduce((a, b) => conditionCounts[a] > conditionCounts[b] ? a : b);
+
+        // 生成天气提醒
+        const weatherAlerts = generateWeatherAlerts(daily.weathercode, language);
 
         // 构造 dailyWeather 数组
         const dailyWeather = daily.time.map((date, idx) => ({
@@ -304,8 +312,12 @@ const getHistoricalWeatherData = async (lat, lon, startDate, endDate, lang = 'en
 
         return {
             averageTemp,
+            tempRange,
+            maxTemp,
+            minTemp,
             condition: getWeatherConditionFromCode(dominantCode, language),
             conditionCode: mapWeatherCodeToCondition(dominantCode),
+            weatherAlerts,
             dailyWeather
         };
 
@@ -448,8 +460,12 @@ async function getMonthlyAverageData(lat, lon, month, language) {
         return {
             monthName: month.name,
             temperature: historicalData.averageTemp,
+            tempRange: historicalData.tempRange,
+            maxTemp: historicalData.maxTemp,
+            minTemp: historicalData.minTemp,
             condition: "weather_historical_monthly_average",
             conditionCode: historicalData.conditionCode,
+            weatherAlerts: historicalData.weatherAlerts,
             icon: mapWeatherCodeToIcon(0) // Use default icon for monthly averages
         };
     } catch (error) {
@@ -457,11 +473,77 @@ async function getMonthlyAverageData(lat, lon, month, language) {
         return {
             monthName: month.name,
             temperature: 20,
+            tempRange: "15°C - 25°C",
+            maxTemp: 25,
+            minTemp: 15,
             condition: "weather_historical_monthly_average",
             conditionCode: "clouds",
+            weatherAlerts: [],
             icon: "02d"
         };
     }
+}
+
+// Generate weather alerts based on historical weather codes
+function generateWeatherAlerts(weatherCodes, language) {
+    const alerts = [];
+    const isChinese = language === 'zh';
+    
+    // 统计各种天气情况
+    const rainCodes = [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82, 95, 96, 99];
+    const snowCodes = [71, 73, 75, 77, 85, 86];
+    const fogCodes = [45, 48];
+    const stormCodes = [95, 96, 99];
+    
+    const rainCount = weatherCodes.filter(code => rainCodes.includes(code)).length;
+    const snowCount = weatherCodes.filter(code => snowCodes.includes(code)).length;
+    const fogCount = weatherCodes.filter(code => fogCodes.includes(code)).length;
+    const stormCount = weatherCodes.filter(code => stormCodes.includes(code)).length;
+    
+    const totalDays = weatherCodes.length;
+    const rainPercentage = (rainCount / totalDays) * 100;
+    const snowPercentage = (snowCount / totalDays) * 100;
+    const fogPercentage = (fogCount / totalDays) * 100;
+    const stormPercentage = (stormCount / totalDays) * 100;
+    
+    // 生成提醒
+    if (rainPercentage >= 30) {
+        alerts.push(isChinese ? 
+            `⚠️ 历史数据显示这段时间有 ${Math.round(rainPercentage)}% 的降雨概率，建议携带雨具` :
+            `⚠️ Historical data shows ${Math.round(rainPercentage)}% chance of rain during this period, consider bringing rain gear`
+        );
+    }
+    
+    if (snowPercentage >= 20) {
+        alerts.push(isChinese ? 
+            `❄️ 历史数据显示这段时间有 ${Math.round(snowPercentage)}% 的降雪概率，注意保暖` :
+            `❄️ Historical data shows ${Math.round(snowPercentage)}% chance of snow during this period, stay warm`
+        );
+    }
+    
+    if (fogPercentage >= 25) {
+        alerts.push(isChinese ? 
+            `🌫️ 历史数据显示这段时间有 ${Math.round(fogPercentage)}% 的雾天概率，注意能见度` :
+            `🌫️ Historical data shows ${Math.round(fogPercentage)}% chance of fog during this period, watch visibility`
+        );
+    }
+    
+    if (stormPercentage >= 15) {
+        alerts.push(isChinese ? 
+            `⛈️ 历史数据显示这段时间有 ${Math.round(stormPercentage)}% 的雷暴概率，注意安全` :
+            `⛈️ Historical data shows ${Math.round(stormPercentage)}% chance of thunderstorms during this period, stay safe`
+        );
+    }
+    
+    // 如果没有特殊天气，添加一般提醒
+    if (alerts.length === 0) {
+        alerts.push(isChinese ? 
+            "📅 基于历史天气数据，建议查看实时天气预报" :
+            "📅 Based on historical weather data, check real-time forecast"
+        );
+    }
+    
+    return alerts;
 }
 
 module.exports = {

@@ -99,6 +99,27 @@ struct ChecklistView: View {
                                         MonthlyAverageCard(monthlyAverage: monthlyAverage, useFahrenheit: useFahrenheit)
                                     }
                                 }
+                                
+                                // 显示天气提醒
+                                if let firstMonthlyAverage = monthlyAverages.first,
+                                   let weatherAlerts = firstMonthlyAverage.weatherAlerts,
+                                   !weatherAlerts.isEmpty {
+                                    VStack(alignment: .leading, spacing: 6) {
+                                        Text("weather_historical_alerts_title")
+                                            .font(.system(size: 13, weight: .medium))
+                                            .foregroundColor(.orange)
+                                        
+                                        ForEach(weatherAlerts, id: \.self) { alert in
+                                            Text(alert)
+                                                .font(.system(size: 12))
+                                                .foregroundColor(.secondary)
+                                                .lineLimit(nil)
+                                                .multilineTextAlignment(.leading)
+                                                .fixedSize(horizontal: false, vertical: true)
+                                        }
+                                    }
+                                    .padding(.top, 8)
+                                }
                             }
                         }
                     }
@@ -786,6 +807,23 @@ struct MonthlyAverageCard: View {
         }
     }
     
+    private var displayTempRange: String {
+        guard let tempRange = monthlyAverage.tempRange else { return "" }
+        
+        if useFahrenheit {
+            // 转换温度范围到华氏度
+            let components = tempRange.components(separatedBy: " - ")
+            if components.count == 2,
+               let minC = Int(components[0].replacingOccurrences(of: "°C", with: "")),
+               let maxC = Int(components[1].replacingOccurrences(of: "°C", with: "")) {
+                let minF = Int(Double(minC) * 9.0 / 5.0 + 32)
+                let maxF = Int(Double(maxC) * 9.0 / 5.0 + 32)
+                return "\(minF)°F - \(maxF)°F"
+            }
+        }
+        return tempRange
+    }
+    
     private var localizedCondition: String {
         let condition = monthlyAverage.condition
         
@@ -841,9 +879,17 @@ struct MonthlyAverageCard: View {
                 size: 24
             )
             
-            Text(displayTemperature)
-                .font(.system(size: 16, weight: .semibold))
-                .foregroundColor(.primary)
+            VStack(spacing: 2) {
+                Text(displayTemperature)
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(.primary)
+                
+                if !displayTempRange.isEmpty {
+                    Text(displayTempRange)
+                        .font(.system(size: 10))
+                        .foregroundColor(.secondary)
+                }
+            }
             
             Text(localizedCondition)
                 .font(.system(size: 9))
@@ -916,6 +962,26 @@ struct ClickableNoteView: View {
         return nil
     }
     
+    private var friendlyDisplayText: String {
+        guard let urlStr = urlString else { return note }
+        
+        // 从URL中提取友好的显示文本
+        if urlStr.contains("visa+requirements") {
+            return "🔍 查询签证要求"
+        } else if urlStr.contains("international+driving+permit") {
+            return "🔍 查询国际驾照要求"
+        } else if urlStr.contains("currency+exchange") {
+            return "🔍 查询货币兑换"
+        } else if urlStr.contains("power+adapter") {
+            return "🔍 查询电源适配器"
+        } else if urlStr.contains("local+money") {
+            return "🔍 查询当地货币"
+        } else {
+            // 默认显示为"搜索相关信息"
+            return "🔍 搜索相关信息"
+        }
+    }
+    
     var body: some View {
         Button(action: {
             print("点击备注：\(note)")  // Debug log
@@ -929,7 +995,7 @@ struct ClickableNoteView: View {
                 if isSearchLink, let urlStr = urlString {
                     // 检测到Search link，显示为可点击的链接
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(urlStr)
+                        Text(friendlyDisplayText)
                             .font(.system(size: 14))
                             .foregroundColor(.blue)
                             .underline()
@@ -977,11 +1043,19 @@ struct ClickableNoteViewTest: View {
             List {
                 Section("测试可点击链接") {
                     ClickableNoteView(note: "搜索链接：https://www.google.com/search?q=visa+requirements+for+东京") {
-                        print("编辑中文链接")
+                        print("编辑签证查询链接")
                     }
                     
                     ClickableNoteView(note: "Search link: https://www.google.com/search?q=currency+exchange+纽约+local+money") {
-                        print("编辑英文链接")
+                        print("编辑货币兑换链接")
+                    }
+                    
+                    ClickableNoteView(note: "Search link: https://www.google.com/search?q=international+driving+permit+requirements+巴黎") {
+                        print("编辑国际驾照查询链接")
+                    }
+                    
+                    ClickableNoteView(note: "Search link: https://www.google.com/search?q=power+adapter+伦敦+electrical+outlet") {
+                        print("编辑电源适配器查询链接")
                     }
                     
                     ClickableNoteView(note: "这是一个普通的备注，没有链接") {

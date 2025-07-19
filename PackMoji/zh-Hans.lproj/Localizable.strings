@@ -180,6 +180,9 @@
 "weather_monthly_average" = "历史月平均";
 "weather_historical_monthly_average" = "历史天气月平均";
 
+// MARK: - Weather Alerts
+"weather_historical_alerts_title" = "📋 历史天气参考";
+
 // MARK: - Emoji Picker
 "emoji_picker_title" = "选择表情";
 "emoji_picker_done" = "完成"; 

@@ -34,9 +34,13 @@ struct MonthlyAverage: Codable, Identifiable, Equatable {
     var id: String { monthName }
     let monthName: String
     let temperature: Int
+    let tempRange: String?
+    let maxTemp: Int?
+    let minTemp: Int?
     let condition: String
     let conditionCode: String
     let icon: String
+    let weatherAlerts: [String]?
 }
 
 struct ChecklistCategory: Codable, Equatable, Identifiable {

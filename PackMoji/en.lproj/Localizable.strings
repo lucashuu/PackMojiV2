@@ -180,6 +180,9 @@
 "weather_monthly_average" = "Monthly Average";
 "weather_historical_monthly_average" = "Monthly Avg";
 
+// MARK: - Weather Alerts
+"weather_historical_alerts_title" = "📋 Historical Weather Reference";
+
 // MARK: - Emoji Picker
 "emoji_picker_title" = "Select Emoji";
 "emoji_picker_done" = "Done"; 
