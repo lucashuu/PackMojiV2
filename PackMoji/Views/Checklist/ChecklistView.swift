@@ -57,6 +57,7 @@ struct ChecklistView: View {
                                 .cornerRadius(6)
                         }
                     }
+                    .zIndex(1) // 确保按钮在最上层
                     HStack {
                         Image(systemName: "calendar")
                         Text("\(viewModel.tripInfo.durationDays) \(String(localized: "checklist_days_suffix"))")
@@ -76,6 +77,7 @@ struct ChecklistView: View {
                         
                         DailyWeatherView(dailyWeather: viewModel.tripInfo.dailyWeather, useFahrenheit: useFahrenheit)
                     }
+                    .zIndex(0) // 确保天气部分在按钮下方
                 } else if viewModel.tripInfo.isHistorical {
                     VStack(alignment: .leading, spacing: 12) {
                         Text("checklist_historical_weather_title")
@@ -123,6 +125,7 @@ struct ChecklistView: View {
                             }
                         }
                     }
+                    .zIndex(0) // 确保历史天气部分在按钮下方
                 }
             }
             .padding()
