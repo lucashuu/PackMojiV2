@@ -46,8 +46,44 @@ const CATEGORY_PRIORITIES = {
 const ESSENTIAL_ITEMS = [
     'passport', 'id_card_cn', 'id_card_us', 'credit_card', 'drivers_license', 'student_id', 'cash', 'keys', 
     'visa_info', 'international_driving_permit_info', 'emergency_contacts', 'hotel_reservation', 'flight_reservation',
-    'underwear', 'socks', 'pajamas', 'toothbrush_paste', 'face_wash', 'towel', 'sanitary_pads', 'band_aids'
+    'underwear', 'socks', 'pajamas', 'toothbrush_paste', 'face_wash', 'towel', 'sanitary_pads'
 ];
+
+// Critical documents that should appear at the very top
+const CRITICAL_DOCUMENTS = [
+    'passport', 'id_card_cn', 'id_card_us', 'drivers_license', 'student_id', 'credit_card'
+];
+
+// Documents that should appear first (highest priority)
+// This will be dynamically determined based on trip type and origin country
+const getHighestPriorityDocuments = (tripType, originCountry) => {
+    if (tripType === 'international') {
+        return ['passport']; // 国际旅行只显示护照
+    } else if (tripType === 'domestic') {
+        if (originCountry === 'CN') {
+            return ['id_card_cn']; // 中国国内旅行只显示中国身份证
+        } else if (originCountry === 'US') {
+            return ['id_card_us']; // 美国国内旅行只显示美国身份证/驾照
+        } else {
+            return ['id_card_cn', 'id_card_us']; // 其他国家的国内旅行显示两种身份证
+        }
+    }
+    return ['passport', 'id_card_cn', 'id_card_us']; // 默认情况
+};
+
+// Get documents to exclude based on trip type and origin country
+const getExcludedDocuments = (tripType, originCountry) => {
+    if (tripType === 'international') {
+        return ['id_card_cn', 'id_card_us']; // 国际旅行排除身份证
+    } else if (tripType === 'domestic') {
+        if (originCountry === 'CN') {
+            return ['passport', 'id_card_us']; // 中国国内旅行排除护照和美国身份证
+        } else if (originCountry === 'US') {
+            return ['passport', 'id_card_cn']; // 美国国内旅行排除护照和中国身份证
+        }
+    }
+    return []; // 默认不排除任何文档
+};
 
 // International trip essential items (added dynamically)
 const INTERNATIONAL_ESSENTIAL_ITEMS = [
@@ -279,8 +315,17 @@ const getRecommendedItems = (tripContext) => {
         });
     }
 
+    // Get documents to exclude based on trip type and origin country
+    const excludedDocuments = getExcludedDocuments(tripType, originCountry);
+    
     // Filter items based on score thresholds AND more flexible activity matching
     const recommended = itemsWithScores.filter(item => {
+        // Exclude documents based on trip type and origin country
+        if (excludedDocuments.includes(item.id)) {
+            console.log(`📊 ${item.id}: score=${item.score.toFixed(1)} -> ❌ (excluded for ${tripType} trip from ${originCountry})`);
+            return false;
+        }
+        
         const categoryKey = item.category['en'] || item.category[Object.keys(item.category)[0]];
         const threshold = SCORE_THRESHOLDS[categoryKey] || 25;
         
@@ -398,16 +443,54 @@ const getRecommendedItems = (tripContext) => {
         finalRecommended.push(...categoryItems);
     });
 
-    // 最终排序：完全按照items.json中的顺序，但必需品优先
+    // 获取动态的最高优先级文档
+    const highestPriorityDocs = getHighestPriorityDocuments(tripType, originCountry);
+    
+    // 最终排序：最高优先级证件最优先，然后其他重要证件，最后按分数排序
     finalRecommended.sort((a, b) => {
-        // 必需品优先，然后按items.json中的顺序
+        // 1. 最高优先级证件最优先（根据旅行类型和出发国家动态确定）
+        const aIsHighest = highestPriorityDocs.includes(a.id);
+        const bIsHighest = highestPriorityDocs.includes(b.id);
+        
+        if (aIsHighest && !bIsHighest) return -1;
+        if (!aIsHighest && bIsHighest) return 1;
+        
+        // 2. 如果都是最高优先级证件，按items.json中的顺序排序
+        if (aIsHighest === bIsHighest && aIsHighest) {
+            const aOrder = itemOrderMap[a.id] || 999999;
+            const bOrder = itemOrderMap[b.id] || 999999;
+            return aOrder - bOrder;
+        }
+        
+        // 3. 其他重要证件优先
+        const aIsCritical = CRITICAL_DOCUMENTS.includes(a.id);
+        const bIsCritical = CRITICAL_DOCUMENTS.includes(b.id);
+        
+        if (aIsCritical && !bIsCritical) return -1;
+        if (!aIsCritical && bIsCritical) return 1;
+        
+        // 4. 如果都是重要证件，按items.json中的顺序排序
+        if (aIsCritical === bIsCritical && aIsCritical) {
+            const aOrder = itemOrderMap[a.id] || 999999;
+            const bOrder = itemOrderMap[b.id] || 999999;
+            return aOrder - bOrder;
+        }
+        
+        // 5. 其他必需品优先
         const aIsEssential = ESSENTIAL_ITEMS.includes(a.id);
         const bIsEssential = ESSENTIAL_ITEMS.includes(b.id);
         
         if (aIsEssential && !bIsEssential) return -1;
         if (!aIsEssential && bIsEssential) return 1;
         
-        // 如果都是必需品或都不是必需品，按items.json中的顺序排序
+        // 6. 如果都是必需品或都不是必需品，按分数排序
+        if (aIsEssential === bIsEssential) {
+            if (a.score !== b.score) {
+                return b.score - a.score;
+            }
+        }
+        
+        // 7. 如果分数相同，按items.json中的顺序排序
         const aOrder = itemOrderMap[a.id] || 999999;
         const bOrder = itemOrderMap[b.id] || 999999;
         return aOrder - bOrder;

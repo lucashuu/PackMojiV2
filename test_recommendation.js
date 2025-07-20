@@ -1,68 +1,49 @@
-const recommendationService = require('./backend/services/recommendation.service');
+const recommendationService = require('./backend/services/recommendation.service.js');
 
-// Test the recommendation logic directly
-function testRecommendation() {
-    console.log('🧪 Testing Recommendation Logic...\n');
-    
-    const testCases = [
-        {
-            name: "International Trip with City Activities",
-            context: {
-                durationDays: 5,
-                avgTemp: 20,
-                weatherCode: "clear",
-                activities: ["activity_city", "activity_shopping"],
-                lang: "en",
-                tripType: "international",
-                originCountry: "US",
-                destination: "Paris"
-            }
-        },
-        {
-            name: "Camping Trip (Chinese Language)",
-            context: {
-                durationDays: 4,
-                avgTemp: 15,
-                weatherCode: "clouds",
-                activities: ["activity_camping"],
-                lang: "zh",
-                tripType: "domestic",
-                originCountry: "US",
-                destination: "Yosemite National Park"
-            }
-        }
-    ];
-    
-    testCases.forEach((testCase, index) => {
-        console.log(`\n📋 Test Case ${index + 1}: ${testCase.name}`);
-        console.log('=' .repeat(50));
-        
-        try {
-            const items = recommendationService.getRecommendedItems(testCase.context);
-            
-            console.log(`✅ Found ${items.length} recommended items:`);
-            
-            // Group by category
-            const byCategory = {};
-            items.forEach(item => {
-                if (!byCategory[item.category]) {
-                    byCategory[item.category] = [];
-                }
-                byCategory[item.category].push(item);
-            });
-            
-            Object.keys(byCategory).forEach(category => {
-                console.log(`\n  📁 ${category}:`);
-                byCategory[category].forEach(item => {
-                    const urlInfo = item.url ? ` (🔗 ${item.url})` : '';
-                    console.log(`    - ${item.emoji} ${item.name} x${item.quantity}${urlInfo}`);
-                });
-            });
-            
-        } catch (error) {
-            console.error(`❌ Error in test case ${index + 1}:`, error.message);
-        }
-    });
-}
+// 测试国际旅行场景
+const internationalTripContext = {
+    durationDays: 7,
+    avgTemp: 20,
+    weatherCode: 'clear',
+    activities: ['activity_city'],
+    lang: 'zh',
+    tripType: 'international',
+    originCountry: 'CN',
+    destination: 'Tokyo, Japan'
+};
 
-testRecommendation(); 
+console.log('🔍 测试国际旅行推荐：');
+console.log('Trip Type:', internationalTripContext.tripType);
+console.log('Destination:', internationalTripContext.destination);
+console.log('---');
+
+const internationalRecommendations = recommendationService.getRecommendedItems(internationalTripContext);
+
+console.log('\n📋 国际旅行推荐结果（前30项）：');
+internationalRecommendations.slice(0, 30).forEach((item, index) => {
+    console.log(`${index + 1}. ${item.emoji} ${item.name} (${item.id}) - 分数: ${item.score.toFixed(1)}`);
+});
+
+// 测试国内旅行场景
+const domesticTripContext = {
+    durationDays: 3,
+    avgTemp: 15,
+    weatherCode: 'clouds',
+    activities: ['activity_city'],
+    lang: 'zh',
+    tripType: 'domestic',
+    originCountry: 'CN',
+    destination: 'Beijing, China'
+};
+
+console.log('\n\n🔍 测试国内旅行推荐：');
+console.log('Trip Type:', domesticTripContext.tripType);
+console.log('Destination:', domesticTripContext.destination);
+console.log('---');
+
+const domesticRecommendations = recommendationService.getRecommendedItems(domesticTripContext);
+
+console.log('\n📋 国内旅行推荐结果（前30项）：');
+domesticRecommendations.slice(0, 30).forEach((item, index) => {
+    console.log(`${index + 1}. ${item.emoji} ${item.name} (${item.id}) - 分数: ${item.score.toFixed(1)}`);
+}); 
