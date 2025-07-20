@@ -77,27 +77,19 @@ const generateChecklist = async (req, res) => {
         // Get recommended items
         const recommendedItems = recommendationService.getRecommendedItems(tripContext);
 
-        // Group items by category
-        const checklist = recommendedItems.reduce((acc, item) => {
-            const categoryName = item.category; // This is already localized from recommendationService
-            const category = acc.find(c => c.category === categoryName);
-            const itemData = { 
-                id: item.id, 
-                name: item.name, 
-                emoji: item.emoji, 
+        // Convert grouped items to the expected format
+        const checklist = recommendedItems.map(group => ({
+            category: group.group,
+            items: group.items.map(item => ({
+                id: item.id,
+                name: item.name,
+                emoji: item.emoji,
                 quantity: item.quantity,
-                category: categoryName,  // Use the localized category name
+                category: group.group,
                 note: item.note || null,
                 url: item.url || null
-            };
-            
-            if (category) {
-                category.items.push(itemData);
-            } else {
-                acc.push({ category: categoryName, items: [itemData] });
-            }
-            return acc;
-        }, []);
+            }))
+        }));
 
         // Format the final response
         const response = {
