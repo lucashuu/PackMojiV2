@@ -572,16 +572,17 @@ const getRecommendedItems = (tripContext) => {
         
         // 对所有类别进行分组排序
         if (category === 'Clothing/Accessories' || category === '衣物/饰品') {
-            // 衣物类分组排序 - 从薄到厚（从内到外）
+            // 衣物类分组排序 - 按穿着层次和部位排序
             const clothingSubCategories = {
-                underwear: ['underwear', 'sport_bra', 'thermal_underwear', 'base_layer', 'socks', 'hiking_socks', 'ski_socks'],
                 inner_tops: ['tank_top', 't_shirt', 'long_sleeve_shirt', 'blouse', 'sun_protection_shirt'],
-                inner_bottoms: ['leggings', 'shorts', 'skirt'],
-                middle_layer: ['sweater', 'casual_pants', 'jeans', 'sports_pants', 'quick_dry_pants'],
+                middle_tops: ['sweater'],
                 outer_tops: ['light_jacket', 'sports_jacket', 'heavy_jacket', 'hardshell_jacket', 'down_jacket', 'wool_coat', 'ski_jacket'],
+                inner_bottoms: ['leggings', 'shorts', 'skirt'],
+                middle_bottoms: ['casual_pants', 'jeans', 'sports_pants', 'quick_dry_pants'],
                 outer_bottoms: ['ski_pants'],
-                special_wear: ['pajamas', 'swimsuit', 'fancy_dress', 'business_suit', 'rain_poncho'],
+                special_wear: ['swimsuit', 'fancy_dress', 'business_suit', 'rain_poncho'],
                 shoes: ['flip_flops', 'sandals', 'sneakers', 'casual_shoes', 'dress_shoes', 'formal_shoes', 'boots', 'hiking_boots', 'water_shoes', 'ski_boots'],
+                underwear: ['underwear', 'sport_bra', 'thermal_underwear', 'base_layer', 'socks', 'hiking_socks', 'ski_socks', 'pajamas'],
                 accessories: ['belt', 'scarf', 'gloves', 'hiking_gloves', 'ski_gloves', 'neck_warmer', 'winter_hat', 'hat_cap', 'sunglasses', 'jewelry', 'tie', 'evening_bag', 'hiking_backpack', 'hair_styling_tools', 'ski_helmet', 'ski_goggles']
             };
             
