@@ -20,6 +20,26 @@ const weatherConditionMap = {
     'tornado': 'special',
 };
 
+// Helper function to sort items by sub-categories
+function sortBySubCategories(items, subCategories) {
+    const sortedItems = [];
+    
+    // 按子分类顺序添加物品
+    Object.keys(subCategories).forEach(subCategory => {
+        const subCategoryItems = items.filter(item => 
+            subCategories[subCategory].includes(item.id)
+        );
+        sortedItems.push(...subCategoryItems);
+    });
+    
+    // 添加任何未分类的物品
+    const categorizedIds = new Set(Object.values(subCategories).flat());
+    const uncategorizedItems = items.filter(item => !categorizedIds.has(item.id));
+    sortedItems.push(...uncategorizedItems);
+    
+    return sortedItems;
+}
+
 // Define item category priorities (higher = more important)
 const CATEGORY_PRIORITIES = {
     'Essentials': 100,                      // 必需品 - 最重要（护照、身份证、钱包等）
@@ -548,9 +568,151 @@ const getRecommendedItems = (tripContext) => {
     // Convert grouped items to array format with group information
     const result = [];
     Object.keys(groupedItems).forEach(category => {
+        let items = groupedItems[category];
+        
+        // 对所有类别进行分组排序
+        if (category === 'Clothing/Accessories' || category === '衣物/饰品') {
+            // 衣物类分组排序 - 从薄到厚（从内到外）
+            const clothingSubCategories = {
+                underwear: ['underwear', 'sport_bra', 'thermal_underwear', 'base_layer', 'socks', 'hiking_socks', 'ski_socks'],
+                inner_tops: ['tank_top', 't_shirt', 'long_sleeve_shirt', 'blouse', 'sun_protection_shirt'],
+                inner_bottoms: ['leggings', 'shorts', 'skirt'],
+                middle_layer: ['sweater', 'casual_pants', 'jeans', 'sports_pants', 'quick_dry_pants'],
+                outer_tops: ['light_jacket', 'sports_jacket', 'heavy_jacket', 'hardshell_jacket', 'down_jacket', 'wool_coat', 'ski_jacket'],
+                outer_bottoms: ['ski_pants'],
+                special_wear: ['pajamas', 'swimsuit', 'fancy_dress', 'business_suit', 'rain_poncho'],
+                shoes: ['flip_flops', 'sandals', 'sneakers', 'casual_shoes', 'dress_shoes', 'formal_shoes', 'boots', 'hiking_boots', 'water_shoes', 'ski_boots'],
+                accessories: ['belt', 'scarf', 'gloves', 'hiking_gloves', 'ski_gloves', 'neck_warmer', 'winter_hat', 'hat_cap', 'sunglasses', 'jewelry', 'tie', 'evening_bag', 'hiking_backpack', 'hair_styling_tools', 'ski_helmet', 'ski_goggles']
+            };
+            
+            items = sortBySubCategories(items, clothingSubCategories);
+        } else if (category === 'Essentials' || category === '必需品') {
+            // 必需品分组排序
+            const essentialsSubCategories = {
+                documents: ['passport', 'id_card_cn', 'id_card_us', 'drivers_license', 'student_id', 'credit_card'],
+                money: ['cash'],
+                travel_info: ['visa_info', 'international_driving_permit_info', 'flight_reservation', 
+                             'hotel_reservation', 'rental_car_reservation', 'attraction_reservation', 
+                             'insurance_documents'],
+                keys: ['keys'],
+                contacts: ['emergency_contacts']
+            };
+            
+            items = sortBySubCategories(items, essentialsSubCategories);
+        } else if (category === 'Electronics' || category === '电子产品') {
+            // 电子产品分组排序
+            const electronicsSubCategories = {
+                phones: ['phone', 'phone_charger', 'power_bank'],
+                computers: ['laptop', 'laptop_charger', 'ipad', 'ipad_charger'],
+                cameras: ['camera', 'camera_charger', 'camera_battery', 'memory_card', 'tripod', 'drone', 
+                         'action_camera', 'smartphone_gimbal'],
+                audio: ['headphones', 'wireless_earbuds', 'portable_speaker'],
+                accessories: ['smartwatch', 'e_reader', 'walkie_talkie', 'travel_adapter', 'power_strip', 
+                            'usb_cable', 'compass_gps', 'headlamp']
+            };
+            
+            items = sortBySubCategories(items, electronicsSubCategories);
+        } else if (category === 'Personal Care/Skincare' || category === '个人护理/护肤品') {
+            // 个人护理分组排序
+            const personalCareSubCategories = {
+                hygiene: ['toothbrush_paste', 'mouthwash', 'water_flosser', 'shower_gel', 'towel'],
+                skincare: ['face_wash', 'toner', 'moisturizer', 'hand_cream', 'body_lotion', 'eye_cream', 
+                          'face_mask', 'essence'],
+                grooming: ['shampoo', 'deodorant', 'razor', 'nail_clippers', 'comb', 'hair_ties'],
+                essentials: ['glasses', 'contact_lenses', 'wet_wipes', 'tissues', 'hand_sanitizer', 
+                           'slippers', 'heating_pad', 'sanitary_pads', 'contraceptives', 'pregnancy_test']
+            };
+            
+            items = sortBySubCategories(items, personalCareSubCategories);
+        } else if (category === 'Cosmetics' || category === '化妆品') {
+            // 化妆品分组排序
+            const cosmeticsSubCategories = {
+                base: ['foundation', 'concealer', 'powder', 'primer'],
+                eyes: ['eyeshadow', 'eyeliner', 'mascara', 'eyebrow_pencil'],
+                lips: ['lipstick', 'lip_balm'],
+                tools: ['makeup_brushes', 'cotton_pads', 'makeup_remover'],
+                extras: ['sunscreen', 'skincare', 'makeup', 'perfume_cologne', 'contour', 'highlighter', 
+                        'setting_spray']
+            };
+            
+            items = sortBySubCategories(items, cosmeticsSubCategories);
+        } else if (category === 'Medical Kit' || category === '医疗用品') {
+            // 医疗用品分组排序
+            const medicalSubCategories = {
+                first_aid: ['band_aids', 'medical_tape', 'alcohol_wipes', 'antiseptic', 'first_aid_kit'],
+                medications: ['pain_relievers', 'painkillers', 'personal_medications'],
+                monitoring: ['thermometer'],
+                protection: ['medical_mask', 'mosquito_repellent']
+            };
+            
+            items = sortBySubCategories(items, medicalSubCategories);
+        } else if (category === 'Camping' || category === '露营装备') {
+            // 露营装备分组排序
+            const campingSubCategories = {
+                shelter: ['tent', 'sleeping_bag', 'sleeping_pad'],
+                cooking: ['camping_stove', 'camping_cookware', 'camping_utensils', 'matches_lighter'],
+                comfort: ['camping_chair', 'camping_lantern', 'cooler'],
+                tools: ['paracord']
+            };
+            
+            items = sortBySubCategories(items, campingSubCategories);
+        } else if (category === 'Skiing Equipment' || category === '滑雪装备') {
+            // 滑雪装备分组排序
+            const skiingSubCategories = {
+                protection: ['ski_helmet', 'ski_goggles', 'ski_gloves'],
+                equipment: ['ski_boots', 'ski_poles', 'skis', 'ski_bindings', 'ski_wax'],
+                accessories: ['ski_bag', 'ski_pass']
+            };
+            
+            items = sortBySubCategories(items, skiingSubCategories);
+        } else if (category === 'Beach' || category === '海滩用品') {
+            // 海滩用品分组排序
+            const beachSubCategories = {
+                towels: ['beach_towel'],
+                protection: ['beach_umbrella'],
+                accessories: ['beach_bag', 'snorkel_gear', 'waterproof_phone_case']
+            };
+            
+            items = sortBySubCategories(items, beachSubCategories);
+        } else if (category === 'Business' || category === '商务用品') {
+            // 商务用品分组排序
+            const businessSubCategories = {
+                documents: ['business_cards', 'notepad'],
+                accessories: ['briefcase']
+            };
+            
+            items = sortBySubCategories(items, businessSubCategories);
+        } else if (category === 'Comfort' || category === '舒适用品') {
+            // 舒适用品分组排序
+            const comfortSubCategories = {
+                sleep: ['travel_pillow', 'eye_mask', 'earplugs'],
+                warmth: ['travel_blanket']
+            };
+            
+            items = sortBySubCategories(items, comfortSubCategories);
+        } else if (category === 'Food & Snacks' || category === '食物零食') {
+            // 食物零食分组排序
+            const foodSubCategories = {
+                snacks: ['travel_snacks', 'energy_bars', 'nuts'],
+                drinks: ['instant_coffee', 'drinking_water', 'electrolyte_powder']
+            };
+            
+            items = sortBySubCategories(items, foodSubCategories);
+        } else if (category === 'Miscellaneous' || category === '杂物') {
+            // 杂物分组排序
+            const miscSubCategories = {
+                bags: ['tote_bag', 'laundry_bags', 'zip_lock_bags'],
+                luggage: ['luggage_tags', 'luggage_locks', 'portable_scale'],
+                tools: ['hiking_poles', 'water_bottle', 'multi_tool', 'emergency_whistle'],
+                weather: ['umbrella', 'hand_warmers']
+            };
+            
+            items = sortBySubCategories(items, miscSubCategories);
+        }
+        
         result.push({
             group: category,
-            items: groupedItems[category]
+            items: items
         });
     });
     
