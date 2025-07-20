@@ -208,15 +208,6 @@ const getRecommendedItems = (tripContext) => {
         destination
     } = tripContext;
 
-    console.log('🔍 Enhanced Recommendation Debug:');
-    console.log('  Trip Type:', tripType);
-    console.log('  Origin Country:', originCountry);
-    console.log('  Activities:', activities);
-    console.log('  Weather Code:', weatherCode);
-    console.log('  Avg Temp:', avgTemp);
-    console.log('  Duration:', durationDays, 'days');
-    console.log('  Total items in database:', items.length);
-
     // Calculate scores for all items
     const itemsWithScores = items.map(item => {
         const score = calculateMatchScore(item, tripContext);
@@ -322,7 +313,6 @@ const getRecommendedItems = (tripContext) => {
     const recommended = itemsWithScores.filter(item => {
         // Exclude documents based on trip type and origin country
         if (excludedDocuments.includes(item.id)) {
-            console.log(`📊 ${item.id}: score=${item.score.toFixed(1)} -> ❌ (excluded for ${tripType} trip from ${originCountry})`);
             return false;
         }
         
@@ -331,18 +321,15 @@ const getRecommendedItems = (tripContext) => {
         
         // First check if item meets score threshold
         if (item.score < threshold) {
-            console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (score too low)`);
             return false;
         }
         
         // 严格的旅行类型匹配：过滤掉不符合旅行类型的物品
         if (item.attributes.trip_type) {
             if (item.attributes.trip_type === 'international' && tripContext.tripType !== 'international') {
-                console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (international item for domestic trip)`);
                 return false;
             }
             if (item.attributes.trip_type === 'domestic' && tripContext.tripType !== 'domestic') {
-                console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (domestic item for international trip)`);
                 return false;
             }
         }
@@ -360,14 +347,12 @@ const getRecommendedItems = (tripContext) => {
                     // 如果分数比阈值高出很多，允许通过（表示这是一个通用的有用物品）
                     const scoreBuffer = item.score - threshold;
                     if (scoreBuffer < 15) {  // 如果分数优势不够大，则过滤掉
-                        console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (no activity match, score buffer: ${scoreBuffer.toFixed(1)})`);
                         return false;
                     }
                 }
             }
         }
         
-        console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ✅`);
         return true;
     });
 
@@ -496,15 +481,21 @@ const getRecommendedItems = (tripContext) => {
         return aOrder - bOrder;
     });
 
-    console.log(`📋 Final recommended items: ${finalRecommended.length}`);
-    console.log(`📊 Score distribution:`);
+    // Define clothing subcategories for better organization
+    const clothingSubcategories = {
+        'tops': ['t_shirt', 'long_sleeve_shirt', 'blouse', 'sweater', 'tank_top', 'sun_protection_shirt', 'light_jacket', 'sports_jacket', 'heavy_jacket', 'down_jacket', 'wool_coat', 'ski_jacket'],
+        'bottoms': ['jeans', 'shorts', 'skirt', 'leggings', 'casual_pants', 'sports_pants', 'quick_dry_pants', 'ski_pants'],
+        'shoes': ['sneakers', 'sandals', 'boots', 'hiking_boots', 'casual_shoes', 'flip_flops', 'formal_shoes', 'dress_shoes', 'ski_boots'],
+        'underwear': ['underwear', 'socks', 'pajamas', 'sport_bra', 'hiking_socks'],
+        'accessories': ['scarf', 'gloves', 'sunglasses', 'hat_cap', 'winter_hat', 'hiking_gloves', 'neck_warmer', 'belt', 'jewelry', 'tie', 'evening_bag']
+    };
+    
+    // Define the order for clothing subcategories
+    const clothingSubcategoryOrder = ['tops', 'bottoms', 'shoes', 'underwear', 'accessories', 'other'];
+    
+    // Group items by category for better organization
+    const groupedItems = {};
     finalRecommended.forEach(item => {
-        const categoryKey = item.category['en'] || item.category[Object.keys(item.category)[0]];
-        console.log(`  - ${item.id}: ${item.score.toFixed(1)} pts (${categoryKey})`);
-    });
-
-    // Transform to final format
-    return finalRecommended.map(item => {
         let quantity = 1;
         if (item.quantity_logic.type === 'per_day') {
             quantity = Math.ceil(durationDays * item.quantity_logic.value);
@@ -525,7 +516,7 @@ const getRecommendedItems = (tripContext) => {
             }
         }
         
-        return {
+        const processedItem = {
             id: item.id,
             name: item.name[lang] || item.name['en'],
             emoji: item.emoji,
@@ -535,7 +526,122 @@ const getRecommendedItems = (tripContext) => {
             url: processedUrl,
             score: item.score // Include score for debugging
         };
+        
+        // Group by category with special handling for clothing
+        const categoryKey = item.category[lang] || item.category['en'];
+        
+        if (categoryKey === '衣物/饰品' || categoryKey === 'Clothing/Accessories') {
+            // For clothing items, add subcategory info for sorting
+            let subcategory = 'other';
+            for (const [subcat, items] of Object.entries(clothingSubcategories)) {
+                if (items.includes(item.id)) {
+                    subcategory = subcat;
+                    break;
+                }
+            }
+            
+            // Add subcategory order to item for sorting
+            processedItem.subcategoryOrder = clothingSubcategoryOrder.indexOf(subcategory);
+            
+            if (!groupedItems[categoryKey]) {
+                groupedItems[categoryKey] = [];
+            }
+            groupedItems[categoryKey].push(processedItem);
+        } else {
+            // Regular grouping for non-clothing items
+            if (!groupedItems[categoryKey]) {
+                groupedItems[categoryKey] = [];
+            }
+            groupedItems[categoryKey].push(processedItem);
+        }
     });
+    
+    // Sort clothing items within their group by subcategory order
+    Object.keys(groupedItems).forEach(category => {
+        if (category === '衣物/饰品' || category === 'Clothing/Accessories') {
+            console.log(`🔍 Processing category: ${category}`);
+            console.log(`🔍 Number of items: ${groupedItems[category].length}`);
+            
+            // Count items by subcategory
+            const subcategoryCounts = {};
+            groupedItems[category].forEach(item => {
+                const subcat = item.subcategoryOrder;
+                subcategoryCounts[subcat] = (subcategoryCounts[subcat] || 0) + 1;
+            });
+            console.log('🔍 Subcategory counts before sorting:', subcategoryCounts);
+            
+            // Create a copy of the array to avoid mutation issues
+            const sortedItems = [...groupedItems[category]].sort((a, b) => {
+                // First sort by subcategory order
+                const aOrder = a.subcategoryOrder || 999;
+                const bOrder = b.subcategoryOrder || 999;
+                
+                console.log(`  Sorting: ${a.name}(${aOrder}) vs ${b.name}(${bOrder})`);
+                
+                if (aOrder !== bOrder) {
+                    const result = aOrder - bOrder;
+                    console.log(`    Different orders: ${aOrder} - ${bOrder} = ${result}`);
+                    return result;
+                }
+                // Then sort by score within same subcategory
+                const scoreResult = b.score - a.score;
+                console.log(`    Same order, score result: ${scoreResult}`);
+                return scoreResult;
+            });
+            
+            // Verify the sorting worked correctly
+            console.log('🔍 Verification - checking first 10 items:');
+            sortedItems.slice(0, 10).forEach((item, index) => {
+                console.log(`  ${index + 1}. ${item.name}: subcategoryOrder=${item.subcategoryOrder}, score=${item.score}`);
+            });
+            
+            // Check if tops items exist in the sorted array
+            const topsItems = sortedItems.filter(item => item.subcategoryOrder === 0);
+            console.log(`🔍 Tops items in sorted array: ${topsItems.length}`);
+            topsItems.slice(0, 3).forEach((item, index) => {
+                console.log(`  ${index + 1}. ${item.name}: subcategoryOrder=${item.subcategoryOrder}, score=${item.score}`);
+            });
+            
+            // Count items by subcategory after sorting
+            const subcategoryCountsAfter = {};
+            sortedItems.forEach(item => {
+                const subcat = item.subcategoryOrder;
+                subcategoryCountsAfter[subcat] = (subcategoryCountsAfter[subcat] || 0) + 1;
+            });
+            console.log('🔍 Subcategory counts after sorting:', subcategoryCountsAfter);
+            
+            // Replace the original array with sorted array
+            groupedItems[category] = sortedItems;
+        }
+    });
+    
+    // Convert grouped items to array format with group information
+    const result = [];
+    
+    // Sort categories to ensure clothing comes first
+    const sortedCategories = Object.keys(groupedItems).sort((a, b) => {
+        // Check if both are clothing categories
+        const aIsClothing = a === '衣物/饰品' || a === 'Clothing/Accessories';
+        const bIsClothing = b === '衣物/饰品' || b === 'Clothing/Accessories';
+        
+        if (aIsClothing && !bIsClothing) {
+            return -1; // Clothing comes first
+        } else if (!aIsClothing && bIsClothing) {
+            return 1; // Non-clothing comes after
+        } else {
+            // Both are non-clothing, maintain original order
+            return 0;
+        }
+    });
+    
+    sortedCategories.forEach(category => {
+        result.push({
+            group: category,
+            items: groupedItems[category]
+        });
+    });
+    
+    return result;
 };
 
 module.exports = {
