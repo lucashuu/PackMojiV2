@@ -21,7 +21,7 @@ struct DateRangePickerView: View {
     var body: some View {
         VStack(spacing: 20) {
             Text("date_picker_title")
-                .font(.headline)
+                .font(.system(size: 17, weight: .semibold))
                 .padding(.top)
 
             DatePicker(
@@ -45,10 +45,10 @@ struct DateRangePickerView: View {
                 self.endDate = self.tempEndDate
                 onDismiss()
             }
-            .font(.headline)
+            .font(.system(size: 17, weight: .regular))
             .padding()
             .frame(maxWidth: .infinity)
-            .background(Color.black)
+            .background(Color.blue)
             .foregroundColor(.white)
             .cornerRadius(12)
         }

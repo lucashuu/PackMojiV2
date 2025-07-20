@@ -78,6 +78,10 @@ struct ChecklistView: View {
                         DailyWeatherView(dailyWeather: viewModel.tripInfo.dailyWeather, useFahrenheit: useFahrenheit)
                     }
                     .zIndex(0) // 确保天气部分在按钮下方
+                    .contentShape(Rectangle()) // 定义点击区域
+                    .onTapGesture {
+                        // 空的手势处理，阻止 List 的默认点击行为
+                    }
                 } else if viewModel.tripInfo.isHistorical {
                     VStack(alignment: .leading, spacing: 12) {
                         Text("checklist_historical_weather_title")
@@ -126,6 +130,10 @@ struct ChecklistView: View {
                         }
                     }
                     .zIndex(0) // 确保历史天气部分在按钮下方
+                    .contentShape(Rectangle()) // 定义点击区域
+                    .onTapGesture {
+                        // 空的手势处理，阻止 List 的默认点击行为
+                    }
                 }
             }
             .padding()
@@ -932,8 +940,15 @@ struct MonthlyAverageCard: View {
         .padding(.vertical, 8)
         .background(
             RoundedRectangle(cornerRadius: 8)
-                .fill(Color(.tertiarySystemBackground))
+                .fill(Color(uiColor: UIColor { traitCollection in
+                    if traitCollection.userInterfaceStyle == .dark {
+                        return UIColor.tertiarySystemBackground
+                    } else {
+                        return UIColor.systemBackground
+                    }
+                }))
         )
+        .shadow(color: Color.black.opacity(0.1), radius: 2, x: 0, y: 1)
     }
 }
 

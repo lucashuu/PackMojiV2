@@ -22,13 +22,13 @@ struct DailyWeatherView: View {
     private var cardWidth: CGFloat {
         let dayCount = dailyWeather.count
         if dayCount <= 7 {
-            return 60
+            return 80 // 大幅增加宽度以容纳完整文字
         } else if dayCount <= 14 {
-            return 55
+            return 75
         } else if dayCount <= 21 {
-            return 50
+            return 70
         } else {
-            return 45
+            return 65
         }
     }
     
@@ -36,13 +36,13 @@ struct DailyWeatherView: View {
     private var cardHeight: CGFloat {
         let dayCount = dailyWeather.count
         if dayCount <= 7 {
-            return 100
+            return 140 // 进一步增加高度
         } else if dayCount <= 14 {
-            return 90
+            return 130
         } else if dayCount <= 21 {
-            return 80
+            return 120
         } else {
-            return 70
+            return 110
         }
     }
     
@@ -73,8 +73,10 @@ struct DailyWeatherView: View {
                     )
                 }
             }
+            .padding(.horizontal, 8) // 添加水平padding给阴影留出空间
+            .padding(.vertical, 4) // 添加垂直padding给阴影留出空间
         }
-        .frame(height: cardHeight + 16)
+        .frame(height: cardHeight + 32) // 增加高度以容纳阴影
     }
 }
 
@@ -105,7 +107,7 @@ struct DailyWeatherCard: View {
     }
     
     var body: some View {
-        VStack(spacing: 6) {
+        VStack(spacing: 6) { // 减少整体间距，给底部文字留出更多空间
             // Day of week
             Text(day.dayOfWeek)
                 .font(.system(size: max(10, iconSize * 0.3)))
@@ -128,20 +130,29 @@ struct DailyWeatherCard: View {
             Text(displayTemperature)
                 .font(.system(size: max(12, iconSize * 0.4), weight: .semibold))
                 .foregroundColor(.primary)
+                .padding(.bottom, 2) // 减少与底部文字的间距
             
             // Condition (shortened)
             Text(shortenedCondition)
-                .font(.system(size: max(8, iconSize * 0.25)))
+                .font(.system(size: max(8, iconSize * 0.25))) // 稍微减小字体
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
-                .lineLimit(2)
+                .lineLimit(4) // 增加行数限制
+                .fixedSize(horizontal: false, vertical: true) // 确保文字不被截断
         }
         .frame(width: cardWidth, height: cardHeight)
-        .padding(.vertical, 8)
+        .padding(.vertical, 4) // 减少垂直padding
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color(.tertiarySystemBackground))
+                .fill(Color(uiColor: UIColor { traitCollection in
+                    if traitCollection.userInterfaceStyle == .dark {
+                        return UIColor.tertiarySystemBackground
+                    } else {
+                        return UIColor.systemBackground
+                    }
+                }))
         )
+        .shadow(color: Color.black.opacity(0.1), radius: 2, x: 0, y: 1)
     }
     
     private var shortenedCondition: String {
@@ -185,7 +196,8 @@ struct DailyWeatherCard: View {
         } else if condition.contains("雷") {
             localizedCondition = String(localized: "weather_stormy")
         } else {
-            localizedCondition = condition.count > 4 ? String(condition.prefix(4)) : condition
+            // 不再截断文字，保持完整
+            localizedCondition = condition
         }
         
         // Add historical suffix for historical data
