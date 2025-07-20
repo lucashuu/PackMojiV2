@@ -44,8 +44,9 @@ const CATEGORY_PRIORITIES = {
 
 // Essential items that should always be included
 const ESSENTIAL_ITEMS = [
-    'passport', 'id_card', 'tickets', 'cash', 'keys', 'drivers_license', 'student_id', 'underwear', 'socks', 'pajamas',
-    'toothbrush_paste', 'face_wash', 'towel', 'sanitary_pads', 'band_aids'
+    'passport', 'id_card_cn', 'id_card_us', 'credit_card', 'drivers_license', 'student_id', 'cash', 'keys', 
+    'visa_info', 'international_driving_permit_info', 'emergency_contacts', 'hotel_reservation', 'flight_reservation',
+    'underwear', 'socks', 'pajamas', 'toothbrush_paste', 'face_wash', 'towel', 'sanitary_pads', 'band_aids'
 ];
 
 // International trip essential items (added dynamically)
