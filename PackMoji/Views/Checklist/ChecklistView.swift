@@ -614,26 +614,26 @@ struct ChecklistItemRow: View {
     @State private var showQuantityEditor = false
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: 2) {
             // Main Item Row
-            HStack(spacing: 12) {
+            HStack(spacing: 8) {
                 // Checkbox or Selection Circle
                 Button(action: onToggle) {
                     if isSelectionMode {
                         Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
                             .foregroundColor(isSelected ? .accentColor : .gray)
-                            .font(.system(size: 20))
+                            .font(.system(size: 16))
                     } else {
                         Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
                             .foregroundColor(isChecked ? .green : .accentColor)
-                            .font(.system(size: 20))
+                            .font(.system(size: 16))
                     }
                 }
                 .buttonStyle(PlainButtonStyle())
                 
                 // Emoji
                 Text(item.emoji)
-                    .font(.title2)
+                    .font(.system(size: 18))
                     .onTapGesture {
                         showEmojiPicker = true
                     }
@@ -642,12 +642,14 @@ struct ChecklistItemRow: View {
                 if isEditing {
                     TextField("", text: $editingText)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .font(.system(size: 15))
                         .onSubmit {
                             item.name = editingText
                             isEditing = false
                         }
                 } else {
                     Text(item.name)
+                        .font(.system(size: 15))
                         .onTapGesture {
                             editingText = item.name
                             isEditing = true
@@ -659,12 +661,12 @@ struct ChecklistItemRow: View {
                 // Quantity
                 Button(action: { showQuantityEditor = true }) {
                     Text("\(NSLocalizedString("item_quantity_prefix", comment: ""))\(item.quantity)")
-                        .font(.system(size: 15))
+                        .font(.system(size: 12))
                         .foregroundColor(.secondary)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
                         .background(Color(UIColor.systemGray6))
-                        .cornerRadius(6)
+                        .cornerRadius(4)
                 }
                 
                 // Note/Edit Button
@@ -675,8 +677,8 @@ struct ChecklistItemRow: View {
                 }) {
                     Image(systemName: item.note?.isEmpty == false ? "note.text" : "square.and.pencil")
                         .foregroundColor(.orange)
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
+                        .font(.system(size: 14))
+                        .frame(width: 24, height: 24)
                 }
                 .buttonStyle(.plain)
                 
@@ -685,8 +687,8 @@ struct ChecklistItemRow: View {
                     Button(action: onDelete) {
                         Image(systemName: "minus.circle.fill")
                             .foregroundColor(.red)
-                            .font(.system(size: 18))
-                            .frame(width: 32, height: 32)
+                            .font(.system(size: 14))
+                            .frame(width: 24, height: 24)
                     }
                     .buttonStyle(.plain)
                 }
@@ -698,14 +700,14 @@ struct ChecklistItemRow: View {
                     editingNote = note
                     isEditingNote = true
                 }
-                .padding(.leading, 44)
-                .padding(.trailing, 12)
+                .padding(.leading, 36)
+                .padding(.trailing, 8)
             }
         }
-        .padding(.vertical, 4)
-        .padding(.horizontal, 12)
+        .padding(.vertical, 2)
+        .padding(.horizontal, 8)
         .background(isChecked ? Color(UIColor.systemGray6) : .clear)
-        .cornerRadius(8)
+        .cornerRadius(6)
         .opacity(isChecked ? 0.6 : 1.0)
         .onChange(of: viewModel.categories[categoryIndex].items) { newItems in
             if let updatedItem = newItems.first(where: { $0.id == item.id }) {
@@ -897,9 +899,9 @@ struct MonthlyAverageCard: View {
     }
     
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 7) {
             Text(monthlyAverage.monthName)
-                .font(.system(size: 14, weight: .medium))
+                .font(.system(size: 13, weight: .medium))
                 .foregroundColor(.primary)
             
             // 天气图标区域 - 支持多个图标
@@ -907,37 +909,37 @@ struct MonthlyAverageCard: View {
                 WeatherIconView(
                     conditionCode: monthlyAverage.conditionCode,
                     icon: monthlyAverage.icon,
-                    size: 24
+                    size: 22
                 )
                 
                 // 如果有额外的天气图标，显示在旁边
                 if let additionalIcon = additionalWeatherIcon {
                     Text(additionalIcon)
-                        .font(.system(size: 16))
+                        .font(.system(size: 15))
                 }
             }
             
             VStack(spacing: 2) {
                 Text(displayTemperature)
-                    .font(.system(size: 16, weight: .semibold))
+                    .font(.system(size: 15, weight: .semibold))
                     .foregroundColor(.primary)
                 
                 if !displayTempRange.isEmpty {
                     Text(displayTempRange)
-                        .font(.system(size: 10))
+                        .font(.system(size: 9))
                         .foregroundColor(.secondary)
                 }
             }
             
             Text(localizedCondition)
-                .font(.system(size: 9))
+                .font(.system(size: 8))
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
                 .lineLimit(3)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .frame(width: 90, height: 110)
-        .padding(.vertical, 8)
+        .frame(width: 80, height: 100)
+        .padding(.vertical, 7)
         .background(
             RoundedRectangle(cornerRadius: 8)
                 .fill(Color(uiColor: UIColor { traitCollection in
@@ -1032,19 +1034,19 @@ struct ClickableNoteView: View {
             print("点击备注：\(note)")  // Debug log
             onEdit()
         }) {
-            HStack(spacing: 8) {
+            HStack(spacing: 6) {
                 Image(systemName: "text.quote")
                     .foregroundColor(.orange)
-                    .font(.system(size: 12))
+                    .font(.system(size: 10))
                 
                 if isSearchLink, let urlStr = urlString {
                     // 检测到Search link，显示为可点击的链接
-                    VStack(alignment: .leading, spacing: 4) {
+                    VStack(alignment: .leading, spacing: 2) {
                         Text(friendlyDisplayText)
-                            .font(.system(size: 14))
+                            .font(.system(size: 12))
                             .foregroundColor(.blue)
                             .underline()
-                            .lineLimit(3)
+                            .lineLimit(2)
                             .multilineTextAlignment(.leading)
                             .onTapGesture {
                                 print("点击链接：\(urlStr)")  // Debug log
@@ -1060,9 +1062,9 @@ struct ClickableNoteView: View {
                 } else {
                     // 普通note显示
                     Text(note)
-                        .font(.system(size: 14))
+                        .font(.system(size: 12))
                         .foregroundColor(.secondary)
-                        .lineLimit(3)
+                        .lineLimit(2)
                         .multilineTextAlignment(.leading)
                 }
                 
@@ -1070,12 +1072,12 @@ struct ClickableNoteView: View {
                 
                 Image(systemName: "pencil")
                     .foregroundColor(.orange)
-                    .font(.system(size: 12))
+                    .font(.system(size: 10))
             }
-            .padding(.vertical, 6)
-            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .padding(.horizontal, 6)
             .background(Color(UIColor.systemGray6).opacity(0.5))
-            .cornerRadius(6)
+            .cornerRadius(4)
         }
         .buttonStyle(.plain)
     }

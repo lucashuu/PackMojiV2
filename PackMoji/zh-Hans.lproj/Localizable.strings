@@ -193,3 +193,63 @@
 "confirm_delete_templates" = "确定要删除选中的 %d 个模板吗？";
 "select_mode" = "选择";
 "item_quantity_prefix" = "x";
+
+// MARK: - Debug Messages
+"debug_init_checklist" = "初始化清单：%@";
+"debug_invalid_category_index" = "无效的分类索引：%d";
+"debug_add_custom_item" = "添加自定义物品 - 分类：%@, 名称：%@, 图标：%@";
+"debug_item_not_found" = "未找到物品ID：%@";
+"debug_update_note_before" = "更新备注 - 之前：%@";
+"debug_update_note_after" = "更新备注 - 之后：%@";
+"debug_category_exists" = "类别已存在：%@";
+"debug_add_new_category" = "添加新类别：%@";
+"debug_invalid_category_index_delete" = "无效的类别索引：%d";
+"debug_delete_category" = "删除类别：%d";
+"debug_category_name_exists" = "类别名称已存在：%@";
+"debug_rename_category" = "重命名类别：%@ -> %@";
+
+// MARK: - Category Names
+"category_essentials" = "必需品";
+"category_clothing" = "衣物";
+"category_electronics" = "电子";
+"category_toiletries" = "洗漱";
+"category_documents" = "证件";
+"category_medicine" = "药品";
+"category_shopping" = "购物";
+"category_sports" = "运动";
+"category_entertainment" = "娱乐";
+"category_food" = "食品";
+"category_work" = "工作";
+"category_other" = "其他";
+
+// MARK: - Item Names
+"item_passport_visa" = "护照与签证";
+"item_tickets" = "机票/车票";
+"item_cash" = "现金";
+"item_tshirt" = "T恤";
+"item_jeans" = "牛仔裤";
+"item_jacket" = "外套";
+"item_phone" = "手机";
+"item_charger" = "充电器";
+"item_powerbank" = "充电宝";
+
+// MARK: - Preview Data
+"preview_5_days_trip" = "5天行程";
+"preview_10_days_trip" = "10天行程";
+"preview_20_days_trip" = "20天行程";
+"preview_30_days_trip" = "30天行程";
+"preview_destination_tokyo" = "东京";
+"preview_destination_london" = "伦敦";
+"preview_weather_sunny" = "晴天";
+"preview_weather_cloudy" = "多云";
+"preview_weather_rainy" = "小雨";
+"preview_weather_summary" = "晴天, 15-25°C";
+
+// MARK: - Week Days
+"weekday_monday" = "周一";
+"weekday_tuesday" = "周二";
+"weekday_wednesday" = "周三";
+"weekday_thursday" = "周四";
+"weekday_friday" = "周五";
+"weekday_saturday" = "周六";
+"weekday_sunday" = "周日";

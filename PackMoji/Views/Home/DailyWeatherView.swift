@@ -8,13 +8,13 @@ struct DailyWeatherView: View {
     private var iconSize: CGFloat {
         let dayCount = dailyWeather.count
         if dayCount <= 7 {
-            return 32
-        } else if dayCount <= 14 {
             return 28
-        } else if dayCount <= 21 {
+        } else if dayCount <= 14 {
             return 24
-        } else {
+        } else if dayCount <= 21 {
             return 20
+        } else {
+            return 18
         }
     }
     
@@ -22,13 +22,13 @@ struct DailyWeatherView: View {
     private var cardWidth: CGFloat {
         let dayCount = dailyWeather.count
         if dayCount <= 7 {
-            return 80 // 大幅增加宽度以容纳完整文字
-        } else if dayCount <= 14 {
-            return 75
-        } else if dayCount <= 21 {
             return 70
-        } else {
+        } else if dayCount <= 14 {
             return 65
+        } else if dayCount <= 21 {
+            return 60
+        } else {
+            return 55
         }
     }
     
@@ -36,13 +36,13 @@ struct DailyWeatherView: View {
     private var cardHeight: CGFloat {
         let dayCount = dailyWeather.count
         if dayCount <= 7 {
-            return 140 // 进一步增加高度
-        } else if dayCount <= 14 {
-            return 130
-        } else if dayCount <= 21 {
             return 120
-        } else {
+        } else if dayCount <= 14 {
             return 110
+        } else if dayCount <= 21 {
+            return 100
+        } else {
+            return 95
         }
     }
     
@@ -50,7 +50,7 @@ struct DailyWeatherView: View {
     private var spacing: CGFloat {
         let dayCount = dailyWeather.count
         if dayCount <= 7 {
-            return 16
+            return 14
         } else if dayCount <= 14 {
             return 12
         } else if dayCount <= 21 {
@@ -73,10 +73,10 @@ struct DailyWeatherView: View {
                     )
                 }
             }
-            .padding(.horizontal, 8) // 添加水平padding给阴影留出空间
-            .padding(.vertical, 4) // 添加垂直padding给阴影留出空间
+            .padding(.horizontal, 2) // 减少水平padding
+            .padding(.vertical, 1) // 减少垂直padding
         }
-        .frame(height: cardHeight + 32) // 增加高度以容纳阴影
+        .frame(height: cardHeight + 8) // 减少高度
     }
 }
 
@@ -107,16 +107,16 @@ struct DailyWeatherCard: View {
     }
     
     var body: some View {
-        VStack(spacing: 6) { // 减少整体间距，给底部文字留出更多空间
+        VStack(spacing: 4) { // 恢复合适的间距
             // Day of week
             Text(day.dayOfWeek)
-                .font(.system(size: max(10, iconSize * 0.3)))
+                .font(.system(size: max(9, iconSize * 0.3)))
                 .foregroundColor(.secondary)
                 .fontWeight(.medium)
             
             // Date (e.g., 6/26)
             Text(formattedDate)
-                .font(.system(size: max(9, iconSize * 0.28)))
+                .font(.system(size: max(8, iconSize * 0.28)))
                 .foregroundColor(.secondary)
             
             // Weather icon
@@ -128,22 +128,22 @@ struct DailyWeatherCard: View {
             
             // Temperature
             Text(displayTemperature)
-                .font(.system(size: max(12, iconSize * 0.4), weight: .semibold))
+                .font(.system(size: max(11, iconSize * 0.4), weight: .semibold))
                 .foregroundColor(.primary)
-                .padding(.bottom, 2) // 减少与底部文字的间距
+                .padding(.bottom, 1) // 恢复适当的间距
             
             // Condition (shortened)
             Text(shortenedCondition)
-                .font(.system(size: max(8, iconSize * 0.25))) // 稍微减小字体
+                .font(.system(size: max(7, iconSize * 0.25))) // 恢复合适的字体大小
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
-                .lineLimit(4) // 增加行数限制
+                .lineLimit(4) // 保持原来的行数限制
                 .fixedSize(horizontal: false, vertical: true) // 确保文字不被截断
         }
         .frame(width: cardWidth, height: cardHeight)
-        .padding(.vertical, 4) // 减少垂直padding
+        .padding(.vertical, 2) // 恢复合适的垂直padding
         .background(
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 8)
                 .fill(Color(uiColor: UIColor { traitCollection in
                     if traitCollection.userInterfaceStyle == .dark {
                         return UIColor.tertiarySystemBackground
@@ -152,7 +152,7 @@ struct DailyWeatherCard: View {
                     }
                 }))
         )
-        .shadow(color: Color.black.opacity(0.1), radius: 2, x: 0, y: 1)
+        .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
     }
     
     private var shortenedCondition: String {

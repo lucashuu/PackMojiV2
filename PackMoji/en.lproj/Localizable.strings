@@ -193,3 +193,63 @@
 "confirm_delete_templates" = "Are you sure you want to delete the selected %d templates?";
 "select_mode" = "Select";
 "item_quantity_prefix" = "x";
+
+// MARK: - Debug Messages
+"debug_init_checklist" = "Initializing checklist: %@";
+"debug_invalid_category_index" = "Invalid category index: %d";
+"debug_add_custom_item" = "Adding custom item - Category: %@, Name: %@, Icon: %@";
+"debug_item_not_found" = "Item ID not found: %@";
+"debug_update_note_before" = "Updating note - Before: %@";
+"debug_update_note_after" = "Updating note - After: %@";
+"debug_category_exists" = "Category already exists: %@";
+"debug_add_new_category" = "Adding new category: %@";
+"debug_invalid_category_index_delete" = "Invalid category index for deletion: %d";
+"debug_delete_category" = "Deleting category: %d";
+"debug_category_name_exists" = "Category name already exists: %@";
+"debug_rename_category" = "Renaming category: %@ -> %@";
+
+// MARK: - Category Names
+"category_essentials" = "Essentials";
+"category_clothing" = "Clothing";
+"category_electronics" = "Electronics";
+"category_toiletries" = "Toiletries";
+"category_documents" = "Documents";
+"category_medicine" = "Medicine";
+"category_shopping" = "Shopping";
+"category_sports" = "Sports";
+"category_entertainment" = "Entertainment";
+"category_food" = "Food";
+"category_work" = "Work";
+"category_other" = "Other";
+
+// MARK: - Item Names
+"item_passport_visa" = "Passport & Visa";
+"item_tickets" = "Tickets";
+"item_cash" = "Cash";
+"item_tshirt" = "T-Shirts";
+"item_jeans" = "Jeans";
+"item_jacket" = "Jacket";
+"item_phone" = "Phone";
+"item_charger" = "Charger";
+"item_powerbank" = "Power Bank";
+
+// MARK: - Preview Data
+"preview_5_days_trip" = "5-Day Trip";
+"preview_10_days_trip" = "10-Day Trip";
+"preview_20_days_trip" = "20-Day Trip";
+"preview_30_days_trip" = "30-Day Trip";
+"preview_destination_tokyo" = "Tokyo";
+"preview_destination_london" = "London";
+"preview_weather_sunny" = "Sunny";
+"preview_weather_cloudy" = "Cloudy";
+"preview_weather_rainy" = "Rainy";
+"preview_weather_summary" = "Sunny, 15-25°C";
+
+// MARK: - Week Days
+"weekday_monday" = "Mon";
+"weekday_tuesday" = "Tue";
+"weekday_wednesday" = "Wed";
+"weekday_thursday" = "Thu";
+"weekday_friday" = "Fri";
+"weekday_saturday" = "Sat";
+"weekday_sunday" = "Sun";
