@@ -375,13 +375,38 @@ const getRecommendedItems = (tripContext) => {
                     item.attributes.activities.includes(userActivity)
                 );
                 
-                // 更宽松的活动匹配：如果分数足够高，即使没有完全匹配也允许通过
+                // 对特定活动相关的物品实施更严格的匹配要求
+                const strictActivityItems = [
+                    'camping_stove', 'camping_chair', 'camping_lantern', 'camping_cookware', 'camping_utensils',
+                    'tent', 'sleeping_bag', 'sleeping_pad', 'paracord',
+                    'ski_boots', 'ski_poles', 'skis', 'ski_bindings', 'ski_wax', 'ski_helmet', 'ski_goggles', 'ski_gloves',
+                    'beach_towel', 'beach_umbrella', 'beach_bag', 'snorkel_gear',
+                    'hiking_poles', 'hiking_boots', 'hiking_socks', 'hiking_gloves', 'hiking_backpack',
+                    'business_suit', 'briefcase', 'business_cards'
+                ];
+                
+                const isStrictActivityItem = strictActivityItems.includes(item.id);
+                
+                // 更智能的判断：通过类别和活动属性来判断是否需要严格匹配
+                const strictActivityCategories = ['Camping', 'Skiing Equipment', 'Beach', 'Business'];
+                const isStrictCategory = strictActivityCategories.includes(categoryKey);
+                const hasSpecificActivities = !item.attributes.activities.includes('any');
+                
+                // 如果物品属于严格活动类别且有特定活动要求，则实施严格匹配
+                const requiresStrictMatch = isStrictCategory && hasSpecificActivities;
+                
                 if (!hasActivityMatch) {
-                    // 如果分数比阈值高出很多，允许通过（表示这是一个通用的有用物品）
-                    const scoreBuffer = item.score - threshold;
-                    if (scoreBuffer < 15) {  // 如果分数优势不够大，则过滤掉
-                        console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (no activity match, score buffer: ${scoreBuffer.toFixed(1)})`);
+                    if (requiresStrictMatch || isStrictActivityItem) {
+                        // 对于严格活动相关的物品，如果没有活动匹配，直接过滤掉
+                        console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (strict activity item, no activity match)`);
                         return false;
+                    } else {
+                        // 对于其他物品，使用更宽松的匹配逻辑
+                        const scoreBuffer = item.score - threshold;
+                        if (scoreBuffer < 15) {  // 如果分数优势不够大，则过滤掉
+                            console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (no activity match, score buffer: ${scoreBuffer.toFixed(1)})`);
+                            return false;
+                        }
                     }
                 }
             }
@@ -584,8 +609,7 @@ const getRecommendedItems = (tripContext) => {
                 shoes: ['flip_flops', 'sandals', 'sneakers', 'casual_shoes', 'dress_shoes', 'formal_shoes', 'boots', 'hiking_boots', 'water_shoes', 'ski_boots'],
                 underwear: ['underwear', 'sport_bra', 'thermal_underwear', 'base_layer', 'socks', 'hiking_socks', 'ski_socks', 'pajamas'],
                 accessories: ['belt', 'scarf', 'gloves', 'hiking_gloves', 'ski_gloves', 'neck_warmer', 'winter_hat', 'hat_cap', 'sunglasses', 'jewelry', 'tie', 'evening_bag', 'hiking_backpack', 'hair_styling_tools', 'ski_helmet', 'ski_goggles']
-            };
-            
+            };        
             items = sortBySubCategories(items, clothingSubCategories);
         } else if (category === 'Essentials' || category === '必需品') {
             // 必需品分组排序
