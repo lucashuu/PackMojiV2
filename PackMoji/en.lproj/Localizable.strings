@@ -253,3 +253,37 @@
 "weekday_friday" = "Fri";
 "weekday_saturday" = "Sat";
 "weekday_sunday" = "Sun";
+
+// MARK: - Travel Items
+"item_travel_adapter" = "Travel Adapter";
+"item_wireless_earbuds" = "Wireless Earbuds";
+"item_e_reader" = "E-Reader/Kindle";
+"item_walkie_talkie" = "Walkie Talkie";
+
+// MARK: - Search Link Messages
+"search_link_power_adapter" = "🔍 Search Power Adapter Info";
+"search_link_visa_requirements" = "🔍 Search Visa Requirements";
+"search_link_currency_exchange" = "🔍 Search Currency Exchange";
+"search_link_international_driving" = "🔍 Search International Driving Permit";
+"search_link_local_money" = "🔍 Search Local Currency Info";
+
+// MARK: - Debug Messages for Search Links
+"debug_edit_power_adapter_link" = "Edit power adapter search link";
+"debug_edit_visa_link" = "Edit visa requirements search link";
+"debug_edit_currency_link" = "Edit currency exchange search link";
+"debug_edit_driving_link" = "Edit international driving permit search link";
+"debug_edit_money_link" = "Edit local currency search link";
+
+// MARK: - Month Names
+"month_january" = "Jan";
+"month_february" = "Feb";
+"month_march" = "Mar";
+"month_april" = "Apr";
+"month_may" = "May";
+"month_june" = "Jun";
+"month_july" = "Jul";
+"month_august" = "Aug";
+"month_september" = "Sep";
+"month_october" = "Oct";
+"month_november" = "Nov";
+"month_december" = "Dec";

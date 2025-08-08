@@ -253,3 +253,37 @@
 "weekday_friday" = "周五";
 "weekday_saturday" = "周六";
 "weekday_sunday" = "周日";
+
+// MARK: - Travel Items
+"item_travel_adapter" = "转换插头";
+"item_wireless_earbuds" = "无线耳机";
+"item_e_reader" = "电子书阅读器";
+"item_walkie_talkie" = "对讲机";
+
+// MARK: - Search Link Messages
+"search_link_power_adapter" = "🔍 查询电源适配器";
+"search_link_visa_requirements" = "🔍 查询签证要求";
+"search_link_currency_exchange" = "🔍 查询货币兑换";
+"search_link_international_driving" = "🔍 查询国际驾照要求";
+"search_link_local_money" = "🔍 查询当地货币";
+
+// MARK: - Debug Messages for Search Links
+"debug_edit_power_adapter_link" = "编辑电源适配器查询链接";
+"debug_edit_visa_link" = "编辑签证要求查询链接";
+"debug_edit_currency_link" = "编辑货币兑换查询链接";
+"debug_edit_driving_link" = "编辑国际驾照查询链接";
+"debug_edit_money_link" = "编辑当地货币查询链接";
+
+// MARK: - Month Names
+"month_january" = "1月";
+"month_february" = "2月";
+"month_march" = "3月";
+"month_april" = "4月";
+"month_may" = "5月";
+"month_june" = "6月";
+"month_july" = "7月";
+"month_august" = "8月";
+"month_september" = "9月";
+"month_october" = "10月";
+"month_november" = "11月";
+"month_december" = "12月";

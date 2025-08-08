@@ -811,6 +811,52 @@ struct MonthlyAverageCard: View {
     let monthlyAverage: MonthlyAverage
     let useFahrenheit: Bool
     
+    private var localizedMonthName: String {
+        // 将月份名称转换为本地化键
+        let monthKey = getMonthLocalizationKey(from: monthlyAverage.monthName)
+        return NSLocalizedString(monthKey, comment: "")
+    }
+    
+    private func getMonthLocalizationKey(from monthName: String) -> String {
+        // 处理中文月份格式 (如 "1月", "2月")
+        if monthName.contains("月") {
+            let monthNumber = monthName.replacingOccurrences(of: "月", with: "")
+            switch monthNumber {
+            case "1": return "month_january"
+            case "2": return "month_february"
+            case "3": return "month_march"
+            case "4": return "month_april"
+            case "5": return "month_may"
+            case "6": return "month_june"
+            case "7": return "month_july"
+            case "8": return "month_august"
+            case "9": return "month_september"
+            case "10": return "month_october"
+            case "11": return "month_november"
+            case "12": return "month_december"
+            default: return monthName
+            }
+        }
+        
+        // 处理英文月份格式
+        let lowercasedMonth = monthName.lowercased()
+        switch lowercasedMonth {
+        case "jan", "january": return "month_january"
+        case "feb", "february": return "month_february"
+        case "mar", "march": return "month_march"
+        case "apr", "april": return "month_april"
+        case "may": return "month_may"
+        case "jun", "june": return "month_june"
+        case "jul", "july": return "month_july"
+        case "aug", "august": return "month_august"
+        case "sep", "september": return "month_september"
+        case "oct", "october": return "month_october"
+        case "nov", "november": return "month_november"
+        case "dec", "december": return "month_december"
+        default: return monthName
+        }
+    }
+    
     private var displayTemperature: String {
         if useFahrenheit {
             let fahrenheit = Int(Double(monthlyAverage.temperature) * 9.0 / 5.0 + 32)
@@ -900,7 +946,7 @@ struct MonthlyAverageCard: View {
     
     var body: some View {
         VStack(spacing: 7) {
-            Text(monthlyAverage.monthName)
+            Text(localizedMonthName)
                 .font(.system(size: 13, weight: .medium))
                 .foregroundColor(.primary)
             
@@ -958,9 +1004,9 @@ struct ChecklistView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             let mockTrip = TripInfo(
-                destinationName: "东京", 
+                destinationName: NSLocalizedString("preview_destination_tokyo", comment: ""), 
                 durationDays: 5, 
-                weatherSummary: "晴天, 15-25°C",
+                weatherSummary: NSLocalizedString("preview_weather_summary", comment: ""),
                 dailyWeather: [
                     DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 18, condition: "晴天", conditionCode: "clear", icon: "01d", dataSource: "forecast"),
                     DailyWeather(date: "2024-01-16", dayOfWeek: "周二", temperature: 15, condition: "多云", conditionCode: "clouds", icon: "02d", dataSource: "forecast"),
@@ -1014,15 +1060,15 @@ struct ClickableNoteView: View {
         
         // 从URL中提取友好的显示文本
         if urlStr.contains("visa+requirements") {
-            return "🔍 查询签证要求"
+            return NSLocalizedString("search_link_visa_requirements", comment: "")
         } else if urlStr.contains("international+driving+permit") {
-            return "🔍 查询国际驾照要求"
+            return NSLocalizedString("search_link_international_driving", comment: "")
         } else if urlStr.contains("currency+exchange") {
-            return "🔍 查询货币兑换"
+            return NSLocalizedString("search_link_currency_exchange", comment: "")
         } else if urlStr.contains("power+adapter") {
-            return "🔍 查询电源适配器"
+            return NSLocalizedString("search_link_power_adapter", comment: "")
         } else if urlStr.contains("local+money") {
-            return "🔍 查询当地货币"
+            return NSLocalizedString("search_link_local_money", comment: "")
         } else {
             // 默认显示为"搜索相关信息"
             return "🔍 搜索相关信息"
@@ -1090,19 +1136,19 @@ struct ClickableNoteViewTest: View {
             List {
                 Section("测试可点击链接") {
                     ClickableNoteView(note: "搜索链接：https://www.google.com/search?q=visa+requirements+for+东京") {
-                        print("编辑签证查询链接")
+                        print(NSLocalizedString("debug_edit_visa_link", comment: ""))
                     }
                     
                     ClickableNoteView(note: "Search link: https://www.google.com/search?q=currency+exchange+纽约+local+money") {
-                        print("编辑货币兑换链接")
+                        print(NSLocalizedString("debug_edit_currency_link", comment: ""))
                     }
                     
                     ClickableNoteView(note: "Search link: https://www.google.com/search?q=international+driving+permit+requirements+巴黎") {
-                        print("编辑国际驾照查询链接")
+                        print(NSLocalizedString("debug_edit_driving_link", comment: ""))
                     }
                     
                     ClickableNoteView(note: "Search link: https://www.google.com/search?q=power+adapter+伦敦+electrical+outlet") {
-                        print("编辑电源适配器查询链接")
+                        print(NSLocalizedString("debug_edit_power_adapter_link", comment: ""))
                     }
                     
                     ClickableNoteView(note: "这是一个普通的备注，没有链接") {
@@ -1122,9 +1168,9 @@ struct ClickableNoteViewTest: View {
 #Preview {
     NavigationStack {
         let mockTrip = TripInfo(
-            destinationName: "伦敦", 
+            destinationName: NSLocalizedString("preview_destination_london", comment: ""), 
             durationDays: 7, 
-            weatherSummary: "多云, 12-18°C",
+            weatherSummary: NSLocalizedString("preview_weather_summary", comment: ""),
             dailyWeather: [
                 DailyWeather(date: "2024-01-15", dayOfWeek: "周一", temperature: 14, condition: "多云", conditionCode: "clouds", icon: "03d", dataSource: "historical"),
                 DailyWeather(date: "2024-01-16", dayOfWeek: "周二", temperature: 12, condition: "小雨", conditionCode: "rain", icon: "10d", dataSource: "historical"),
