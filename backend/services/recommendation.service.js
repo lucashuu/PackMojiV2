@@ -395,9 +395,13 @@ const getRecommendedItems = (tripContext) => {
                 // 如果物品属于严格活动类别且有特定活动要求，则实施严格匹配
                 const requiresStrictMatch = isStrictCategory && hasSpecificActivities;
                 
+                // 检查物品是否包含多个特定活动（如walkie_talkie包含hiking, skiing, camping）
+                const hasMultipleSpecificActivities = item.attributes.activities.length > 1 && 
+                    item.attributes.activities.every(activity => activity !== 'any');
+                
                 if (!hasActivityMatch) {
-                    if (requiresStrictMatch || isStrictActivityItem) {
-                        // 对于严格活动相关的物品，如果没有活动匹配，直接过滤掉
+                    if (requiresStrictMatch || isStrictActivityItem || hasMultipleSpecificActivities) {
+                        // 对于严格活动相关的物品或多活动物品，如果没有活动匹配，直接过滤掉
                         console.log(`📊 ${item.id}: score=${item.score.toFixed(1)}, threshold=${threshold}, category=${categoryKey} -> ❌ (strict activity item, no activity match)`);
                         return false;
                     } else {
